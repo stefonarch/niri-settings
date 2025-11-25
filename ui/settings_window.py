@@ -122,8 +122,23 @@ class SettingsWindow(QMainWindow):
             f.write(f'        right {self.appearance_tab.struts_right_spin.value()}\n')
             f.write(f'        top {self.appearance_tab.struts_top_spin.value()}\n')
             f.write(f'        bottom {self.appearance_tab.struts_bottom_spin.value()}\n')
-            f.write('    }\n}\n')
+            f.write('    }\n\n    focus-ring {\n')
+            if self.appearance_tab.focus_ring_enable_checkbox.isChecked():
+                f.write('        on\n')
+            else:
+                f.write('        off\n')
+            f.write(f'        width {self.appearance_tab.focus_ring_spinbox.value()}\n')
+            f.write(f'        active-color "{self.appearance_tab.current_color}"\n')
 
+            f.write('    }\n\n    border {\n')
+            if self.appearance_tab.border_enable_checkbox.isChecked():
+                f.write('        on\n')
+            else:
+                f.write('        off\n')
+            f.write(f'        width {self.appearance_tab.border_spinbox.value()
+            }\n')
+            f.write(f'        active-color "{self.appearance_tab.current_bordercolor}"\n')
+            f.write('    }\n}\n')
 
             # Input block
             f.write(' \n\ninput {\n')
@@ -327,6 +342,28 @@ class SettingsWindow(QMainWindow):
             self.appearance_tab.struts_top_spin.setValue(int(value.group(1)))
             value = re.search(r'bottom\s+(\d+)', content)
             self.appearance_tab.struts_bottom_spin.setValue(int(value.group(1)))
+
+            self.appearance_tab.focus_ring_enable_checkbox.setChecked(
+            bool(re.search(r'focus-ring\s*\{[^}]*\bon\b[^}]*\}', content)))
+            value = re.search(r'focus-ring\s*\{[^}]*width\s+(\d+)', content)
+            self.appearance_tab.focus_ring_spinbox.setValue(int(value.group(1)))
+            m = re.search(r'focus-ring\s*\{[^}]*active-color\s+"([^"]+)"', content)
+            color_val = m.group(1)
+            self.appearance_tab.current_color = color_val
+            self.appearance_tab.update_color_button()
+
+            self.appearance_tab.border_enable_checkbox.setChecked(
+            bool(re.search(r'border\s*\{[^}]*\bon\b[^}]*\}', content)))
+            value = re.search(r'border\s*\{[^}]*width\s+(\d+)', content)
+            self.appearance_tab.border_spinbox.setValue(int(value.group(1)))
+            m = re.search(r'border\s*\{[^}]*active-color\s+"([^"]+)"', content)
+            color_val = m.group(1)
+
+            self.appearance_tab.current_bordercolor = color_val
+            self.appearance_tab.update_border_color_button()
+
+
+
 
             # Parse behavior settings
             self.behavior_tab.warp_mouse_to_focus_checkbox.setChecked(

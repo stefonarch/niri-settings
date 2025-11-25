@@ -8,7 +8,7 @@ class AppearanceTab(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.parent = parent
-        self.current_color = "#7fc8ff"  # Default color
+        self.current_color = "#7fc8ff"  # Default focus ring color
         self.current_bordercolor = "#ffc87f"  # Default border color
         self.init_ui()
 
@@ -91,18 +91,17 @@ class AppearanceTab(QWidget):
         animations_layout.addStretch()
         appearance_layout.addLayout(animations_layout)
 
-       # focus_ring
+        # focus_ring
         focus_ring_layout = QHBoxLayout()
         focus_ring_label = QLabel(self.tr('Width:'))
 
         self.focus_ring_enable_checkbox = QCheckBox(self.tr('Focus ring'))
         self.focus_ring_enable_checkbox.setChecked(True)
 
-        self.focus_ring_spinbox = QDoubleSpinBox()
+        self.focus_ring_spinbox = QSpinBox()
         self.focus_ring_spinbox.setRange(1,9)
         self.focus_ring_spinbox.setSingleStep(1)
         self.focus_ring_spinbox.setValue(4)
-        self.focus_ring_spinbox.setDecimals(0)
 
         self.focus_ring_enable_checkbox.toggled.connect(self.focus_ring_spinbox.setEnabled)
 
@@ -140,11 +139,10 @@ class AppearanceTab(QWidget):
         self.border_enable_checkbox = QCheckBox(self.tr('Border'))
         self.border_enable_checkbox.setChecked(True)
 
-        self.border_spinbox = QDoubleSpinBox()
+        self.border_spinbox = QSpinBox()
         self.border_spinbox.setRange(1,9)
         self.border_spinbox.setSingleStep(1)
         self.border_spinbox.setValue(4)
-        self.border_spinbox.setDecimals(0)
 
         self.border_enable_checkbox.toggled.connect(self.border_spinbox.setEnabled)
         self.border_enable_checkbox.toggled.connect(border_label.setEnabled)
@@ -184,11 +182,11 @@ class AppearanceTab(QWidget):
         # Gaps
         gaps_layout = QHBoxLayout()
         gaps_label = QLabel(self.tr('Gaps:'))
-        self.gaps_spinbox = QDoubleSpinBox()
+        self.gaps_spinbox = QSpinBox()
         self.gaps_spinbox.setRange(0,50)
         self.gaps_spinbox.setSingleStep(1)
         self.gaps_spinbox.setValue(8)
-        self.gaps_spinbox.setDecimals(0)
+        #self.gaps_spinbox.setDecimals(0)
 
         gaps_layout.addWidget(gaps_label)
         gaps_layout.addWidget(self.gaps_spinbox)
