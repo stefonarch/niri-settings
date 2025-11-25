@@ -21,6 +21,7 @@ class BehaviorTab(QWidget):
 
         # Behavior checkboxes
         self.hotkey_overlay_checkbox = QCheckBox(self.tr('Show shortcuts at login'))
+        self.hotkey_overlay_checkbox.setChecked(True)
         self.warp_mouse_to_focus_checkbox = QCheckBox(self.tr('Warp mouse to focus'))
         self.focus_follows_mouse_checkbox = QCheckBox(self.tr('Focus follows mouse'))
         self.focus_request_checkbox = QCheckBox(self.tr('Always focus windows on request'))
@@ -85,6 +86,7 @@ class BehaviorTab(QWidget):
         self.inactive_spinbox.setRange(500, 20000)
         self.inactive_spinbox.setValue(3000)
         self.inactive_spinbox.setSingleStep(250)
+        self.inactive_spinbox.setSuffix(' ms')
 
         inactive_layout.addWidget(self.inactive_enable_checkbox)
         inactive_layout.addWidget(inactive_label)

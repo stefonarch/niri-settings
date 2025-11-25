@@ -8,8 +8,8 @@ class AppearanceTab(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.parent = parent
-        self.current_color = "#3584e4"  # Default color
-        self.current_bordercolor = "#3584e4"  # Default border color
+        self.current_color = "#7fc8ff"  # Default color
+        self.current_bordercolor = "#ffc87f"  # Default border color
         self.init_ui()
 
     def choose_active_color(self):
@@ -32,7 +32,7 @@ class AppearanceTab(QWidget):
 
     def update_border_color_button(self):
         """Update border color button background to show current color"""
-        self.bordercolor_button.setStyleSheet(f"background-color: {self.current_bordercolor}; border: 1px solid gray;")
+        self.border_color_button.setStyleSheet(f"background-color: {self.current_bordercolor}; border: 1px solid gray;")
 
     def init_ui(self):
         layout = QVBoxLayout(self)
@@ -62,7 +62,13 @@ class AppearanceTab(QWidget):
         overview_layout.addStretch()
         appearance_layout.addLayout(overview_layout)
 
-                # Animations
+        self.shadows_checkbox = QCheckBox(self.tr('Enable shadows'))
+        self.shadows_checkbox.setChecked(True)
+        appearance_layout.addWidget(self.shadows_checkbox)
+
+
+
+        # Animations
         animations_layout = QHBoxLayout()
         slowdown_label = QLabel(self.tr('Slowdown:'))
 
@@ -70,57 +76,43 @@ class AppearanceTab(QWidget):
         self.animations_enable_checkbox.setChecked(True)
 
         self.animations_spinbox = QDoubleSpinBox()
-        self.animations_spinbox.setRange(0.1, 3.0)
+        self.animations_spinbox.setRange(0.1, 5.0)
         self.animations_spinbox.setSingleStep(0.1)
         self.animations_spinbox.setValue(1)
         self.animations_spinbox.setDecimals(1)
 
         self.animations_enable_checkbox.toggled.connect(self.animations_spinbox.setEnabled)
+        self.animations_enable_checkbox.toggled.connect(slowdown_label.setEnabled)
+        slowdown_label.setEnabled(self.animations_enable_checkbox.isChecked())
 
-
-        #animations_layout.addSpacing(10)  # Add some space between label and checkbox
         animations_layout.addWidget(self.animations_enable_checkbox)
         animations_layout.addWidget(slowdown_label)
-        #animations_layout.addSpacing(5)   # Add small space between checkbox and spinbox
         animations_layout.addWidget(self.animations_spinbox)
         animations_layout.addStretch()
         appearance_layout.addLayout(animations_layout)
 
-        # Layout: Gaps
-        gaps_layout = QHBoxLayout()
-        gaps_label = QLabel(self.tr('Gaps:'))
-        self.gaps_spinbox = QDoubleSpinBox()
-        self.gaps_spinbox.setRange(0,30)
-        self.gaps_spinbox.setSingleStep(1)
-        self.gaps_spinbox.setValue(8)
-        self.gaps_spinbox.setDecimals(1)
+       # focus_ring
+        focus_ring_layout = QHBoxLayout()
+        focus_ring_label = QLabel(self.tr('Width:'))
 
-        gaps_layout.addWidget(gaps_label)
-        gaps_layout.addWidget(self.gaps_spinbox)
-        gaps_layout.addStretch()
-        appearance_layout.addLayout(gaps_layout)
+        self.focus_ring_enable_checkbox = QCheckBox(self.tr('Focus ring'))
+        self.focus_ring_enable_checkbox.setChecked(True)
 
-        # Layout: Focus Ring
-        focus_group = QGroupBox(self.tr("Focus ring"))
-        focus_layout = QVBoxLayout(focus_group)
+        self.focus_ring_spinbox = QDoubleSpinBox()
+        self.focus_ring_spinbox.setRange(1,9)
+        self.focus_ring_spinbox.setSingleStep(1)
+        self.focus_ring_spinbox.setValue(4)
+        self.focus_ring_spinbox.setDecimals(0)
 
-        # Enabled checkbox
-        self.focus_ring_enabled = QCheckBox(self.tr('Enabled'))
-        self.focus_ring_enabled.setChecked(True)
-        focus_layout.addWidget(self.focus_ring_enabled)
+        self.focus_ring_enable_checkbox.toggled.connect(self.focus_ring_spinbox.setEnabled)
 
-        # Border width
-        border_layout = QHBoxLayout()
-        border_label = QLabel(self.tr('Width:'))
-        self.border_spinbox = QSpinBox()
-        self.border_spinbox.setRange(0, 10)
-        self.border_spinbox.setValue(2)
-        border_layout.addWidget(border_label)
-        border_layout.addWidget(self.border_spinbox)
-        border_layout.addStretch()
-        focus_layout.addLayout(border_layout)
+        focus_ring_layout.addWidget(self.focus_ring_enable_checkbox)
+        focus_ring_layout.addWidget(focus_ring_label)
+        focus_ring_layout.addWidget(self.focus_ring_spinbox)
+        focus_ring_layout.addStretch()
+        appearance_layout.addSpacing(15)
+        appearance_layout.addLayout(focus_ring_layout)
 
-        # Active color selector
         color_layout = QHBoxLayout()
         color_label = QLabel(self.tr('Color:'))
         self.color_button = QPushButton()
@@ -130,42 +122,125 @@ class AppearanceTab(QWidget):
         color_layout.addWidget(color_label)
         color_layout.addWidget(self.color_button)
         color_layout.addStretch()
-        focus_layout.addLayout(color_layout)
+        self.focus_ring_enable_checkbox.toggled.connect(focus_ring_label.setEnabled)
+        self.focus_ring_enable_checkbox.toggled.connect(self.color_button.setEnabled)
+
+        # initial states
+        focus_ring_label.setEnabled(self.focus_ring_enable_checkbox.isChecked())
+        self.color_button.setEnabled(self.focus_ring_enable_checkbox.isChecked())
+        self.focus_ring_enable_checkbox.toggled.connect(color_label.setEnabled)
+        color_label.setEnabled(self.focus_ring_enable_checkbox.isChecked())
+
+        appearance_layout.addLayout(color_layout)
 
         # Border
-        border_group = QGroupBox(self.tr("Border"))
-        borderb_layout = QVBoxLayout(border_group)
+        border_layout = QHBoxLayout()
+        border_label = QLabel(self.tr('Width:'))
 
-        # Enabled checkbox
-        self.borderb_enabled = QCheckBox(self.tr('Enabled'))
-        self.borderb_enabled.setChecked(True)
-        borderb_layout.addWidget(self.borderb_enabled)
+        self.border_enable_checkbox = QCheckBox(self.tr('Border'))
+        self.border_enable_checkbox.setChecked(True)
 
-        # Border's border width
-        border2_layout = QHBoxLayout()
-        border2_label = QLabel(self.tr('Width:'))
-        self.border2_spinbox = QSpinBox()
-        self.border2_spinbox.setRange(0, 10)
-        self.border2_spinbox.setValue(2)
-        border2_layout.addWidget(border2_label)
-        border2_layout.addWidget(self.border2_spinbox)
-        border2_layout.addStretch()
-        borderb_layout.addLayout(border2_layout)
+        self.border_spinbox = QDoubleSpinBox()
+        self.border_spinbox.setRange(1,9)
+        self.border_spinbox.setSingleStep(1)
+        self.border_spinbox.setValue(4)
+        self.border_spinbox.setDecimals(0)
 
-        # Active border color selector
-        bordercolor_layout = QHBoxLayout()
-        bordercolor_label = QLabel(self.tr('Color:'))
-        self.bordercolor_button = QPushButton()
-        self.bordercolor_button.setFixedSize(60, 25)
-        self.bordercolor_button.clicked.connect(self.choose_border_color)
+        self.border_enable_checkbox.toggled.connect(self.border_spinbox.setEnabled)
+        self.border_enable_checkbox.toggled.connect(border_label.setEnabled)
+        border_label.setEnabled(self.border_enable_checkbox.isChecked())
+
+        border_layout.addWidget(self.border_enable_checkbox)
+        border_layout.addWidget(border_label)
+        border_layout.addWidget(self.border_spinbox)
+        border_layout.addStretch()
+        appearance_layout.addSpacing(15)
+        appearance_layout.addLayout(border_layout)
+
+        border_color_layout = QHBoxLayout()
+        border_color_label = QLabel(self.tr('Color:'))
+        self.border_color_button = QPushButton()
+        self.border_color_button.setFixedSize(60, 25)
+        self.border_color_button.clicked.connect(self.choose_border_color)
         self.update_border_color_button()
-        bordercolor_layout.addWidget(bordercolor_label)
-        bordercolor_layout.addWidget(self.bordercolor_button)
-        bordercolor_layout.addStretch()
-        borderb_layout.addLayout(bordercolor_layout)
+        border_color_layout.addWidget(border_color_label)
+        border_color_layout.addWidget(self.border_color_button)
+        border_color_layout.addStretch()
+        self.border_enable_checkbox.toggled.connect(border_color_label.setEnabled)
+        self.border_enable_checkbox.toggled.connect(self.border_color_button.setEnabled)
+
+        focus_ring_label.setEnabled(self.focus_ring_enable_checkbox.isChecked())
+        self.border_color_button.setEnabled(self.focus_ring_enable_checkbox.isChecked())
+        self.focus_ring_enable_checkbox.toggled.connect(border_color_label.setEnabled)
+        border_color_label.setEnabled(self.border_enable_checkbox.isChecked())
+
+        appearance_layout.addLayout(border_color_layout)
+
+        # Margins
+        margins_group = QGroupBox(self.tr("Margins"))
+        margins_layout = QVBoxLayout(margins_group)
+        margins_layout.setContentsMargins(30, 10, 20, 20)
+
+        # Gaps
+        gaps_layout = QHBoxLayout()
+        gaps_label = QLabel(self.tr('Gaps:'))
+        self.gaps_spinbox = QDoubleSpinBox()
+        self.gaps_spinbox.setRange(0,50)
+        self.gaps_spinbox.setSingleStep(1)
+        self.gaps_spinbox.setValue(8)
+        self.gaps_spinbox.setDecimals(0)
+
+        gaps_layout.addWidget(gaps_label)
+        gaps_layout.addWidget(self.gaps_spinbox)
+        gaps_layout.addStretch()
+        margins_layout.addLayout(gaps_layout)
 
         layout.addWidget(appearance_frame)
+        layout.addWidget(margins_group)
 
-        layout.addWidget(focus_group)
-        layout.addWidget(border_group)
+        # Struts (two rows)
+        struts_row1 = QHBoxLayout()
+        struts_row2 = QHBoxLayout()
+
+        # Left
+        left_label = QLabel(self.tr("Left:"))
+        self.struts_left_spin = QSpinBox()
+        self.struts_left_spin.setRange(0, 100)
+        self.struts_left_spin.setValue(0)
+
+        right_label = QLabel(self.tr("Right:"))
+        self.struts_right_spin = QSpinBox()
+        self.struts_right_spin.setRange(0, 100)
+        self.struts_right_spin.setValue(0)
+
+        top_label = QLabel(self.tr("Top:"))
+        self.struts_top_spin = QSpinBox()
+        self.struts_top_spin.setRange(0, 100)
+        self.struts_top_spin.setValue(0)
+
+        bottom_label = QLabel(self.tr("Bottom:"))
+        self.struts_bottom_spin = QSpinBox()
+        self.struts_bottom_spin.setRange(0, 100)
+        self.struts_bottom_spin.setValue(0)
+
+        struts_row1.addWidget(left_label)
+        struts_row1.addWidget(self.struts_left_spin)
+        struts_row1.addWidget(right_label)
+        struts_row1.addWidget(self.struts_right_spin)
+        struts_row1.addStretch()
+
+        struts_row2.addWidget(top_label)
+        struts_row2.addWidget(self.struts_top_spin)
+        struts_row2.addWidget(bottom_label)
+        struts_row2.addWidget(self.struts_bottom_spin)
+        struts_row2.addStretch()
+
+        struts_title = QLabel(self.tr("Struts:"))
+        margins_layout.addSpacing(10)
+        margins_layout.addWidget(struts_title)
+
+        margins_layout.addLayout(struts_row1)
+        margins_layout.addLayout(struts_row2)
+
         layout.addStretch()
+

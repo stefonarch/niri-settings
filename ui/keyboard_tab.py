@@ -1,5 +1,5 @@
-from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QRadioButton, 
-                             QLabel, QFrame, QButtonGroup, QPushButton, QCheckBox, 
+from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QRadioButton,
+                             QLabel, QFrame, QButtonGroup, QPushButton, QCheckBox,
                              QDoubleSpinBox, QComboBox, QSpinBox, QLineEdit, QGroupBox)
 from PyQt6.QtCore import Qt
 
@@ -21,6 +21,7 @@ class KeyboardTab(QWidget):
 
         # Numlock checkbox
         self.numlock_checkbox = QCheckBox(self.tr('Enable num lock at startup'))
+        self.numlock_checkbox.setChecked(True)
         keyboard_layout.addWidget(self.numlock_checkbox)
 
         # Track layout
@@ -71,7 +72,7 @@ class KeyboardTab(QWidget):
         options_layout = QHBoxLayout()
         options_label = QLabel(self.tr('Options:'))
         self.options_edit = QLineEdit()
-        self.options_edit.setText("grp:alt_shift_toggle,compose:rctrl")
+        self.options_edit.setPlaceholderText("grp:alt_shift_toggle,compose:rctrl")
         self.options_edit.setMinimumWidth(400)
         self.options_edit.setClearButtonEnabled(True)
 

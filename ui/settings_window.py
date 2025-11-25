@@ -7,7 +7,7 @@ from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
 from PyQt6.QtCore import QTranslator, QLocale, QLibraryInfo
 from PyQt6.QtGui import QIcon
 
-from .utils import get_config_path
+from .conf_path import get_config_path
 from .appearance_tab import AppearanceTab
 from .behavior_tab import BehaviorTab
 from .touchpad_tab import TouchpadTab
@@ -104,11 +104,29 @@ class SettingsWindow(QMainWindow):
             f.write(f'    zoom {self.appearance_tab.overview_spinbox.value()}\n')
             f.write('}\n\nanimations {\n')
             if self.appearance_tab.animations_enable_checkbox.isChecked():
-                f.write('    // off\n')
+                f.write('    on\n')
             else:
                 f.write('    off\n')
             f.write(f'    slowdown {self.appearance_tab.animations_spinbox.value()}\n')
-            f.write('} \n\ninput {\n')
+
+            # Layout block
+            f.write('}\n\nlayout {\n')
+            if self.appearance_tab.shadows_checkbox.isChecked():
+                f.write('    shadow {\n    on\n    }')
+            else:
+                f.write('    shadow {\n    off\n    }')
+            f.write(f'\n    gaps {self.appearance_tab.gaps_spinbox.value()}\n')
+
+            f.write('\n    struts {\n')
+            f.write(f'        left {self.appearance_tab.struts_left_spin.value()}\n')
+            f.write(f'        right {self.appearance_tab.struts_right_spin.value()}\n')
+            f.write(f'        top {self.appearance_tab.struts_top_spin.value()}\n')
+            f.write(f'        bottom {self.appearance_tab.struts_bottom_spin.value()}\n')
+            f.write('    }\n}\n')
+
+
+            # Input block
+            f.write(' \n\ninput {\n')
             if self.behavior_tab.warp_mouse_to_focus_checkbox.isChecked():
                 f.write('    warp-mouse-to-focus\n')
             else:
@@ -256,7 +274,7 @@ class SettingsWindow(QMainWindow):
                 f.write('    honor-xdg-activation-with-invalid-serial \n')
             else:
                     f.write('    // honor-xdg-activation-with-invalid-serial \n')
-            f.write('}\n')
+            f.write('}\n\n')
 
             # Cursor
             f.write('cursor {\n')
@@ -292,16 +310,23 @@ class SettingsWindow(QMainWindow):
             if value:
                 self.appearance_tab.overview_spinbox.setValue(float(value.group(1)))
 
-            off = re.search(r'animations\s*\{[^}]*//\s*off[^}]*\}', content)
-
             self.appearance_tab.animations_enable_checkbox.setChecked(
-                bool(re.search(r'animations\s*\{[^}]*//\s*off[^}]*\}', content))
-            )
-
+            bool(re.search(r'animations\s*\{[^}]*\bon\b[^}]*\}', content)))
 
             value = re.search(r'slowdown\s+([0-9]*\.?[0-9]+)', content)
-            if value:
-                self.appearance_tab.animations_spinbox.setValue(float(value.group(1)))
+            self.appearance_tab.animations_spinbox.setValue(float(value.group(1)))
+
+            value = re.search(r'gaps\s+(\d+)', content)
+            self.appearance_tab.gaps_spinbox.setValue(int(value.group(1)))
+
+            value = re.search(r'left\s+(\d+)', content)
+            self.appearance_tab.struts_left_spin.setValue(int(value.group(1)))
+            value = re.search(r'right\s+(\d+)', content)
+            self.appearance_tab.struts_right_spin.setValue(int(value.group(1)))
+            value = re.search(r'top\s+(\d+)', content)
+            self.appearance_tab.struts_top_spin.setValue(int(value.group(1)))
+            value = re.search(r'bottom\s+(\d+)', content)
+            self.appearance_tab.struts_bottom_spin.setValue(int(value.group(1)))
 
             # Parse behavior settings
             self.behavior_tab.warp_mouse_to_focus_checkbox.setChecked(

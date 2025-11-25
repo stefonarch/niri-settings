@@ -1,5 +1,5 @@
-from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QRadioButton, 
-                             QLabel, QFrame, QButtonGroup, QPushButton, QCheckBox, 
+from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QRadioButton,
+                             QLabel, QFrame, QButtonGroup, QPushButton, QCheckBox,
                              QDoubleSpinBox, QComboBox, QSpinBox, QLineEdit, QGroupBox)
 from PyQt6.QtCore import Qt
 
@@ -21,7 +21,9 @@ class TouchpadTab(QWidget):
 
         # Touchpad checkboxes
         self.tap_checkbox = QCheckBox(self.tr('Tap to click'))
+        self.tap_checkbox.setChecked(True)
         self.natural_scroll_checkbox = QCheckBox(self.tr('Natural scroll'))
+        self.natural_scroll_checkbox.setChecked(True)
         self.drag_lock_checkbox = QCheckBox(self.tr('Drag lock'))
         self.disable_external_mouse_checkbox = QCheckBox(self.tr('Disable when external mouse connected'))
         self.dwt_checkbox = QCheckBox(self.tr('Disable while typing'))
