@@ -1,5 +1,5 @@
-from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QRadioButton, 
-                             QLabel, QFrame, QButtonGroup, QPushButton, QCheckBox, 
+from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QRadioButton,
+                             QLabel, QFrame, QButtonGroup, QPushButton, QCheckBox,
                              QDoubleSpinBox, QComboBox, QSpinBox, QLineEdit, QGroupBox, QColorDialog)
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont, QColor
@@ -48,20 +48,6 @@ class AppearanceTab(QWidget):
         self.csd_checkbox = QCheckBox(self.tr('Use client side decorations'))
         appearance_layout.addWidget(self.csd_checkbox)
 
-        # Gaps
-        gaps_layout = QHBoxLayout()
-        gaps_label = QLabel(self.tr('Gaps:'))
-        self.gaps_spinbox = QDoubleSpinBox()
-        self.gaps_spinbox.setRange(0,30)
-        self.gaps_spinbox.setSingleStep(1)
-        self.gaps_spinbox.setValue(8)
-        self.gaps_spinbox.setDecimals(1)
-
-        gaps_layout.addWidget(gaps_label)
-        gaps_layout.addWidget(self.gaps_spinbox)
-        gaps_layout.addStretch()
-        appearance_layout.addLayout(gaps_layout)
-
         # Overview
         overview_layout = QHBoxLayout()
         overview_label = QLabel(self.tr('Overview zoom:'))
@@ -76,7 +62,45 @@ class AppearanceTab(QWidget):
         overview_layout.addStretch()
         appearance_layout.addLayout(overview_layout)
 
-        # Focus Ring
+                # Animations
+        animations_layout = QHBoxLayout()
+        slowdown_label = QLabel(self.tr('Slowdown:'))
+
+        self.animations_enable_checkbox = QCheckBox(self.tr('Enable Animations'))
+        self.animations_enable_checkbox.setChecked(True)
+
+        self.animations_spinbox = QDoubleSpinBox()
+        self.animations_spinbox.setRange(0.1, 3.0)
+        self.animations_spinbox.setSingleStep(0.1)
+        self.animations_spinbox.setValue(1)
+        self.animations_spinbox.setDecimals(1)
+
+        self.animations_enable_checkbox.toggled.connect(self.animations_spinbox.setEnabled)
+
+
+        #animations_layout.addSpacing(10)  # Add some space between label and checkbox
+        animations_layout.addWidget(self.animations_enable_checkbox)
+        animations_layout.addWidget(slowdown_label)
+        #animations_layout.addSpacing(5)   # Add small space between checkbox and spinbox
+        animations_layout.addWidget(self.animations_spinbox)
+        animations_layout.addStretch()
+        appearance_layout.addLayout(animations_layout)
+
+        # Layout: Gaps
+        gaps_layout = QHBoxLayout()
+        gaps_label = QLabel(self.tr('Gaps:'))
+        self.gaps_spinbox = QDoubleSpinBox()
+        self.gaps_spinbox.setRange(0,30)
+        self.gaps_spinbox.setSingleStep(1)
+        self.gaps_spinbox.setValue(8)
+        self.gaps_spinbox.setDecimals(1)
+
+        gaps_layout.addWidget(gaps_label)
+        gaps_layout.addWidget(self.gaps_spinbox)
+        gaps_layout.addStretch()
+        appearance_layout.addLayout(gaps_layout)
+
+        # Layout: Focus Ring
         focus_group = QGroupBox(self.tr("Focus ring"))
         focus_layout = QVBoxLayout(focus_group)
 
@@ -141,6 +165,7 @@ class AppearanceTab(QWidget):
         borderb_layout.addLayout(bordercolor_layout)
 
         layout.addWidget(appearance_frame)
+
         layout.addWidget(focus_group)
         layout.addWidget(border_group)
         layout.addStretch()

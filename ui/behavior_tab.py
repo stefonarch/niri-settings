@@ -1,5 +1,5 @@
-from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QRadioButton, 
-                             QLabel, QFrame, QButtonGroup, QPushButton, QCheckBox, 
+from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QRadioButton,
+                             QLabel, QFrame, QButtonGroup, QPushButton, QCheckBox,
                              QDoubleSpinBox, QComboBox, QSpinBox, QLineEdit, QGroupBox)
 from PyQt6.QtCore import Qt
 
@@ -82,7 +82,7 @@ class BehaviorTab(QWidget):
         inactive_layout = QHBoxLayout()
         inactive_label = QLabel(self.tr('hiding after inactive for:'))
         self.inactive_spinbox = QSpinBox()
-        self.inactive_spinbox.setRange(500, 99999)
+        self.inactive_spinbox.setRange(500, 20000)
         self.inactive_spinbox.setValue(3000)
         self.inactive_spinbox.setSingleStep(250)
 
