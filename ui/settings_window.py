@@ -23,7 +23,7 @@ class SettingsWindow(QMainWindow):
 
     def init_ui(self):
         self.setWindowTitle('Niri Settings')
-        self.setFixedSize(600, 750)
+        self.setFixedSize(600, 800)
 
         # Try to use system theme icon first, fallback to Qt standard icon
         icon = QIcon.fromTheme("preferences-desktop")
@@ -81,7 +81,7 @@ class SettingsWindow(QMainWindow):
         main_layout.addLayout(button_layout)
 
     def apply_settings(self):
-        """Save settings to input.kdl in KDL format"""
+        """Save settings in KDL format"""
         self.save_behavior_config()
         self.save_touchpad_config()
         self.save_mouse_config()
@@ -118,14 +118,27 @@ class SettingsWindow(QMainWindow):
             f.write(f'        right {self.appearance_tab.struts_right_spin.value()}\n')
             f.write(f'        top {self.appearance_tab.struts_top_spin.value()}\n')
             f.write(f'        bottom {self.appearance_tab.struts_bottom_spin.value()}\n')
+
             f.write('    }\n\n    focus-ring {\n')
-            if self.appearance_tab.focus_ring_enable_checkbox.isChecked():
+            if (self.appearance_tab.focus_ring_enable_checkbox.isChecked()
+                and self.appearance_tab.focus_radio.isChecked()):
                 f.write('        on\n')
             else:
                 f.write('        off\n')
             f.write(f'        width {self.appearance_tab.focus_ring_spinbox.value()}\n')
             f.write(f'        active-color "{self.appearance_tab.current_color}"\n')
+            f.write(f'        inactive-color "{self.appearance_tab.current_inactive_color}"\n')
 
+            f.write('    }\n\n    border {\n')
+            if (self.appearance_tab.focus_ring_enable_checkbox.isChecked()
+                and self.appearance_tab.border_radio.isChecked()):
+                f.write('        on\n')
+            else:
+                f.write('        off\n')
+            f.write(f'        width {self.appearance_tab.focus_ring_spinbox.value()}\n')
+
+            f.write(f'        active-color "{self.appearance_tab.current_color}"\n')
+            f.write(f'        inactive-color "{self.appearance_tab.current_inactive_color}"\n')
 
             f.write('    }\n}\n')
 
@@ -332,16 +345,21 @@ class SettingsWindow(QMainWindow):
             value = re.search(r'bottom\s+(\d+)', content)
             self.appearance_tab.struts_bottom_spin.setValue(int(value.group(1)))
 
-            self.appearance_tab.focus_ring_enable_checkbox.setChecked(
-            bool(re.search(r'focus-ring\s*\{[^}]*\bon\b[^}]*\}', content)))
+            focus_on = bool(re.search(r'focus-ring\s*\{[^}]*\bon\b[^}]*\}', content))
+            border_on = bool(re.search(r'border\s*\{[^}]*\bon\b[^}]*\}', content))
+            self.appearance_tab.focus_ring_enable_checkbox.setChecked(focus_on or border_on)
+
             value = re.search(r'focus-ring\s*\{[^}]*width\s+(\d+)', content)
             self.appearance_tab.focus_ring_spinbox.setValue(int(value.group(1)))
-            m = re.search(r'focus-ring\s*\{[^}]*active-color\s+"([^"]+)"', content)
+            m = re.search(r'active-color\s+"([^"]+)"', content)
             color_val = m.group(1)
             self.appearance_tab.current_color = color_val
             self.appearance_tab.update_color_button()
 
-
+            m = re.search(r'inactive-color\s+"([^"]+)"', content)
+            inactive_color_val = m.group(1)
+            self.appearance_tab.current_inactive_color = inactive_color_val
+            self.appearance_tab.update_inactive_color_button()
 
             # Parse behavior settings
             self.behavior_tab.warp_mouse_to_focus_checkbox.setChecked(

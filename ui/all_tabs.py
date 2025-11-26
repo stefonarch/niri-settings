@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QRadioButton,
-                             QLabel, QFrame, QButtonGroup, QPushButton, QCheckBox,
+                             QLabel, QFrame, QButtonGroup, QPushButton, QCheckBox,QGridLayout,
                              QDoubleSpinBox, QComboBox, QSpinBox, QLineEdit, QGroupBox, QColorDialog)
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont, QColor
@@ -9,30 +9,26 @@ class AppearanceTab(QWidget):
         super().__init__(parent)
         self.parent = parent
         self.current_color = "#7fc8ff"  # Default focus ring color
-        self.current_bordercolor = "#ffc87f"  # Default border color
+        self.current_inactive_color = "#505050"  # Default inactive color
         self.init_ui()
 
     def choose_active_color(self):
-        """Open color dialog to choose active focus ring color"""
-        color = QColorDialog.getColor(QColor(self.current_color), self, self.tr("Choose Focus Ring Color"))
+        color = QColorDialog.getColor(QColor(self.current_color), self, self.tr("Choose Color"))
         if color.isValid():
             self.current_color = color.name()
             self.update_color_button()
 
     def update_color_button(self):
-        """Update color button background to show current color"""
         self.color_button.setStyleSheet(f"background-color: {self.current_color}; border: 1px solid gray;")
 
-    def choose_border_color(self):
-        """Open color dialog to choose border color"""
-        color = QColorDialog.getColor(QColor(self.current_bordercolor), self, self.tr("Choose Border Color"))
+    def choose_inactive_color(self):
+        color = QColorDialog.getColor(QColor(self.current_inactive_color), self, self.tr("Choose Color"))
         if color.isValid():
-            self.current_bordercolor = color.name()
-            self.update_border_color_button()
+            self.current_inactive_color = color.name()
+            self.update_inactive_color_button()
 
-    def update_border_color_button(self):
-        """Update border color button background to show current color"""
-        self.border_color_button.setStyleSheet(f"background-color: {self.current_bordercolor}; border: 1px solid gray;")
+    def update_inactive_color_button(self):
+        self.inactive_color_button.setStyleSheet(f"background-color: {self.current_inactive_color}; border: 1px solid gray;")
 
     def init_ui(self):
         layout = QVBoxLayout(self)
@@ -47,6 +43,7 @@ class AppearanceTab(QWidget):
         # Appearance checkboxes
         self.csd_checkbox = QCheckBox(self.tr('Use client side decorations'))
         appearance_layout.addWidget(self.csd_checkbox)
+        self.csd_checkbox.setChecked(True)
 
         # Overview
         overview_layout = QHBoxLayout()
@@ -90,9 +87,9 @@ class AppearanceTab(QWidget):
         appearance_layout.addLayout(animations_layout)
         appearance_layout.addSpacing(10)
 
-        # Focus/border ring
+        # Focus ring or border
         focus_ring_layout = QHBoxLayout()
-        self.focus_ring_enable_checkbox = QCheckBox(self.tr('Enable borders'))
+        self.focus_ring_enable_checkbox = QCheckBox(self.tr('Enable focus-ring or border'))
         self.focus_ring_enable_checkbox.setChecked(True)
 
         focus_ring_layout.addWidget(self.focus_ring_enable_checkbox)
@@ -105,8 +102,8 @@ class AppearanceTab(QWidget):
         indented_layout.setContentsMargins(25, 0, 0, 0)
         indented_layout.setSpacing(0)
 
-        # Color and width
-        color_width_layout = QHBoxLayout()
+        # Color and inactive color on first line
+        colors_layout = QHBoxLayout()
 
         color_label = QLabel(self.tr('Active color: '))
         self.color_button = QPushButton()
@@ -114,6 +111,24 @@ class AppearanceTab(QWidget):
         self.color_button.clicked.connect(self.choose_active_color)
         self.update_color_button()
 
+        inactive_color_label = QLabel(self.tr('Inactive color: '))
+        self.inactive_color_button = QPushButton()
+        self.inactive_color_button.setFixedSize(60, 25)
+        self.inactive_color_button.clicked.connect(self.choose_inactive_color)
+        self.update_inactive_color_button()
+
+        colors_layout.addWidget(color_label)
+        colors_layout.addSpacing(14)
+        colors_layout.addWidget(self.color_button)
+        colors_layout.addSpacing(20)
+        colors_layout.addWidget(inactive_color_label)
+        colors_layout.addWidget(self.inactive_color_button)
+        colors_layout.addStretch()
+        indented_layout.addLayout(colors_layout)
+        indented_layout.addSpacing(10)
+
+        # Width on second line
+        width_layout = QHBoxLayout()
         width_label = QLabel(self.tr('Width:'))
         self.focus_ring_spinbox = QSpinBox()
         self.focus_ring_spinbox.setRange(1,9)
@@ -121,41 +136,18 @@ class AppearanceTab(QWidget):
         self.focus_ring_spinbox.setValue(4)
         self.focus_ring_spinbox.setSuffix(' px')
 
-        color_width_layout.addWidget(color_label)
-        color_width_layout.addWidget(self.color_button)
-        color_width_layout.addSpacing(20)  # Add some spacing between color and width
-        color_width_layout.addWidget(width_label)
-        color_width_layout.addWidget(self.focus_ring_spinbox)
-        color_width_layout.addStretch()
-        indented_layout.addLayout(color_width_layout)
+        width_layout.addWidget(width_label)
+        width_layout.addWidget(self.focus_ring_spinbox)
+        width_layout.addStretch()
+        indented_layout.addLayout(width_layout)
+        indented_layout.addSpacing(10)
 
-        # Inactive color and width
-        inactive_color_width_layout = QHBoxLayout()
-
-        inactive_color_label = QLabel(self.tr('Inactive color: '))
-        self.inactive_color_button = QPushButton()
-        self.inactive_color_button.setFixedSize(60, 25)
-        #self.inactive_color_button.clicked.connect(self.choose_active_inactive_color)
-        #self.update_inactive_color_button()
-
-        inactive_width_label = QLabel(self.tr('Inactive width:'))
-        self.inactive_width_spinbox = QSpinBox()
-        self.inactive_width_spinbox.setRange(1,9)
-        self.inactive_width_spinbox.setSingleStep(1)
-        self.inactive_width_spinbox.setValue(4)
-        self.inactive_width_spinbox.setSuffix(' px')
-
-        inactive_color_width_layout.addWidget(inactive_color_label)
-        inactive_color_width_layout.addWidget(self.inactive_color_button)
-        inactive_color_width_layout.addSpacing(20)  # Add some spacing between inactive_color and width
-        inactive_color_width_layout.addWidget(inactive_width_label)
-        inactive_color_width_layout.addWidget(self.inactive_width_spinbox)
-        inactive_color_width_layout.addStretch()
-        indented_layout.addLayout(inactive_color_width_layout)
+        # Add the indented widget to the main appearance layout
+        appearance_layout.addWidget(indented_widget)
 
         # Apply to
         apply_layout = QHBoxLayout()
-        select_label = QLabel(self.tr('Apply to:'))
+        select_label = QLabel(self.tr('Apply as:'))
 
         self.focus_radio = QRadioButton(self.tr('Focus ring '))
         self.border_radio = QRadioButton(self.tr('Border'))
@@ -173,10 +165,9 @@ class AppearanceTab(QWidget):
 
         # Connect enable/disable states for all dependent widgets
         self.focus_ring_enable_checkbox.toggled.connect(self.focus_ring_spinbox.setEnabled)
-        self.focus_ring_enable_checkbox.toggled.connect(self.inactive_width_spinbox.setEnabled)
         self.focus_ring_enable_checkbox.toggled.connect(width_label.setEnabled)
-        self.focus_ring_enable_checkbox.toggled.connect(inactive_width_label.setEnabled)
         self.focus_ring_enable_checkbox.toggled.connect(self.color_button.setEnabled)
+        self.focus_ring_enable_checkbox.toggled.connect(self.inactive_color_button.setEnabled)
         self.focus_ring_enable_checkbox.toggled.connect(color_label.setEnabled)
         self.focus_ring_enable_checkbox.toggled.connect(inactive_color_label.setEnabled)
         self.focus_ring_enable_checkbox.toggled.connect(select_label.setEnabled)
@@ -186,12 +177,13 @@ class AppearanceTab(QWidget):
         # Set initial states
         width_label.setEnabled(self.focus_ring_enable_checkbox.isChecked())
         self.color_button.setEnabled(self.focus_ring_enable_checkbox.isChecked())
+        self.inactive_color_button.setEnabled(self.focus_ring_enable_checkbox.isChecked())
         color_label.setEnabled(self.focus_ring_enable_checkbox.isChecked())
         select_label.setEnabled(self.focus_ring_enable_checkbox.isChecked())
         self.focus_radio.setEnabled(self.focus_ring_enable_checkbox.isChecked())
         self.border_radio.setEnabled(self.focus_ring_enable_checkbox.isChecked())
 
-        # Margins
+        # Margins Area
         margins_group = QGroupBox(self.tr("Margins"))
         margins_layout = QVBoxLayout(margins_group)
         margins_layout.setContentsMargins(30, 10, 20, 20)
@@ -365,7 +357,192 @@ class BehaviorTab(QWidget):
         layout.addWidget(cursor_group)
         layout.addStretch()
 
+class TouchpadTab(QWidget):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.parent = parent
+        self.init_ui()
 
+    def init_ui(self):
+        layout = QVBoxLayout(self)
+        layout.setSpacing(20)
+        layout.setContentsMargins(20, 10, 20, 20)
+
+        # Touchpad configuration section
+        touchpad_frame = QFrame()
+        touchpad_frame.setFrameStyle(QFrame.Shape.StyledPanel)
+        touchpad_layout = QVBoxLayout(touchpad_frame)
+
+        # Touchpad checkboxes
+        self.tap_checkbox = QCheckBox(self.tr('Tap to click'))
+        self.tap_checkbox.setChecked(True)
+        self.natural_scroll_checkbox = QCheckBox(self.tr('Natural scroll'))
+        self.natural_scroll_checkbox.setChecked(True)
+        self.drag_lock_checkbox = QCheckBox(self.tr('Drag lock'))
+        self.disable_external_mouse_checkbox = QCheckBox(self.tr('Disable when external mouse connected'))
+        self.dwt_checkbox = QCheckBox(self.tr('Disable while typing'))
+        self.left_handed_checkbox = QCheckBox(self.tr('Left handed'))
+
+        touchpad_layout.addWidget(self.tap_checkbox)
+        touchpad_layout.addWidget(self.natural_scroll_checkbox)
+        touchpad_layout.addWidget(self.drag_lock_checkbox)
+        touchpad_layout.addWidget(self.disable_external_mouse_checkbox)
+        touchpad_layout.addWidget(self.dwt_checkbox)
+        touchpad_layout.addWidget(self.left_handed_checkbox)
+
+        # Scroll method selection
+        touchpad_layout.addSpacing(10)
+
+        self.scroll_group = QButtonGroup(self)
+        self.no_scroll_radio = QRadioButton(self.tr('No scroll'))
+        self.two_finger_radio = QRadioButton(self.tr('Two finger'))
+        self.edge_radio = QRadioButton(self.tr('Edge'))
+        self.button_radio = QRadioButton(self.tr('Button'))
+
+        self.scroll_group.addButton(self.no_scroll_radio)
+        self.scroll_group.addButton(self.two_finger_radio)
+        self.scroll_group.addButton(self.edge_radio)
+        self.scroll_group.addButton(self.button_radio)
+        self.two_finger_radio.setChecked(True)
+
+        scroll_groupbox = QGroupBox(self.tr('Scroll method'))
+        scroll_groupbox_layout = QGridLayout(scroll_groupbox)
+        scroll_groupbox_layout.setHorizontalSpacing(20)  # Space between columns
+        scroll_groupbox_layout.setVerticalSpacing(5)     # Space between rows
+
+        scroll_groupbox_layout.addWidget(self.no_scroll_radio, 0, 0)   # row 0, col 0
+        scroll_groupbox_layout.addWidget(self.two_finger_radio, 0, 1)  # row 0, col 1
+        scroll_groupbox_layout.addWidget(self.edge_radio, 1, 0)        # row 1, col 0
+        scroll_groupbox_layout.addWidget(self.button_radio, 1, 1)      # row 1, col 1
+
+        touchpad_layout.addSpacing(10)
+        touchpad_layout.addWidget(scroll_groupbox)
+
+        # Acceleration speed
+        accel_speed_layout = QHBoxLayout()
+        accel_speed_label = QLabel(self.tr('Acceleration speed:'))
+        self.accel_speed_spinbox = QDoubleSpinBox()
+        self.accel_speed_spinbox.setRange(-1.0, 1.0)
+        self.accel_speed_spinbox.setSingleStep(0.1)
+        self.accel_speed_spinbox.setValue(0.2)
+        self.accel_speed_spinbox.setDecimals(1)
+
+        accel_speed_layout.addWidget(accel_speed_label)
+        accel_speed_layout.addWidget(self.accel_speed_spinbox)
+        accel_speed_layout.addStretch()
+        touchpad_layout.addLayout(accel_speed_layout)
+
+        # Acceleration profile
+        accel_profile_layout = QHBoxLayout()
+        accel_profile_label = QLabel(self.tr('Acceleration profile:'))
+        self.accel_profile_combobox = QComboBox()
+        self.accel_profile_combobox.addItems(["adaptive", "flat"])
+
+        accel_profile_layout.addWidget(accel_profile_label)
+        accel_profile_layout.addWidget(self.accel_profile_combobox)
+        accel_profile_layout.addStretch()
+        touchpad_layout.addLayout(accel_profile_layout)
+
+        # Scroll factor
+        scroll_factor_layout = QHBoxLayout()
+        scroll_factor_label = QLabel(self.tr('Scroll factor:'))
+        self.scroll_factor_spinbox = QDoubleSpinBox()
+        self.scroll_factor_spinbox.setRange(0.1, 3.0)
+        self.scroll_factor_spinbox.setSingleStep(0.1)
+        self.scroll_factor_spinbox.setValue(1.0)
+        self.scroll_factor_spinbox.setDecimals(1)
+
+        scroll_factor_layout.addWidget(scroll_factor_label)
+        scroll_factor_layout.addWidget(self.scroll_factor_spinbox)
+        scroll_factor_layout.addStretch()
+        touchpad_layout.addLayout(scroll_factor_layout)
+
+        # Button_map method selection
+        touchpad_layout.addSpacing(10)
+        button_map_label = QLabel(self.tr('Tap Button Map:'))
+        button_map_label.setContentsMargins(0, 10, 0, 0)
+        touchpad_layout.addWidget(button_map_label)
+
+        self.button_map_group = QButtonGroup(self)
+        self.lmr_radio = QRadioButton(self.tr('left-middle-right'))
+        self.lrm_radio = QRadioButton(self.tr('left-right-middle'))
+
+        self.button_map_group.addButton(self.lmr_radio)
+        self.button_map_group.addButton(self.lrm_radio)
+        self.lmr_radio.setChecked(True)
+
+        touchpad_layout.addWidget(self.lmr_radio)
+        touchpad_layout.addWidget(self.lrm_radio)
+
+        layout.addWidget(touchpad_frame)
+        layout.addStretch()
+
+class MouseTab(QWidget):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.parent = parent
+        self.init_ui()
+
+    def init_ui(self):
+        layout = QVBoxLayout(self)
+        layout.setSpacing(20)
+        layout.setContentsMargins(20, 10, 20, 20)
+
+        # Mouse configuration section
+        mouse_frame = QFrame()
+        mouse_frame.setFrameStyle(QFrame.Shape.StyledPanel)
+        mouse_layout = QVBoxLayout(mouse_frame)
+
+        # Mouse checkboxes
+        self.natural_scroll_checkbox = QCheckBox(self.tr('Natural scroll'))
+        self.left_handed_checkbox = QCheckBox(self.tr('Left handed'))
+        self.middle_emulation_checkbox = QCheckBox(self.tr('Middle button emulation'))
+
+        mouse_layout.addWidget(self.natural_scroll_checkbox)
+        mouse_layout.addWidget(self.left_handed_checkbox)
+        mouse_layout.addWidget(self.middle_emulation_checkbox)
+
+        # Acceleration speed
+        accel_speed_layout = QHBoxLayout()
+        accel_speed_label = QLabel(self.tr('Acceleration speed:'))
+        self.accel_speed_spinbox = QDoubleSpinBox()
+        self.accel_speed_spinbox.setRange(-1.0, 1.0)
+        self.accel_speed_spinbox.setSingleStep(0.1)
+        self.accel_speed_spinbox.setValue(0.2)
+        self.accel_speed_spinbox.setDecimals(1)
+
+        accel_speed_layout.addWidget(accel_speed_label)
+        accel_speed_layout.addWidget(self.accel_speed_spinbox)
+        accel_speed_layout.addStretch()
+        mouse_layout.addLayout(accel_speed_layout)
+
+        # Acceleration profile
+        accel_profile_layout = QHBoxLayout()
+        accel_profile_label = QLabel(self.tr('Acceleration profile:'))
+        self.accel_profile_combobox = QComboBox()
+        self.accel_profile_combobox.addItems(["adaptive","flat"])
+
+        accel_profile_layout.addWidget(accel_profile_label)
+        accel_profile_layout.addWidget(self.accel_profile_combobox)
+        accel_profile_layout.addStretch()
+        mouse_layout.addLayout(accel_profile_layout)
+
+        # Scroll factor
+        scroll_factor_layout = QHBoxLayout()
+        scroll_factor_label = QLabel(self.tr('Scroll factor:'))
+        self.scroll_factor_spinbox = QDoubleSpinBox()
+        self.scroll_factor_spinbox.setRange(0.1, 3.0)
+        self.scroll_factor_spinbox.setSingleStep(0.1)
+        self.scroll_factor_spinbox.setValue(1.0)
+        self.scroll_factor_spinbox.setDecimals(1)
+
+        scroll_factor_layout.addWidget(scroll_factor_label)
+        scroll_factor_layout.addWidget(self.scroll_factor_spinbox)
+        scroll_factor_layout.addStretch()
+        mouse_layout.addLayout(scroll_factor_layout)
+
+        layout.addWidget(mouse_frame)
+        layout.addStretch()
 
 class KeyboardTab(QWidget):
     def __init__(self, parent=None):
@@ -510,184 +687,3 @@ class KeyboardTab(QWidget):
         layout.addWidget(keyboard_frame)
         layout.addStretch()
 
-class MouseTab(QWidget):
-    def __init__(self, parent=None):
-        super().__init__(parent)
-        self.parent = parent
-        self.init_ui()
-
-    def init_ui(self):
-        layout = QVBoxLayout(self)
-        layout.setSpacing(20)
-        layout.setContentsMargins(20, 10, 20, 20)
-
-        # Mouse configuration section
-        mouse_frame = QFrame()
-        mouse_frame.setFrameStyle(QFrame.Shape.StyledPanel)
-        mouse_layout = QVBoxLayout(mouse_frame)
-
-        # Mouse checkboxes
-        self.natural_scroll_checkbox = QCheckBox(self.tr('Natural scroll'))
-        self.left_handed_checkbox = QCheckBox(self.tr('Left handed'))
-        self.middle_emulation_checkbox = QCheckBox(self.tr('Middle button emulation'))
-
-        mouse_layout.addWidget(self.natural_scroll_checkbox)
-        mouse_layout.addWidget(self.left_handed_checkbox)
-        mouse_layout.addWidget(self.middle_emulation_checkbox)
-
-        # Acceleration speed
-        accel_speed_layout = QHBoxLayout()
-        accel_speed_label = QLabel(self.tr('Acceleration speed:'))
-        self.accel_speed_spinbox = QDoubleSpinBox()
-        self.accel_speed_spinbox.setRange(-1.0, 1.0)
-        self.accel_speed_spinbox.setSingleStep(0.1)
-        self.accel_speed_spinbox.setValue(0.2)
-        self.accel_speed_spinbox.setDecimals(1)
-
-        accel_speed_layout.addWidget(accel_speed_label)
-        accel_speed_layout.addWidget(self.accel_speed_spinbox)
-        accel_speed_layout.addStretch()
-        mouse_layout.addLayout(accel_speed_layout)
-
-        # Acceleration profile
-        accel_profile_layout = QHBoxLayout()
-        accel_profile_label = QLabel(self.tr('Acceleration profile:'))
-        self.accel_profile_combobox = QComboBox()
-        self.accel_profile_combobox.addItems(["adaptive","flat"])
-
-        accel_profile_layout.addWidget(accel_profile_label)
-        accel_profile_layout.addWidget(self.accel_profile_combobox)
-        accel_profile_layout.addStretch()
-        mouse_layout.addLayout(accel_profile_layout)
-
-        # Scroll factor
-        scroll_factor_layout = QHBoxLayout()
-        scroll_factor_label = QLabel(self.tr('Scroll factor:'))
-        self.scroll_factor_spinbox = QDoubleSpinBox()
-        self.scroll_factor_spinbox.setRange(0.1, 3.0)
-        self.scroll_factor_spinbox.setSingleStep(0.1)
-        self.scroll_factor_spinbox.setValue(1.0)
-        self.scroll_factor_spinbox.setDecimals(1)
-
-        scroll_factor_layout.addWidget(scroll_factor_label)
-        scroll_factor_layout.addWidget(self.scroll_factor_spinbox)
-        scroll_factor_layout.addStretch()
-        mouse_layout.addLayout(scroll_factor_layout)
-
-        layout.addWidget(mouse_frame)
-        layout.addStretch()
-
-class TouchpadTab(QWidget):
-    def __init__(self, parent=None):
-        super().__init__(parent)
-        self.parent = parent
-        self.init_ui()
-
-    def init_ui(self):
-        layout = QVBoxLayout(self)
-        layout.setSpacing(20)
-        layout.setContentsMargins(20, 10, 20, 20)
-
-        # Touchpad configuration section
-        touchpad_frame = QFrame()
-        touchpad_frame.setFrameStyle(QFrame.Shape.StyledPanel)
-        touchpad_layout = QVBoxLayout(touchpad_frame)
-
-        # Touchpad checkboxes
-        self.tap_checkbox = QCheckBox(self.tr('Tap to click'))
-        self.tap_checkbox.setChecked(True)
-        self.natural_scroll_checkbox = QCheckBox(self.tr('Natural scroll'))
-        self.natural_scroll_checkbox.setChecked(True)
-        self.drag_lock_checkbox = QCheckBox(self.tr('Drag lock'))
-        self.disable_external_mouse_checkbox = QCheckBox(self.tr('Disable when external mouse connected'))
-        self.dwt_checkbox = QCheckBox(self.tr('Disable while typing'))
-        self.left_handed_checkbox = QCheckBox(self.tr('Left handed'))
-
-        touchpad_layout.addWidget(self.tap_checkbox)
-        touchpad_layout.addWidget(self.natural_scroll_checkbox)
-        touchpad_layout.addWidget(self.drag_lock_checkbox)
-        touchpad_layout.addWidget(self.disable_external_mouse_checkbox)
-        touchpad_layout.addWidget(self.dwt_checkbox)
-        touchpad_layout.addWidget(self.left_handed_checkbox)
-
-        # Scroll method selection
-        touchpad_layout.addSpacing(10)
-        scroll_label = QLabel(self.tr('Scroll method:'))
-        scroll_label.setContentsMargins(0, 10, 0, 0)
-        touchpad_layout.addWidget(scroll_label)
-
-        self.scroll_group = QButtonGroup(self)
-        self.no_scroll_radio = QRadioButton(self.tr('No scroll'))
-        self.two_finger_radio = QRadioButton(self.tr('Two finger'))
-        self.edge_radio = QRadioButton(self.tr('Edge'))
-        self.button_radio = QRadioButton(self.tr('Button'))
-
-        self.scroll_group.addButton(self.no_scroll_radio)
-        self.scroll_group.addButton(self.two_finger_radio)
-        self.scroll_group.addButton(self.edge_radio)
-        self.scroll_group.addButton(self.button_radio)
-        self.two_finger_radio.setChecked(True)
-
-        touchpad_layout.addWidget(self.no_scroll_radio)
-        touchpad_layout.addWidget(self.two_finger_radio)
-        touchpad_layout.addWidget(self.edge_radio)
-        touchpad_layout.addWidget(self.button_radio)
-
-        # Acceleration speed
-        accel_speed_layout = QHBoxLayout()
-        accel_speed_label = QLabel(self.tr('Acceleration speed:'))
-        self.accel_speed_spinbox = QDoubleSpinBox()
-        self.accel_speed_spinbox.setRange(-1.0, 1.0)
-        self.accel_speed_spinbox.setSingleStep(0.1)
-        self.accel_speed_spinbox.setValue(0.2)
-        self.accel_speed_spinbox.setDecimals(1)
-
-        accel_speed_layout.addWidget(accel_speed_label)
-        accel_speed_layout.addWidget(self.accel_speed_spinbox)
-        accel_speed_layout.addStretch()
-        touchpad_layout.addLayout(accel_speed_layout)
-
-        # Acceleration profile
-        accel_profile_layout = QHBoxLayout()
-        accel_profile_label = QLabel(self.tr('Acceleration profile:'))
-        self.accel_profile_combobox = QComboBox()
-        self.accel_profile_combobox.addItems(["adaptive", "flat"])
-
-        accel_profile_layout.addWidget(accel_profile_label)
-        accel_profile_layout.addWidget(self.accel_profile_combobox)
-        accel_profile_layout.addStretch()
-        touchpad_layout.addLayout(accel_profile_layout)
-
-        # Scroll factor
-        scroll_factor_layout = QHBoxLayout()
-        scroll_factor_label = QLabel(self.tr('Scroll factor:'))
-        self.scroll_factor_spinbox = QDoubleSpinBox()
-        self.scroll_factor_spinbox.setRange(0.1, 3.0)
-        self.scroll_factor_spinbox.setSingleStep(0.1)
-        self.scroll_factor_spinbox.setValue(1.0)
-        self.scroll_factor_spinbox.setDecimals(1)
-
-        scroll_factor_layout.addWidget(scroll_factor_label)
-        scroll_factor_layout.addWidget(self.scroll_factor_spinbox)
-        scroll_factor_layout.addStretch()
-        touchpad_layout.addLayout(scroll_factor_layout)
-
-        # Button_map method selection
-        touchpad_layout.addSpacing(10)
-        button_map_label = QLabel(self.tr('Tap Button Map:'))
-        button_map_label.setContentsMargins(0, 10, 0, 0)
-        touchpad_layout.addWidget(button_map_label)
-
-        self.button_map_group = QButtonGroup(self)
-        self.lmr_radio = QRadioButton(self.tr('left-middle-right'))
-        self.lrm_radio = QRadioButton(self.tr('left-right-middle'))
-
-        self.button_map_group.addButton(self.lmr_radio)
-        self.button_map_group.addButton(self.lrm_radio)
-        self.lmr_radio.setChecked(True)
-
-        touchpad_layout.addWidget(self.lmr_radio)
-        touchpad_layout.addWidget(self.lrm_radio)
-
-        layout.addWidget(touchpad_frame)
-        layout.addStretch()

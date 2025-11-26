@@ -1,2 +1,4 @@
 #!/bin/bash
-exec /home/stef/git/stefonarch/niri-input-conf/main.py
+export PYTHONPYCACHEPREFIX=/tmp/pycache
+#exec /usr/lib/niri-settings/niri_settings.py $1
+exec ./niri_settings.py $1

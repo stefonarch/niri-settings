@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Niri Settings
+GenericName=GUI for basic configuring of niri in Qt
+Comment=
+Exec=niri-settings
+Type=Application
+Categories=Settings;System;
+Icon=preferences-desktop
+Terminal=false
