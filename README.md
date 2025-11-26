@@ -2,7 +2,8 @@
 
 > GUI in Qt for configure niri
 
-![Screenshot of niri-settings window](niri-settings.png)
+
+https://github.com/user-attachments/assets/6b955a49-b09e-485c-ae79-6a2064a17fa4
 
 
 
