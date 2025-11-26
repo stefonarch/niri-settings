@@ -66,8 +66,6 @@ class AppearanceTab(QWidget):
         self.shadows_checkbox.setChecked(True)
         appearance_layout.addWidget(self.shadows_checkbox)
 
-
-
         # Animations
         animations_layout = QHBoxLayout()
         slowdown_label = QLabel(self.tr('Slowdown:'))
@@ -90,89 +88,108 @@ class AppearanceTab(QWidget):
         animations_layout.addWidget(self.animations_spinbox)
         animations_layout.addStretch()
         appearance_layout.addLayout(animations_layout)
+        appearance_layout.addSpacing(10)
 
-        # focus_ring
+        # Focus/border ring
         focus_ring_layout = QHBoxLayout()
-        focus_ring_label = QLabel(self.tr('Width:'))
-
-        self.focus_ring_enable_checkbox = QCheckBox(self.tr('Focus ring'))
+        self.focus_ring_enable_checkbox = QCheckBox(self.tr('Enable borders'))
         self.focus_ring_enable_checkbox.setChecked(True)
 
-        self.focus_ring_spinbox = QSpinBox()
-        self.focus_ring_spinbox.setRange(1,9)
-        self.focus_ring_spinbox.setSingleStep(1)
-        self.focus_ring_spinbox.setValue(4)
-
-        self.focus_ring_enable_checkbox.toggled.connect(self.focus_ring_spinbox.setEnabled)
-
         focus_ring_layout.addWidget(self.focus_ring_enable_checkbox)
-        focus_ring_layout.addWidget(focus_ring_label)
-        focus_ring_layout.addWidget(self.focus_ring_spinbox)
         focus_ring_layout.addStretch()
-        appearance_layout.addSpacing(15)
         appearance_layout.addLayout(focus_ring_layout)
 
-        color_layout = QHBoxLayout()
-        color_label = QLabel(self.tr('Color:'))
+        # Create a container for the indented content
+        indented_widget = QWidget()
+        indented_layout = QVBoxLayout(indented_widget)
+        indented_layout.setContentsMargins(25, 0, 0, 0)
+        indented_layout.setSpacing(0)
+
+        # Color and width
+        color_width_layout = QHBoxLayout()
+
+        color_label = QLabel(self.tr('Active color: '))
         self.color_button = QPushButton()
         self.color_button.setFixedSize(60, 25)
         self.color_button.clicked.connect(self.choose_active_color)
         self.update_color_button()
-        color_layout.addWidget(color_label)
-        color_layout.addWidget(self.color_button)
-        color_layout.addStretch()
-        self.focus_ring_enable_checkbox.toggled.connect(focus_ring_label.setEnabled)
+
+        width_label = QLabel(self.tr('Width:'))
+        self.focus_ring_spinbox = QSpinBox()
+        self.focus_ring_spinbox.setRange(1,9)
+        self.focus_ring_spinbox.setSingleStep(1)
+        self.focus_ring_spinbox.setValue(4)
+        self.focus_ring_spinbox.setSuffix(' px')
+
+        color_width_layout.addWidget(color_label)
+        color_width_layout.addWidget(self.color_button)
+        color_width_layout.addSpacing(20)  # Add some spacing between color and width
+        color_width_layout.addWidget(width_label)
+        color_width_layout.addWidget(self.focus_ring_spinbox)
+        color_width_layout.addStretch()
+        indented_layout.addLayout(color_width_layout)
+
+        # Inactive color and width
+        inactive_color_width_layout = QHBoxLayout()
+
+        inactive_color_label = QLabel(self.tr('Inactive color: '))
+        self.inactive_color_button = QPushButton()
+        self.inactive_color_button.setFixedSize(60, 25)
+        #self.inactive_color_button.clicked.connect(self.choose_active_inactive_color)
+        #self.update_inactive_color_button()
+
+        inactive_width_label = QLabel(self.tr('Inactive width:'))
+        self.inactive_width_spinbox = QSpinBox()
+        self.inactive_width_spinbox.setRange(1,9)
+        self.inactive_width_spinbox.setSingleStep(1)
+        self.inactive_width_spinbox.setValue(4)
+        self.inactive_width_spinbox.setSuffix(' px')
+
+        inactive_color_width_layout.addWidget(inactive_color_label)
+        inactive_color_width_layout.addWidget(self.inactive_color_button)
+        inactive_color_width_layout.addSpacing(20)  # Add some spacing between inactive_color and width
+        inactive_color_width_layout.addWidget(inactive_width_label)
+        inactive_color_width_layout.addWidget(self.inactive_width_spinbox)
+        inactive_color_width_layout.addStretch()
+        indented_layout.addLayout(inactive_color_width_layout)
+
+        # Apply to
+        apply_layout = QHBoxLayout()
+        select_label = QLabel(self.tr('Apply to:'))
+
+        self.focus_radio = QRadioButton(self.tr('Focus ring '))
+        self.border_radio = QRadioButton(self.tr('Border'))
+        self.focus_radio.setChecked(True)
+
+        apply_layout.addWidget(select_label)
+        apply_layout.addSpacing(20)
+        apply_layout.addWidget(self.focus_radio)
+        apply_layout.addWidget(self.border_radio)
+        apply_layout.addStretch()
+        indented_layout.addLayout(apply_layout)
+
+        # Add the indented widget to the main appearance layout
+        appearance_layout.addWidget(indented_widget)
+
+        # Connect enable/disable states for all dependent widgets
+        self.focus_ring_enable_checkbox.toggled.connect(self.focus_ring_spinbox.setEnabled)
+        self.focus_ring_enable_checkbox.toggled.connect(self.inactive_width_spinbox.setEnabled)
+        self.focus_ring_enable_checkbox.toggled.connect(width_label.setEnabled)
+        self.focus_ring_enable_checkbox.toggled.connect(inactive_width_label.setEnabled)
         self.focus_ring_enable_checkbox.toggled.connect(self.color_button.setEnabled)
-
-        # initial states
-        focus_ring_label.setEnabled(self.focus_ring_enable_checkbox.isChecked())
-        self.color_button.setEnabled(self.focus_ring_enable_checkbox.isChecked())
         self.focus_ring_enable_checkbox.toggled.connect(color_label.setEnabled)
+        self.focus_ring_enable_checkbox.toggled.connect(inactive_color_label.setEnabled)
+        self.focus_ring_enable_checkbox.toggled.connect(select_label.setEnabled)
+        self.focus_ring_enable_checkbox.toggled.connect(self.focus_radio.setEnabled)
+        self.focus_ring_enable_checkbox.toggled.connect(self.border_radio.setEnabled)
+
+        # Set initial states
+        width_label.setEnabled(self.focus_ring_enable_checkbox.isChecked())
+        self.color_button.setEnabled(self.focus_ring_enable_checkbox.isChecked())
         color_label.setEnabled(self.focus_ring_enable_checkbox.isChecked())
-
-        appearance_layout.addLayout(color_layout)
-
-        # Border
-        border_layout = QHBoxLayout()
-        border_label = QLabel(self.tr('Width:'))
-
-        self.border_enable_checkbox = QCheckBox(self.tr('Border'))
-        self.border_enable_checkbox.setChecked(True)
-
-        self.border_spinbox = QSpinBox()
-        self.border_spinbox.setRange(1,9)
-        self.border_spinbox.setSingleStep(1)
-        self.border_spinbox.setValue(4)
-
-        self.border_enable_checkbox.toggled.connect(self.border_spinbox.setEnabled)
-        self.border_enable_checkbox.toggled.connect(border_label.setEnabled)
-        border_label.setEnabled(self.border_enable_checkbox.isChecked())
-
-        border_layout.addWidget(self.border_enable_checkbox)
-        border_layout.addWidget(border_label)
-        border_layout.addWidget(self.border_spinbox)
-        border_layout.addStretch()
-        appearance_layout.addSpacing(15)
-        appearance_layout.addLayout(border_layout)
-
-        border_color_layout = QHBoxLayout()
-        border_color_label = QLabel(self.tr('Color:'))
-        self.border_color_button = QPushButton()
-        self.border_color_button.setFixedSize(60, 25)
-        self.border_color_button.clicked.connect(self.choose_border_color)
-        self.update_border_color_button()
-        border_color_layout.addWidget(border_color_label)
-        border_color_layout.addWidget(self.border_color_button)
-        border_color_layout.addStretch()
-        self.border_enable_checkbox.toggled.connect(border_color_label.setEnabled)
-        self.border_enable_checkbox.toggled.connect(self.border_color_button.setEnabled)
-
-        focus_ring_label.setEnabled(self.focus_ring_enable_checkbox.isChecked())
-        self.border_color_button.setEnabled(self.focus_ring_enable_checkbox.isChecked())
-        self.focus_ring_enable_checkbox.toggled.connect(border_color_label.setEnabled)
-        border_color_label.setEnabled(self.border_enable_checkbox.isChecked())
-
-        appearance_layout.addLayout(border_color_layout)
+        select_label.setEnabled(self.focus_ring_enable_checkbox.isChecked())
+        self.focus_radio.setEnabled(self.focus_ring_enable_checkbox.isChecked())
+        self.border_radio.setEnabled(self.focus_ring_enable_checkbox.isChecked())
 
         # Margins
         margins_group = QGroupBox(self.tr("Margins"))
@@ -186,7 +203,7 @@ class AppearanceTab(QWidget):
         self.gaps_spinbox.setRange(0,50)
         self.gaps_spinbox.setSingleStep(1)
         self.gaps_spinbox.setValue(8)
-        #self.gaps_spinbox.setDecimals(0)
+        self.gaps_spinbox.setSuffix(' px')
 
         gaps_layout.addWidget(gaps_label)
         gaps_layout.addWidget(self.gaps_spinbox)
@@ -205,21 +222,25 @@ class AppearanceTab(QWidget):
         self.struts_left_spin = QSpinBox()
         self.struts_left_spin.setRange(0, 100)
         self.struts_left_spin.setValue(0)
+        self.struts_left_spin.setSuffix(' px')
 
         right_label = QLabel(self.tr("Right:"))
         self.struts_right_spin = QSpinBox()
         self.struts_right_spin.setRange(0, 100)
         self.struts_right_spin.setValue(0)
+        self.struts_right_spin.setSuffix(' px')
 
         top_label = QLabel(self.tr("Top:"))
         self.struts_top_spin = QSpinBox()
         self.struts_top_spin.setRange(0, 100)
         self.struts_top_spin.setValue(0)
+        self.struts_top_spin.setSuffix(' px')
 
         bottom_label = QLabel(self.tr("Bottom:"))
         self.struts_bottom_spin = QSpinBox()
         self.struts_bottom_spin.setRange(0, 100)
         self.struts_bottom_spin.setValue(0)
+        self.struts_bottom_spin.setSuffix(' px')
 
         struts_row1.addWidget(left_label)
         struts_row1.addWidget(self.struts_left_spin)
