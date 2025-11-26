@@ -1,14 +1,18 @@
 ## niri-settings
 
-> GUI in Qt for configure niri
+> GUI in PyQt for configuring niri
 
-![Screenshot of niri-settings window](niri-settings.png)
+
+https://github.com/user-attachments/assets/6b955a49-b09e-485c-ae79-6a2064a17fa4
 
 
 
 ## Usage
 
-**Note**: A separated  `basicsettings.kdl` config file included at the end in the default `.kdl` file is needed, which means niri minimal version 25.11.
+**Note**: A separated  `basicsettings.kdl` config file included at the end in the default `.kdl` file is needed.
+Aka niri minimal version supported is 25.11.
+
+Consider it beta software atm.
 
 
 If no argument is given `$XDG_CONFIG_HOME/lxqt/wayland/niri/basicsettings.kdl` is used, otherwise
