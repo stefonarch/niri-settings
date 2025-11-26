@@ -1,1 +1,4 @@
 PKGBUILD
+update_translations
+old/
+ui/__pycache__

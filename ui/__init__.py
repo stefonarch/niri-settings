@@ -1,14 +1,10 @@
-from .appearance_tab import AppearanceTab
-from .behavior_tab import BehaviorTab
-from .touchpad_tab import TouchpadTab
-from .mouse_tab import MouseTab
-from .keyboard_tab import KeyboardTab
+from .all_tabs import AppearanceTab, BehaviorTab, MouseTab, KeyboardTab, TouchpadTab
 from .settings_window import SettingsWindow
 from .utils import get_config_path
 
 __all__ = [
     'AppearanceTab',
-    'BehaviorTab', 
+    'BehaviorTab',
     'TouchpadTab',
     'MouseTab',
     'KeyboardTab',
