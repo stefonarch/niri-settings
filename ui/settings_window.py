@@ -8,11 +8,7 @@ from PyQt6.QtCore import QTranslator, QLocale, QLibraryInfo
 from PyQt6.QtGui import QIcon
 
 from .conf_path import get_config_path
-from .appearance_tab import AppearanceTab
-from .behavior_tab import BehaviorTab
-from .touchpad_tab import TouchpadTab
-from .mouse_tab import MouseTab
-from .keyboard_tab import KeyboardTab
+from .all_tabs import AppearanceTab, BehaviorTab ,TouchpadTab, MouseTab,KeyboardTab
 
 class SettingsWindow(QMainWindow):
     def __init__(self):

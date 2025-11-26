@@ -4,325 +4,352 @@
 <context>
     <name>AppearanceTab</name>
     <message>
-        <location filename="../niri-settings.py" line="46" />
+        <location filename="../ui/all_tabs.py" line="19" />
         <source>Choose Focus Ring Color</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../niri-settings.py" line="67" />
+        <location filename="../ui/all_tabs.py" line="30" />
+        <source>Choose Border Color</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="50" />
         <source>Use client side decorations</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../niri-settings.py" line="72" />
-        <source>Gaps:</source>
+        <location filename="../ui/all_tabs.py" line="55" />
+        <source>Overview zoom:</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../niri-settings.py" line="85" />
-        <source>Focus ring</source>
+        <location filename="../ui/all_tabs.py" line="67" />
+        <source>Enable shadows</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../niri-settings.py" line="122" />
-        <location filename="../niri-settings.py" line="89" />
-        <source>Enabled</source>
+        <location filename="../ui/all_tabs.py" line="75" />
+        <source>Slowdown:</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../niri-settings.py" line="128" />
-        <location filename="../niri-settings.py" line="95" />
+        <location filename="../ui/all_tabs.py" line="77" />
+        <source>Enable Animations</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="139" />
+        <location filename="../ui/all_tabs.py" line="98" />
         <source>Width:</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../niri-settings.py" line="139" />
-        <location filename="../niri-settings.py" line="106" />
+        <location filename="../ui/all_tabs.py" line="100" />
+        <source>Focus ring</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="161" />
+        <location filename="../ui/all_tabs.py" line="118" />
         <source>Color:</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../niri-settings.py" line="118" />
+        <location filename="../ui/all_tabs.py" line="141" />
         <source>Border</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="180" />
+        <source>Margins</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="186" />
+        <source>Gaps:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="206" />
+        <source>Left:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="211" />
+        <source>Right:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="216" />
+        <source>Top:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="221" />
+        <source>Bottom:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="238" />
+        <source>Struts:</source>
         <translation type="unfinished" />
     </message>
 </context><context>
     <name>BehaviorTab</name>
     <message>
-        <location filename="../niri-settings.py" line="175" />
-        <source>Show shortcuts at login</source>
+        <location filename="../ui/all_tabs.py" line="264" />
+        <source>Show hotkeys at login</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../niri-settings.py" line="176" />
+        <location filename="../ui/all_tabs.py" line="266" />
         <source>Warp mouse to focus</source>
         <translation>Déplacer la souris vers le focus</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="177" />
+        <location filename="../ui/all_tabs.py" line="267" />
         <source>Focus follows mouse</source>
         <translation>Le focus suit la souris</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="178" />
+        <location filename="../ui/all_tabs.py" line="268" />
         <source>Always focus windows on request</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../niri-settings.py" line="179" />
+        <location filename="../ui/all_tabs.py" line="269" />
         <source>Disable power key handling</source>
         <translation>Désactiver la gestion de la touche d'alimentation</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="180" />
+        <location filename="../ui/all_tabs.py" line="270" />
         <source>Workspace auto back and forth</source>
         <translation>Espace de travail aller-retour automatique</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="181" />
+        <location filename="../ui/all_tabs.py" line="271" />
         <source>Disable hot corners</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../niri-settings.py" line="193" />
+        <location filename="../ui/all_tabs.py" line="272" />
+        <source>Hide cursor while typing</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="282" />
         <source>Mod Key:</source>
         <translation>Touche Mod :</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="197" />
+        <location filename="../ui/all_tabs.py" line="286" />
         <source>Super</source>
         <translation>Super</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="198" />
+        <location filename="../ui/all_tabs.py" line="287" />
         <source>Alt</source>
         <translation>Alt</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="199" />
+        <location filename="../ui/all_tabs.py" line="288" />
         <source>Ctrl</source>
         <translation>Ctrl</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="217" />
-        <source>Screenshot path:</source>
+        <location filename="../ui/all_tabs.py" line="306" />
+        <source>Screenshots:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="319" />
+        <source>Cursor</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="321" />
+        <source>Enable</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="325" />
+        <source>hiding after inactive for:</source>
         <translation type="unfinished" />
     </message>
 </context><context>
     <name>KeyboardTab</name>
     <message>
-        <location filename="../niri-settings.py" line="434" />
+        <location filename="../ui/all_tabs.py" line="366" />
         <source>Enable num lock at startup</source>
         <translation>Activer le verrouillage numérique au démarrage</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="439" />
+        <location filename="../ui/all_tabs.py" line="372" />
         <source>Track keyboard layout:</source>
         <translation>Suivre la disposition du clavier :</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="449" />
+        <location filename="../ui/all_tabs.py" line="382" />
         <source>XKB Settings</source>
         <translation>Paramètres XKB</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="454" />
+        <location filename="../ui/all_tabs.py" line="387" />
         <source>Layout:</source>
         <translation>Disposition :</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="469" />
+        <location filename="../ui/all_tabs.py" line="402" />
         <source>Variant:</source>
         <translation>Variante :</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="483" />
+        <location filename="../ui/all_tabs.py" line="416" />
         <source>Options:</source>
         <translation>Options :</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="496" />
+        <location filename="../ui/all_tabs.py" line="429" />
         <source>Model:</source>
         <translation>Modèle :</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="510" />
+        <location filename="../ui/all_tabs.py" line="443" />
         <source>File:</source>
         <translation>Fichier :</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="527" />
+        <location filename="../ui/all_tabs.py" line="458" />
         <source>Repeat Settings</source>
         <translation>Paramètres de répétition</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="532" />
+        <location filename="../ui/all_tabs.py" line="463" />
         <source>Repeat delay:</source>
         <translation>Délai de répétition :</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="546" />
+        <location filename="../ui/all_tabs.py" line="477" />
         <source>Repeat rate:</source>
         <translation>Vitesse de répétition :</translation>
     </message>
 </context><context>
     <name>MouseTab</name>
     <message>
-        <location filename="../niri-settings.py" line="366" />
+        <location filename="../ui/all_tabs.py" line="509" />
         <source>Natural scroll</source>
         <translation>Défilement naturel</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="367" />
+        <location filename="../ui/all_tabs.py" line="510" />
         <source>Left handed</source>
         <translation>Gaucher</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="368" />
+        <location filename="../ui/all_tabs.py" line="511" />
         <source>Middle button emulation</source>
         <translation>Émulation du bouton du milieu</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="376" />
+        <location filename="../ui/all_tabs.py" line="519" />
         <source>Acceleration speed:</source>
         <translation>Vitesse d'accélération :</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="390" />
+        <location filename="../ui/all_tabs.py" line="533" />
         <source>Acceleration profile:</source>
         <translation>Profil d'accélération :</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="401" />
+        <location filename="../ui/all_tabs.py" line="544" />
         <source>Scroll factor:</source>
         <translation>Facteur de défilement :</translation>
-    </message>
-</context><context>
-    <name>SettingsWindow</name>
-    <message>
-        <location filename="../niri-settings.py" line="603" />
-        <source>Appearance</source>
-        <translation>Apparence</translation>
-    </message>
-    <message>
-        <location filename="../niri-settings.py" line="604" />
-        <source>Behavior</source>
-        <translation>Comportement</translation>
-    </message>
-    <message>
-        <location filename="../niri-settings.py" line="605" />
-        <source>Touchpad</source>
-        <translation>Touchpad</translation>
-    </message>
-    <message>
-        <location filename="../niri-settings.py" line="606" />
-        <source>Mouse</source>
-        <translation>Souris</translation>
-    </message>
-    <message>
-        <location filename="../niri-settings.py" line="607" />
-        <source>Keyboard</source>
-        <translation>Clavier</translation>
-    </message>
-    <message>
-        <location filename="../niri-settings.py" line="614" />
-        <source>Wiki</source>
-        <translation>Wiki</translation>
-    </message>
-    <message>
-        <location filename="../niri-settings.py" line="618" />
-        <source>Apply</source>
-        <translation>Appliquer</translation>
-    </message>
-    <message>
-        <location filename="../niri-settings.py" line="622" />
-        <source>Close</source>
-        <translation>Fermer</translation>
     </message>
 </context><context>
     <name>TouchpadTab</name>
     <message>
-        <location filename="../niri-settings.py" line="251" />
+        <location filename="../ui/all_tabs.py" line="573" />
         <source>Tap to click</source>
         <translation>Taper pour cliquer</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="252" />
+        <location filename="../ui/all_tabs.py" line="575" />
         <source>Natural scroll</source>
         <translation>Défilement naturel</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="253" />
+        <location filename="../ui/all_tabs.py" line="577" />
         <source>Drag lock</source>
         <translation>Verrouillage du glisser</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="254" />
+        <location filename="../ui/all_tabs.py" line="578" />
         <source>Disable when external mouse connected</source>
         <translation>Désactiver quand une souris externe est connectée</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="255" />
+        <location filename="../ui/all_tabs.py" line="579" />
         <source>Disable while typing</source>
         <translation>Désactiver pendant la frappe</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="256" />
+        <location filename="../ui/all_tabs.py" line="580" />
         <source>Left handed</source>
         <translation>Gaucher</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="267" />
+        <location filename="../ui/all_tabs.py" line="591" />
         <source>Scroll method:</source>
         <translation>Méthode de défilement :</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="272" />
+        <location filename="../ui/all_tabs.py" line="596" />
         <source>No scroll</source>
         <translation>Aucun défilement</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="273" />
+        <location filename="../ui/all_tabs.py" line="597" />
         <source>Two finger</source>
         <translation>Deux doigts</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="274" />
+        <location filename="../ui/all_tabs.py" line="598" />
         <source>Edge</source>
         <translation>Bord</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="275" />
+        <location filename="../ui/all_tabs.py" line="599" />
         <source>Button</source>
         <translation>Bouton</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="290" />
+        <location filename="../ui/all_tabs.py" line="614" />
         <source>Acceleration speed:</source>
         <translation>Vitesse d'accélération :</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="304" />
+        <location filename="../ui/all_tabs.py" line="628" />
         <source>Acceleration profile:</source>
         <translation>Profil d'accélération :</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="315" />
+        <location filename="../ui/all_tabs.py" line="639" />
         <source>Scroll factor:</source>
         <translation>Facteur de défilement :</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="332" />
+        <location filename="../ui/all_tabs.py" line="653" />
         <source>Tap Button Map:</source>
         <translation>Mappage des boutons :</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="337" />
+        <location filename="../ui/all_tabs.py" line="658" />
         <source>left-middle-right</source>
         <translation>gauche-milieu-droite</translation>
     </message>
     <message>
-        <location filename="../niri-settings.py" line="338" />
+        <location filename="../ui/all_tabs.py" line="659" />
         <source>left-right-middle</source>
         <translation>gauche-droite-milieu</translation>
     </message>

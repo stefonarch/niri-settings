@@ -1,0 +1,2 @@
+#!/bin/bash
+exec /home/stef/git/stefonarch/niri-input-conf/main.py
