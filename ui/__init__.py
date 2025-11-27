@@ -1,6 +1,6 @@
 from .all_tabs import AppearanceTab, BehaviorTab, MouseTab, KeyboardTab, TouchpadTab
 from .settings_window import SettingsWindow
-from .utils import get_config_path
+from .conf_path import get_config_path
 
 __all__ = [
     'AppearanceTab',
