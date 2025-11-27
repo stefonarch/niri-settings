@@ -25,10 +25,11 @@ class SettingsWindow(QMainWindow):
         self.setWindowTitle('Niri Settings')
         self.setFixedSize(600, 800)
 
-        # Try to use system theme icon first, fallback to Qt standard icon
-        icon = QIcon.fromTheme("preferences-desktop")
+        icon = QIcon.fromTheme("niri-settings",
+            QIcon.fromTheme("preferences-desktop",
+            self.style().standardIcon(QStyle.StandardPixmap.SP_FileDialogDetailedView)))
         if icon.isNull():
-            icon = self.style().standardIcon(QStyle.StandardPixmap.SP_FileDialogDetailedView)
+            icon = self.style().standardIcon(QStyle.StandardPixmap.SP_FileDialogDetailedView)  # Final fallback
         self.setWindowIcon(icon)
 
         # Central widget

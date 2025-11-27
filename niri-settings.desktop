@@ -1,9 +1,10 @@
 [Desktop Entry]
 Name=Niri Settings
-GenericName=GUI for basic configuring of niri in Qt
-Comment=
-Exec=python3 niri_settings.py
+GenericName=Basic settings manager for niri
+Name[it]=Impostazioni di niri
+GenericName[it]=Configurazione di base per niri
+Exec=python3 /path/to/niri-settings/niri_settings.py
 Type=Application
 Categories=Settings;DesktopSettings
-Icon=preferences-desktop
+Icon=niri-settings
 Terminal=false
