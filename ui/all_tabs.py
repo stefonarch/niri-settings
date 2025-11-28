@@ -212,25 +212,25 @@ class AppearanceTab(QWidget):
         # Left
         left_label = QLabel(self.tr("Left:"))
         self.struts_left_spin = QSpinBox()
-        self.struts_left_spin.setRange(0, 100)
+        self.struts_left_spin.setRange(-100, 100)
         self.struts_left_spin.setValue(0)
         self.struts_left_spin.setSuffix(' px')
 
         right_label = QLabel(self.tr("Right:"))
         self.struts_right_spin = QSpinBox()
-        self.struts_right_spin.setRange(0, 100)
+        self.struts_right_spin.setRange(-100, 100)
         self.struts_right_spin.setValue(0)
         self.struts_right_spin.setSuffix(' px')
 
         top_label = QLabel(self.tr("Top:"))
         self.struts_top_spin = QSpinBox()
-        self.struts_top_spin.setRange(0, 100)
+        self.struts_top_spin.setRange(-100, 100)
         self.struts_top_spin.setValue(0)
         self.struts_top_spin.setSuffix(' px')
 
         bottom_label = QLabel(self.tr("Bottom:"))
         self.struts_bottom_spin = QSpinBox()
-        self.struts_bottom_spin.setRange(0, 100)
+        self.struts_bottom_spin.setRange(-100, 100)
         self.struts_bottom_spin.setValue(0)
         self.struts_bottom_spin.setSuffix(' px')
 

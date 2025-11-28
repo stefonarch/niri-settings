@@ -63,14 +63,17 @@ class SettingsWindow(QMainWindow):
         button_layout = QHBoxLayout()
 
         wiki_btn = QPushButton(self.tr('Wiki'))
-        wiki_btn.setFixedSize(80, 35)
+        wiki_btn.setFixedSize(100, 35)
+        wiki_btn.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_MessageBoxInformation))
         wiki_btn.clicked.connect(self.open_wiki)
 
         apply_btn = QPushButton(self.tr('Apply'))
+        apply_btn.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_DialogApplyButton))
         apply_btn.setFixedSize(120, 35)
         apply_btn.clicked.connect(self.apply_settings)
 
         close_btn = QPushButton(self.tr('Close'))
+        close_btn.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_DialogCloseButton))
         close_btn.setFixedSize(120, 35)
         close_btn.clicked.connect(self.close)
 

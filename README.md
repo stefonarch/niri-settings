@@ -9,8 +9,7 @@ https://github.com/user-attachments/assets/6b955a49-b09e-485c-ae79-6a2064a17fa4
 
 ## Usage
 
-Under LXQt the line `include "niri/basicsettings.kdl"` at the bottom of the default `~/.config/lxqt/wayland/lxqt-niri.kdl` file has to be added. The "include" feature was added in niri version ̣̣̣̣̣̣25.11.
-
+Under LXQt a line `include "niri/basicsettings.kdl"` at the bottom of the default `~/.config/lxqt/wayland/lxqt-niri.kdl` file has to be added. The "include" feature was added in niri version 25.11.
 
 If no argument is given `$XDG_CONFIG_HOME/lxqt/wayland/niri/basicsettings.kdl` is used when running
 under LXQt, otherwise `$XDG_CONFIG_HOME/niribasicsettings.kdl` will be used. Edit `ui/conf_path.py`
