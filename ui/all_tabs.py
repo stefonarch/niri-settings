@@ -277,6 +277,7 @@ class BehaviorTab(QWidget):
         self.warp_mouse_to_focus_checkbox = QCheckBox(self.tr('Warp mouse to focus'))
         self.focus_follows_mouse_checkbox = QCheckBox(self.tr('Focus follows mouse'))
         self.focus_request_checkbox = QCheckBox(self.tr('Always focus windows on request'))
+        self.always_center_single_checkbox = QCheckBox(self.tr('Always center single column'))
         self.disable_power_key_checkbox = QCheckBox(self.tr('Disable power key handling'))
         self.workspace_auto_back_forth_checkbox = QCheckBox(self.tr('Workspace auto back and forth'))
         self.hot_corners_checkbox = QCheckBox(self.tr('Disable hot corners'))
@@ -284,6 +285,7 @@ class BehaviorTab(QWidget):
 
         behavior_layout.addWidget(self.hotkey_overlay_checkbox)
         behavior_layout.addWidget(self.focus_request_checkbox)
+        behavior_layout.addWidget(self.always_center_single_checkbox)
         behavior_layout.addWidget(self.disable_power_key_checkbox)
         behavior_layout.addWidget(self.workspace_auto_back_forth_checkbox)
         behavior_layout.addWidget(self.hot_corners_checkbox)

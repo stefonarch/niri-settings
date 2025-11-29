@@ -21,11 +21,11 @@ class SettingsWindow(QMainWindow):
         self.load_settings()
 
     def open_wiki(self):
-        wiki_url = "https://yalter.github.io/niri/Configuration%3A-Input"
+        wiki_url = "https://yalter.github.io/niri/Configuration%3A-Introduction.html"
         webbrowser.open(wiki_url)
 
     def init_ui(self):
-        self.setWindowTitle('Niri Settings')
+        self.setWindowTitle(self.tr('Niri Settings'))
         self.setFixedSize(600, 800)
 
         icon = QIcon.fromTheme("niri-settings",
@@ -118,7 +118,10 @@ class SettingsWindow(QMainWindow):
                 f.write('    shadow {\n    on\n    }')
             else:
                 f.write('    shadow {\n    off\n    }')
-            f.write(f'\n    gaps {self.appearance_tab.gaps_spinbox.value()}\n')
+            f.write(f'\n\n    gaps {self.appearance_tab.gaps_spinbox.value()}\n')
+
+            if self.behavior_tab.always_center_single_checkbox.isChecked():
+                f.write(f'    always-center-single-column\n')
 
             f.write('\n    struts {\n')
             f.write(f'        left {self.appearance_tab.struts_left_spin.value()}\n')
@@ -176,7 +179,7 @@ class SettingsWindow(QMainWindow):
 
     def save_touchpad_config(self):
         try:
-            with open(self.config_path, 'a') as f:  # Append to the file
+            with open(self.config_path, 'a') as f:
                 f.write('    \n')
                 f.write('    touchpad {\n')
 
@@ -383,23 +386,26 @@ class SettingsWindow(QMainWindow):
 
             try:
                 # Parse behavior settings
-                self.behavior_tab.warp_mouse_to_focus_checkbox.setChecked(
-                    '// warp-mouse-to-focus' not in content
-                )
-                self.behavior_tab.focus_follows_mouse_checkbox.setChecked(
-                    '// focus-follows-mouse' not in content
-                )
-                self.behavior_tab.disable_power_key_checkbox.setChecked(
-                    '// disable-power-key-handling' not in content
-                )
-                self.behavior_tab.workspace_auto_back_forth_checkbox.setChecked(
-                    '// workspace-auto-back-and-forth' not in content
-                )
                 self.behavior_tab.hotkey_overlay_checkbox.setChecked(
                     '// skip-at-startup' in content
                 )
                 self.behavior_tab.focus_request_checkbox.setChecked(
                     '// honor-xdg-activation-with-invalid-serial ' not in content
+                )
+                self.behavior_tab.always_center_single_checkbox.setChecked(
+                    'always-center-single-column' in content
+                )
+                self.behavior_tab.disable_power_key_checkbox.setChecked(
+                    '// disable-power-key-handling' not in content
+                )
+                self.behavior_tab.warp_mouse_to_focus_checkbox.setChecked(
+                    '// warp-mouse-to-focus' not in content
+                )
+                self.behavior_tab.workspace_auto_back_forth_checkbox.setChecked(
+                    '// workspace-auto-back-and-forth' not in content
+                )
+                self.behavior_tab.focus_follows_mouse_checkbox.setChecked(
+                    '// focus-follows-mouse' not in content
                 )
                 self.behavior_tab.hide_while_typing_checkbox.setChecked(
                     '// hide-when-typing ' not in content
@@ -430,6 +436,7 @@ class SettingsWindow(QMainWindow):
                         self.behavior_tab.alt_radio.setChecked(True)
                     elif mod_key == "Ctrl":
                         self.behavior_tab.ctrl_radio.setChecked(True)
+
             except Exception as e:
                 print(f"Error parsing some behavior settings: {e} ")
                 msg= QMessageBox()
