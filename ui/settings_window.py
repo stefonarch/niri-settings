@@ -123,6 +123,12 @@ class SettingsWindow(QMainWindow):
             if self.behavior_tab.always_center_single_checkbox.isChecked():
                 f.write(f'    always-center-single-column\n')
 
+            if (self.behavior_tab.tabbed_radio.isChecked()):
+                f.write('    default-column-display "tabbed"\n')
+            else:
+                f.write('    default-column-display "normal"\n')
+
+
             f.write('\n    struts {\n')
             f.write(f'        left {self.appearance_tab.struts_left_spin.value()}\n')
             f.write(f'        right {self.appearance_tab.struts_right_spin.value()}\n')
@@ -217,7 +223,6 @@ class SettingsWindow(QMainWindow):
                 elif self.touchpad_tab.button_radio.isChecked():
                     f.write('        scroll-method "on-button-down"\n')
 
-                # Always write those settings
                 f.write(f'        accel-speed {self.touchpad_tab.accel_speed_spinbox.value()}\n')
                 f.write(f'        accel-profile "{self.touchpad_tab.accel_profile_combobox.currentText()}"\n')
                 f.write(f'        scroll-factor {self.touchpad_tab.scroll_factor_spinbox.value()}\n')
@@ -228,7 +233,7 @@ class SettingsWindow(QMainWindow):
 
     def save_mouse_config(self):
         try:
-            with open(self.config_path, 'a') as f:  # Append to the file
+            with open(self.config_path, 'a') as f:
                 f.write('    \n')
                 f.write('    mouse {\n')
                 if self.mouse_tab.natural_scroll_checkbox.isChecked():
@@ -244,7 +249,6 @@ class SettingsWindow(QMainWindow):
                 else:
                     f.write('        // middle-emulation\n')
 
-                # Always write those settings
                 f.write(f'        accel-speed {self.mouse_tab.accel_speed_spinbox.value()}\n')
                 f.write(f'        accel-profile "{self.mouse_tab.accel_profile_combobox.currentText()}"\n')
                 f.write(f'        scroll-factor {self.mouse_tab.scroll_factor_spinbox.value()}\n')
@@ -358,7 +362,6 @@ class SettingsWindow(QMainWindow):
                 value = re.search(r'bottom\s+(-?\d+)', content)
                 self.appearance_tab.struts_bottom_spin.setValue(int(value.group(1)))
 
-
                 focus_on = bool(re.search(r'focus-ring\s*\{[^}]*\bon\b[^}]*\}', content))
                 border_on = bool(re.search(r'border\s*\{[^}]*\bon\b[^}]*\}', content))
                 self.appearance_tab.focus_ring_enable_checkbox.setChecked(focus_on or border_on)
@@ -374,6 +377,12 @@ class SettingsWindow(QMainWindow):
                 inactive_color_val = m.group(1)
                 self.appearance_tab.current_inactive_color = inactive_color_val
                 self.appearance_tab.update_inactive_color_button()
+
+                match = re.search(r'focus-ring\s*\{\s*on\b', content)
+                if match:
+                        self.appearance_tab.focus_radio.setChecked(True)
+                else:
+                        self.appearance_tab.border_radio.setChecked(True)
 
             except Exception as e:
                 print(f"Error parsing some appearance settings key: {e} ")
@@ -395,6 +404,13 @@ class SettingsWindow(QMainWindow):
                 self.behavior_tab.always_center_single_checkbox.setChecked(
                     'always-center-single-column' in content
                 )
+
+                match = re.search(r'tabbed', content)
+                if match:
+                        self.behavior_tab.tabbed_radio.setChecked(True)
+                else:
+                        self.behavior_tab.normal_radio.setChecked(True)
+
                 self.behavior_tab.disable_power_key_checkbox.setChecked(
                     '// disable-power-key-handling' not in content
                 )

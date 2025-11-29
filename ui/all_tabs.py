@@ -286,6 +286,23 @@ class BehaviorTab(QWidget):
         behavior_layout.addWidget(self.hotkey_overlay_checkbox)
         behavior_layout.addWidget(self.focus_request_checkbox)
         behavior_layout.addWidget(self.always_center_single_checkbox)
+
+        # Default column layout
+        default_column_display_layout = QHBoxLayout()
+        select_label = QLabel(self.tr('Default column layout:'))
+
+        self.tabbed_radio = QRadioButton(self.tr('Tabbed'))
+        self.normal_radio = QRadioButton(self.tr('Normal'))
+        self.tabbed_radio.setChecked(True)
+
+        default_column_display_layout.addWidget(select_label)
+        default_column_display_layout.addSpacing(20)
+        default_column_display_layout.addWidget(self.tabbed_radio)
+        default_column_display_layout.addWidget(self.normal_radio)
+        default_column_display_layout.addStretch()
+
+        behavior_layout.addLayout(default_column_display_layout)
+
         behavior_layout.addWidget(self.disable_power_key_checkbox)
         behavior_layout.addWidget(self.workspace_auto_back_forth_checkbox)
         behavior_layout.addWidget(self.hot_corners_checkbox)
@@ -346,9 +363,10 @@ class BehaviorTab(QWidget):
         inactive_layout.addWidget(inactive_label)
         inactive_layout.addWidget(self.inactive_spinbox)
         inactive_layout.addStretch()
-        self.inactive_enable_checkbox.toggled.connect(
-            self.inactive_spinbox.setEnabled
-        )
+        self.inactive_enable_checkbox.toggled.connect(self.inactive_spinbox.setEnabled)
+        self.inactive_enable_checkbox.toggled.connect(inactive_label.setEnabled)
+        inactive_label.setEnabled(self.inactive_enable_checkbox.isChecked())
+
 
         cursor_layout.addWidget(self.focus_follows_mouse_checkbox)
         cursor_layout.addWidget(self.warp_mouse_to_focus_checkbox)
