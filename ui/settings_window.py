@@ -1,14 +1,17 @@
 import sys
+import subprocess
 import os
 import re
 import webbrowser
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
-                             QHBoxLayout, QPushButton, QTabWidget, QStyle)
-from PyQt6.QtCore import QTranslator, QLocale, QLibraryInfo
+                             QHBoxLayout, QPushButton, QTabWidget, QStyle, QMessageBox)
+from PyQt6.QtCore import Qt, QTranslator, QLocale, QLibraryInfo
 from PyQt6.QtGui import QIcon
 
 from .conf_path import get_config_path
 from .all_tabs import AppearanceTab, BehaviorTab ,TouchpadTab, MouseTab,KeyboardTab
+
+
 
 class SettingsWindow(QMainWindow):
     def __init__(self):
@@ -322,98 +325,102 @@ class SettingsWindow(QMainWindow):
         try:
             with open(self.config_path, 'r') as f:
                 content = f.read()
-
-            # Parse Appearance Settings
-            self.appearance_tab.csd_checkbox.setChecked(
-                '// prefer-no-csd' in content
-            )
-            value = re.search(r'zoom\s+([0-9]*\.?[0-9]+)', content)
-            if value:
-                self.appearance_tab.overview_spinbox.setValue(float(value.group(1)))
-
-            self.appearance_tab.animations_enable_checkbox.setChecked(
-            bool(re.search(r'animations\s*\{[^}]*\bon\b[^}]*\}', content)))
-
-            value = re.search(r'slowdown\s+([0-9]*\.?[0-9]+)', content)
-            self.appearance_tab.animations_spinbox.setValue(float(value.group(1)))
-
-            value = re.search(r"gaps\s+(-?\d+)", content)
-            self.appearance_tab.gaps_spinbox.setValue(int(value.group(1)))
-
-            value = re.search(r'left\s+(-?\d+)', content)
-            self.appearance_tab.struts_left_spin.setValue(int(value.group(1)))
-
-            value = re.search(r'right\s+(-?\d+)', content)
-            self.appearance_tab.struts_right_spin.setValue(int(value.group(1)))
-
-            value = re.search(r'top\s+(-?\d+)', content)
-            self.appearance_tab.struts_top_spin.setValue(int(value.group(1)))
-
-            value = re.search(r'bottom\s+(-?\d+)', content)
-            self.appearance_tab.struts_bottom_spin.setValue(int(value.group(1)))
-
-
-            focus_on = bool(re.search(r'focus-ring\s*\{[^}]*\bon\b[^}]*\}', content))
-            border_on = bool(re.search(r'border\s*\{[^}]*\bon\b[^}]*\}', content))
-            self.appearance_tab.focus_ring_enable_checkbox.setChecked(focus_on or border_on)
-
-            value = re.search(r'focus-ring\s*\{[^}]*width\s+(\d+)', content)
-            self.appearance_tab.focus_ring_spinbox.setValue(int(value.group(1)))
-            m = re.search(r'active-color\s+"([^"]+)"', content)
-            color_val = m.group(1)
-            self.appearance_tab.current_color = color_val
-            self.appearance_tab.update_color_button()
-
-            m = re.search(r'inactive-color\s+"([^"]+)"', content)
-            inactive_color_val = m.group(1)
-            self.appearance_tab.current_inactive_color = inactive_color_val
-            self.appearance_tab.update_inactive_color_button()
-
-            # Parse behavior settings
-            self.behavior_tab.warp_mouse_to_focus_checkbox.setChecked(
-                '// warp-mouse-to-focus' not in content
-            )
-            self.behavior_tab.focus_follows_mouse_checkbox.setChecked(
-                '// focus-follows-mouse' not in content
-            )
-            self.behavior_tab.disable_power_key_checkbox.setChecked(
-                '// disable-power-key-handling' not in content
-            )
-            self.behavior_tab.workspace_auto_back_forth_checkbox.setChecked(
-                '// workspace-auto-back-and-forth' not in content
-            )
-
-            self.behavior_tab.hotkey_overlay_checkbox.setChecked(
-                '// skip-at-startup' in content
-            )
-
-            self.behavior_tab.focus_request_checkbox.setChecked(
-                '// honor-xdg-activation-with-invalid-serial ' not in content
-            )
-
-            self.behavior_tab.hide_while_typing_checkbox.setChecked(
-                '// hide-when-typing ' not in content
-            )
-            self.behavior_tab.inactive_enable_checkbox.setChecked(
-                '// hide-after-inactive-ms' not in content
-            )
-
-            value = re.search(r'hide-after-inactive-ms\s+(\d+)', content)
-            if value:
-                self.behavior_tab.inactive_spinbox.setValue(int(value.group(1)))
-
-            match = re.search(r'gestures\s*\{\s*hot-corners\s*\{[^}]*//[^}]*\}\s*\}', content)
-            if match:
-                self.behavior_tab.hot_corners_checkbox.setChecked(False)
-            else:
-                self.behavior_tab.hot_corners_checkbox.setChecked(True)
-
-            path = re.search(r'screenshot-path\s+"([^"]+)"', content)
-            if path:
-                self.behavior_tab.screenshot_path_edit.setText(path.group(1))
-
-            # Parse mod key with radio buttons
             try:
+                # Parse Appearance Settings
+                self.appearance_tab.csd_checkbox.setChecked(
+                    '// prefer-no-csd' in content
+                )
+                value = re.search(r'zoom\s+([0-9]*\.?[0-9]+)', content)
+                if value:
+                    self.appearance_tab.overview_spinbox.setValue(float(value.group(1)))
+
+                self.appearance_tab.animations_enable_checkbox.setChecked(
+                bool(re.search(r'animations\s*\{[^}]*\bon\b[^}]*\}', content)))
+
+                value = re.search(r'slowdown\s+([0-9]*\.?[0-9]+)', content)
+                self.appearance_tab.animations_spinbox.setValue(float(value.group(1)))
+
+                value = re.search(r"gaps\s+(-?\d+)", content)
+                self.appearance_tab.gaps_spinbox.setValue(int(value.group(1)))
+
+                value = re.search(r'left\s+(-?\d+)', content)
+                self.appearance_tab.struts_left_spin.setValue(int(value.group(1)))
+
+                value = re.search(r'right\s+(-?\d+)', content)
+                self.appearance_tab.struts_right_spin.setValue(int(value.group(1)))
+
+                value = re.search(r'top\s+(-?\d+)', content)
+                self.appearance_tab.struts_top_spin.setValue(int(value.group(1)))
+
+                value = re.search(r'bottom\s+(-?\d+)', content)
+                self.appearance_tab.struts_bottom_spin.setValue(int(value.group(1)))
+
+
+                focus_on = bool(re.search(r'focus-ring\s*\{[^}]*\bon\b[^}]*\}', content))
+                border_on = bool(re.search(r'border\s*\{[^}]*\bon\b[^}]*\}', content))
+                self.appearance_tab.focus_ring_enable_checkbox.setChecked(focus_on or border_on)
+
+                value = re.search(r'focus-ring\s*\{[^}]*width\s+(\d+)', content)
+                self.appearance_tab.focus_ring_spinbox.setValue(int(value.group(1)))
+                m = re.search(r'active-color\s+"([^"]+)"', content)
+                color_val = m.group(1)
+                self.appearance_tab.current_color = color_val
+                self.appearance_tab.update_color_button()
+
+                m = re.search(r'inactive-color\s+"([^"]+)"', content)
+                inactive_color_val = m.group(1)
+                self.appearance_tab.current_inactive_color = inactive_color_val
+                self.appearance_tab.update_inactive_color_button()
+
+            except Exception as e:
+                print(f"Error parsing some appearance settings key: {e} ")
+                msg= QMessageBox()
+                msg.setIcon(QMessageBox.Icon.Critical)
+                msg.setWindowTitle(self.tr("Configuration Parsing Error"))
+                msg.setText(self.tr(f"Error reading 'Appearance Settings' in {self.config_path}"))
+                msg.setInformativeText(self.tr("Applying changes will reset to defaults some values, please check this file."))
+                msg.exec()
+
+            try:
+                # Parse behavior settings
+                self.behavior_tab.warp_mouse_to_focus_checkbox.setChecked(
+                    '// warp-mouse-to-focus' not in content
+                )
+                self.behavior_tab.focus_follows_mouse_checkbox.setChecked(
+                    '// focus-follows-mouse' not in content
+                )
+                self.behavior_tab.disable_power_key_checkbox.setChecked(
+                    '// disable-power-key-handling' not in content
+                )
+                self.behavior_tab.workspace_auto_back_forth_checkbox.setChecked(
+                    '// workspace-auto-back-and-forth' not in content
+                )
+                self.behavior_tab.hotkey_overlay_checkbox.setChecked(
+                    '// skip-at-startup' in content
+                )
+                self.behavior_tab.focus_request_checkbox.setChecked(
+                    '// honor-xdg-activation-with-invalid-serial ' not in content
+                )
+                self.behavior_tab.hide_while_typing_checkbox.setChecked(
+                    '// hide-when-typing ' not in content
+                )
+                self.behavior_tab.inactive_enable_checkbox.setChecked(
+                    '// hide-after-inactive-ms' not in content
+                )
+                value = re.search(r'hide-after-inactive-ms\s+(\d+)', content)
+                if value:
+                    self.behavior_tab.inactive_spinbox.setValue(int(value.group(1)))
+
+                match = re.search(r'gestures\s*\{\s*hot-corners\s*\{[^}]*//[^}]*\}\s*\}', content)
+                if match:
+                    self.behavior_tab.hot_corners_checkbox.setChecked(False)
+                else:
+                    self.behavior_tab.hot_corners_checkbox.setChecked(True)
+
+                path = re.search(r'screenshot-path\s+"([^"]+)"', content)
+                if path:
+                    self.behavior_tab.screenshot_path_edit.setText(path.group(1))
+
                 match = re.search(r'mod-key\s+"([^"]+)"', content)
                 if match:
                     mod_key = match.group(1)
@@ -424,57 +431,54 @@ class SettingsWindow(QMainWindow):
                     elif mod_key == "Ctrl":
                         self.behavior_tab.ctrl_radio.setChecked(True)
             except Exception as e:
-                print(f"Error parsing mod-key: {e}")
+                print(f"Error parsing some behavior settings: {e} ")
+                msg= QMessageBox()
+                msg.setIcon(QMessageBox.Icon.Critical)
+                msg.setWindowTitle(self.tr("Configuration Parsing Error"))
+                msg.setText(self.tr(f"Error reading 'Behavior Settings' in {self.config_path}"))
+                msg.setInformativeText(self.tr("Applying changes will reset to defaults some values, please check this file."))
+                msg.exec()
 
-            # Touchpad settings
-            self.touchpad_tab.tap_checkbox.setChecked(
-                'tap' in content and '// tap' not in content
-            )
-            self.touchpad_tab.dwt_checkbox.setChecked(
-                'dwt' in content and '// dwt' not in content
-            )
-            self.touchpad_tab.natural_scroll_checkbox.setChecked(
-                'natural-scroll' in content and '// natural-scroll' not in content
-            )
-            self.touchpad_tab.drag_lock_checkbox.setChecked(
-                'drag-lock' in content and '// drag-lock' not in content
-            )
-            self.touchpad_tab.disable_external_mouse_checkbox.setChecked(
-                'disabled-on-external-mouse' in content and '// disabled-on-external-mouse' not in content
-            )
-            self.touchpad_tab.left_handed_checkbox.setChecked(
-                'left-handed' in content and '// left-handed' not in content
-            )
             try:
-                # Touchpad acceleration speed and profile
+                # Parse Touchpad settings
+                self.touchpad_tab.tap_checkbox.setChecked(
+                    'tap' in content and '// tap' not in content
+                )
+                self.touchpad_tab.dwt_checkbox.setChecked(
+                    'dwt' in content and '// dwt' not in content
+                )
+                self.touchpad_tab.natural_scroll_checkbox.setChecked(
+                    'natural-scroll' in content and '// natural-scroll' not in content
+                )
+                self.touchpad_tab.drag_lock_checkbox.setChecked(
+                    'drag-lock' in content and '// drag-lock' not in content
+                )
+                self.touchpad_tab.disable_external_mouse_checkbox.setChecked(
+                    'disabled-on-external-mouse' in content and '// disabled-on-external-mouse' not in content
+                )
+                self.touchpad_tab.left_handed_checkbox.setChecked(
+                    'left-handed' in content and '// left-handed' not in content
+                )
                 touchpad_match = re.search(r'touchpad\s*\{([^}]+)\}', content)
-                if touchpad_match:
-                    touchpad_content = touchpad_match.group(1)
+                touchpad_content = touchpad_match.group(1)
 
-                    # Parse acceleration speed
-                    speed_match = re.search(r'accel-speed\s+(-?[\d.]+)', touchpad_content)
-                    if speed_match:
-                        self.touchpad_tab.accel_speed_spinbox.setValue(float(speed_match.group(1)))
+                speed_match = re.search(r'accel-speed\s+(-?[\d.]+)', touchpad_content)
 
-                    # Parse acceleration profile
-                    profile_match = re.search(r'accel-profile\s+"([^"]+)"', touchpad_content)
-                    if profile_match:
-                        profile_value = profile_match.group(1)
-                        # Assuming you have a QComboBox for accel profile
-                        index = self.touchpad_tab.accel_profile_combobox.findText(profile_value)
-                        if index >= 0:
-                            self.touchpad_tab.accel_profile_combobox.setCurrentIndex(index)
+                self.touchpad_tab.accel_speed_spinbox.setValue(float(speed_match.group(1)))
 
-                    # Scroll factor
-                    scroll_match = re.search(r'scroll-factor\s+([\d.]+)', touchpad_content)
-                    if scroll_match:
-                        self.touchpad_tab.scroll_factor_spinbox.setValue(float(scroll_match.group(1)))
-            except:
-                pass
+                profile_match = re.search(r'accel-profile\s+"([^"]+)"', touchpad_content)
+                if profile_match:
+                    profile_value = profile_match.group(1)
 
-                # Parse scroll method with radio buttons
-            match = re.search(r'scroll-method\s+"([^"]+)"', content)
-            if match:
+                    index = self.touchpad_tab.accel_profile_combobox.findText(profile_value)
+                    if index >= 0:
+                        self.touchpad_tab.accel_profile_combobox.setCurrentIndex(index)
+
+                scroll_match = re.search(r'scroll-factor\s+([\d.]+)', touchpad_content)
+                self.touchpad_tab.scroll_factor_spinbox.setValue(float(scroll_match.group(1)))
+
+                match = re.search(r'scroll-method\s+"([^"]+)"', touchpad_content)
+
                 scroll_method = match.group(1)
                 if scroll_method == "no-scroll":
                     self.touchpad_tab.no_scroll_radio.setChecked(True)
@@ -485,105 +489,112 @@ class SettingsWindow(QMainWindow):
                 elif scroll_method == "on-button-down":
                     self.touchpad_tab.button_radio.setChecked(True)
 
-            # Mouse settings
+            except Exception as e:
+                print(f"Error parsing some touchpad settings: {e} ")
+                msg= QMessageBox()
+                msg.setIcon(QMessageBox.Icon.Critical)
+                msg.setWindowTitle(self.tr("Configuration Parsing Error"))
+                msg.setText(self.tr(f"Error reading 'Touchpad Settings' in {self.config_path}"))
+                msg.setInformativeText(self.tr("Applying changes will reset to defaults some values, please check this file."))
+                msg.exec()
+
+            # Parse Mouse settings
             try:
                 mouse_match = re.search(r'mouse\s*\{([^}]+)\}', content)
-                if mouse_match:
-                    mouse_content = mouse_match.group(1)
+                mouse_content = mouse_match.group(1)
 
-                    # Checkboxes within mouse block
-                    self.mouse_tab.natural_scroll_checkbox.setChecked(
-                        'natural-scroll' in mouse_content and '// natural-scroll' not in mouse_content
-                    )
-                    self.mouse_tab.left_handed_checkbox.setChecked(
-                        'left-handed' in mouse_content and '// left-handed' not in mouse_content
-                    )
-                    self.mouse_tab.middle_emulation_checkbox.setChecked(
-                        'middle-emulation' in mouse_content and '// middle-emulation' not in mouse_content
-                    )
+                self.mouse_tab.natural_scroll_checkbox.setChecked(
+                    '// natural-scroll' not in mouse_content
+                )
+                self.mouse_tab.left_handed_checkbox.setChecked(
+                    '// left-handed' not in mouse_content
+                )
+                self.mouse_tab.middle_emulation_checkbox.setChecked(
+                    '// middle-emulation' not in mouse_content
+                )
+                speed_match = re.search(r'accel-speed\s+(-?[\d.]+)', mouse_content)
+                self.mouse_tab.accel_speed_spinbox.setValue(float(speed_match.group(1)))
 
-                    # Mouse acceleration speed
-                    speed_match = re.search(r'accel-speed\s+(-?[\d.]+)', mouse_content)
-                    if speed_match:
-                        self.mouse_tab.accel_speed_spinbox.setValue(float(speed_match.group(1)))
+                profile_match = re.search(r'accel-profile\s+"([^"]+)"', mouse_content)
+                profile_value = profile_match.group(1)
+                index = self.mouse_tab.accel_profile_combobox.findText(profile_value)
+                if index >= 0:
+                    self.mouse_tab.accel_profile_combobox.setCurrentIndex(index)
 
-                    # Mouse acceleration profile
-                    profile_match = re.search(r'accel-profile\s+"([^"]+)"', mouse_content)
-                    if profile_match:
-                        profile_value = profile_match.group(1)
-                        index = self.mouse_tab.accel_profile_combobox.findText(profile_value)
-                        if index >= 0:
-                            self.mouse_tab.accel_profile_combobox.setCurrentIndex(index)
+                # Scroll factor
+                scroll_match = re.search(r'scroll-factor\s+([\d.]+)', mouse_content)
+                if scroll_match:
+                    self.mouse_tab.scroll_factor_spinbox.setValue(float(scroll_match.group(1)))
 
-                    # Scroll factor
-                    scroll_match = re.search(r'scroll-factor\s+([\d.]+)', mouse_content)
-                    if scroll_match:
-                        self.mouse_tab.scroll_factor_spinbox.setValue(float(scroll_match.group(1)))
-            except:
-                pass
+            except Exception as e:
+                print(f"Error parsing some mouse settings: {e} ")
+                msg= QMessageBox()
+                msg.setIcon(QMessageBox.Icon.Critical)
+                msg.setWindowTitle(self.tr("Configuration Parsing Error"))
+                msg.setText(self.tr(f"Error reading 'Mouse Settings' in {self.config_path}"))
+                msg.setInformativeText(self.tr("Applying changes will reset to defaults some values, please check this file."))
+                msg.exec()
 
-            # Keyboard settings
-            self.keyboard_tab.numlock_checkbox.setChecked(
-                'numlock' in content and '// numlock' not in content
-            )
+            # Parse Keyboard settings
+            try:
+                self.keyboard_tab.numlock_checkbox.setChecked(
+                    'numlock' in content and '// numlock' not in content
+                )
 
-            match = re.search(r'repeat-delay\s+(\d+)', content)
-            if match:
+                match = re.search(r'repeat-delay\s+(\d+)', content)
                 self.keyboard_tab.repeat_delay_spinbox.setValue(int(match.group(1)))
 
-            match = re.search(r'repeat-rate\s+(\d+)', content)
-            if match:
+                match = re.search(r'repeat-rate\s+(\d+)', content)
                 self.keyboard_tab.repeat_rate_spinbox.setValue(int(match.group(1)))
 
-            # Track layout
-            match = re.search(r'track-layout\s+"([^"]+)"', content)
-            if match:
+                match = re.search(r'track-layout\s+"([^"]+)"', content)
                 track_layout = match.group(1)
                 index = self.keyboard_tab.track_layout_combobox.findText(track_layout)
                 if index >= 0:
                         self.keyboard_tab.track_layout_combobox.setCurrentIndex(index)
 
-            try:
-                # XKB layout
+
                 xkb_match = re.search(r'xkb\s*{.*?layout\s+"([^"]+)"', content, re.DOTALL)
                 if xkb_match:
                     self.keyboard_tab.layout_edit.setText(xkb_match.group(1))
-            except:
-                pass
 
-            try:
-                # XKB Variant
                 variant_match = re.search(r'xkb\s*{.*?variant\s+"([^"]+)"', content, re.DOTALL)
                 if variant_match:
                     self.keyboard_tab.variant_edit.setText(variant_match.group(1))
-            except:
-                pass
 
-            try:
-                # XKB options
                 options_match = re.search(r'xkb\s*{.*?options\s+"([^"]+)"', content, re.DOTALL)
                 if options_match:
                     self.keyboard_tab.options_edit.setText(options_match.group(1))
-            except:
-                pass
 
-            try:
-                # XKB model
                 model_match = re.search(r'xkb\s*{.*?model\s+"([^"]+)"', content, re.DOTALL)
                 if model_match:
                     self.keyboard_tab.model_edit.setText(model_match.group(1))
-            except:
-                pass
 
-            try:
-                # XKB file
                 file_match = re.search(r'xkb\s*{.*?file\s+"([^"]+)"', content, re.DOTALL)
                 if file_match:
                     self.keyboard_tab.file_edit.setText(file_match.group(1))
-            except:
-                pass
+
+            except Exception as e:
+                print(f"Error parsing some keyboard settings: {e} ")
+                msg= QMessageBox()
+                msg.setIcon(QMessageBox.Icon.Critical)
+                msg.setWindowTitle(self.tr("Configuration Parsing Error"))
+                msg.setText(self.tr(f"Error reading 'Keyboard Settings' in {self.config_path}"))
+                msg.setInformativeText(self.tr("Applying changes will reset to defaults some values, please check this file."))
+                msg.exec()
+
         except FileNotFoundError:
             # If file doesn't exist, use defaults
-            print(f"No existing config file found at {self.config_path}, using defaults")
+            print(f"No existing config file found at {self.config_path}, applying default settings")
+            pass
         except Exception as e:
             print(f"Error loading configuration: {e}")
+
+            # Create error message box
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Icon.Critical)
+            msg.setWindowTitle(self.tr("Configuration Parsing Error"))
+            msg.setText(self.tr(f"Error reading settings in {self.config_path}"))
+            msg.setInformativeText(self.tr("Applying changes will reset to defaults some values, please check this file."))
+            msg.exec()
+

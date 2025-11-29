@@ -577,7 +577,7 @@ class KeyboardTab(QWidget):
         keyboard_layout.addLayout(track_layout_layout)
 
         # XKB Settings Group
-        xkb_group = QGroupBox(self.tr("XKB Settings"))
+        xkb_group = QGroupBox(self.tr("Keyboard Layout"))
         xkb_layout = QVBoxLayout(xkb_group)
 
         # Layout

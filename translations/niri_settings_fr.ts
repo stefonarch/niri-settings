@@ -200,8 +200,8 @@
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="580" />
-        <source>XKB Settings</source>
-        <translation>Paramètres XKB</translation>
+        <source>Keyboard Layout</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="585" />
@@ -278,44 +278,64 @@
 </context><context>
     <name>SettingsWindow</name>
     <message>
-        <location filename="../ui/settings_window.py" line="53" />
+        <location filename="../ui/settings_window.py" line="57" />
         <source>Appearance</source>
         <translation>Apparence</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="54" />
+        <location filename="../ui/settings_window.py" line="58" />
         <source>Behavior</source>
         <translation>Comportement</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="55" />
+        <location filename="../ui/settings_window.py" line="59" />
         <source>Touchpad</source>
         <translation>Touchpad</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="56" />
+        <location filename="../ui/settings_window.py" line="60" />
         <source>Mouse</source>
         <translation>Souris</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="57" />
+        <location filename="../ui/settings_window.py" line="61" />
         <source>Keyboard</source>
         <translation>Clavier</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="64" />
+        <location filename="../ui/settings_window.py" line="68" />
         <source>Wiki</source>
         <translation>Wiki</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="68" />
+        <location filename="../ui/settings_window.py" line="73" />
         <source>Apply</source>
         <translation>Appliquer</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="72" />
+        <location filename="../ui/settings_window.py" line="78" />
         <source>Close</source>
         <translation>Fermer</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_window.py" line="596" />
+        <location filename="../ui/settings_window.py" line="581" />
+        <location filename="../ui/settings_window.py" line="533" />
+        <location filename="../ui/settings_window.py" line="496" />
+        <location filename="../ui/settings_window.py" line="437" />
+        <location filename="../ui/settings_window.py" line="379" />
+        <source>Configuration Parsing Error</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/settings_window.py" line="598" />
+        <location filename="../ui/settings_window.py" line="583" />
+        <location filename="../ui/settings_window.py" line="535" />
+        <location filename="../ui/settings_window.py" line="498" />
+        <location filename="../ui/settings_window.py" line="439" />
+        <location filename="../ui/settings_window.py" line="381" />
+        <source>Applying changes will reset to defaults some values, please check this file.</source>
+        <translation type="unfinished" />
     </message>
 </context><context>
     <name>TouchpadTab</name>
