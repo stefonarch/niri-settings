@@ -26,9 +26,10 @@ mkdir -p ~/.local/share/niri-settings/  ~/.local/share/applications
 cp -a translations/ ~/.local/share/niri-settings/
 mkdir -p ~/.local/share/icons/hicolor/scalable/apps/
 cp niri-settings.svg ~/.local/share/icons/hicolor/scalable/apps/niri-settings.svg
-cp niri-desktop-settings ~/.local/share/applications
+cp niri-settings.desktop ~/.local/share/applications/
+
 ```
-Run `./niri-settings` from terminal inside the folder or customize `niri-settings.desktop` file.
+Run `./niri-settings` from terminal inside the folder or customize `~/.local/share/applications/niri-settings.desktop` to match the path to `niri-setttings/niri-settings.py`.
 
 
 
