@@ -337,17 +337,21 @@ class SettingsWindow(QMainWindow):
             value = re.search(r'slowdown\s+([0-9]*\.?[0-9]+)', content)
             self.appearance_tab.animations_spinbox.setValue(float(value.group(1)))
 
-            value = re.search(r'gaps\s+(\d+)', content)
+            value = re.search(r"gaps\s+(-?\d+)", content)
             self.appearance_tab.gaps_spinbox.setValue(int(value.group(1)))
 
-            value = re.search(r'left\s+(\d+)', content)
+            value = re.search(r'left\s+(-?\d+)', content)
             self.appearance_tab.struts_left_spin.setValue(int(value.group(1)))
-            value = re.search(r'right\s+(\d+)', content)
+
+            value = re.search(r'right\s+(-?\d+)', content)
             self.appearance_tab.struts_right_spin.setValue(int(value.group(1)))
-            value = re.search(r'top\s+(\d+)', content)
+
+            value = re.search(r'top\s+(-?\d+)', content)
             self.appearance_tab.struts_top_spin.setValue(int(value.group(1)))
-            value = re.search(r'bottom\s+(\d+)', content)
+
+            value = re.search(r'bottom\s+(-?\d+)', content)
             self.appearance_tab.struts_bottom_spin.setValue(int(value.group(1)))
+
 
             focus_on = bool(re.search(r'focus-ring\s*\{[^}]*\bon\b[^}]*\}', content))
             border_on = bool(re.search(r'border\s*\{[^}]*\bon\b[^}]*\}', content))
