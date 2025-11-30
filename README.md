@@ -9,11 +9,12 @@ https://github.com/user-attachments/assets/6b955a49-b09e-485c-ae79-6a2064a17fa4
 
 ## Usage
 
-Under LXQt a line `include "niri/basicsettings.kdl"` at the bottom of the default `~/.config/lxqt/wayland/lxqt-niri.kdl` file has to be added. The "include" feature was added in niri version 25.11.
+Default niri configuration values are used everywhere.
+The line to include `basicsettings.kdl"` at the bottom of the default configuration file (for LXQt: `~/.config/lxqt/wayland/lxqt-niri.kdl`, otherwise `~/.config/niri/config.kdl`) should be added automatically when applying the first changes. The "include" feature was added in niri version 25.11.
 
 If no argument is given `$XDG_CONFIG_HOME/lxqt/wayland/niri/basicsettings.kdl` is used when running
-under LXQt, otherwise `$XDG_CONFIG_HOME/niribasicsettings.kdl` will be used. Edit `ui/conf_path.py`
-to change the defaults in other environments.
+under LXQt, otherwise `$XDG_CONFIG_HOME/niri/basicsettings.kdl` will be used. Edit `ui/conf_path.py`
+to change those defaults.
 
 ## Installation
 
@@ -40,3 +41,4 @@ A `PKGBUILD` is added now.
 * Add hint settings
 * Default column width settings
 * Submit to https://translate.lxqt-project.org after feedback
+* Submit to AUR.

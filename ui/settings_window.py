@@ -8,15 +8,14 @@ from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
 from PyQt6.QtCore import Qt, QTranslator, QLocale, QLibraryInfo
 from PyQt6.QtGui import QIcon
 
-from .conf_path import get_config_path
+from .conf_path import get_config_path, get_niri_config_path
 from .all_tabs import AppearanceTab, BehaviorTab ,TouchpadTab, MouseTab,KeyboardTab
-
-
 
 class SettingsWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.config_path = get_config_path()
+        self.niri_config_path = get_niri_config_path()
         self.init_ui()
         self.load_settings()
 
@@ -93,7 +92,25 @@ class SettingsWindow(QMainWindow):
         self.save_touchpad_config()
         self.save_mouse_config()
         self.save_keyboard_config()
+        self.save_include_setting()
         print(f"Settings applied to {self.config_path}")
+
+    def save_include_setting(self):
+
+        current_desktop = os.environ.get('XDG_CURRENT_DESKTOP', '')
+        desktop_list = [item.strip() for item in current_desktop.split(':')]
+
+        if 'LXQt' in desktop_list:
+            include_to_add = '\ninclude "niri/basicsettings.kdl"\n'
+        else:
+            include_to_add = '\ninclude "basicsettings.kdl"\n'
+
+        with open(self.niri_config_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        if include_to_add.strip() not in content:
+            with open(self.niri_config_path, 'a', encoding='utf-8') as f:
+                f.write(include_to_add)
 
     def save_behavior_config(self):
         """Save behavior and appearance configuration"""
@@ -268,17 +285,38 @@ class SettingsWindow(QMainWindow):
                 f.write('        numlock\n')
             else:
                 f.write('        // numlock\n')
-            f.write('        xkb {\n')
-            f.write(f'           layout "{self.keyboard_tab.layout_edit.text()}"\n')
-            f.write(f'           variant "{self.keyboard_tab.variant_edit.text()}"\n')
-            f.write(f'           options "{self.keyboard_tab.options_edit.text()}"\n')
-            f.write(f'           model "{self.keyboard_tab.model_edit.text()}"\n')
-            f.write(f'           file "{self.keyboard_tab.file_edit.text()}"\n')
-            f.write('        }\n')
+            lines = [
+                f'           layout "{self.keyboard_tab.layout_edit.text()}"\n',
+                f'           variant "{self.keyboard_tab.variant_edit.text()}"\n',
+                f'           options "{self.keyboard_tab.options_edit.text()}"\n',
+                f'           model "{self.keyboard_tab.model_edit.text()}"\n',
+                f'           file "{self.keyboard_tab.file_edit.text()}"\n',
+            ]
+
+            # Write XKB block only if at least one line has a value
+            if any('""' not in line for line in lines):
+                f.write('        xkb {\n')
+
+            layout = self.keyboard_tab.layout_edit.text()
+            if layout:
+                f.write(f'            layout "{layout}"\n')
+            variant = self.keyboard_tab.variant_edit.text()
+            if variant:
+                f.write(f'            variant "{variant}"\n')
+            options = self.keyboard_tab.options_edit.text()
+            if options:
+                f.write(f'            options "{options}"\n')
+            model = self.keyboard_tab.model_edit.text()
+            if model:
+                f.write(f'            model "{model}"\n')
+            file_ = self.keyboard_tab.file_edit.text()
+            if file_:
+                f.write(f'            file "{file_}"\n')
+            if any('""' not in line for line in lines):
+                f.write('        }\n')# End XKB block
 
             f.write(f'        repeat-delay {self.keyboard_tab.repeat_delay_spinbox.value()}\n')
             f.write(f'        repeat-rate {self.keyboard_tab.repeat_rate_spinbox.value()}\n')
-
             f.write('    }\n')
             f.write('}\n\n')
 
@@ -609,6 +647,16 @@ class SettingsWindow(QMainWindow):
         except FileNotFoundError:
             # If file doesn't exist, use defaults
             print(f"No existing config file found at {self.config_path}, applying default settings")
+
+            current_desktop = os.environ.get('XDG_CURRENT_DESKTOP', '')
+            desktop_list = [item.strip() for item in current_desktop.split(':')]
+
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Icon.Information)
+            msg.setWindowTitle(self.tr("Niri Settings: Configuration not found"))
+            msg.setText(self.tr(f"No existing configuration file found at {self.config_path}. \n\nA new line to include \"basicsettings.kdl\" will be added at the bottom in {self.niri_config_path} when applying changes."))
+            msg.setInformativeText(self.tr("This line is needed to make this application work. \nIdentical settings before this line will be ignored after."))
+            msg.exec()
             pass
         except Exception as e:
             print(f"Error loading configuration: {e}")

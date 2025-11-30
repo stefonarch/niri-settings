@@ -298,68 +298,79 @@
 </context><context>
     <name>SettingsWindow</name>
     <message>
-        <location filename="../ui/settings_window.py" line="28" />
+        <location filename="../ui/settings_window.py" line="29" />
         <source>Niri Settings</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="57" />
+        <location filename="../ui/settings_window.py" line="58" />
         <source>Appearance</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="58" />
+        <location filename="../ui/settings_window.py" line="59" />
         <source>Behavior</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="59" />
+        <location filename="../ui/settings_window.py" line="60" />
         <source>Touchpad</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="60" />
+        <location filename="../ui/settings_window.py" line="61" />
         <source>Mouse</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="61" />
+        <location filename="../ui/settings_window.py" line="62" />
         <source>Keyboard</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="68" />
+        <location filename="../ui/settings_window.py" line="69" />
         <source>Wiki</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="73" />
+        <location filename="../ui/settings_window.py" line="74" />
         <source>Apply</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="78" />
+        <location filename="../ui/settings_window.py" line="79" />
         <source>Close</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="619" />
-        <location filename="../ui/settings_window.py" line="604" />
-        <location filename="../ui/settings_window.py" line="556" />
-        <location filename="../ui/settings_window.py" line="519" />
-        <location filename="../ui/settings_window.py" line="460" />
-        <location filename="../ui/settings_window.py" line="391" />
+        <location filename="../ui/settings_window.py" line="674" />
+        <location filename="../ui/settings_window.py" line="649" />
+        <location filename="../ui/settings_window.py" line="601" />
+        <location filename="../ui/settings_window.py" line="564" />
+        <location filename="../ui/settings_window.py" line="505" />
+        <location filename="../ui/settings_window.py" line="436" />
         <source>Configuration Parsing Error</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="621" />
-        <location filename="../ui/settings_window.py" line="606" />
-        <location filename="../ui/settings_window.py" line="558" />
-        <location filename="../ui/settings_window.py" line="521" />
-        <location filename="../ui/settings_window.py" line="462" />
-        <location filename="../ui/settings_window.py" line="393" />
+        <location filename="../ui/settings_window.py" line="676" />
+        <location filename="../ui/settings_window.py" line="651" />
+        <location filename="../ui/settings_window.py" line="603" />
+        <location filename="../ui/settings_window.py" line="566" />
+        <location filename="../ui/settings_window.py" line="507" />
+        <location filename="../ui/settings_window.py" line="438" />
         <source>Applying changes will reset to defaults some values, please check this file.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/settings_window.py" line="663" />
+        <source>Niri Settings: Configuration not found</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/settings_window.py" line="665" />
+        <source>This line is needed to make this application work. 
+Identical settings before this line will be ignored after.</source>
         <translation type="unfinished" />
     </message>
 </context><context>
