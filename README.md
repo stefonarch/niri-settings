@@ -32,7 +32,11 @@ cp niri-settings.svg ~/.local/share/icons/hicolor/scalable/apps/niri-settings.sv
 ```
 Run `./niri-settings` from terminal inside the folder or customize `~/.local/share/applications/niri-settings.desktop` to match the path to `niri-setttings/niri-settings.py`.
 
+A `PKGBUILD` is added now.
 
+## Todo list
 
-
-
+* Add tab settings somewhere
+* Add hint settings
+* Default column width settings
+* Submit to https://translate.lxqt-project.org after feedback
