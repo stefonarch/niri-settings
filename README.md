@@ -3,13 +3,14 @@
 > GUI in PyQt for configuring niri
 
 
-https://github.com/user-attachments/assets/6b955a49-b09e-485c-ae79-6a2064a17fa4
+https://github.com/user-attachments/assets/0d2b044e-59a8-4427-bf19-e672891bd53b
 
 
 
 ## Usage
 
 Default niri configuration values are used everywhere.
+
 The line to include `basicsettings.kdl"` at the bottom of the default configuration file (for LXQt: `~/.config/lxqt/wayland/lxqt-niri.kdl`, otherwise `~/.config/niri/config.kdl`) should be added automatically when applying the first changes. The "include" feature was added in niri version 25.11.
 
 If no argument is given `$XDG_CONFIG_HOME/lxqt/wayland/niri/basicsettings.kdl` is used when running
@@ -37,8 +38,9 @@ A `PKGBUILD` is added now.
 
 ## Todo list
 
-* Add tab settings somewhere
-* Add hint settings
+* Get feedback and testing
+* Improve parsing
+* Show default niri config files if not running under LXQt
 * Default column width settings
-* Submit to https://translate.lxqt-project.org after feedback
+* Setup translations at https://translate.lxqt-project.org
 * Submit to AUR.

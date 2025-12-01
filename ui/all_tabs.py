@@ -1,8 +1,12 @@
-from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QRadioButton,
+from PyQt6.QtWidgets import (QApplication,QWidget, QVBoxLayout, QHBoxLayout, QRadioButton,
                              QLabel, QScrollArea, QFrame, QButtonGroup, QPushButton, QCheckBox,QGridLayout,
-                             QDoubleSpinBox, QComboBox, QSpinBox, QLineEdit, QGroupBox, QColorDialog)
-from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QFont, QColor
+                             QDoubleSpinBox, QComboBox, QSpinBox, QLineEdit, QGroupBox, QColorDialog,
+                             QListWidget, QListWidgetItem, QMenu,QMessageBox,QPlainTextEdit)
+from PyQt6.QtCore import Qt, QTimer,QProcess
+from PyQt6.QtGui import QFont, QColor,QAction, QCursor
+
+from pathlib import Path
+import os, re, sys, subprocess
 
 class AppearanceTab(QScrollArea):
     def __init__(self, parent=None):
@@ -331,11 +335,11 @@ class AppearanceTab(QScrollArea):
         # Tab Gaps
         tab_gaps_layout = QHBoxLayout()
         tab_gaps_label = QLabel(self.tr('Gap:'))
-        self.tab_gaps_spinbox = QSpinBox()
-        self.tab_gaps_spinbox.setRange(0,99)
-        self.tab_gaps_spinbox.setSingleStep(1)
-        self.tab_gaps_spinbox.setValue(4)
-        self.tab_gaps_spinbox.setSuffix(' px')
+        self.tab_gap_spinbox = QSpinBox()
+        self.tab_gap_spinbox.setRange(0,99)
+        self.tab_gap_spinbox.setSingleStep(1)
+        self.tab_gap_spinbox.setValue(4)
+        self.tab_gap_spinbox.setSuffix(' px')
 
         gap_between_label = QLabel(self.tr('Gap between:'))
         self.gap_between_spinbox = QSpinBox()
@@ -345,7 +349,7 @@ class AppearanceTab(QScrollArea):
         self.gap_between_spinbox.setSuffix(' px')
 
         tab_gaps_layout.addWidget(tab_gaps_label)
-        tab_gaps_layout.addWidget(self.tab_gaps_spinbox)
+        tab_gaps_layout.addWidget(self.tab_gap_spinbox)
         tab_gaps_layout.addSpacing(10)
         tab_gaps_layout.addWidget(gap_between_label)
         tab_gaps_layout.addSpacing(10)
@@ -502,8 +506,6 @@ class TouchpadTab(QWidget):
 
     def init_ui(self):
         layout = QVBoxLayout(self)
-        #layout.setSpacing(20)
-        #layout.setContentsMargins(20, 10, 20, 20)
 
         # Touchpad configuration section
         touchpad_frame = QFrame()
@@ -550,8 +552,6 @@ class TouchpadTab(QWidget):
         scroll_groupbox_layout.addWidget(self.edge_radio, 1, 0)        # row 1, col 0
         scroll_groupbox_layout.addWidget(self.button_radio, 1, 1)
         scroll_groupbox_layout.rowStretch(1)     # row 1, col 1
-
-
         touchpad_layout.addWidget(scroll_groupbox)
 
         # Acceleration speed
@@ -819,11 +819,178 @@ class KeyboardTab(QWidget):
         layout.addWidget(keyboard_frame)
         layout.addStretch()
 
+
 class FilesTab(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.parent = parent
         self.init_ui()
+        self.load_kdl_files()
 
     def init_ui(self):
         layout = QVBoxLayout(self)
+        title = QLabel("KDL Files in LXQt Wayland Configuration")#generic title?
+        title.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        layout.addWidget(title)
+
+        self.list_widget = QListWidget()
+        self.list_widget.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
+        layout.addWidget(self.list_widget)
+
+        button_layout = QHBoxLayout()
+
+        refresh_btn = QPushButton("Refresh")
+        refresh_btn.clicked.connect(self.refresh_files)
+        button_layout.addWidget(refresh_btn)
+
+        open_btn = QPushButton("Open Selected")
+        open_btn.clicked.connect(self.open_selected)
+        button_layout.addWidget(open_btn)
+
+        validate_btn = QPushButton("Validate configuration")
+        validate_btn.clicked.connect(self.validate_selected)# create action
+        #validate_btn.setEnabled(False)
+
+        button_layout.addWidget(validate_btn)
+
+        button_layout.addStretch()
+        layout.addLayout(button_layout)
+
+
+        self.terminal = QPlainTextEdit()
+        self.terminal.setReadOnly(True)
+
+        layout.addWidget(self.terminal)
+
+        # Connect signals
+        self.list_widget.itemClicked.connect(self.on_item_clicked)
+        self.list_widget.itemDoubleClicked.connect(self.on_item_double_clicked)
+        self.list_widget.customContextMenuRequested.connect(self.show_context_menu)
+
+    def load_kdl_files(self):
+        """Load and display all .kdl files from the configuration directory."""
+        # Get XDG_CONFIG_HOME or use default
+        xdg_config_home = os.getenv('XDG_CONFIG_HOME')
+        if not xdg_config_home:
+            xdg_config_home = Path.home() / '.config'
+        base_path = Path(xdg_config_home) / 'lxqt' / 'wayland'#FIXME use 'niri' if not under LXQt
+
+        if not base_path.exists():#needed?
+            self.show_error(self.tr("Directory does not exist:\n{base_path}"))
+            return
+
+        # Find all .kdl files recursively
+        kdl_files = list(base_path.rglob('*.kdl'))
+
+        if not kdl_files:
+            self.show_info(self.tr(f"No .kdl files found in:\n{base_path}"))
+            return
+
+        for file_path in sorted(kdl_files):
+            # Get relative path from base directory for cleaner display
+            try:
+                rel_path = file_path.relative_to(base_path)
+                display_text = str(rel_path)
+            except ValueError:
+                display_text = str(file_path)
+
+            # Create list item with full path as tooltip
+            item = QListWidgetItem(display_text)
+            item.setToolTip(str(file_path))
+            item.setData(Qt.ItemDataRole.UserRole, str(file_path))  # Store full path
+            self.list_widget.addItem(item)
+
+    def open_with_xdg(self, file_path):
+        try:
+            subprocess.Popen(['xdg-open', file_path])
+            return True
+        except FileNotFoundError:
+            self.show_error(self.tr("xdg-open not found. Make sure it's installed and in your PATH."))
+            return False
+        except Exception as e:
+            self.show_error(self.tr(f"Failed to open file:\n{str(e)}"))
+            return False
+
+    def on_item_clicked(self, item):
+        file_path = item.data(Qt.ItemDataRole.UserRole)
+
+    def on_item_double_clicked(self, item):
+        file_path = item.data(Qt.ItemDataRole.UserRole)
+        self.open_with_xdg(file_path)
+
+    def show_context_menu(self, position):
+        item = self.list_widget.itemAt(position)
+        if not item:
+            return
+
+        file_path = item.data(Qt.ItemDataRole.UserRole)
+        menu = QMenu()
+
+        open_action = QAction(self.tr("Open"), self)
+        open_action.triggered.connect(lambda: self.open_with_xdg(file_path))
+        menu.addAction(open_action)
+
+        show_in_folder_action = QAction(self.tr("Show in file manager"), self)
+        show_in_folder_action.triggered.connect(
+            lambda: subprocess.Popen(['xdg-open', os.path.dirname(file_path)])
+        )
+        menu.addAction(show_in_folder_action)
+
+        copy_path_action = QAction(self.tr("Copy path to clipboard"), self)
+        copy_path_action.triggered.connect(
+            lambda: QApplication.clipboard().setText(file_path)
+        )
+        menu.addAction(copy_path_action)
+
+        menu.exec(self.list_widget.mapToGlobal(position))
+
+    def show_error(self, message):
+        QMessageBox.critical(self, "Error", message)
+
+    def show_info(self, message):
+        QMessageBox.information(self, "Information", message)
+
+    def refresh_files(self):
+        self.list_widget.clear()
+        self.load_kdl_files()
+
+    def open_selected(self):
+        current_item = self.list_widget.currentItem()
+        if current_item:
+            file_path = current_item.data(Qt.ItemDataRole.UserRole)
+            self.open_with_xdg(file_path)
+        else:
+            self.show_info(self.tr("No file selected."))
+
+    ansi_escape = re.compile(r'\x1b\[[0-9;]*m')
+    def clean_ansi(self, text: str) -> str:
+        return self.ansi_escape.sub('', text)
+
+    def validate_selected(self):
+        item = self.list_widget.currentItem()
+        if not item:
+            self.show_info("No file selected.")
+            return
+
+        file_path = item.data(Qt.ItemDataRole.UserRole)
+
+        self.proc = QProcess(self)
+        self.proc.setProgram("niri")
+        self.proc.setArguments(["validate", "-c", file_path])
+
+        self.proc.readyReadStandardOutput.connect(
+            lambda: self.terminal.appendPlainText(
+                self.clean_ansi(bytes(self.proc.readAllStandardOutput()).decode())
+            )
+        )
+
+        self.proc.readyReadStandardError.connect(
+            lambda: self.terminal.appendPlainText(
+                self.clean_ansi(bytes(self.proc.readAllStandardError()).decode())
+            )
+        )
+
+        self.terminal.clear()
+        self.terminal.appendPlainText(f"$ niri validate -c {file_path}\n")
+
+        self.proc.start()

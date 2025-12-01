@@ -25,7 +25,6 @@ class SettingsWindow(QMainWindow):
 
     def init_ui(self):
         self.setWindowTitle(self.tr('Niri Settings'))
-        #self.setFixedSize(700, 900)
 
         icon = QIcon.fromTheme("niri-settings",
             QIcon.fromTheme("preferences-desktop",
@@ -43,6 +42,9 @@ class SettingsWindow(QMainWindow):
 
         # Create tab widget
         self.tabs = QTabWidget()
+        tab_bar = self.tabs.tabBar()
+        tab_bar.setUsesScrollButtons(False)
+        tab_bar.setExpanding(True)#does nothing
 
         # Create tabs
         self.appearance_tab = AppearanceTab(self)
@@ -142,7 +144,6 @@ class SettingsWindow(QMainWindow):
             else:
                 f.write('    default-column-display "normal"\n')
 
-
             f.write('\n    struts {\n')
             f.write(f'        left {self.appearance_tab.struts_left_spin.value()}\n')
             f.write(f'        right {self.appearance_tab.struts_right_spin.value()}\n')
@@ -170,12 +171,31 @@ class SettingsWindow(QMainWindow):
             f.write(f'        active-color "{self.appearance_tab.current_color}"\n')
             f.write(f'        inactive-color "{self.appearance_tab.current_inactive_color}"\n')
 
+            # Tab Indicator block
             f.write('    }\n\n    insert-hint {\n')
             if self.appearance_tab.hint_enable_checkbox.isChecked():
                 f.write('        // off\n')
             else:
                 f.write('        off\n')
-            f.write(f'        color "{self.appearance_tab.current_hint_color}50"\n') # opacity 50
+            f.write(f'        color "{self.appearance_tab.current_hint_color}70"\n') # opacity 70
+            f.write('    }\n\n    tab-indicator {\n')
+            if self.appearance_tab.hide_indicator_checkbox.isChecked():
+                f.write('        hide-when-single-tab\n')
+            if self.appearance_tab.place_within_checkbox.isChecked():
+                f.write('        place-within-column\n')
+            f.write(f'        corner-radius {self.appearance_tab.corner_radius_spinbox.value()}\n')
+            f.write(f'        width {self.appearance_tab.tab_width_spinbox.value()}\n')
+            f.write(f'        length total-proportion={self.appearance_tab.length_spinbox.value()}\n')
+            f.write(f'        gap {self.appearance_tab.tab_gap_spinbox.value()}\n')
+            f.write(f'        gaps-between-tabs {self.appearance_tab.gap_between_spinbox.value()}\n')
+            if self.appearance_tab.left_radio.isChecked():
+                f.write('        position "left"\n')
+            elif self.appearance_tab.top_radio.isChecked():
+                f.write('        position "top"\n')
+            elif self.appearance_tab.right_radio.isChecked():
+                f.write('        position "right"\n')
+            elif self.appearance_tab.bottom_radio.isChecked():
+                f.write('        position "bottom"\n')
             f.write('    }\n}')
 
             # Input block
@@ -204,82 +224,75 @@ class SettingsWindow(QMainWindow):
                 f.write('    mod-key "Ctrl"\n')
 
     def save_touchpad_config(self):
-        try:
-            with open(self.config_path, 'a') as f:
-                f.write('    \n')
-                f.write('    touchpad {\n')
 
-                if self.touchpad_tab.tap_checkbox.isChecked():
-                    f.write('        tap\n')
-                else:
-                    f.write('        // tap\n')
-                if self.touchpad_tab.dwt_checkbox.isChecked():
-                    f.write('        dwt\n')
-                else:
-                    f.write('        // dwt\n')
-                if self.touchpad_tab.natural_scroll_checkbox.isChecked():
-                    f.write('        natural-scroll\n')
-                else:
-                    f.write('        // natural-scroll\n')
-                if self.touchpad_tab.drag_lock_checkbox.isChecked():
-                    f.write('        drag-lock\n')
-                else:
-                    f.write('        // drag-lock\n')
-                if self.touchpad_tab.disable_external_mouse_checkbox.isChecked():
-                    f.write('        disabled-on-external-mouse\n')
-                else:
-                    f.write('        // disabled-on-external-mouse\n')
-                if self.touchpad_tab.left_handed_checkbox.isChecked():
-                    f.write('        left-handed\n')
-                else:
+        with open(self.config_path, 'a') as f:
+            f.write('    \n')
+            f.write('    touchpad {\n')
+
+            if self.touchpad_tab.tap_checkbox.isChecked():
+                f.write('        tap\n')
+            else:
+                f.write('        // tap\n')
+            if self.touchpad_tab.dwt_checkbox.isChecked():
+                f.write('        dwt\n')
+            else:
+                f.write('        // dwt\n')
+            if self.touchpad_tab.natural_scroll_checkbox.isChecked():
+                f.write('        natural-scroll\n')
+            else:
+                f.write('        // natural-scroll\n')
+            if self.touchpad_tab.drag_lock_checkbox.isChecked():
+                f.write('        drag-lock\n')
+            else:
+                f.write('        // drag-lock\n')
+            if self.touchpad_tab.disable_external_mouse_checkbox.isChecked():
+                f.write('        disabled-on-external-mouse\n')
+            else:
+                f.write('        // disabled-on-external-mouse\n')
+            if self.touchpad_tab.left_handed_checkbox.isChecked():
+                f.write('        left-handed\n')
+            else:
                     f.write('        // left-handed\n')
 
-                if self.touchpad_tab.no_scroll_radio.isChecked():
-                    f.write('        scroll-method "no-scroll"\n')
-                elif self.touchpad_tab.two_finger_radio.isChecked():
-                    f.write('        scroll-method "two-finger"\n')
-                elif self.touchpad_tab.edge_radio.isChecked():
-                    f.write('        scroll-method "edge"\n')
-                elif self.touchpad_tab.button_radio.isChecked():
-                    f.write('        scroll-method "on-button-down"\n')
+            if self.touchpad_tab.no_scroll_radio.isChecked():
+                f.write('        scroll-method "no-scroll"\n')
+            elif self.touchpad_tab.two_finger_radio.isChecked():
+                f.write('        scroll-method "two-finger"\n')
+            elif self.touchpad_tab.edge_radio.isChecked():
+                f.write('        scroll-method "edge"\n')
+            elif self.touchpad_tab.button_radio.isChecked():
+                f.write('        scroll-method "on-button-down"\n')
 
-                f.write(f'        accel-speed {self.touchpad_tab.accel_speed_spinbox.value()}\n')
-                f.write(f'        accel-profile "{self.touchpad_tab.accel_profile_combobox.currentText()}"\n')
-                f.write(f'        scroll-factor {self.touchpad_tab.scroll_factor_spinbox.value()}\n')
-                f.write('    }\n')
-
-        except Exception as e:
-            print(f"Error saving touchpad configuration: {e}")
+            f.write(f'        accel-speed {self.touchpad_tab.accel_speed_spinbox.value()}\n')
+            f.write(f'        accel-profile "{self.touchpad_tab.accel_profile_combobox.currentText()}"\n')
+            f.write(f'        scroll-factor {self.touchpad_tab.scroll_factor_spinbox.value()}\n')
+            f.write('    }\n')
 
     def save_mouse_config(self):
-        try:
-            with open(self.config_path, 'a') as f:
-                f.write('    \n')
-                f.write('    mouse {\n')
-                if self.mouse_tab.natural_scroll_checkbox.isChecked():
-                    f.write('        natural-scroll\n')
-                else:
-                    f.write('        // natural-scroll\n')
-                if self.mouse_tab.left_handed_checkbox.isChecked():
-                    f.write('        left-handed\n')
-                else:
-                    f.write('        // left-handed\n')
-                if self.mouse_tab.middle_emulation_checkbox.isChecked():
-                    f.write('        middle-emulation\n')
-                else:
-                    f.write('        // middle-emulation\n')
 
-                f.write(f'        accel-speed {self.mouse_tab.accel_speed_spinbox.value()}\n')
-                f.write(f'        accel-profile "{self.mouse_tab.accel_profile_combobox.currentText()}"\n')
-                f.write(f'        scroll-factor {self.mouse_tab.scroll_factor_spinbox.value()}\n')
+        with open(self.config_path, 'a') as f:
+            f.write('    \n')
+            f.write('    mouse {\n')
+            if self.mouse_tab.natural_scroll_checkbox.isChecked():
+                f.write('        natural-scroll\n')
+            else:
+                f.write('        // natural-scroll\n')
+            if self.mouse_tab.left_handed_checkbox.isChecked():
+                f.write('        left-handed\n')
+            else:
+                f.write('        // left-handed\n')
+            if self.mouse_tab.middle_emulation_checkbox.isChecked():
+                f.write('        middle-emulation\n')
+            else:
+                f.write('        // middle-emulation\n')
 
-                f.write('    }\n')
+            f.write(f'        accel-speed {self.mouse_tab.accel_speed_spinbox.value()}\n')
+            f.write(f'        accel-profile "{self.mouse_tab.accel_profile_combobox.currentText()}"\n')
+            f.write(f'        scroll-factor {self.mouse_tab.scroll_factor_spinbox.value()}\n')
 
-        except Exception as e:
-            print(f"Error saving mouse configuration: {e}")
+            f.write('    }\n')
 
     def save_keyboard_config(self):
-        """Save keyboard configuration in KDL format"""
         with open(self.config_path, 'a') as f:  # Append to the file
             f.write('    \n')
             f.write('    keyboard {\n')
@@ -367,9 +380,7 @@ class SettingsWindow(QMainWindow):
                 f.write(f'\nscreenshot-path "{path}"\n')
 
     def load_settings(self):
-        """Load existing settings"""
-        import re
-
+        """Parse existing settings"""
         try:
             with open(self.config_path, 'r') as f:
                 content = f.read()
@@ -419,25 +430,60 @@ class SettingsWindow(QMainWindow):
                 self.appearance_tab.current_inactive_color = inactive_color_val
                 self.appearance_tab.update_inactive_color_button()
 
+                match = re.search(r'focus-ring\s*\{\s*on\b', content)
+                if match:
+                        self.appearance_tab.focus_radio.setChecked(True)
+                else:
+                        self.appearance_tab.border_radio.setChecked(True)
+
                 match = re.search(r'insert-hint\s*\{[^}]*//', content, flags=re.DOTALL)
                 if match:
                         self.appearance_tab.hint_enable_checkbox.setChecked(True)
                 else:
                         self.appearance_tab.hint_enable_checkbox.setChecked(False)
 
-                match = re.search(r'insert-hint\s*\{\s// off\b', content)
-                if match:
-                        self.appearance_tab.focus_radio.setChecked(True)
-                else:
-                        self.appearance_tab.border_radio.setChecked(True)
-
                 m = re.search(r'insert-hint\s*\{[^}]*color\s*"(?P<col>#[0-9A-Fa-f]{6})', content,
                 flags=re.DOTALL)
-
                 color_val = m.group(1)
                 self.appearance_tab.current_hint_color = color_val
                 self.appearance_tab.update_hint_color_button()
 
+                block = re.search(r'tab-indicator\s*\{([^}]*)\}', content, re.DOTALL)# FIXME to do for more blocks
+                tab_indicator = block.group(1)
+
+                self.appearance_tab.hide_indicator_checkbox.setChecked(
+                    'hide-when-single-tab' in tab_indicator
+                    )
+                self.appearance_tab.place_within_checkbox.setChecked(
+                    'place-within-column' in tab_indicator
+                    )
+                value = re.search(r'corner-radius\s+(\d+)', tab_indicator)
+                self.appearance_tab.corner_radius_spinbox.setValue(int(value.group(1)))
+
+                value = re.search(r'width\s+(\d+)', tab_indicator)
+                self.appearance_tab.tab_width_spinbox.setValue(int(value.group(1)))
+
+                m = re.search(r'total-proportion\s*=\s*([0-9]*\.?[0-9]+)', tab_indicator)
+                value = float(m.group(1))
+                self.appearance_tab.length_spinbox.setValue(value)
+
+                value = re.search(r'gap\s+(\d+)', tab_indicator)
+                self.appearance_tab.tab_gap_spinbox.setValue(int(value.group(1)))
+
+                value = re.search(r'gaps-between-tabs\s+(\d+)', tab_indicator)
+                self.appearance_tab.gap_between_spinbox.setValue(int(value.group(1)))
+
+                match = re.search(r'position\s+"([^"]+)"', tab_indicator)
+                if match:
+                    position = match.group(1)
+                    if position == "left":
+                        self.appearance_tab.left_radio.setChecked(True)
+                    elif position == "top":
+                        self.appearance_tab.top_radio.setChecked(True)
+                    elif position == "right":
+                        self.appearance_tab.right_radio.setChecked(True)
+                    elif position == "bottom":
+                        self.appearance_tab.bottom_radio.setChecked(True)
 
             except Exception as e:
                 print(f"Error parsing some appearance settings key: {e} ")
