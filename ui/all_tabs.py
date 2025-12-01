@@ -1,15 +1,16 @@
 from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QRadioButton,
-                             QLabel, QFrame, QButtonGroup, QPushButton, QCheckBox,QGridLayout,
+                             QLabel, QScrollArea, QFrame, QButtonGroup, QPushButton, QCheckBox,QGridLayout,
                              QDoubleSpinBox, QComboBox, QSpinBox, QLineEdit, QGroupBox, QColorDialog)
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont, QColor
 
-class AppearanceTab(QWidget):
+class AppearanceTab(QScrollArea):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.parent = parent
-        self.current_color = "#7fc8ff"  # Default focus ring color
+        self.current_color = "#7fc8ff"  # Default focus ring/border color
         self.current_inactive_color = "#505050"  # Default inactive color
+        self.current_hint_color = "#ffc87f"
         self.init_ui()
 
     def choose_active_color(self):
@@ -22,7 +23,7 @@ class AppearanceTab(QWidget):
         self.color_button.setStyleSheet(f"background-color: {self.current_color}; border: 1px solid gray;")
 
     def choose_inactive_color(self):
-        color = QColorDialog.getColor(QColor(self.current_inactive_color), self, self.tr("Choose Color"))
+        color = QColorDialog.getColor(QColor(self.current_inactive_color), self, self.tr("Choose Incactive Color"))
         if color.isValid():
             self.current_inactive_color = color.name()
             self.update_inactive_color_button()
@@ -30,22 +31,29 @@ class AppearanceTab(QWidget):
     def update_inactive_color_button(self):
         self.inactive_color_button.setStyleSheet(f"background-color: {self.current_inactive_color}; border: 1px solid gray;")
 
+
+    def choose_hint_color(self):
+        color = QColorDialog.getColor(QColor(self.current_hint_color), self, self.tr("Choose Insert Hint Color"))
+        if color.isValid():
+            self.current_hint_color = color.name()
+            self.update_hint_color_button()
+
+    def update_hint_color_button(self):
+        self.hint_color_button.setStyleSheet(f"background-color: {self.current_hint_color}; border: 1px solid gray;")
+
     def init_ui(self):
-        layout = QVBoxLayout(self)
-        layout.setSpacing(20)
-        layout.setContentsMargins(20, 10, 20, 20)
+        widget = QWidget()
+        layout = QVBoxLayout(widget)
 
         # Appearance configuration section
         appearance_frame = QFrame()
         appearance_frame.setFrameStyle(QFrame.Shape.StyledPanel)
         appearance_layout = QVBoxLayout(appearance_frame)
 
-        # Appearance checkboxes
         self.csd_checkbox = QCheckBox(self.tr('Use client side decorations'))
         appearance_layout.addWidget(self.csd_checkbox)
         self.csd_checkbox.setChecked(True)
 
-        # Overview
         overview_layout = QHBoxLayout()
         overview_label = QLabel(self.tr('Overview zoom:'))
         self.overview_spinbox = QDoubleSpinBox()
@@ -63,12 +71,10 @@ class AppearanceTab(QWidget):
         self.shadows_checkbox.setChecked(True)
         appearance_layout.addWidget(self.shadows_checkbox)
 
-        # Animations
-        animations_layout = QHBoxLayout()
-        slowdown_label = QLabel(self.tr('Slowdown:'))
-
         self.animations_enable_checkbox = QCheckBox(self.tr('Enable Animations'))
         self.animations_enable_checkbox.setChecked(True)
+        animations_layout = QHBoxLayout()
+        slowdown_label = QLabel(self.tr('Slowdown:'))
 
         self.animations_spinbox = QDoubleSpinBox()
         self.animations_spinbox.setRange(0.1, 5.0)
@@ -100,32 +106,27 @@ class AppearanceTab(QWidget):
         indented_widget = QWidget()
         indented_layout = QVBoxLayout(indented_widget)
         indented_layout.setContentsMargins(25, 0, 0, 0)
-        indented_layout.setSpacing(0)
 
         # Color and inactive color on first line
         colors_layout = QHBoxLayout()
 
         color_label = QLabel(self.tr('Active color: '))
         self.color_button = QPushButton()
-        self.color_button.setFixedSize(60, 25)
         self.color_button.clicked.connect(self.choose_active_color)
         self.update_color_button()
 
         inactive_color_label = QLabel(self.tr('Inactive color: '))
         self.inactive_color_button = QPushButton()
-        self.inactive_color_button.setFixedSize(60, 25)
         self.inactive_color_button.clicked.connect(self.choose_inactive_color)
         self.update_inactive_color_button()
 
         colors_layout.addWidget(color_label)
-        colors_layout.addSpacing(14)
         colors_layout.addWidget(self.color_button)
-        colors_layout.addSpacing(20)
+        colors_layout.addSpacing(25)
         colors_layout.addWidget(inactive_color_label)
         colors_layout.addWidget(self.inactive_color_button)
         colors_layout.addStretch()
         indented_layout.addLayout(colors_layout)
-        indented_layout.addSpacing(10)
 
         # Width on second line
         width_layout = QHBoxLayout()
@@ -140,7 +141,7 @@ class AppearanceTab(QWidget):
         width_layout.addWidget(self.focus_ring_spinbox)
         width_layout.addStretch()
         indented_layout.addLayout(width_layout)
-        indented_layout.addSpacing(10)
+        #indented_layout.addSpacing(10)
 
         # Add the indented widget to the main appearance layout
         appearance_layout.addWidget(indented_widget)
@@ -154,7 +155,7 @@ class AppearanceTab(QWidget):
         self.focus_radio.setChecked(True)
 
         apply_layout.addWidget(select_label)
-        apply_layout.addSpacing(20)
+        apply_layout.addSpacing(15)
         apply_layout.addWidget(self.focus_radio)
         apply_layout.addWidget(self.border_radio)
         apply_layout.addStretch()
@@ -183,10 +184,33 @@ class AppearanceTab(QWidget):
         self.focus_radio.setEnabled(self.focus_ring_enable_checkbox.isChecked())
         self.border_radio.setEnabled(self.focus_ring_enable_checkbox.isChecked())
 
-        # Margins Area
+
+        hint_color_layout = QHBoxLayout()
+
+        self.hint_enable_checkbox = QCheckBox(self.tr('Enable insert hint'))
+        self.hint_enable_checkbox.setChecked(True)
+
+        hint_color_label = QLabel(self.tr('Color: '))
+        self.hint_color_button = QPushButton()
+        self.hint_color_button.clicked.connect(self.choose_hint_color)
+        self.update_hint_color_button()
+        hint_color_layout.addWidget(self.hint_enable_checkbox)
+        hint_color_layout.addSpacing(25)
+        hint_color_layout.addWidget(hint_color_label)
+
+        hint_color_layout.addWidget(self.hint_color_button)
+        hint_color_layout.addStretch()
+
+        self.hint_enable_checkbox.toggled.connect(self.hint_color_button.setEnabled)
+        self.hint_enable_checkbox.toggled.connect(hint_color_label.setEnabled)
+        hint_color_label.setEnabled(self.hint_enable_checkbox.isChecked())
+        self.hint_color_button.setEnabled(self.hint_enable_checkbox.isChecked())#same
+
+        appearance_layout.addLayout(hint_color_layout)
+
+        # Margins Group
         margins_group = QGroupBox(self.tr("Margins"))
         margins_layout = QVBoxLayout(margins_group)
-        margins_layout.setContentsMargins(30, 10, 20, 20)
 
         # Gaps
         gaps_layout = QHBoxLayout()
@@ -204,6 +228,7 @@ class AppearanceTab(QWidget):
 
         layout.addWidget(appearance_frame)
         layout.addWidget(margins_group)
+        layout.addSpacing(10)
 
         # Struts (two rows)
         struts_row1 = QHBoxLayout()
@@ -247,24 +272,119 @@ class AppearanceTab(QWidget):
         struts_row2.addStretch()
 
         struts_title = QLabel(self.tr("Struts:"))
-        margins_layout.addSpacing(10)
         margins_layout.addWidget(struts_title)
 
         margins_layout.addLayout(struts_row1)
         margins_layout.addLayout(struts_row2)
 
+        # Tab Indicator
+        tab_group = QGroupBox(self.tr("Tab Indicator"))
+        tab_layout = QVBoxLayout(tab_group)
+
+        layout.addWidget(tab_group)
+
+        hide_place_layout = QHBoxLayout()
+        self.hide_indicator_checkbox = QCheckBox(self.tr('Hide when single tab'))
+        self.hide_indicator_checkbox.setChecked(True)
+        hide_place_layout.addWidget(self.hide_indicator_checkbox)
+        self.place_within_checkbox = QCheckBox(self.tr('Place within column'))
+        self.place_within_checkbox.setChecked(True)
+        hide_place_layout.addWidget(self.place_within_checkbox)
+        tab_layout.addLayout(hide_place_layout)
+
+        corner_radius_layout = QHBoxLayout()
+        corner_radius_label = QLabel(self.tr('Corner radius:'))
+        self.corner_radius_spinbox = QSpinBox()
+        self.corner_radius_spinbox.setRange(0,20)
+        self.corner_radius_spinbox.setSingleStep(1)
+        self.corner_radius_spinbox.setValue(4)
+        self.corner_radius_spinbox.setSuffix(' px')
+        corner_radius_layout.addWidget(corner_radius_label)
+        corner_radius_layout.addWidget(self.corner_radius_spinbox)
+        corner_radius_layout.addStretch()
+        tab_layout.addLayout(corner_radius_layout)
+
+        # Tab Width and Length
+        tab_width_layout = QHBoxLayout()
+        tab_width_label = QLabel(self.tr('Width:'))
+        self.tab_width_spinbox = QSpinBox()
+        self.tab_width_spinbox.setRange(0,50)
+        self.tab_width_spinbox.setSingleStep(1)
+        self.tab_width_spinbox.setValue(4)
+        self.tab_width_spinbox.setSuffix(' px')
+
+        length_label = QLabel(self.tr('Length:'))
+        self.length_spinbox = QDoubleSpinBox()
+        self.length_spinbox.setRange(0,1)
+        self.length_spinbox.setSingleStep(0.05)
+        self.length_spinbox.setValue(1)
+
+        tab_width_layout.addWidget(tab_width_label)
+        tab_width_layout.addWidget(self.tab_width_spinbox)
+        tab_width_layout.addSpacing(10)
+        tab_width_layout.addWidget(length_label)
+        tab_width_layout.addSpacing(10)
+        tab_width_layout.addWidget(self.length_spinbox)
+        tab_width_layout.addStretch()
+        tab_layout.addLayout(tab_width_layout)
+
+        # Tab Gaps
+        tab_gaps_layout = QHBoxLayout()
+        tab_gaps_label = QLabel(self.tr('Gap:'))
+        self.tab_gaps_spinbox = QSpinBox()
+        self.tab_gaps_spinbox.setRange(0,99)
+        self.tab_gaps_spinbox.setSingleStep(1)
+        self.tab_gaps_spinbox.setValue(4)
+        self.tab_gaps_spinbox.setSuffix(' px')
+
+        gap_between_label = QLabel(self.tr('Gap between:'))
+        self.gap_between_spinbox = QSpinBox()
+        self.gap_between_spinbox.setRange(0,99)
+        self.gap_between_spinbox.setSingleStep(1)
+        self.gap_between_spinbox.setValue(2)
+        self.gap_between_spinbox.setSuffix(' px')
+
+        tab_gaps_layout.addWidget(tab_gaps_label)
+        tab_gaps_layout.addWidget(self.tab_gaps_spinbox)
+        tab_gaps_layout.addSpacing(10)
+        tab_gaps_layout.addWidget(gap_between_label)
+        tab_gaps_layout.addSpacing(10)
+        tab_gaps_layout.addWidget(self.gap_between_spinbox)
+        tab_gaps_layout.addStretch()
+        tab_layout.addLayout(tab_gaps_layout)
+
+        # Position
+        tab_position_label = QLabel(self.tr('Position:'))
+
+        self.left_radio = QRadioButton(self.tr('left'))
+        self.top_radio = QRadioButton(self.tr('top'))
+        self.right_radio = QRadioButton(self.tr('right'))
+        self.bottom_radio = QRadioButton(self.tr('bottom'))
+        self.left_radio.setChecked(True)
+
+        tab_position_radio_layout = QHBoxLayout()
+        tab_position_radio_layout.addWidget(tab_position_label)
+        tab_position_radio_layout.addSpacing(10)
+        tab_position_radio_layout.addWidget(self.left_radio)
+        tab_position_radio_layout.addWidget(self.top_radio)
+        tab_position_radio_layout.addWidget(self.right_radio)
+        tab_position_radio_layout.addWidget(self.bottom_radio)
+        tab_position_radio_layout.addStretch()
+        tab_layout.addLayout(tab_position_radio_layout)
+
         layout.addStretch()
 
-class BehaviorTab(QWidget):
+        self.setWidget(widget)
+
+class BehaviorTab(QScrollArea):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.parent = parent
         self.init_ui()
 
     def init_ui(self):
-        layout = QVBoxLayout(self)
-        layout.setSpacing(20)
-        layout.setContentsMargins(20, 10, 20, 20)
+        widget = QWidget()
+        layout = QVBoxLayout(widget)
 
         # Behavior configuration section
         behavior_frame = QFrame()
@@ -296,7 +416,6 @@ class BehaviorTab(QWidget):
         self.tabbed_radio.setChecked(True)
 
         default_column_display_layout.addWidget(select_label)
-        default_column_display_layout.addSpacing(20)
         default_column_display_layout.addWidget(self.tabbed_radio)
         default_column_display_layout.addWidget(self.normal_radio)
         default_column_display_layout.addStretch()
@@ -309,20 +428,18 @@ class BehaviorTab(QWidget):
 
         # Mod key
         behavior_layout.addSpacing(10)
-        mod_key_label = QLabel(self.tr('Mod Key:'))
-        behavior_layout.addWidget(mod_key_label)
 
-        self.mod_key_group = QButtonGroup(self)
+        mod_key_label = QLabel(self.tr('Mod Key:'))
+
         self.super_radio = QRadioButton(self.tr('Super'))
         self.alt_radio = QRadioButton(self.tr('Alt'))
         self.ctrl_radio = QRadioButton(self.tr('Ctrl'))
         self.super_radio.setChecked(True)
 
-        self.mod_key_group.addButton(self.super_radio)
-        self.mod_key_group.addButton(self.alt_radio)
-        self.mod_key_group.addButton(self.ctrl_radio)
-
         mod_key_radio_layout = QHBoxLayout()
+        mod_key_radio_label = QLabel(self.tr('Mod Key:'))
+        mod_key_radio_layout.addWidget(mod_key_label)
+        mod_key_radio_layout.addSpacing(15)
         mod_key_radio_layout.addWidget(self.super_radio)
         mod_key_radio_layout.addWidget(self.alt_radio)
         mod_key_radio_layout.addWidget(self.ctrl_radio)
@@ -332,7 +449,6 @@ class BehaviorTab(QWidget):
 
         # screenshot_path
         screenshot_path_layout = QHBoxLayout()
-        behavior_layout.addSpacing(10)
         screenshot_path_label = QLabel(self.tr('Screenshots:'))
         self.screenshot_path_edit = QLineEdit()
         self.screenshot_path_edit.setPlaceholderText("~/Pictures/Screenshot %Y-%m-%d %H-%M-%S.png")
@@ -340,7 +456,6 @@ class BehaviorTab(QWidget):
         self.screenshot_path_edit.setClearButtonEnabled(True)
 
         screenshot_path_layout.addWidget(screenshot_path_label)
-        screenshot_path_layout.addSpacing(34)
         screenshot_path_layout.addWidget(self.screenshot_path_edit)
         screenshot_path_layout.addStretch()
         behavior_layout.addLayout(screenshot_path_layout)
@@ -366,7 +481,7 @@ class BehaviorTab(QWidget):
         self.inactive_enable_checkbox.toggled.connect(self.inactive_spinbox.setEnabled)
         self.inactive_enable_checkbox.toggled.connect(inactive_label.setEnabled)
         inactive_label.setEnabled(self.inactive_enable_checkbox.isChecked())
-
+        self.inactive_spinbox.setEnabled(self.inactive_enable_checkbox.isChecked())
 
         cursor_layout.addWidget(self.focus_follows_mouse_checkbox)
         cursor_layout.addWidget(self.warp_mouse_to_focus_checkbox)
@@ -377,6 +492,8 @@ class BehaviorTab(QWidget):
         layout.addWidget(cursor_group)
         layout.addStretch()
 
+        self.setWidget(widget)
+
 class TouchpadTab(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -385,8 +502,8 @@ class TouchpadTab(QWidget):
 
     def init_ui(self):
         layout = QVBoxLayout(self)
-        layout.setSpacing(20)
-        layout.setContentsMargins(20, 10, 20, 20)
+        #layout.setSpacing(20)
+        #layout.setContentsMargins(20, 10, 20, 20)
 
         # Touchpad configuration section
         touchpad_frame = QFrame()
@@ -411,8 +528,6 @@ class TouchpadTab(QWidget):
         touchpad_layout.addWidget(self.left_handed_checkbox)
 
         # Scroll method selection
-        touchpad_layout.addSpacing(10)
-
         self.scroll_group = QButtonGroup(self)
         self.no_scroll_radio = QRadioButton(self.tr('No scroll'))
         self.two_finger_radio = QRadioButton(self.tr('Two finger'))
@@ -427,15 +542,16 @@ class TouchpadTab(QWidget):
 
         scroll_groupbox = QGroupBox(self.tr('Scroll method'))
         scroll_groupbox_layout = QGridLayout(scroll_groupbox)
-        scroll_groupbox_layout.setHorizontalSpacing(20)  # Space between columns
-        scroll_groupbox_layout.setVerticalSpacing(5)     # Space between rows
+        scroll_groupbox.setFixedWidth(500)
 
         scroll_groupbox_layout.addWidget(self.no_scroll_radio, 0, 0)   # row 0, col 0
         scroll_groupbox_layout.addWidget(self.two_finger_radio, 0, 1)  # row 0, col 1
+        scroll_groupbox_layout.rowStretch(0)
         scroll_groupbox_layout.addWidget(self.edge_radio, 1, 0)        # row 1, col 0
-        scroll_groupbox_layout.addWidget(self.button_radio, 1, 1)      # row 1, col 1
+        scroll_groupbox_layout.addWidget(self.button_radio, 1, 1)
+        scroll_groupbox_layout.rowStretch(1)     # row 1, col 1
 
-        touchpad_layout.addSpacing(10)
+
         touchpad_layout.addWidget(scroll_groupbox)
 
         # Acceleration speed
@@ -478,9 +594,7 @@ class TouchpadTab(QWidget):
         touchpad_layout.addLayout(scroll_factor_layout)
 
         # Button_map method selection
-        touchpad_layout.addSpacing(10)
         button_map_label = QLabel(self.tr('Tap Button Map:'))
-        button_map_label.setContentsMargins(0, 10, 0, 0)
         touchpad_layout.addWidget(button_map_label)
 
         self.button_map_group = QButtonGroup(self)
@@ -505,8 +619,8 @@ class MouseTab(QWidget):
 
     def init_ui(self):
         layout = QVBoxLayout(self)
-        layout.setSpacing(20)
-        layout.setContentsMargins(20, 10, 20, 20)
+        #layout.setSpacing(20)
+        #layout.setContentsMargins(20, 10, 20, 20)
 
         # Mouse configuration section
         mouse_frame = QFrame()
@@ -572,8 +686,6 @@ class KeyboardTab(QWidget):
 
     def init_ui(self):
         layout = QVBoxLayout(self)
-        layout.setSpacing(20)
-        layout.setContentsMargins(20, 10, 20, 20)
 
         # Keyboard configuration section
         keyboard_frame = QFrame()
@@ -609,10 +721,10 @@ class KeyboardTab(QWidget):
         self.layout_edit.setClearButtonEnabled(True)
 
         layout_layout.addWidget(layout_label)
-        layout_layout.addSpacing(5)
+        #layout_layout.addSpacing(5)
         layout_layout.addWidget(self.layout_edit)
         layout_layout.addStretch()
-        layout_layout.addSpacing(10)
+        #layout_layout.addSpacing(10)
         xkb_layout.addLayout(layout_layout)
 
         # Variant
@@ -624,7 +736,7 @@ class KeyboardTab(QWidget):
         self.variant_edit.setClearButtonEnabled(True)
 
         variant_layout.addWidget(variant_label)
-        variant_layout.addSpacing(5)
+        #variant_layout.addSpacing(5)
         variant_layout.addWidget(self.variant_edit)
         variant_layout.addStretch()
         xkb_layout.addLayout(variant_layout)
@@ -651,7 +763,7 @@ class KeyboardTab(QWidget):
         self.model_edit.setClearButtonEnabled(True)
 
         model_layout.addWidget(model_label)
-        model_layout.addSpacing(14)
+        #model_layout.addSpacing(14)
         model_layout.addWidget(self.model_edit)
         model_layout.addStretch()
         xkb_layout.addLayout(model_layout)
@@ -665,7 +777,7 @@ class KeyboardTab(QWidget):
         self.file_edit.setClearButtonEnabled(True)
 
         file_layout.addWidget(file_label)
-        file_layout.addSpacing(34)
+        #file_layout.addSpacing(34)
         file_layout.addWidget(self.file_edit)
         file_layout.addStretch()
         xkb_layout.addLayout(file_layout)
@@ -707,3 +819,11 @@ class KeyboardTab(QWidget):
         layout.addWidget(keyboard_frame)
         layout.addStretch()
 
+class FilesTab(QWidget):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.parent = parent
+        self.init_ui()
+
+    def init_ui(self):
+        layout = QVBoxLayout(self)

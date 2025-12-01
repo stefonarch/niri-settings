@@ -9,7 +9,7 @@ from PyQt6.QtCore import Qt, QTranslator, QLocale, QLibraryInfo
 from PyQt6.QtGui import QIcon
 
 from .conf_path import get_config_path, get_niri_config_path
-from .all_tabs import AppearanceTab, BehaviorTab ,TouchpadTab, MouseTab,KeyboardTab
+from .all_tabs import AppearanceTab, BehaviorTab ,TouchpadTab, MouseTab,KeyboardTab,FilesTab
 
 class SettingsWindow(QMainWindow):
     def __init__(self):
@@ -25,7 +25,7 @@ class SettingsWindow(QMainWindow):
 
     def init_ui(self):
         self.setWindowTitle(self.tr('Niri Settings'))
-        self.setFixedSize(600, 800)
+        #self.setFixedSize(700, 900)
 
         icon = QIcon.fromTheme("niri-settings",
             QIcon.fromTheme("preferences-desktop",
@@ -40,8 +40,6 @@ class SettingsWindow(QMainWindow):
 
         # Main layout
         main_layout = QVBoxLayout(central_widget)
-        main_layout.setSpacing(20)
-        main_layout.setContentsMargins(10, 10, 10, 10)
 
         # Create tab widget
         self.tabs = QTabWidget()
@@ -52,12 +50,14 @@ class SettingsWindow(QMainWindow):
         self.touchpad_tab = TouchpadTab(self)
         self.mouse_tab = MouseTab(self)
         self.keyboard_tab = KeyboardTab(self)
+        self.files_tab = FilesTab(self)
 
         self.tabs.addTab(self.appearance_tab, self.tr("Appearance"))
         self.tabs.addTab(self.behavior_tab, self.tr("Behavior"))
         self.tabs.addTab(self.touchpad_tab, self.tr("Touchpad"))
         self.tabs.addTab(self.mouse_tab, self.tr("Mouse"))
         self.tabs.addTab(self.keyboard_tab, self.tr("Keyboard"))
+        self.tabs.addTab(self.files_tab, self.tr("Files"))
 
         main_layout.addWidget(self.tabs)
 
@@ -65,18 +65,15 @@ class SettingsWindow(QMainWindow):
         button_layout = QHBoxLayout()
 
         wiki_btn = QPushButton(self.tr('Wiki'))
-        wiki_btn.setFixedSize(100, 35)
         wiki_btn.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_MessageBoxInformation))
         wiki_btn.clicked.connect(self.open_wiki)
 
         apply_btn = QPushButton(self.tr('Apply'))
         apply_btn.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_DialogApplyButton))
-        apply_btn.setFixedSize(120, 35)
         apply_btn.clicked.connect(self.apply_settings)
 
         close_btn = QPushButton(self.tr('Close'))
         close_btn.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_DialogCloseButton))
-        close_btn.setFixedSize(120, 35)
         close_btn.clicked.connect(self.close)
 
         button_layout.addWidget(wiki_btn)
@@ -173,7 +170,13 @@ class SettingsWindow(QMainWindow):
             f.write(f'        active-color "{self.appearance_tab.current_color}"\n')
             f.write(f'        inactive-color "{self.appearance_tab.current_inactive_color}"\n')
 
-            f.write('    }\n}\n')
+            f.write('    }\n\n    insert-hint {\n')
+            if self.appearance_tab.hint_enable_checkbox.isChecked():
+                f.write('        // off\n')
+            else:
+                f.write('        off\n')
+            f.write(f'        color "{self.appearance_tab.current_hint_color}50"\n') # opacity 50
+            f.write('    }\n}')
 
             # Input block
             f.write(' \n\ninput {\n')
@@ -416,11 +419,25 @@ class SettingsWindow(QMainWindow):
                 self.appearance_tab.current_inactive_color = inactive_color_val
                 self.appearance_tab.update_inactive_color_button()
 
-                match = re.search(r'focus-ring\s*\{\s*on\b', content)
+                match = re.search(r'insert-hint\s*\{[^}]*//', content, flags=re.DOTALL)
+                if match:
+                        self.appearance_tab.hint_enable_checkbox.setChecked(True)
+                else:
+                        self.appearance_tab.hint_enable_checkbox.setChecked(False)
+
+                match = re.search(r'insert-hint\s*\{\s// off\b', content)
                 if match:
                         self.appearance_tab.focus_radio.setChecked(True)
                 else:
                         self.appearance_tab.border_radio.setChecked(True)
+
+                m = re.search(r'insert-hint\s*\{[^}]*color\s*"(?P<col>#[0-9A-Fa-f]{6})', content,
+                flags=re.DOTALL)
+
+                color_val = m.group(1)
+                self.appearance_tab.current_hint_color = color_val
+                self.appearance_tab.update_hint_color_button()
+
 
             except Exception as e:
                 print(f"Error parsing some appearance settings key: {e} ")
