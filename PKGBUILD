@@ -1,7 +1,7 @@
 # Maintainer: stefonarch <your@email.com>
 _pkgname=niri-settings
 pkgname=$_pkgname
-pkgver=b0c15f9
+pkgver=6c2f2ee
 pkgrel=1
 pkgdesc="GUI application in Qt for configuring niri"
 arch=('any')

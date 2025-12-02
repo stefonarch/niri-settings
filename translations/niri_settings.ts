@@ -300,8 +300,9 @@
         <translation type="unfinished" />
     </message>
     <message>
+        <location filename="../ui/all_tabs.py" line="939" />
         <location filename="../ui/all_tabs.py" line="846" />
-        <source>Open Selected</source>
+        <source>Open</source>
         <translation type="unfinished" />
     </message>
     <message>
@@ -310,34 +311,40 @@
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="886" />
+        <location filename="../ui/all_tabs.py" line="853" />
+        <source>Backup file</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="889" />
         <source>Directory does not exist:
 {base_path}</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="915" />
+        <location filename="../ui/all_tabs.py" line="918" />
         <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="936" />
-        <source>Open</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../ui/all_tabs.py" line="940" />
+        <location filename="../ui/all_tabs.py" line="943" />
         <source>Show in file manager</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="946" />
+        <location filename="../ui/all_tabs.py" line="949" />
         <source>Copy path to clipboard</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="970" />
+        <location filename="../ui/all_tabs.py" line="1000" />
+        <location filename="../ui/all_tabs.py" line="973" />
         <source>No file selected.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="988" />
+        <source>Permission denied. Cannot create backup.</source>
         <translation type="unfinished" />
     </message>
 </context><context>

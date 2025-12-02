@@ -11,7 +11,7 @@ https://github.com/user-attachments/assets/0d2b044e-59a8-4427-bf19-e672891bd53b
 
 Default niri configuration values are used everywhere, see `basicsettings.kdl` example file.
 
-The line to include `basicsettings.kdl"` at the bottom of the default configuration file (for LXQt: `~/.config/lxqt/wayland/lxqt-niri.kdl`, otherwise `~/.config/niri/config.kdl`) should be added automatically when applying the first changes. The "include" feature was added in niri version 25.11.
+The line to include `basicsettings.kdl"` at the bottom of the default configuration file (for LXQt: `~/.config/lxqt/wayland/lxqt-niri.kdl`, otherwise `~/.config/niri/config.kdl`) should be added automatically when applying the first changes. The "include" feature was added in niri version 25.11, so using this version or above is mandatory.
 
 If no argument is given `$XDG_CONFIG_HOME/lxqt/wayland/niri/basicsettings.kdl` is used when running
 under LXQt, otherwise `$XDG_CONFIG_HOME/niri/basicsettings.kdl` will be used. Edit `ui/conf_path.py`
@@ -47,8 +47,8 @@ Translations should be submitted using the [Weblate platform](https://translate.
 ## Todo list
 
 * Get feedback and testing
-* Improve parsing
+* Improve parsing regex
+* Add install script for local install
 * Default column width settings
-* Add "backup" button in Files tab? Show hidden files then?
 
 * Submit to AUR.

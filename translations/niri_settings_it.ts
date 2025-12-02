@@ -302,9 +302,10 @@
         <translation>Aggiorna</translation>
     </message>
     <message>
+        <location filename="../ui/all_tabs.py" line="939"/>
         <location filename="../ui/all_tabs.py" line="846"/>
-        <source>Open Selected</source>
-        <translation>Apri selezionato</translation>
+        <source>Open</source>
+        <translation>Apri</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="850"/>
@@ -312,36 +313,42 @@
         <translation>Valida file</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="886"/>
+        <location filename="../ui/all_tabs.py" line="853"/>
+        <source>Backup file</source>
+        <translation>Crea backup</translation>
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="889"/>
         <source>Directory does not exist:
 {base_path}</source>
         <translation>Cartella non esiste:
 {base_path}</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="915"/>
+        <location filename="../ui/all_tabs.py" line="918"/>
         <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>xdg-open non trovato, assicurati che è installato e nel PATH.</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="936"/>
-        <source>Open</source>
-        <translation>Apri</translation>
-    </message>
-    <message>
-        <location filename="../ui/all_tabs.py" line="940"/>
+        <location filename="../ui/all_tabs.py" line="943"/>
         <source>Show in file manager</source>
         <translation>Mostra nel gestore file</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="946"/>
+        <location filename="../ui/all_tabs.py" line="949"/>
         <source>Copy path to clipboard</source>
         <translation>Copia percorso negli appunti</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="970"/>
+        <location filename="../ui/all_tabs.py" line="1000"/>
+        <location filename="../ui/all_tabs.py" line="973"/>
         <source>No file selected.</source>
         <translation>Nessun file selezionato.</translation>
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="988"/>
+        <source>Permission denied. Cannot create backup.</source>
+        <translation>Impossibile creare il backup, autorizzazion negata.</translation>
     </message>
 </context>
 <context>

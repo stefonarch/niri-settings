@@ -6,7 +6,7 @@ from PyQt6.QtCore import Qt, QTimer,QProcess
 from PyQt6.QtGui import QFont, QColor,QAction, QCursor
 
 from pathlib import Path
-import os, re, sys, subprocess
+import os, re, sys, subprocess, shutil
 
 class AppearanceTab(QScrollArea):
     def __init__(self, parent=None):
@@ -843,7 +843,7 @@ class FilesTab(QWidget):
         refresh_btn.clicked.connect(self.refresh_files)
         button_layout.addWidget(refresh_btn)
 
-        open_btn = QPushButton(self.tr("Open Selected"))
+        open_btn = QPushButton(self.tr("Open"))
         open_btn.clicked.connect(self.open_selected)
         button_layout.addWidget(open_btn)
 
@@ -851,9 +851,9 @@ class FilesTab(QWidget):
         validate_btn.clicked.connect(self.validate_selected)
 
         backup_btn = QPushButton(self.tr("Backup file"))
-        backup_btn.clicked.connect(self.validate_selected)
+        backup_btn.clicked.connect(self.backup_selected)
         button_layout.addWidget(backup_btn)
-        backup_btn.setEnabled(False)
+        #backup_btn.setEnabled(False)
 
         button_layout.addWidget(validate_btn)
 
@@ -972,7 +972,34 @@ class FilesTab(QWidget):
         else:
             self.show_info(self.tr("No file selected."))
 
-    ansi_escape = re.compile(r'\x1b\[[0-9;]*m')
+    def backup_file(self, file_path):
+        try:
+            if not os.path.exists(file_path):
+                self.show_info(self.tr(f"File not found: {file_path}"))
+                return False
+
+            backup_path = f"{file_path}~"
+            shutil.copy2(file_path, backup_path)
+
+            self.refresh_files()
+            return True
+
+        except PermissionError:
+            self.show_info(self.tr("Permission denied. Cannot create backup."))
+            return False
+        except Exception as e:
+            self.show_info(self.tr(f"Backup failed: {str(e)}"))
+            return False
+
+    def backup_selected(self):
+        current_item = self.list_widget.currentItem()
+        if current_item:
+            file_path = current_item.data(Qt.ItemDataRole.UserRole)
+            self.backup_file(file_path)
+        else:
+            self.show_info(self.tr("No file selected."))
+
+    ansi_escape = re.compile(r'\x1b\[[0-9;]*m') # needed to clean "file is valid" output
     def clean_ansi(self, text: str) -> str:
         return self.ansi_escape.sub('', text)
 
