@@ -34,7 +34,15 @@ cp niri-settings.svg ~/.local/share/icons/hicolor/scalable/apps/niri-settings.sv
 ```
 Run `./niri-settings` from terminal inside the folder or customize `~/.local/share/applications/niri-settings.desktop` to match the path to `niri-setttings/niri-settings.py`.
 
-A `PKGBUILD` is added now.
+A `PKGBUILD` is added now for arch and derivates users.
+
+## Translations
+
+Translations should be submitted using the [Weblate platform](https://translate.lxqt-project.org/projects/stefonarch/niri-settings/).
+
+<a href="https://translate.lxqt-project.org/projects/stefonarch/niri-settings/">
+<img src="https://translate.lxqt-project.org/widgets/stefonarch/-/niri-settings/multi-auto.svg" alt="Translation status" />
+</a>
 
 ## Todo list
 
@@ -42,5 +50,5 @@ A `PKGBUILD` is added now.
 * Improve parsing
 * Default column width settings
 * Add "backup" button in Files tab? Show hidden files then?
-* Setup translations at https://translate.lxqt-project.org
+
 * Submit to AUR.
