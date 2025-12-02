@@ -290,33 +290,53 @@
 </context><context>
     <name>FilesTab</name>
     <message>
-        <location filename="../ui/all_tabs.py" line="879" />
+        <location filename="../ui/all_tabs.py" line="832" />
+        <source>KDL Files in Configuration</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="842" />
+        <source>Refresh</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="846" />
+        <source>Open Selected</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="850" />
+        <source>Validate file</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="886" />
         <source>Directory does not exist:
 {base_path}</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="908" />
+        <location filename="../ui/all_tabs.py" line="915" />
         <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="929" />
+        <location filename="../ui/all_tabs.py" line="936" />
         <source>Open</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="933" />
+        <location filename="../ui/all_tabs.py" line="940" />
         <source>Show in file manager</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="939" />
+        <location filename="../ui/all_tabs.py" line="946" />
         <source>Copy path to clipboard</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="963" />
+        <location filename="../ui/all_tabs.py" line="970" />
         <source>No file selected.</source>
         <translation type="unfinished" />
     </message>
@@ -412,82 +432,82 @@
 </context><context>
     <name>SettingsWindow</name>
     <message>
-        <location filename="../ui/settings_window.py" line="27" />
+        <location filename="../ui/settings_window.py" line="31" />
         <source>Niri Settings</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="57" />
+        <location filename="../ui/settings_window.py" line="61" />
         <source>Appearance</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="58" />
+        <location filename="../ui/settings_window.py" line="62" />
         <source>Behavior</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="59" />
+        <location filename="../ui/settings_window.py" line="63" />
         <source>Touchpad</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="60" />
+        <location filename="../ui/settings_window.py" line="64" />
         <source>Mouse</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="61" />
+        <location filename="../ui/settings_window.py" line="65" />
         <source>Keyboard</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="62" />
+        <location filename="../ui/settings_window.py" line="66" />
         <source>Files</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="69" />
+        <location filename="../ui/settings_window.py" line="73" />
         <source>Wiki</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="73" />
+        <location filename="../ui/settings_window.py" line="77" />
         <source>Apply</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="77" />
+        <location filename="../ui/settings_window.py" line="81" />
         <source>Close</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="730" />
-        <location filename="../ui/settings_window.py" line="705" />
-        <location filename="../ui/settings_window.py" line="657" />
-        <location filename="../ui/settings_window.py" line="620" />
-        <location filename="../ui/settings_window.py" line="561" />
-        <location filename="../ui/settings_window.py" line="492" />
+        <location filename="../ui/settings_window.py" line="731" />
+        <location filename="../ui/settings_window.py" line="706" />
+        <location filename="../ui/settings_window.py" line="658" />
+        <location filename="../ui/settings_window.py" line="621" />
+        <location filename="../ui/settings_window.py" line="562" />
+        <location filename="../ui/settings_window.py" line="493" />
         <source>Configuration Parsing Error</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="732" />
-        <location filename="../ui/settings_window.py" line="707" />
-        <location filename="../ui/settings_window.py" line="659" />
-        <location filename="../ui/settings_window.py" line="622" />
-        <location filename="../ui/settings_window.py" line="563" />
-        <location filename="../ui/settings_window.py" line="494" />
+        <location filename="../ui/settings_window.py" line="733" />
+        <location filename="../ui/settings_window.py" line="708" />
+        <location filename="../ui/settings_window.py" line="660" />
+        <location filename="../ui/settings_window.py" line="623" />
+        <location filename="../ui/settings_window.py" line="564" />
+        <location filename="../ui/settings_window.py" line="495" />
         <source>Applying changes will reset to defaults some values, please check this file.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="719" />
+        <location filename="../ui/settings_window.py" line="720" />
         <source>Niri Settings: Configuration not found</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="721" />
+        <location filename="../ui/settings_window.py" line="722" />
         <source>This line is needed to make this application work. 
 Identical settings before this line will be ignored after.</source>
         <translation type="unfinished" />

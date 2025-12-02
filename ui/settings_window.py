@@ -11,6 +11,10 @@ from PyQt6.QtGui import QIcon
 from .conf_path import get_config_path, get_niri_config_path
 from .all_tabs import AppearanceTab, BehaviorTab ,TouchpadTab, MouseTab,KeyboardTab,FilesTab
 
+# Where are we?
+current_desktop = os.environ.get('XDG_CURRENT_DESKTOP', '')
+desktop_list = [item.strip() for item in current_desktop.split(':')]
+
 class SettingsWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -95,9 +99,6 @@ class SettingsWindow(QMainWindow):
         print(f"Settings applied to {self.config_path}")
 
     def save_include_setting(self):
-
-        current_desktop = os.environ.get('XDG_CURRENT_DESKTOP', '')
-        desktop_list = [item.strip() for item in current_desktop.split(':')]
 
         if 'LXQt' in desktop_list:
             include_to_add = '\ninclude "niri/basicsettings.kdl"\n'

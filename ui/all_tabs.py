@@ -829,7 +829,7 @@ class FilesTab(QWidget):
 
     def init_ui(self):
         layout = QVBoxLayout(self)
-        title = QLabel("KDL Files in LXQt Wayland Configuration")#generic title?
+        title = QLabel(self.tr("KDL Files in Configuration"))#specific title?
         title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(title)
 
@@ -839,23 +839,26 @@ class FilesTab(QWidget):
 
         button_layout = QHBoxLayout()
 
-        refresh_btn = QPushButton("Refresh")
+        refresh_btn = QPushButton(self.tr("Refresh"))
         refresh_btn.clicked.connect(self.refresh_files)
         button_layout.addWidget(refresh_btn)
 
-        open_btn = QPushButton("Open Selected")
+        open_btn = QPushButton(self.tr("Open Selected"))
         open_btn.clicked.connect(self.open_selected)
         button_layout.addWidget(open_btn)
 
-        validate_btn = QPushButton("Validate configuration")
-        validate_btn.clicked.connect(self.validate_selected)# create action
-        #validate_btn.setEnabled(False)
+        validate_btn = QPushButton(self.tr("Validate file"))
+        validate_btn.clicked.connect(self.validate_selected)
+
+        backup_btn = QPushButton(self.tr("Backup file"))
+        backup_btn.clicked.connect(self.validate_selected)
+        button_layout.addWidget(backup_btn)
+        backup_btn.setEnabled(False)
 
         button_layout.addWidget(validate_btn)
 
         button_layout.addStretch()
         layout.addLayout(button_layout)
-
 
         self.terminal = QPlainTextEdit()
         self.terminal.setReadOnly(True)
@@ -870,17 +873,24 @@ class FilesTab(QWidget):
     def load_kdl_files(self):
         """Load and display all .kdl files from the configuration directory."""
         # Get XDG_CONFIG_HOME or use default
+        current_desktop = os.environ.get('XDG_CURRENT_DESKTOP', '')
+        desktop_list = [item.strip() for item in current_desktop.split(':')]
         xdg_config_home = os.getenv('XDG_CONFIG_HOME')
+
         if not xdg_config_home:
             xdg_config_home = Path.home() / '.config'
-        base_path = Path(xdg_config_home) / 'lxqt' / 'wayland'#FIXME use 'niri' if not under LXQt
 
-        if not base_path.exists():#needed?
+        if 'LXQt' in desktop_list:
+            base_path = Path(xdg_config_home) / 'lxqt' / 'wayland'
+        else:
+            base_path = Path(xdg_config_home) / 'niri'
+
+        if not base_path.exists():  #needed?
             self.show_error(self.tr("Directory does not exist:\n{base_path}"))
             return
 
         # Find all .kdl files recursively
-        kdl_files = list(base_path.rglob('*.kdl'))
+        kdl_files = list(base_path.rglob('*.kdl*'))
 
         if not kdl_files:
             self.show_info(self.tr(f"No .kdl files found in:\n{base_path}"))

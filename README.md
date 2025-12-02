@@ -9,7 +9,7 @@ https://github.com/user-attachments/assets/0d2b044e-59a8-4427-bf19-e672891bd53b
 
 ## Usage
 
-Default niri configuration values are used everywhere.
+Default niri configuration values are used everywhere, see `basicsettings.kdl` example file.
 
 The line to include `basicsettings.kdl"` at the bottom of the default configuration file (for LXQt: `~/.config/lxqt/wayland/lxqt-niri.kdl`, otherwise `~/.config/niri/config.kdl`) should be added automatically when applying the first changes. The "include" feature was added in niri version 25.11.
 
@@ -40,7 +40,7 @@ A `PKGBUILD` is added now.
 
 * Get feedback and testing
 * Improve parsing
-* Show default niri config files if not running under LXQt
 * Default column width settings
+* Add "backup" button in Files tab? Show hidden files then?
 * Setup translations at https://translate.lxqt-project.org
 * Submit to AUR.
