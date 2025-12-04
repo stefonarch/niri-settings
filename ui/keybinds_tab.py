@@ -119,7 +119,9 @@ class KeybindsFileEditor(QWidget):
         self.move_down_btn.setEnabled(False)
         #button_layout.addWidget(self.move_down_btn)
 
-
+        self.trigger_label = QLabel(self.tr("Trigger:"))
+        self.trigger_label.setEnabled(False)
+        add_button_layout.addWidget(self.trigger_label)
         self.add_cmd_btn = QPushButton(self.tr("Application"))
         self.add_cmd_btn.clicked.connect(self.add_application)
         self.add_cmd_btn.setEnabled(False)
@@ -461,6 +463,7 @@ class KeybindsFileEditor(QWidget):
     def on_changed(self, seq):
         self.key_edit.setKeySequence(seq)
         self.stored_key = seq.toString()
+        self.trigger_label.setEnabled(True)
         self.add_cmd_btn.setEnabled(True)
         self.add_cmd_sh_btn.setEnabled(True)
         self.add_action_btn.setEnabled(True)

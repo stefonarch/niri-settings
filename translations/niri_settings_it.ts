@@ -386,58 +386,63 @@
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="123" />
+        <location filename="../ui/keybinds_tab.py" line="122" />
+        <source>Trigger:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/keybinds_tab.py" line="125" />
         <source>Application</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="128" />
+        <location filename="../ui/keybinds_tab.py" line="130" />
         <source>Shell command</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="133" />
+        <location filename="../ui/keybinds_tab.py" line="135" />
         <source>niri action</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="139" />
+        <location filename="../ui/keybinds_tab.py" line="141" />
         <source>Add as comment</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="150" />
+        <location filename="../ui/keybinds_tab.py" line="152" />
         <source>Add a shortcut:</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="159" />
+        <location filename="../ui/keybinds_tab.py" line="161" />
         <source>Add "Mod" key</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="162" />
+        <location filename="../ui/keybinds_tab.py" line="164" />
         <source>No repeating</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="165" />
+        <location filename="../ui/keybinds_tab.py" line="167" />
         <source>Allow whith locked session</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="177" />
+        <location filename="../ui/keybinds_tab.py" line="179" />
         <source>Note: keys like -,+ esc and more need to be translated
  to xkbcommon naming: (minus, comma, plus, escape ecc).</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="184" />
+        <location filename="../ui/keybinds_tab.py" line="187" />
         <source>Select a keybind line to edit</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="208" />
+        <location filename="../ui/keybinds_tab.py" line="211" />
         <source>Created new keybinds file</source>
         <translation type="unfinished" />
     </message>
