@@ -75,7 +75,7 @@ Translations should be submitted using the [Weblate platform](https://translate.
 
 ## Disclaimer
 
-Scripts ready for use here may contain the following ingredients: LLM generated content, typos, bugs.
+Scripts here may contain the following ingredients: LLM generated content, typos, bugs.
 If you have an allergy, please be aware.
 
 ## Todo list

@@ -6,7 +6,7 @@ from PyQt6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout, QR
                              )
 import sys
 
-from PyQt6.QtCore import Qt, QTimer, QProcess, QRegularExpression
+from PyQt6.QtCore import Qt, QTimer, QProcess
 from PyQt6.QtGui import QFont, QColor, QAction, QCursor
 
 from pathlib import Path
@@ -112,12 +112,12 @@ class KeybindsFileEditor(QWidget):
         self.move_up_btn = QPushButton(self.tr("Move up"))
         self.move_up_btn.clicked.connect(self.delete_line)
         self.move_up_btn.setEnabled(False)
-        button_layout.addWidget(self.move_up_btn)
+        #button_layout.addWidget(self.move_up_btn)
 
         self.move_down_btn = QPushButton(self.tr("Move down"))
         self.move_down_btn.clicked.connect(self.delete_line)
         self.move_down_btn.setEnabled(False)
-        button_layout.addWidget(self.move_down_btn)
+        #button_layout.addWidget(self.move_down_btn)
 
 
         self.add_cmd_btn = QPushButton(self.tr("Application"))
@@ -136,16 +136,15 @@ class KeybindsFileEditor(QWidget):
         add_button_layout.addWidget(self.add_action_btn)
         add_button_layout.addStretch()
 
-        self.add_comment_btn = QPushButton(self.tr("Add comment"))
+        self.add_comment_btn = QPushButton(self.tr("Add as comment"))
         self.add_comment_btn.clicked.connect(self.add_comment)
         self.add_comment_btn.setEnabled(True)
-        add_button_layout.addWidget(self.add_comment_btn)
+        button_layout.addWidget(self.add_comment_btn)
 
         self.stored_key = None
+        self.mod = ""
         self.allow_locked = ""
         self.repeat_false = ""
-
-
 
         keypress_layout = QFormLayout(self)
         self.label = QLabel(self.tr("Add a shortcut:"))
@@ -157,26 +156,30 @@ class KeybindsFileEditor(QWidget):
         keypress_layout.addRow(self.label, self.key_edit)
 
         options_layout = QHBoxLayout()
-        self.repeat_false_checkbox = QCheckBox(self.tr('Do not repeat'))
-        self.allow_locked_checkbox = QCheckBox(self.tr('Allow when session is locked'))
-        self.allow_locked_checkbox.setEnabled(False)
-        self.allow_locked_checkbox.toggled.connect(self.on_toggled_locked)
+        self.mod_checkbox = QCheckBox(self.tr('Add "Mod" key'))
+        self.mod_checkbox.setEnabled(False)
+        self.mod_checkbox.toggled.connect(self.on_toggled_mod)
+        self.repeat_false_checkbox = QCheckBox(self.tr('No repeating'))
         self.repeat_false_checkbox.setEnabled(False)
         self.repeat_false_checkbox.toggled.connect(self.on_toggled_repeat)
+        self.allow_locked_checkbox = QCheckBox(self.tr('Allow whith locked session'))
+        self.allow_locked_checkbox.setEnabled(False)
+        self.allow_locked_checkbox.toggled.connect(self.on_toggled_locked)
 
-
+        options_layout.addWidget(self.mod_checkbox)
         options_layout.addWidget(self.repeat_false_checkbox)
         options_layout.addWidget(self.allow_locked_checkbox)
         options_layout.addStretch()
 
         bottom_layout.addLayout(button_layout)
         bottom_layout.addSpacing(15)
-                # Notes
-        notes_label = QLabel(self.tr("Note: keys like -,+ esc and more have to be translated\n to xkbcommon naming: (minus,comma,plus,escape ecc).\nTo add the 'Mod' key another modifier has to be used\nand the line edited afterwards."))
-        bottom_layout.addWidget(notes_label)
+        # Notes
+        self.notes_label = QLabel(self.tr("Note: keys like -,+ esc and more need to be translated\n to xkbcommon naming: (minus, comma, plus, escape ecc)."))
+        self.notes_label.setEnabled(False)
         bottom_layout.addLayout(keypress_layout)
         bottom_layout.addLayout(add_button_layout)
         bottom_layout.addLayout(options_layout)
+        bottom_layout.addWidget(self.notes_label)
 
         # Status label
         self.status_label = QLabel(self.tr("Select a keybind line to edit"))
@@ -324,10 +327,10 @@ class KeybindsFileEditor(QWidget):
         if ok and new_line:
             if 'LXQt' in desktop_list:
                 command = f'spawn-sh "lxqt-qdbus run {new_line}"'
-                new_line = f"    {self.stored_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
+                new_line = f"    {self.mod}{self.stored_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
             else:
                 command = f'spawn "{new_line}"'
-                new_line = f"    {self.stored_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
+                new_line = f"    {self.mod}{self.stored_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
 
             try:
                 # Find the last line (should be "}")
@@ -368,7 +371,7 @@ class KeybindsFileEditor(QWidget):
 
         if ok and new_line:
             command = f'spawn-sh "{new_line}"'
-            new_line = f"    {self.stored_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
+            new_line = f"    {self.mod}{self.stored_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
 
             try:
                 last_line_index = len(self.lines) - 1
@@ -433,7 +436,7 @@ class KeybindsFileEditor(QWidget):
         )
 
         if ok and new_line:
-            new_line = f"    {self.stored_key} {self.allow_locked} {self.repeat_false}{{ {new_line}; }}\n"
+            new_line = f"    {self.mod}{self.stored_key} {self.allow_locked} {self.repeat_false}{{ {new_line}; }}\n"
 
             try:
                 last_line_index = len(self.lines) - 1
@@ -461,8 +464,16 @@ class KeybindsFileEditor(QWidget):
         self.add_cmd_btn.setEnabled(True)
         self.add_cmd_sh_btn.setEnabled(True)
         self.add_action_btn.setEnabled(True)
+        self.mod_checkbox.setEnabled(True)
         self.allow_locked_checkbox.setEnabled(True)
         self.repeat_false_checkbox.setEnabled(True)
+        self.notes_label.setEnabled(True)
+
+    def on_toggled_mod(self, checked):
+        if checked:
+            self.mod = "Mod+"
+        else:
+            self.mod = ""
 
     def on_toggled_locked(self, checked):
         if checked:
@@ -475,7 +486,6 @@ class KeybindsFileEditor(QWidget):
             self.repeat_false = "repeat=false"
         else:
             self.repeat_false = ""
-
 
 def get_keybind_config_path():
     if len(sys.argv) > 1:

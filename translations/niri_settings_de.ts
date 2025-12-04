@@ -400,32 +400,43 @@
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="138" />
-        <source>Add comment</source>
+        <location filename="../ui/keybinds_tab.py" line="139" />
+        <source>Add as comment</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="149" />
+        <location filename="../ui/keybinds_tab.py" line="150" />
         <source>Add a shortcut:</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="158" />
-        <source>Do not repeat</source>
+        <location filename="../ui/keybinds_tab.py" line="159" />
+        <source>Add "Mod" key</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="159" />
-        <source>Allow when session is locked</source>
+        <location filename="../ui/keybinds_tab.py" line="162" />
+        <source>No repeating</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/keybinds_tab.py" line="165" />
+        <source>Allow whith locked session</source>
         <translation type="unfinished" />
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="177" />
+        <source>Note: keys like -,+ esc and more need to be translated
+ to xkbcommon naming: (minus, comma, plus, escape ecc).</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/keybinds_tab.py" line="184" />
         <source>Select a keybind line to edit</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="201" />
+        <location filename="../ui/keybinds_tab.py" line="208" />
         <source>Created new keybinds file</source>
         <translation type="unfinished" />
     </message>
@@ -576,32 +587,32 @@
         <translation>Schließen</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="734" />
-        <location filename="../ui/settings_window.py" line="709" />
-        <location filename="../ui/settings_window.py" line="661" />
-        <location filename="../ui/settings_window.py" line="624" />
-        <location filename="../ui/settings_window.py" line="565" />
-        <location filename="../ui/settings_window.py" line="496" />
+        <location filename="../ui/settings_window.py" line="737" />
+        <location filename="../ui/settings_window.py" line="712" />
+        <location filename="../ui/settings_window.py" line="664" />
+        <location filename="../ui/settings_window.py" line="627" />
+        <location filename="../ui/settings_window.py" line="568" />
+        <location filename="../ui/settings_window.py" line="499" />
         <source>Configuration Parsing Error</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="736" />
-        <location filename="../ui/settings_window.py" line="711" />
-        <location filename="../ui/settings_window.py" line="663" />
-        <location filename="../ui/settings_window.py" line="626" />
-        <location filename="../ui/settings_window.py" line="567" />
-        <location filename="../ui/settings_window.py" line="498" />
+        <location filename="../ui/settings_window.py" line="739" />
+        <location filename="../ui/settings_window.py" line="714" />
+        <location filename="../ui/settings_window.py" line="666" />
+        <location filename="../ui/settings_window.py" line="629" />
+        <location filename="../ui/settings_window.py" line="570" />
+        <location filename="../ui/settings_window.py" line="501" />
         <source>Applying changes will reset to defaults some values, please check this file.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="723" />
+        <location filename="../ui/settings_window.py" line="726" />
         <source>Niri Settings: Configuration not found</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="725" />
+        <location filename="../ui/settings_window.py" line="728" />
         <source>This line is needed to make this application work. 
 Identical settings before this line will be ignored after.</source>
         <translation type="unfinished" />
