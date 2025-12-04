@@ -134,16 +134,18 @@ class KeybindsFileEditor(QWidget):
         self.add_action_btn.clicked.connect(self.add_niri_action)
         self.add_action_btn.setEnabled(False)
         add_button_layout.addWidget(self.add_action_btn)
+        add_button_layout.addStretch()
 
         self.add_comment_btn = QPushButton(self.tr("Add comment"))
         self.add_comment_btn.clicked.connect(self.add_comment)
         self.add_comment_btn.setEnabled(True)
         add_button_layout.addWidget(self.add_comment_btn)
-        add_button_layout.addStretch()
 
         self.stored_key = None
         self.allow_locked = ""
         self.repeat_false = ""
+
+
 
         keypress_layout = QFormLayout(self)
         self.label = QLabel(self.tr("Add a shortcut:"))
@@ -169,6 +171,9 @@ class KeybindsFileEditor(QWidget):
 
         bottom_layout.addLayout(button_layout)
         bottom_layout.addSpacing(15)
+                # Notes
+        notes_label = QLabel(self.tr("Note: keys like -,+ esc and more have to be translated\n to xkbcommon naming: (minus,comma,plus,escape ecc).\nTo add the 'Mod' key another modifier has to be used\nand the line edited afterwards."))
+        bottom_layout.addWidget(notes_label)
         bottom_layout.addLayout(keypress_layout)
         bottom_layout.addLayout(add_button_layout)
         bottom_layout.addLayout(options_layout)
