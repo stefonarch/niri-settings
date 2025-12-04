@@ -1,9 +1,9 @@
-from PyQt6.QtWidgets import (QApplication,QWidget, QVBoxLayout, QHBoxLayout, QRadioButton,
+from PyQt6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout, QRadioButton,
                              QLabel, QScrollArea, QFrame, QButtonGroup, QPushButton, QCheckBox,QGridLayout,
                              QDoubleSpinBox, QComboBox, QSpinBox, QLineEdit, QGroupBox, QColorDialog,
-                             QListWidget, QListWidgetItem, QMenu,QMessageBox,QPlainTextEdit)
-from PyQt6.QtCore import Qt, QTimer,QProcess
-from PyQt6.QtGui import QFont, QColor,QAction, QCursor
+                             QListWidget, QListWidgetItem, QMenu, QMessageBox, QPlainTextEdit)
+from PyQt6.QtCore import Qt, QTimer, QProcess
+from PyQt6.QtGui import QFont, QColor, QAction, QCursor
 
 from pathlib import Path
 import os, re, sys, subprocess, shutil

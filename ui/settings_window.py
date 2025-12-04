@@ -10,6 +10,7 @@ from PyQt6.QtGui import QIcon
 
 from .conf_path import get_config_path, get_niri_config_path
 from .all_tabs import AppearanceTab, BehaviorTab ,TouchpadTab, MouseTab,KeyboardTab,FilesTab
+from .keybinds_tab import KeyBindsTab
 
 # Where are we?
 current_desktop = os.environ.get('XDG_CURRENT_DESKTOP', '')
@@ -56,6 +57,7 @@ class SettingsWindow(QMainWindow):
         self.touchpad_tab = TouchpadTab(self)
         self.mouse_tab = MouseTab(self)
         self.keyboard_tab = KeyboardTab(self)
+        self.keybinds_tab = KeyBindsTab(self)
         self.files_tab = FilesTab(self)
 
         self.tabs.addTab(self.appearance_tab, self.tr("Appearance"))
@@ -63,6 +65,7 @@ class SettingsWindow(QMainWindow):
         self.tabs.addTab(self.touchpad_tab, self.tr("Touchpad"))
         self.tabs.addTab(self.mouse_tab, self.tr("Mouse"))
         self.tabs.addTab(self.keyboard_tab, self.tr("Keyboard"))
+        self.tabs.addTab(self.keybinds_tab, self.tr("Shortcuts"))
         self.tabs.addTab(self.files_tab, self.tr("Files"))
 
         main_layout.addWidget(self.tabs)
@@ -101,9 +104,11 @@ class SettingsWindow(QMainWindow):
     def save_include_setting(self):
 
         if 'LXQt' in desktop_list:
-            include_to_add = '\ninclude "niri/basicsettings.kdl"\n'
+            keybinds_to_add = 'include "niri/keybinds.kdl" // Added by niri-settings\n'
+            include_to_add = 'include "niri/basicsettings.kdl" // Added by niri-settings\n'
         else:
-            include_to_add = '\ninclude "basicsettings.kdl"\n'
+            keybinds_to_add = '\ninclude "keybinds.kdl" // Added by niri-settings\n'
+            include_to_add = '\ninclude "basicsettings.kdl" // Added by niri-settings\n'
 
         with open(self.niri_config_path, 'r', encoding='utf-8') as f:
             content = f.read()
@@ -111,6 +116,7 @@ class SettingsWindow(QMainWindow):
         if include_to_add.strip() not in content:
             with open(self.niri_config_path, 'a', encoding='utf-8') as f:
                 f.write(include_to_add)
+                f.write(keybinds_to_add)
 
     def save_behavior_config(self):
         """Save behavior and appearance configuration"""

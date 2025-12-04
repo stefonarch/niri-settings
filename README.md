@@ -19,7 +19,29 @@ to change those defaults.
 
 ## Installation
 
-Manual installation as user:
+### Arch, derivatives
+
+Install `pyqt6` and  package:
+```
+# pacman -S python-pyqt6 qt6-wayland
+
+```
+
+### Debian, derivatives
+```apt
+# apt -y install python3-pyqt6 qt6-wayland
+```
+### Fedora
+```
+# dnf install python-pyqt6 qt6-wayland
+```
+
+### openSuse
+```
+zypper install python-PyQt6 qt6-wayland
+```
+
+Manual local installation as user:
 
 ```
 git clone https://github.com/stefonarch/niri-settings
@@ -30,11 +52,18 @@ cp -a translations/ ~/.local/share/niri-settings/
 mkdir -p ~/.local/share/icons/hicolor/scalable/apps/
 cp niri-settings.svg ~/.local/share/icons/hicolor/scalable/apps/niri-settings.svg
 
-
 ```
-Run `./niri-settings` from terminal inside the folder or customize `~/.local/share/applications/niri-settings.desktop` to match the path to `niri-setttings/niri-settings.py`.
+Run `./niri-settings-local` from a terminal inside the folder or customize `~/.local/share/applications/niri-settings.desktop` to match the path to `niri-settings/niri-settings.py`.
 
-A `PKGBUILD` is added now for arch and derivates users.
+A `PKGBUILD` is added now for arch and derivatives users.
+
+## Shortcut editor
+
+![screenshot of the shortcut editor](editor.png)
+
+
+By default `keybinds.kdl` is used, again in relative paths both for LXQt and pure niri. It will be created and
+added to the default configuration when applying changes with the "Apply" button. Existing shortcuts can be moved there. Backup your files.
 
 ## Translations
 
@@ -44,11 +73,18 @@ Translations should be submitted using the [Weblate platform](https://translate.
 <img src="https://translate.lxqt-project.org/widgets/stefonarch/-/niri-settings/multi-auto.svg" alt="Translation status" />
 </a>
 
+## Disclaimer
+
+Scripts ready for use here may contain the following ingredients: LLM generated content, typos, bugs.
+If you have an allergy, please be aware.
+
 ## Todo list
 
 * Get feedback and testing
 * Improve parsing regex
 * Add install script for local install
 * Default column width settings
+* Translate to xkbcommon naming some keys in shortcuts (- = minus; Esc=escape)
+* Add shortcut at position instead of end
 
 * Submit to AUR.

@@ -348,6 +348,88 @@
         <translation type="unfinished" />
     </message>
 </context><context>
+    <name>KeybindsFileEditor</name>
+    <message>
+        <location filename="../ui/keybinds_tab.py" line="62" />
+        <source>Filter:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/keybinds_tab.py" line="65" />
+        <source>Type to filter...</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/keybinds_tab.py" line="89" />
+        <source>Edit selected shortcut:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/keybinds_tab.py" line="101" />
+        <source>Save edit</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/keybinds_tab.py" line="106" />
+        <source>Remove this line</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/keybinds_tab.py" line="112" />
+        <source>Move up</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/keybinds_tab.py" line="117" />
+        <source>Move down</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/keybinds_tab.py" line="123" />
+        <source>Application</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/keybinds_tab.py" line="128" />
+        <source>Shell command</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/keybinds_tab.py" line="133" />
+        <source>niri action</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/keybinds_tab.py" line="138" />
+        <source>Add comment</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/keybinds_tab.py" line="149" />
+        <source>Add a shortcut:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/keybinds_tab.py" line="158" />
+        <source>Do not repeat</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/keybinds_tab.py" line="159" />
+        <source>Allow when session is locked</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/keybinds_tab.py" line="177" />
+        <source>Select a keybind line to edit</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/keybinds_tab.py" line="201" />
+        <source>Created new keybinds file</source>
+        <translation type="unfinished" />
+    </message>
+</context><context>
     <name>KeyboardTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="696" />
@@ -439,82 +521,87 @@
 </context><context>
     <name>SettingsWindow</name>
     <message>
-        <location filename="../ui/settings_window.py" line="31" />
+        <location filename="../ui/settings_window.py" line="32" />
         <source>Niri Settings</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="61" />
+        <location filename="../ui/settings_window.py" line="63" />
         <source>Appearance</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="62" />
+        <location filename="../ui/settings_window.py" line="64" />
         <source>Behavior</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="63" />
+        <location filename="../ui/settings_window.py" line="65" />
         <source>Touchpad</source>
         <translation>Touchpad</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="64" />
+        <location filename="../ui/settings_window.py" line="66" />
         <source>Mouse</source>
         <translation>Maus</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="65" />
+        <location filename="../ui/settings_window.py" line="67" />
         <source>Keyboard</source>
         <translation>Tastatur</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="66" />
+        <location filename="../ui/settings_window.py" line="68" />
+        <source>Shortcuts</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/settings_window.py" line="69" />
         <source>Files</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="73" />
+        <location filename="../ui/settings_window.py" line="76" />
         <source>Wiki</source>
         <translation>Wiki</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="77" />
+        <location filename="../ui/settings_window.py" line="80" />
         <source>Apply</source>
         <translation>Übernehmen</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="81" />
+        <location filename="../ui/settings_window.py" line="84" />
         <source>Close</source>
         <translation>Schließen</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="731" />
-        <location filename="../ui/settings_window.py" line="706" />
-        <location filename="../ui/settings_window.py" line="658" />
-        <location filename="../ui/settings_window.py" line="621" />
-        <location filename="../ui/settings_window.py" line="562" />
-        <location filename="../ui/settings_window.py" line="493" />
+        <location filename="../ui/settings_window.py" line="734" />
+        <location filename="../ui/settings_window.py" line="709" />
+        <location filename="../ui/settings_window.py" line="661" />
+        <location filename="../ui/settings_window.py" line="624" />
+        <location filename="../ui/settings_window.py" line="565" />
+        <location filename="../ui/settings_window.py" line="496" />
         <source>Configuration Parsing Error</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="733" />
-        <location filename="../ui/settings_window.py" line="708" />
-        <location filename="../ui/settings_window.py" line="660" />
-        <location filename="../ui/settings_window.py" line="623" />
-        <location filename="../ui/settings_window.py" line="564" />
-        <location filename="../ui/settings_window.py" line="495" />
+        <location filename="../ui/settings_window.py" line="736" />
+        <location filename="../ui/settings_window.py" line="711" />
+        <location filename="../ui/settings_window.py" line="663" />
+        <location filename="../ui/settings_window.py" line="626" />
+        <location filename="../ui/settings_window.py" line="567" />
+        <location filename="../ui/settings_window.py" line="498" />
         <source>Applying changes will reset to defaults some values, please check this file.</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="720" />
+        <location filename="../ui/settings_window.py" line="723" />
         <source>Niri Settings: Configuration not found</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="722" />
+        <location filename="../ui/settings_window.py" line="725" />
         <source>This line is needed to make this application work. 
 Identical settings before this line will be ignored after.</source>
         <translation type="unfinished" />
