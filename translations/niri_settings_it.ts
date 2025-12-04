@@ -411,38 +411,43 @@
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="152" />
+        <location filename="../ui/keybinds_tab.py" line="153" />
         <source>Add a shortcut:</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="161" />
-        <source>Add "Mod" key</source>
+        <location filename="../ui/keybinds_tab.py" line="162" />
+        <source>Add "Mod"</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="164" />
+        <location filename="../ui/keybinds_tab.py" line="165" />
+        <source>Add "AltGr"</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/keybinds_tab.py" line="168" />
         <source>No repeating</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="167" />
-        <source>Allow whith locked session</source>
+        <location filename="../ui/keybinds_tab.py" line="171" />
+        <source>Allow when locked</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="179" />
+        <location filename="../ui/keybinds_tab.py" line="184" />
         <source>Note: keys like -,+ esc and more need to be translated
  to xkbcommon naming: (minus, comma, plus, escape ecc).</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="187" />
+        <location filename="../ui/keybinds_tab.py" line="192" />
         <source>Select a keybind line to edit</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="211" />
+        <location filename="../ui/keybinds_tab.py" line="216" />
         <source>Created new keybinds file</source>
         <translation type="unfinished" />
     </message>
