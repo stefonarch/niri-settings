@@ -143,7 +143,8 @@ class KeybindsFileEditor(QWidget):
         self.add_comment_btn.setEnabled(True)
         button_layout.addWidget(self.add_comment_btn)
 
-        self.stored_key = None
+        self.stored_key = ""
+        self.xkbcommon_key = ""
         self.mod = ""
         self.mod5 = ""
         self.allow_locked = ""
@@ -181,12 +182,12 @@ class KeybindsFileEditor(QWidget):
         bottom_layout.addLayout(button_layout)
         bottom_layout.addSpacing(15)
         # Notes
-        self.notes_label = QLabel(self.tr("Note: keys like -,+ esc and more need to be translated\n to xkbcommon naming: (minus, comma, plus, escape ecc)."))
+        self.notes_label = QLabel(self.tr("Note: )."))
         self.notes_label.setEnabled(False)
         bottom_layout.addLayout(keypress_layout)
         bottom_layout.addLayout(options_layout)
         bottom_layout.addLayout(add_button_layout)
-        bottom_layout.addWidget(self.notes_label)
+        #bottom_layout.addWidget(self.notes_label)
 
         # Status label
         self.status_label = QLabel(self.tr("Select a keybind line to edit"))
@@ -334,10 +335,10 @@ class KeybindsFileEditor(QWidget):
         if ok and new_line:
             if 'LXQt' in desktop_list:
                 command = f'spawn-sh "lxqt-qdbus run {new_line}"'
-                new_line = f"    {self.mod}{self.mod5}{self.stored_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
+                new_line = f"    {self.mod}{self.mod5}{self.xkbcommon_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
             else:
                 command = f'spawn "{new_line}"'
-                new_line = f"    {self.mod}{self.mod5}{self.stored_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
+                new_line = f"    {self.mod}{self.mod5}{self.xkbcommon_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
 
             try:
                 # Find the last line (should be "}")
@@ -378,7 +379,7 @@ class KeybindsFileEditor(QWidget):
 
         if ok and new_line:
             command = f'spawn-sh "{new_line}"'
-            new_line = f"    {self.mod}{self.mod5}{self.stored_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
+            new_line = f"    {self.mod}{self.mod5}{self.xkbcommon_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
 
             try:
                 last_line_index = len(self.lines) - 1
@@ -443,7 +444,7 @@ class KeybindsFileEditor(QWidget):
         )
 
         if ok and new_line:
-            new_line = f"    {self.mod}{self.mod5}{self.stored_key} {self.allow_locked} {self.repeat_false}{{ {new_line}; }}\n"
+            new_line = f"    {self.mod}{self.mod5}{self.xkbcommon_key} {self.allow_locked} {self.repeat_false}{{ {new_line}; }}\n"
 
             try:
                 last_line_index = len(self.lines) - 1
@@ -477,6 +478,46 @@ class KeybindsFileEditor(QWidget):
         self.allow_locked_checkbox.setEnabled(True)
         self.repeat_false_checkbox.setEnabled(True)
         self.notes_label.setEnabled(True)
+
+        if self.stored_key:
+            conversion = self.stored_key
+            conversion = conversion.replace("-", "minus")
+            conversion = conversion.replace("=", "equal")
+            conversion = conversion.replace("[", "bracketleft")
+            conversion = conversion.replace("]", "bracketright")
+            conversion = conversion.replace("{", "braceleft")
+            conversion = conversion.replace("}", "braceright")
+            conversion = conversion.replace(";", "semicolon")
+            conversion = conversion.replace(":", "colon")
+            conversion = conversion.replace("'", "apostrophe")
+            conversion = conversion.replace('"', "quotedbl")
+            conversion = conversion.replace(",", "comma")
+            conversion = conversion.replace(".", "period")
+            conversion = conversion.replace("<", "less")
+            conversion = conversion.replace(">", "greater")
+            conversion = conversion.replace("/", "slash")
+            conversion = conversion.replace("?", "question")
+            conversion = conversion.replace("\\", "backslash")
+            conversion = conversion.replace("|", "bar")
+            conversion = conversion.replace("`", "grave")
+            conversion = conversion.replace("~", "asciitilde")
+            conversion = conversion.replace("!", "exclam")
+            conversion = conversion.replace("@", "at")
+            conversion = conversion.replace("#", "numbersign")
+            conversion = conversion.replace("$", "dollar")
+            conversion = conversion.replace("%", "percent")
+            conversion = conversion.replace("^", "asciicircum")
+            conversion = conversion.replace("&", "ampersand")
+            conversion = conversion.replace("*", "asterisk")
+            conversion = conversion.replace("(", "parenleft")
+            conversion = conversion.replace(")", "parenright")
+            conversion = conversion.replace("_", "underscore")
+            conversion = conversion.replace("++", "+plus") # otherwise breaks all others...
+
+            self.xkbcommon_key = conversion
+        #else:
+        #    self.xkbcommon_key = ""
+        #print(f"Qt: '{self.stored_key}' -> xkbcommon: '{self.xkbcommon_key}'")
 
     def on_toggled_mod(self, checked):
         if checked:

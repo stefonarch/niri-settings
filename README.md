@@ -84,7 +84,6 @@ If you have an allergy, please be aware.
 * Improve parsing regex
 * Add install script for local install
 * Default column width settings
-* Translate to xkbcommon naming some keys in shortcuts (- = minus; Esc=escape)
-* Add shortcut at position instead of end
+* Add shortcut at position instead at the end
 
 * Submit to AUR.
