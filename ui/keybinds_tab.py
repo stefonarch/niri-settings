@@ -481,6 +481,7 @@ class KeybindsFileEditor(QWidget):
 
         if self.stored_key:
             conversion = self.stored_key
+            conversion = conversion.replace("Esc", "escape")
             conversion = conversion.replace("-", "minus")
             conversion = conversion.replace("=", "equal")
             conversion = conversion.replace("[", "bracketleft")
