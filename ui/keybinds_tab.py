@@ -138,9 +138,9 @@ class KeybindsFileEditor(QWidget):
         add_button_layout.addWidget(self.add_action_btn)
         add_button_layout.addStretch()
 
-        self.add_comment_btn = QPushButton(self.tr("Add as comment"))
+        self.add_comment_btn = QPushButton(self.tr("Insert comment"))
         self.add_comment_btn.clicked.connect(self.add_comment)
-        self.add_comment_btn.setEnabled(True)
+        self.add_comment_btn.setEnabled(False)
         button_layout.addWidget(self.add_comment_btn)
 
         self.stored_key = ""
@@ -273,6 +273,7 @@ class KeybindsFileEditor(QWidget):
         original_text = self.lines[self.selected_index].rstrip('\n')
         self.text_edit.setPlainText(original_text)
         self.save_btn.setEnabled(True)
+        self.add_comment_btn.setEnabled(True)
         self.remove_btn.setEnabled(True)
         self.status_label.setText(f"Editing line {self.selected_index + 1}")
 
@@ -327,7 +328,7 @@ class KeybindsFileEditor(QWidget):
         new_line, ok = QInputDialog.getText(
             self,
             "Add Command",
-            "Add a single command without arguments\nExample: firefox",
+            "Add a single command without arguments\nExample: firefox" ,
             QLineEdit.EchoMode.Normal,
             ""
         )
@@ -341,7 +342,7 @@ class KeybindsFileEditor(QWidget):
                 new_line = f"    {self.mod}{self.mod5}{self.xkbcommon_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
 
             try:
-                # Find the last line (should be "}")
+                # Find the last line (should be "}") #FIXME add at current index if there is
                 last_line_index = len(self.lines) - 1
 
                 # Insert before the last line
@@ -383,7 +384,8 @@ class KeybindsFileEditor(QWidget):
 
             try:
                 last_line_index = len(self.lines) - 1
-                self.lines.insert(last_line_index, new_line)
+                self.lines.insert(last_line_index, new_text, new_line)
+
 
                 with open(self.filename, 'w') as file:
                     file.writelines(self.lines)
@@ -402,37 +404,38 @@ class KeybindsFileEditor(QWidget):
                 self.status_label.setText(f"Error adding shell command: {str(e)}")
 
     def add_comment(self):
-        new_line, ok = QInputDialog.getText(
-            self,
-            "Add a comment",
-            "Add a comment:",
-            QLineEdit.EchoMode.Normal,
-            ""
-        )
+        if hasattr(self, 'selected_index'):
+            comment, ok = QInputDialog.getText(
+                self,
+                "Add a comment",
+                "Add a comment for this keybind:",
+                QLineEdit.EchoMode.Normal,
+                ""
+            )
 
-        if ok and new_line:
+            if ok and comment:
+                comment_to_add = f"    // {comment}\n"
+                self.lines.insert(self.selected_index, comment_to_add)
 
-            new_line = f"    // {new_line}\n"
+                try:
+                    with open(self.filename, 'w') as file:
+                        file.writelines(self.lines)
 
-            try:
-                last_line_index = len(self.lines) - 1
-                self.lines.insert(last_line_index, new_line)
+                    # Update the list display
+                     #if self.filter_input.comment():
+#                        self.filter_lines()
 
-                with open(self.filename, 'w') as file:
-                    file.writelines(self.lines)
+                    #display_text = comment_to_add
+                    self.filter_input.text()
+                    self.filter_lines()
+                    #self.filter_lines(comment)
+                    #self.list_widget.item(self.selected_index).setText(display_text)
 
-                self.update_list_display()
+                    self.status_label.setText(f"New comment saved at line {self.selected_index + 1}")
 
-                new_index = last_line_index
-                self.list_widget.setCurrentRow(new_index)
 
-                self.text_edit.setPlainText(new_line.rstrip('\n'))
-                self.save_btn.setEnabled(True)
-
-                self.status_label.setText(f"Added new shell keybind at line {new_index + 1}")
-
-            except Exception as e:
-                self.status_label.setText(f"Error adding shell command: {str(e)}")
+                except Exception as e:
+                    self.status_label.setText(f"Error saving file: {str(e)}")
 
     def add_niri_action(self):
         new_line, ok = QInputDialog.getText(

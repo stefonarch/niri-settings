@@ -59,8 +59,7 @@ A `PKGBUILD` is added now for arch and derivatives users.
 
 ## Shortcut editor
 
-![screenshot of the shortcut editor](editor.png)
-
+![screenshot of the niri shortcut editor](editor.png)
 
 By default `keybinds.kdl` is used, again in relative paths both for LXQt and pure niri. It will be created and
 added to the default configuration when applying changes with the "Apply" button. Existing shortcuts can be moved there. Backup your files.
@@ -83,7 +82,7 @@ If you have an allergy, please be aware.
 * Get feedback and testing
 * Improve parsing regex
 * Add install script for local install
-* Default column width settings
-* Add shortcut at position instead at the end
+* Add Default column width settings, corner rounding yes|no, else ?
+* Add new shortcut at position instead at the end
 
 * Submit to AUR.
