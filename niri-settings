@@ -1,3 +1,3 @@
 #!/bin/bash
 export PYTHONPYCACHEPREFIX=/tmp/pycache
-exec /usr/lib/niri-settings/niri_settings.py $1
+python3 /usr/lib/niri-settings/niri_settings.py $1
