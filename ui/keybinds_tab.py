@@ -431,7 +431,7 @@ class KeybindsFileEditor(QWidget):
                     #self.filter_lines(comment)
                     #self.list_widget.item(self.selected_index).setText(display_text)
 
-                    self.status_label.setText(f"New comment saved at line {self.selected_index + 1}")
+                    self.status_label.setText(f"Comment saved at line {self.selected_index+1}")
 
 
                 except Exception as e:

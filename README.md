@@ -43,7 +43,7 @@ zypper install python-PyQt6 qt6-wayland
 
 Manual local installation as user:
 
-```
+```bash
 git clone https://github.com/stefonarch/niri-settings
 cd niri-settings
 mkdir -p ~/.local/share/niri-settings/  ~/.local/share/applications
@@ -55,7 +55,13 @@ cp niri-settings.svg ~/.local/share/icons/hicolor/scalable/apps/niri-settings.sv
 ```
 Run `./niri-settings-local` from a terminal inside the folder or customize `~/.local/share/applications/niri-settings.desktop` to match the path to `niri-settings/niri-settings.py`.
 
-A `PKGBUILD` is added now for arch and derivatives users.
+### Archlinux
+
+An [AUR package](https://aur.archlinux.org/packages/niri-settings) is available.
+
+```
+yay -S niri-settings
+```
 
 ## Shortcut editor
 
@@ -85,4 +91,3 @@ If you have an allergy, please be aware.
 * Add Default column width settings, corner rounding yes|no, else ?
 * Add new shortcut at position instead at the end
 
-* Submit to AUR.
