@@ -406,47 +406,46 @@
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="141" />
-        <source>Add as comment</source>
+        <source>Insert comment</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="153" />
+        <location filename="../ui/keybinds_tab.py" line="154" />
         <source>Add a shortcut:</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="162" />
+        <location filename="../ui/keybinds_tab.py" line="163" />
         <source>Add "Mod"</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="165" />
+        <location filename="../ui/keybinds_tab.py" line="166" />
         <source>Add "AltGr"</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="168" />
+        <location filename="../ui/keybinds_tab.py" line="169" />
         <source>No repeating</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="171" />
+        <location filename="../ui/keybinds_tab.py" line="172" />
         <source>Allow when locked</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="184" />
-        <source>Note: keys like -,+ esc and more need to be translated
- to xkbcommon naming: (minus, comma, plus, escape ecc).</source>
+        <location filename="../ui/keybinds_tab.py" line="185" />
+        <source>Note: ).</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="192" />
+        <location filename="../ui/keybinds_tab.py" line="193" />
         <source>Select a keybind line to edit</source>
         <translation type="unfinished" />
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="216" />
+        <location filename="../ui/keybinds_tab.py" line="217" />
         <source>Created new keybinds file</source>
         <translation type="unfinished" />
     </message>
