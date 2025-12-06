@@ -6,118 +6,118 @@
     <message>
         <location filename="../ui/all_tabs.py" line="21"/>
         <source>Choose Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбрать цвет</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="30"/>
         <source>Choose Incactive Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбрать цвет для инактивного окна</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="40"/>
         <source>Choose Insert Hint Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите цвет для требущего внимания окна</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="57"/>
         <source>Use client side decorations</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать клиентские декорации</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="62"/>
         <source>Overview zoom:</source>
-        <translation type="unfinished"></translation>
+        <translation>Зум в режиме обзора:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="74"/>
         <source>Enable shadows</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить тени</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="78"/>
         <source>Enable Animations</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить анимации</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="81"/>
         <source>Slowdown:</source>
-        <translation type="unfinished"></translation>
+        <translation>Замедление:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="102"/>
         <source>Enable focus-ring or border</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить фокусное кольцо или рамку</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="117"/>
         <source>Active color: </source>
-        <translation type="unfinished"></translation>
+        <translation>Активный цвет: </translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="122"/>
         <source>Inactive color: </source>
-        <translation type="unfinished"></translation>
+        <translation>Инактивный цвет: </translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="313"/>
         <location filename="../ui/all_tabs.py" line="137"/>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="155"/>
         <source>Apply as:</source>
-        <translation type="unfinished"></translation>
+        <translation>Применить как:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="157"/>
         <source>Focus ring </source>
-        <translation type="unfinished"></translation>
+        <translation>Фокусное кольцо </translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="158"/>
         <source>Border</source>
-        <translation type="unfinished"></translation>
+        <translation>Рамка</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="194"/>
         <source>Enable insert hint</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить подсказку для вставки</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="197"/>
         <source>Color: </source>
-        <translation type="unfinished"></translation>
+        <translation>Цвет: </translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="216"/>
         <source>Margins</source>
-        <translation type="unfinished"></translation>
+        <translation>Отступы</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="221"/>
         <source>Gaps:</source>
-        <translation type="unfinished"></translation>
+        <translation>Пробелы:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="242"/>
         <source>Left:</source>
-        <translation type="unfinished"></translation>
+        <translation>Слева:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="248"/>
         <source>Right:</source>
-        <translation type="unfinished"></translation>
+        <translation>Справа:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="254"/>
         <source>Top:</source>
-        <translation type="unfinished"></translation>
+        <translation>Сверху:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="260"/>
         <source>Bottom:</source>
-        <translation type="unfinished"></translation>
+        <translation>Снизу:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="278"/>
@@ -127,32 +127,32 @@
     <message>
         <location filename="../ui/all_tabs.py" line="285"/>
         <source>Tab Indicator</source>
-        <translation type="unfinished"></translation>
+        <translation>Индикатор вкладок</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="291"/>
         <source>Hide when single tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Скрыть, когда одна вкладка</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="294"/>
         <source>Place within column</source>
-        <translation type="unfinished"></translation>
+        <translation>Разместить внутри столбца</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="300"/>
         <source>Corner radius:</source>
-        <translation type="unfinished"></translation>
+        <translation>Закругление:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="320"/>
         <source>Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Длина:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="337"/>
         <source>Gap:</source>
-        <translation type="unfinished"></translation>
+        <translation>Пробел:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="344"/>

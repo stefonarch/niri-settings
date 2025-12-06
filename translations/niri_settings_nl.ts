@@ -321,27 +321,27 @@
     <message>
         <location filename="../ui/all_tabs.py" line="915"/>
         <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
-        <translation type="unfinished"></translation>
+        <translation>xdg-open is niet aangetroffen. Controleer de installatie en PATH.</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="936"/>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Openen</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="940"/>
         <source>Show in file manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Tonen in bestandsbeheerder</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="946"/>
         <source>Copy path to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Locatie kopiëren naar klembord</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="970"/>
         <source>No file selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er is geen bestand gekozen.</translation>
     </message>
 </context>
 <context>
@@ -349,57 +349,57 @@
     <message>
         <location filename="../ui/all_tabs.py" line="696"/>
         <source>Enable num lock at startup</source>
-        <translation type="unfinished"></translation>
+        <translation>NumLock inschakelen na opstarten</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="702"/>
         <source>Track keyboard layout:</source>
-        <translation type="unfinished"></translation>
+        <translation>Toetsenbordindeling bijhouden:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="712"/>
         <source>Keyboard Layout</source>
-        <translation type="unfinished"></translation>
+        <translation>Toetsenbordindeling</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="717"/>
         <source>Layout:</source>
-        <translation type="unfinished"></translation>
+        <translation>Indeling:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="732"/>
         <source>Variant:</source>
-        <translation type="unfinished"></translation>
+        <translation>Variant:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="746"/>
         <source>Options:</source>
-        <translation type="unfinished"></translation>
+        <translation>Opties:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="759"/>
         <source>Model:</source>
-        <translation type="unfinished"></translation>
+        <translation>Model:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="773"/>
         <source>File:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestand:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="788"/>
         <source>Repeat Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Herhaalinstellingen</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="793"/>
         <source>Repeat delay:</source>
-        <translation type="unfinished"></translation>
+        <translation>Herhaalvertraging:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="807"/>
         <source>Repeat rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Herhaalsnelheid:</translation>
     </message>
 </context>
 <context>
@@ -407,32 +407,32 @@
     <message>
         <location filename="../ui/all_tabs.py" line="631"/>
         <source>Natural scroll</source>
-        <translation type="unfinished"></translation>
+        <translation>Natuurlijk scrollen</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="632"/>
         <source>Left handed</source>
-        <translation type="unfinished"></translation>
+        <translation>Linkshandig</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="633"/>
         <source>Middle button emulation</source>
-        <translation type="unfinished"></translation>
+        <translation>Middelste muisknop emuleren</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="641"/>
         <source>Acceleration speed:</source>
-        <translation type="unfinished"></translation>
+        <translation>Versnelling:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="655"/>
         <source>Acceleration profile:</source>
-        <translation type="unfinished"></translation>
+        <translation>Versnellingsprofiel:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="666"/>
         <source>Scroll factor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Scrolfactor:</translation>
     </message>
 </context>
 <context>
@@ -440,52 +440,52 @@
     <message>
         <location filename="../ui/settings_window.py" line="31"/>
         <source>Niri Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Niri-instellingen</translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="61"/>
         <source>Appearance</source>
-        <translation type="unfinished"></translation>
+        <translation>Vormgeving</translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="62"/>
         <source>Behavior</source>
-        <translation type="unfinished"></translation>
+        <translation>Gedrag</translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="63"/>
         <source>Touchpad</source>
-        <translation type="unfinished"></translation>
+        <translation>Touchpad</translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="64"/>
         <source>Mouse</source>
-        <translation type="unfinished"></translation>
+        <translation>Muis</translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="65"/>
         <source>Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Toetsenbord</translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="66"/>
         <source>Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestanden</translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="73"/>
         <source>Wiki</source>
-        <translation type="unfinished"></translation>
+        <translation>Wiki</translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="77"/>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>Toepassen</translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="81"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Sluiten</translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="731"/>
@@ -495,7 +495,7 @@
         <location filename="../ui/settings_window.py" line="562"/>
         <location filename="../ui/settings_window.py" line="493"/>
         <source>Configuration Parsing Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Instellingen-verwerkingsfout</translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="733"/>
@@ -505,18 +505,19 @@
         <location filename="../ui/settings_window.py" line="564"/>
         <location filename="../ui/settings_window.py" line="495"/>
         <source>Applying changes will reset to defaults some values, please check this file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Door de wijzigingen toe te passen, worden sommige instellingen teruggezet. Controleer daarom dit bestand.</translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="720"/>
         <source>Niri Settings: Configuration not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Niri-instellingen: instellingen niet aangetroffen</translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="722"/>
         <source>This line is needed to make this application work. 
 Identical settings before this line will be ignored after.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deze regel is nodig om het programma te laten werken.
+Identieke instellingen ná deze regel worden genegeerd.</translation>
     </message>
 </context>
 <context>
@@ -524,87 +525,87 @@ Identical settings before this line will be ignored after.</source>
     <message>
         <location filename="../ui/all_tabs.py" line="516"/>
         <source>Tap to click</source>
-        <translation type="unfinished"></translation>
+        <translation>Tik om te klikken</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="518"/>
         <source>Natural scroll</source>
-        <translation type="unfinished"></translation>
+        <translation>Natuurlijk scrollen</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="520"/>
         <source>Drag lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Sleepvergrendeling</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="521"/>
         <source>Disable when external mouse connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitschakelen als er een externe muis verbonden is</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="522"/>
         <source>Disable while typing</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitschakelen tijdens typen</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="523"/>
         <source>Left handed</source>
-        <translation type="unfinished"></translation>
+        <translation>Linkshandig</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="534"/>
         <source>No scroll</source>
-        <translation type="unfinished"></translation>
+        <translation>Niet scrollen</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="535"/>
         <source>Two finger</source>
-        <translation type="unfinished"></translation>
+        <translation>Met twee vingers</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="536"/>
         <source>Edge</source>
-        <translation type="unfinished"></translation>
+        <translation>Op de rand</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="537"/>
         <source>Button</source>
-        <translation type="unfinished"></translation>
+        <translation>Met een knop</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="545"/>
         <source>Scroll method</source>
-        <translation type="unfinished"></translation>
+        <translation>Scrolmethode</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="559"/>
         <source>Acceleration speed:</source>
-        <translation type="unfinished"></translation>
+        <translation>Versnelling:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="573"/>
         <source>Acceleration profile:</source>
-        <translation type="unfinished"></translation>
+        <translation>Versnellingsprofiel:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="584"/>
         <source>Scroll factor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Scrolfactor:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="597"/>
         <source>Tap Button Map:</source>
-        <translation type="unfinished"></translation>
+        <translation>Knoppen toewijzen:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="601"/>
         <source>left-middle-right</source>
-        <translation type="unfinished"></translation>
+        <translation>links-midden-rechts</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="602"/>
         <source>left-right-middle</source>
-        <translation type="unfinished"></translation>
+        <translation>links-rechts-midden</translation>
     </message>
 </context>
 </TS>
