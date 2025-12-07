@@ -410,7 +410,6 @@ class BehaviorTab(QScrollArea):
         behavior_layout.addWidget(self.focus_request_checkbox)
 
         # Column group
-
         column_group = QGroupBox(self.tr('Columns'))
         column_layout =QVBoxLayout(column_group)
 
@@ -432,6 +431,7 @@ class BehaviorTab(QScrollArea):
         default_column_display_layout.addWidget(self.normal_radio)
         default_column_display_layout.addStretch()
 
+        # Default column width
         column_width_label = QLabel(self.tr("Default width:"))
 
         proportion_layout = QHBoxLayout()
@@ -472,12 +472,34 @@ class BehaviorTab(QScrollArea):
         app_decide_layout.addSpacing(20)
         app_decide_layout.addWidget(self.app_decide_radio)
 
+        # Center focused column
+        center_focused_label = QLabel(self.tr("Center focused column:"))
+        center_focused_layout = QHBoxLayout()
+        center_focused_btns = QButtonGroup(self)
+
+        self.column_never_radio = QRadioButton(self.tr('never'))
+        self.column_never_radio.setChecked(True)
+        self.column_always_radio = QRadioButton(self.tr('always'))
+        self.column_on_overflow_radio = QRadioButton(self.tr('on overflow'))
+
+        center_focused_btns.addButton(self.column_never_radio)
+        center_focused_btns.addButton(self.column_always_radio)
+        center_focused_btns.addButton(self.column_on_overflow_radio)
+
+        center_focused_layout.addSpacing(20)
+        center_focused_layout.addWidget(self.column_never_radio)
+        center_focused_layout.addWidget(self.column_always_radio)
+        center_focused_layout.addWidget(self.column_on_overflow_radio)
+        center_focused_layout.addStretch()
+
         column_layout.addLayout(default_column_display_layout)
         column_layout.addWidget(column_width_label)
         column_layout.addLayout(proportion_layout)
         column_layout.addLayout(width_layout)
         column_layout.addLayout(app_decide_layout)
-
+        column_layout.addSpacing(10)
+        column_layout.addWidget(center_focused_label)
+        column_layout.addLayout(center_focused_layout)
         column_layout.addWidget(self.always_center_single_checkbox)
 
         behavior_layout.addWidget(column_group)

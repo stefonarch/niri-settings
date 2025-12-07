@@ -95,6 +95,7 @@ If you have an allergy, please be aware.
 * Get feedback and testing
 * Improve parsing regex
 * Add install script for local install
-* Add center-focused-column, corner rounding yes|no, else ?
-* Add new shortcut at current position instead at the end
+* Add  corner rounding yes|no, empty-workspace-above-first , else ?
+* Add new shortcut at current  position instead at the end
+* "Toolbox" tab
 

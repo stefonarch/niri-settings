@@ -163,6 +163,14 @@ class SettingsWindow(QMainWindow):
             if (self.behavior_tab.app_decide_radio.isChecked()):
                 f.write('    default-column-width { }\n')
 
+
+            if (self.behavior_tab.column_never_radio.isChecked()):
+                f.write('    center-focused-column "never"\n')
+            if (self.behavior_tab.column_always_radio.isChecked()):
+                f.write('    center-focused-column "always"\n' )
+            if (self.behavior_tab.column_on_overflow_radio.isChecked()):
+                f.write('    center-focused-column "on-overflow"\n')
+
             f.write('\n    struts {\n')
             f.write(f'        left {self.appearance_tab.struts_left_spin.value()}\n')
             f.write(f'        right {self.appearance_tab.struts_right_spin.value()}\n')
@@ -207,14 +215,8 @@ class SettingsWindow(QMainWindow):
             f.write(f'        length total-proportion={self.appearance_tab.length_spinbox.value()}\n')
             f.write(f'        gap {self.appearance_tab.tab_gap_spinbox.value()}\n')
             f.write(f'        gaps-between-tabs {self.appearance_tab.gap_between_spinbox.value()}\n')
-            if self.appearance_tab.left_radio.isChecked():
-                f.write('        position "left"\n')
-            elif self.appearance_tab.top_radio.isChecked():
-                f.write('        position "top"\n')
-            elif self.appearance_tab.right_radio.isChecked():
-                f.write('        position "right"\n')
-            elif self.appearance_tab.bottom_radio.isChecked():
-                f.write('        position "bottom"\n')
+
+
             f.write('    }\n}')
 
             # Input block
@@ -568,11 +570,10 @@ class SettingsWindow(QMainWindow):
                 if match:
                     self.behavior_tab.app_decide_radio.setChecked(True)
 
-
                 m = re.search(r"\{\s*(fixed|proportion)\s+([^;]+)\s*;", content)
                 if m:
                     mode = m.group(1)          # "fixed" or "proportion"
-                    value = m.group(2).strip() # e.g. "444" or "0.5"
+                    value = m.group(2).strip() # value
 
                     if mode == "fixed":
                         self.behavior_tab.column_width_radio.setChecked(True)
@@ -582,6 +583,9 @@ class SettingsWindow(QMainWindow):
                         self.behavior_tab.column_proportion_radio.setChecked(True)
                         self.behavior_tab.column_proportion_spinbox.setValue(float(value))
 
+                self.behavior_tab.column_never_radio.setChecked('never' in content)
+                self.behavior_tab.column_always_radio.setChecked('always' in content)
+                self.behavior_tab.column_on_overflow_radio.setChecked('on-overflow' in content)
 
                 match = re.search(r'mod-key\s+"([^"]+)"', content)
                 if match:
