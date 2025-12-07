@@ -6,6 +6,13 @@
 https://github.com/user-attachments/assets/0d2b044e-59a8-4427-bf19-e672891bd53b
 
 
+## Features
+
+* Basic settings for appearance, behavior,  mouse, touchpad and keyboard.
+* Shortcut editor.
+* Show, open, open in filemanager and backup niri config files.
+* Included configuration validator.
+
 
 ## Usage
 
@@ -88,6 +95,6 @@ If you have an allergy, please be aware.
 * Get feedback and testing
 * Improve parsing regex
 * Add install script for local install
-* Add Default column width settings, corner rounding yes|no, else ?
-* Add new shortcut at position instead at the end
+* Add center-focused-column, corner rounding yes|no, else ?
+* Add new shortcut at current position instead at the end
 

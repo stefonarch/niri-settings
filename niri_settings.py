@@ -7,7 +7,14 @@ from PyQt6.QtCore import QTranslator, QLocale, QLibraryInfo
 
 from ui import SettingsWindow
 
+APP_VERSION = "25.12"
+
 def main():
+
+    if "--version" in sys.argv or "-v" in sys.argv:
+            print(f"niri-settings {APP_VERSION}")
+            return
+
     app = QApplication(sys.argv)
     app.setDesktopFileName("niri-settings")
 

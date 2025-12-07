@@ -151,6 +151,18 @@ class SettingsWindow(QMainWindow):
             else:
                 f.write('    default-column-display "normal"\n')
 
+            if (self.behavior_tab.column_proportion_radio.isChecked()):
+                f.write('    default-column-width { proportion')
+                f.write(f' {self.behavior_tab.column_proportion_spinbox.value()};')
+                f.write('}\n')
+
+            if (self.behavior_tab.column_width_radio.isChecked()):
+                f.write('    default-column-width { fixed')
+                f.write(f' {self.behavior_tab.column_width_spinbox.value()};')
+                f.write('}\n')
+            if (self.behavior_tab.app_decide_radio.isChecked()):
+                f.write('    default-column-width { }\n')
+
             f.write('\n    struts {\n')
             f.write(f'        left {self.appearance_tab.struts_left_spin.value()}\n')
             f.write(f'        right {self.appearance_tab.struts_right_spin.value()}\n')
@@ -550,6 +562,26 @@ class SettingsWindow(QMainWindow):
                 path = re.search(r'screenshot-path\s+"([^"]+)"', content)
                 if path:
                     self.behavior_tab.screenshot_path_edit.setText(path.group(1))
+
+
+                match = re.search(r"default-column-width\s*\{\s*\}", content)
+                if match:
+                    self.behavior_tab.app_decide_radio.setChecked(True)
+
+
+                m = re.search(r"\{\s*(fixed|proportion)\s+([^;]+)\s*;", content)
+                if m:
+                    mode = m.group(1)          # "fixed" or "proportion"
+                    value = m.group(2).strip() # e.g. "444" or "0.5"
+
+                    if mode == "fixed":
+                        self.behavior_tab.column_width_radio.setChecked(True)
+                        self.behavior_tab.column_width_spinbox.setValue(int(value))
+
+                    elif mode == "proportion":
+                        self.behavior_tab.column_proportion_radio.setChecked(True)
+                        self.behavior_tab.column_proportion_spinbox.setValue(float(value))
+
 
                 match = re.search(r'mod-key\s+"([^"]+)"', content)
                 if match:

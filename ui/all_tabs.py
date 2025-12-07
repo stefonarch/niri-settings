@@ -188,7 +188,6 @@ class AppearanceTab(QScrollArea):
         self.focus_radio.setEnabled(self.focus_ring_enable_checkbox.isChecked())
         self.border_radio.setEnabled(self.focus_ring_enable_checkbox.isChecked())
 
-
         hint_color_layout = QHBoxLayout()
 
         self.hint_enable_checkbox = QCheckBox(self.tr('Enable insert hint'))
@@ -409,30 +408,85 @@ class BehaviorTab(QScrollArea):
 
         behavior_layout.addWidget(self.hotkey_overlay_checkbox)
         behavior_layout.addWidget(self.focus_request_checkbox)
-        behavior_layout.addWidget(self.always_center_single_checkbox)
+
+        # Column group
+
+        column_group = QGroupBox(self.tr('Columns'))
+        column_layout =QVBoxLayout(column_group)
 
         # Default column layout
         default_column_display_layout = QHBoxLayout()
-        select_label = QLabel(self.tr('Default column layout:'))
+        column_layout_label = QLabel(self.tr('Default layout:'))
+
+        column_display_btngroup = QButtonGroup(self) # keep radio button independent
 
         self.tabbed_radio = QRadioButton(self.tr('Tabbed'))
         self.normal_radio = QRadioButton(self.tr('Normal'))
         self.tabbed_radio.setChecked(True)
+        column_display_btngroup.addButton(self.tabbed_radio)
+        column_display_btngroup.addButton(self.normal_radio)
 
-        default_column_display_layout.addWidget(select_label)
+        default_column_display_layout.addWidget(column_layout_label)
         default_column_display_layout.addWidget(self.tabbed_radio)
+        default_column_display_layout.addSpacing(15)
         default_column_display_layout.addWidget(self.normal_radio)
         default_column_display_layout.addStretch()
 
-        behavior_layout.addLayout(default_column_display_layout)
+        column_width_label = QLabel(self.tr("Default width:"))
 
+        proportion_layout = QHBoxLayout()
+        width_layout = QHBoxLayout()
+        app_decide_layout = QHBoxLayout()
+
+        self.column_proportion_radio = QRadioButton(self.tr('Proportion:'))
+        self.column_width_radio = QRadioButton(self.tr('Fixed width:'))
+        self.app_decide_radio = QRadioButton(self.tr('Applications may decide'))
+
+        self.column_width_spinbox = QSpinBox()
+        self.column_width_spinbox.setRange(100, 4000)
+        self.column_width_spinbox.setValue(500)
+        self.column_width_spinbox.setSingleStep(100)
+        self.column_width_spinbox.setSuffix(" px ")
+        self.column_width_spinbox.setEnabled(False)
+        self.column_width_radio.toggled.connect(self.column_width_spinbox.setEnabled)
+        self.column_width_spinbox.setEnabled(self.column_width_radio.isChecked())
+
+        self.column_proportion_spinbox = QDoubleSpinBox()
+        self.column_proportion_spinbox.setRange(0.1, 1.0)
+        self.column_proportion_spinbox.setValue(0.5)
+        self.column_proportion_spinbox.setSingleStep(0.05)
+        self.column_proportion_spinbox.setEnabled(False)
+        self.column_proportion_radio.toggled.connect(self.column_proportion_spinbox.setEnabled)
+        self.column_width_spinbox.setEnabled(self.column_width_radio.isChecked())
+
+        proportion_layout.addSpacing(20)
+        proportion_layout.addWidget(self.column_proportion_radio)
+        proportion_layout.addWidget(self.column_proportion_spinbox)
+        proportion_layout.addStretch()
+
+        width_layout.addSpacing(20)
+        width_layout.addWidget(self.column_width_radio)
+        width_layout.addWidget(self.column_width_spinbox)
+        width_layout.addStretch()
+
+        app_decide_layout.addSpacing(20)
+        app_decide_layout.addWidget(self.app_decide_radio)
+
+        column_layout.addLayout(default_column_display_layout)
+        column_layout.addWidget(column_width_label)
+        column_layout.addLayout(proportion_layout)
+        column_layout.addLayout(width_layout)
+        column_layout.addLayout(app_decide_layout)
+
+        column_layout.addWidget(self.always_center_single_checkbox)
+
+        behavior_layout.addWidget(column_group)
         behavior_layout.addWidget(self.disable_power_key_checkbox)
         behavior_layout.addWidget(self.workspace_auto_back_forth_checkbox)
         behavior_layout.addWidget(self.hot_corners_checkbox)
 
         # Mod key
         behavior_layout.addSpacing(10)
-
         mod_key_label = QLabel(self.tr('Mod Key:'))
 
         self.super_radio = QRadioButton(self.tr('Super'))
@@ -559,9 +613,9 @@ class TouchpadTab(QWidget):
         accel_speed_label = QLabel(self.tr('Acceleration speed:'))
         self.accel_speed_spinbox = QDoubleSpinBox()
         self.accel_speed_spinbox.setRange(-1.0, 1.0)
-        self.accel_speed_spinbox.setSingleStep(0.1)
+        self.accel_speed_spinbox.setSingleStep(0.05)
         self.accel_speed_spinbox.setValue(0.2)
-        self.accel_speed_spinbox.setDecimals(1)
+        self.accel_speed_spinbox.setDecimals(2)
 
         accel_speed_layout.addWidget(accel_speed_label)
         accel_speed_layout.addWidget(self.accel_speed_spinbox)
@@ -583,7 +637,7 @@ class TouchpadTab(QWidget):
         scroll_factor_layout = QHBoxLayout()
         scroll_factor_label = QLabel(self.tr('Scroll factor:'))
         self.scroll_factor_spinbox = QDoubleSpinBox()
-        self.scroll_factor_spinbox.setRange(0.1, 3.0)
+        self.scroll_factor_spinbox.setRange(0.1, 5.0)
         self.scroll_factor_spinbox.setSingleStep(0.1)
         self.scroll_factor_spinbox.setValue(1.0)
         self.scroll_factor_spinbox.setDecimals(1)
@@ -597,12 +651,11 @@ class TouchpadTab(QWidget):
         button_map_label = QLabel(self.tr('Tap Button Map:'))
         touchpad_layout.addWidget(button_map_label)
 
-        self.button_map_group = QButtonGroup(self)
+
         self.lmr_radio = QRadioButton(self.tr('left-middle-right'))
         self.lrm_radio = QRadioButton(self.tr('left-right-middle'))
 
-        self.button_map_group.addButton(self.lmr_radio)
-        self.button_map_group.addButton(self.lrm_radio)
+
         self.lmr_radio.setChecked(True)
 
         touchpad_layout.addWidget(self.lmr_radio)
@@ -641,9 +694,9 @@ class MouseTab(QWidget):
         accel_speed_label = QLabel(self.tr('Acceleration speed:'))
         self.accel_speed_spinbox = QDoubleSpinBox()
         self.accel_speed_spinbox.setRange(-1.0, 1.0)
-        self.accel_speed_spinbox.setSingleStep(0.1)
+        self.accel_speed_spinbox.setSingleStep(0.05)
         self.accel_speed_spinbox.setValue(0.2)
-        self.accel_speed_spinbox.setDecimals(1)
+        self.accel_speed_spinbox.setDecimals(2)
 
         accel_speed_layout.addWidget(accel_speed_label)
         accel_speed_layout.addWidget(self.accel_speed_spinbox)
@@ -665,7 +718,7 @@ class MouseTab(QWidget):
         scroll_factor_layout = QHBoxLayout()
         scroll_factor_label = QLabel(self.tr('Scroll factor:'))
         self.scroll_factor_spinbox = QDoubleSpinBox()
-        self.scroll_factor_spinbox.setRange(0.1, 3.0)
+        self.scroll_factor_spinbox.setRange(0.1, 5.0)
         self.scroll_factor_spinbox.setSingleStep(0.1)
         self.scroll_factor_spinbox.setValue(1.0)
         self.scroll_factor_spinbox.setDecimals(1)
@@ -819,7 +872,6 @@ class KeyboardTab(QWidget):
         layout.addWidget(keyboard_frame)
         layout.addStretch()
 
-
 class FilesTab(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -853,7 +905,6 @@ class FilesTab(QWidget):
         backup_btn = QPushButton(self.tr("Backup file"))
         backup_btn.clicked.connect(self.backup_selected)
         button_layout.addWidget(backup_btn)
-        #backup_btn.setEnabled(False)
 
         button_layout.addWidget(validate_btn)
 
