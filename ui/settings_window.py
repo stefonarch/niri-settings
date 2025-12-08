@@ -11,6 +11,7 @@ from PyQt6.QtGui import QIcon
 from .conf_path import get_config_path, get_niri_config_path
 from .all_tabs import AppearanceTab, BehaviorTab ,TouchpadTab, MouseTab,KeyboardTab,FilesTab
 from .keybinds_tab import KeyBindsTab
+from .tools_tab import ToolsTab
 
 # Where are we?
 current_desktop = os.environ.get('XDG_CURRENT_DESKTOP', '')
@@ -59,6 +60,7 @@ class SettingsWindow(QMainWindow):
         self.keyboard_tab = KeyboardTab(self)
         self.keybinds_tab = KeyBindsTab(self)
         self.files_tab = FilesTab(self)
+        self.tools_tab = ToolsTab(self)
 
         self.tabs.addTab(self.appearance_tab, self.tr("Appearance"))
         self.tabs.addTab(self.behavior_tab, self.tr("Behavior"))
@@ -67,6 +69,7 @@ class SettingsWindow(QMainWindow):
         self.tabs.addTab(self.keyboard_tab, self.tr("Keyboard"))
         self.tabs.addTab(self.keybinds_tab, self.tr("Shortcuts"))
         self.tabs.addTab(self.files_tab, self.tr("Files"))
+        self.tabs.addTab(self.tools_tab, self.tr("Tools"))
 
         main_layout.addWidget(self.tabs)
 

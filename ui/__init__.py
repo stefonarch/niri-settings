@@ -1,13 +1,2 @@
-from .all_tabs import AppearanceTab, BehaviorTab, MouseTab, KeyboardTab, TouchpadTab
 from .settings_window import SettingsWindow
-from .conf_path import get_config_path
 
-__all__ = [
-    'AppearanceTab',
-    'BehaviorTab',
-    'TouchpadTab',
-    'MouseTab',
-    'KeyboardTab',
-    'SettingsWindow',
-    'get_config_path'
-]
