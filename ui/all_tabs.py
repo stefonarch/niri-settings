@@ -588,19 +588,29 @@ class TouchpadTab(QWidget):
         touchpad_frame.setFrameStyle(QFrame.Shape.StyledPanel)
         touchpad_layout = QVBoxLayout(touchpad_frame)
 
+        drag_layout = QHBoxLayout(self)
+
         # Touchpad checkboxes
         self.tap_checkbox = QCheckBox(self.tr('Tap to click'))
         self.tap_checkbox.setChecked(True)
         self.natural_scroll_checkbox = QCheckBox(self.tr('Natural scroll'))
         self.natural_scroll_checkbox.setChecked(True)
+        self.drag_checkbox = QCheckBox(self.tr('Tap and Drag'))
         self.drag_lock_checkbox = QCheckBox(self.tr('Drag lock'))
+        self.drag_lock_checkbox.setEnabled(False)
+        self.drag_checkbox.toggled.connect(self.drag_lock_checkbox.setEnabled)
+        drag_layout.addWidget(self.drag_checkbox)
+        drag_layout.addSpacing(15)
+        drag_layout.addWidget(self.drag_lock_checkbox)
+        drag_layout.addStretch()
+
         self.disable_external_mouse_checkbox = QCheckBox(self.tr('Disable when external mouse connected'))
         self.dwt_checkbox = QCheckBox(self.tr('Disable while typing'))
         self.left_handed_checkbox = QCheckBox(self.tr('Left handed'))
 
         touchpad_layout.addWidget(self.tap_checkbox)
         touchpad_layout.addWidget(self.natural_scroll_checkbox)
-        touchpad_layout.addWidget(self.drag_lock_checkbox)
+        touchpad_layout.addLayout(drag_layout)
         touchpad_layout.addWidget(self.disable_external_mouse_checkbox)
         touchpad_layout.addWidget(self.dwt_checkbox)
         touchpad_layout.addWidget(self.left_handed_checkbox)

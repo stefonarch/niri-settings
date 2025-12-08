@@ -8,17 +8,19 @@ https://github.com/user-attachments/assets/0d2b044e-59a8-4427-bf19-e672891bd53b
 
 ## Features
 
-* Basic settings for appearance, behavior,  mouse, touchpad and keyboard.
-* Shortcut editor.
-* Show, open, open in filemanager and backup niri config files.
-* Included configuration validator.
+* Basic settings for appearance, behavior, mouse, touchpad and keyboard.
+* Shortcut editor with filter and "add new shortcut" dialog.
+* Show, open, open in filemanager and backup niri config files- Includes a configuration validator.
+* Toolbox for showing infos about windows, outputs, layers and performing action (pick color to clipboard,
+kill selected window).
+* Detects if running under LXQt, otherwise default niri config path is used.
 
 
 ## Usage
 
 Default niri configuration values are used everywhere, see `basicsettings.kdl` example file.
 
-The line to include `basicsettings.kdl"` at the bottom of the default configuration file (for LXQt: `~/.config/lxqt/wayland/lxqt-niri.kdl`, otherwise `~/.config/niri/config.kdl`) should be added automatically when applying the first changes. The "include" feature was added in niri version 25.11, so using this version or above is mandatory.
+The line to include `basicsettings.kdl"` at the bottom of the default configuration file (for LXQt: `~/.config/lxqt/wayland/lxqt-niri.kdl`, otherwise `~/.config/niri/config.kdl`) will be added automatically when applying the first changes. The "include" feature was added in niri version 25.11, so using this version or higher is mandatory.
 
 If no argument is given `$XDG_CONFIG_HOME/lxqt/wayland/niri/basicsettings.kdl` is used when running
 under LXQt, otherwise `$XDG_CONFIG_HOME/niri/basicsettings.kdl` will be used. Edit `ui/conf_path.py`
@@ -97,5 +99,3 @@ If you have an allergy, please be aware.
 * Add install script for local install
 * Add  corner rounding yes|no, empty-workspace-above-first , else ?
 * Add new shortcut at current  position instead at the end
-* "Toolbox" tab
-

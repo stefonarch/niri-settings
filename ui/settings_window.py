@@ -265,6 +265,10 @@ class SettingsWindow(QMainWindow):
                 f.write('        natural-scroll\n')
             else:
                 f.write('        // natural-scroll\n')
+            if self.touchpad_tab.drag_checkbox.isChecked():
+                f.write('        drag true\n')
+            else:
+                f.write('        drag false\n')
             if self.touchpad_tab.drag_lock_checkbox.isChecked():
                 f.write('        drag-lock\n')
             else:
@@ -619,6 +623,9 @@ class SettingsWindow(QMainWindow):
                 )
                 self.touchpad_tab.natural_scroll_checkbox.setChecked(
                     'natural-scroll' in content and '// natural-scroll' not in content
+                )
+                self.touchpad_tab.drag_checkbox.setChecked(
+                    'drag false' not in content
                 )
                 self.touchpad_tab.drag_lock_checkbox.setChecked(
                     'drag-lock' in content and '// drag-lock' not in content
