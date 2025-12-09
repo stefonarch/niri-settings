@@ -646,7 +646,7 @@ class SettingsWindow(QMainWindow):
                     '// dwtp' not in touchpad_content
                 )
                 self.touchpad_tab.natural_scroll_checkbox.setChecked(
-                    '// natural-scroll' in touchpad_content
+                    '// natural-scroll' not in touchpad_content
                 )
                 self.touchpad_tab.drag_checkbox.setChecked(
                     'drag false' not in touchpad_content
