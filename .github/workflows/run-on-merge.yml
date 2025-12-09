@@ -12,5 +12,6 @@ jobs:
       - uses: actions/checkout@v4
       - name: .ts files to .qm files
         run: |
-           apt install qt6-tools
-          ./generate_qm_files.sh
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - run:    apt install qt6-tools
+      - run:   ./generate_qm_files.sh
