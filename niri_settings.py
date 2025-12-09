@@ -25,8 +25,8 @@ def main():
     translator = QTranslator()
     translation_loaded = False
 
-    # Get XDG_DATA_DIRS from environment
-    xdg_data_dirs = os.environ.get('XDG_DATA_DIRS')
+    # Get XDG_DATA_DIRS from environment with fallback
+    xdg_data_dirs = os.environ.get('XDG_DATA_DIRS', '/usr/local/share/:/usr/share/')
     data_dirs = xdg_data_dirs.split(':')
 
     # Try both full locale and language-only versions
