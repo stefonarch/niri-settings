@@ -608,12 +608,26 @@ class TouchpadTab(QWidget):
         self.dwt_checkbox = QCheckBox(self.tr('Disable while typing'))
         self.left_handed_checkbox = QCheckBox(self.tr('Left handed'))
 
+        clickmethod_layout = QHBoxLayout(self)
+        clickmethod_label = QLabel(self.tr("Click method:"))
+        self.clickfinger_radio = QRadioButton(self.tr("Clickfinger"))
+        self.clickfinger_radio.setChecked(True)
+        self.btn_areas_radio = QRadioButton(self.tr("Button areas"))
+
+        clickmethod_layout.addWidget(clickmethod_label)
+        clickmethod_layout.addWidget(self.clickfinger_radio)
+        clickmethod_layout.addSpacing(15)
+        clickmethod_layout.addWidget(self.btn_areas_radio)
+        clickmethod_layout.addStretch()
+
         touchpad_layout.addWidget(self.tap_checkbox)
         touchpad_layout.addWidget(self.natural_scroll_checkbox)
         touchpad_layout.addLayout(drag_layout)
         touchpad_layout.addWidget(self.disable_external_mouse_checkbox)
         touchpad_layout.addWidget(self.dwt_checkbox)
         touchpad_layout.addWidget(self.left_handed_checkbox)
+        touchpad_layout.addLayout(clickmethod_layout)
+        touchpad_layout.addSpacing(10)
 
         # Scroll method selection
         self.scroll_group = QButtonGroup(self)

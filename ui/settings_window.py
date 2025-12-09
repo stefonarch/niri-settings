@@ -282,6 +282,11 @@ class SettingsWindow(QMainWindow):
             else:
                     f.write('        // left-handed\n')
 
+            if self.touchpad_tab.clickfinger_radio.isChecked():
+                f.write('        click-method "clickfinger"\n')
+            if self.touchpad_tab.btn_areas_radio.isChecked():
+                f.write('        click-method "button-areas"\n')
+
             if self.touchpad_tab.no_scroll_radio.isChecked():
                 f.write('        scroll-method "no-scroll"\n')
             elif self.touchpad_tab.two_finger_radio.isChecked():
@@ -665,6 +670,13 @@ class SettingsWindow(QMainWindow):
                     self.touchpad_tab.edge_radio.setChecked(True)
                 elif scroll_method == "on-button-down":
                     self.touchpad_tab.button_radio.setChecked(True)
+
+                self.touchpad_tab.clickfinger_radio.setChecked(
+                    'clickfinger' in content
+                )
+                self.touchpad_tab.btn_areas_radio.setChecked(
+                    'button-areas' in content
+                )
 
             except Exception as e:
                 print(f"Error parsing some touchpad settings: {e} ")

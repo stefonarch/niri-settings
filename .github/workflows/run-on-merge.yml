@@ -1,0 +1,16 @@
+name: update-qm-files
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: .ts files to .qm files
+        run: |
+           apt install qt6-tools
+          ./generate_qm_files.sh
