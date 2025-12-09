@@ -11,9 +11,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+         token: ${{ secrets.GITHUB_TOKEN }}
       - name: Install Qt tools
         run: sudo apt-get update && sudo apt-get install -y qt6-tools-dev-tools
       - name: Ensure script is executable
         run: chmod +x generate_qm_files.sh
       - name: Run script
         run:  ./generate_qm_files.sh
+      - name: Commit updated .qm files
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add translations/*.qm
+          git commit -m "Updated .qm files" || echo "No changes to commit"
+          git push
