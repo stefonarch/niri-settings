@@ -670,6 +670,7 @@ class TouchpadTab(QWidget):
         scroll_groupbox_layout.addWidget(self.button_radio, 1, 1)
         scroll_groupbox_layout.rowStretch(1)     # row 1, col 1
         touchpad_layout.addWidget(scroll_groupbox)
+        touchpad_layout.addSpacing(20)
 
         # Acceleration speed
         accel_speed_layout = QHBoxLayout()
@@ -710,19 +711,16 @@ class TouchpadTab(QWidget):
         scroll_factor_layout.addStretch()
         touchpad_layout.addLayout(scroll_factor_layout)
 
-        # Button_map method selection
-        button_map_label = QLabel(self.tr('Tap Button Map:'))
-        touchpad_layout.addWidget(button_map_label)
+        # Tap Button Map
+        tap_button_map_layout = QHBoxLayout()
+        tap_button_map_label = QLabel(self.tr('Tap button map:'))
+        self.tap_button_map_combobox = QComboBox()
+        self.tap_button_map_combobox.addItems(["left-right-middle", "left-middle-right"])
 
-
-        self.lmr_radio = QRadioButton(self.tr('left-middle-right'))
-        self.lrm_radio = QRadioButton(self.tr('left-right-middle'))
-
-
-        self.lmr_radio.setChecked(True)
-
-        touchpad_layout.addWidget(self.lmr_radio)
-        touchpad_layout.addWidget(self.lrm_radio)
+        tap_button_map_layout.addWidget(tap_button_map_label)
+        tap_button_map_layout.addWidget(self.tap_button_map_combobox)
+        tap_button_map_layout.addStretch()
+        touchpad_layout.addLayout(tap_button_map_layout)
 
         layout.addWidget(touchpad_frame)
         layout.addStretch()

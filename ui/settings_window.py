@@ -308,6 +308,7 @@ class SettingsWindow(QMainWindow):
 
             f.write(f'        accel-speed {self.touchpad_tab.accel_speed_spinbox.value()}\n')
             f.write(f'        accel-profile "{self.touchpad_tab.accel_profile_combobox.currentText()}"\n')
+            f.write(f'        tap-button-map "{self.touchpad_tab.tap_button_map_combobox.currentText()}"\n')
             f.write(f'        scroll-factor {self.touchpad_tab.scroll_factor_spinbox.value()}\n')
             f.write('    }\n')
 
@@ -640,10 +641,11 @@ class SettingsWindow(QMainWindow):
                     '// tap' not in touchpad_content
                 )
                 self.touchpad_tab.dwt_checkbox.setChecked(
-                    '// dwt' not in touchpad_content
+                    not re.search(r'^\s*//\s*dwt\s*$', touchpad_content, re.MULTILINE)
                 )
+
                 self.touchpad_tab.dwtp_checkbox.setChecked(
-                    '// dwtp' not in touchpad_content
+                    not re.search(r'^\s*//\s*dwtp\s*$', touchpad_content, re.MULTILINE)
                 )
                 self.touchpad_tab.natural_scroll_checkbox.setChecked(
                     '// natural-scroll' not in touchpad_content
@@ -673,6 +675,17 @@ class SettingsWindow(QMainWindow):
                     if index >= 0:
                         self.touchpad_tab.accel_profile_combobox.setCurrentIndex(index)
 
+                profile_match = re.search(
+                    r'tap-button-map\s+"([^"]+)"',
+                    touchpad_content
+                )
+                if profile_match:
+                    profile_value = profile_match.group(1)
+                    index = self.touchpad_tab.tap_button_map_combobox.findText(profile_value)
+                    if index >= 0:
+                        self.touchpad_tab.tap_button_map_combobox.setCurrentIndex(index)
+
+
                 scroll_match = re.search(r'scroll-factor\s+([\d.]+)', touchpad_content)
                 self.touchpad_tab.scroll_factor_spinbox.setValue(float(scroll_match.group(1)))
 
@@ -694,6 +707,7 @@ class SettingsWindow(QMainWindow):
                 self.touchpad_tab.btn_areas_radio.setChecked(
                     'button-areas' in content
                 )
+
 
             except Exception as e:
                 print(f"Error parsing some touchpad settings: {e} ")
