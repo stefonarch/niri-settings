@@ -66,7 +66,8 @@ Run `./niri-settings-local` from a terminal inside the folder or customize `~/.l
 
 ### Archlinux
 
-An [AUR package](https://aur.archlinux.org/packages/niri-settings) is available.
+An [AUR package](https://aur.archlinux.org/packages/niri-settings-git) is available.
+Note: package is now renamed with `-git` suffix.
 
 ```
 yay -S niri-settings
