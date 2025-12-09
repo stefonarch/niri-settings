@@ -4,14 +4,11 @@ on:
   push:
     branches:
       - master
-
+permissions:
+  contents: write
 jobs:
   run-script:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: .ts files to .qm files
-        run: |
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - run:    apt install qt6-tools
-      - run:   ./generate_qm_files.sh
+      - run:  ./generate_qm_files.sh
