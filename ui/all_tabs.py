@@ -188,8 +188,20 @@ class AppearanceTab(QScrollArea):
         self.focus_radio.setEnabled(self.focus_ring_enable_checkbox.isChecked())
         self.border_radio.setEnabled(self.focus_ring_enable_checkbox.isChecked())
 
-        hint_color_layout = QHBoxLayout()
+        corner_rounding_layout = QHBoxLayout()
+        corner_rounding_label = QLabel(self.tr('Corner rounding:'))
+        self.corner_rounding_spinbox = QSpinBox()
+        self.corner_rounding_spinbox.setRange(0,30)
+        self.corner_rounding_spinbox.setSingleStep(1)
+        self.corner_rounding_spinbox.setValue(8)
+        corner_rounding_layout.addWidget(corner_rounding_label)
+        corner_rounding_layout.addWidget(self.corner_rounding_spinbox)
+        corner_rounding_layout.addStretch()
 
+        appearance_layout.addLayout(corner_rounding_layout)
+        appearance_layout.addSpacing(10)
+
+        hint_color_layout = QHBoxLayout()
         self.hint_enable_checkbox = QCheckBox(self.tr('Enable insert hint'))
         self.hint_enable_checkbox.setChecked(True)
 
@@ -403,6 +415,7 @@ class BehaviorTab(QScrollArea):
         self.always_center_single_checkbox = QCheckBox(self.tr('Always center single column'))
         self.disable_power_key_checkbox = QCheckBox(self.tr('Disable power key handling'))
         self.workspace_auto_back_forth_checkbox = QCheckBox(self.tr('Workspace auto back and forth'))
+        self.empty_workspace_above_checkbox = QCheckBox(self.tr('Add also an empty workspace above'))
         self.hot_corners_checkbox = QCheckBox(self.tr('Disable hot corners'))
         self.hide_while_typing_checkbox = QCheckBox(self.tr('Hide cursor while typing'))
 
@@ -503,9 +516,11 @@ class BehaviorTab(QScrollArea):
         column_layout.addWidget(self.always_center_single_checkbox)
 
         behavior_layout.addWidget(column_group)
-        behavior_layout.addWidget(self.disable_power_key_checkbox)
+
         behavior_layout.addWidget(self.workspace_auto_back_forth_checkbox)
+        behavior_layout.addWidget(self.empty_workspace_above_checkbox)
         behavior_layout.addWidget(self.hot_corners_checkbox)
+        behavior_layout.addWidget(self.disable_power_key_checkbox)
 
         # Mod key
         behavior_layout.addSpacing(10)
@@ -606,6 +621,7 @@ class TouchpadTab(QWidget):
 
         self.disable_external_mouse_checkbox = QCheckBox(self.tr('Disable when external mouse connected'))
         self.dwt_checkbox = QCheckBox(self.tr('Disable while typing'))
+        self.dwtp_checkbox = QCheckBox(self.tr('Disable while trackpointing'))
         self.left_handed_checkbox = QCheckBox(self.tr('Left handed'))
 
         clickmethod_layout = QHBoxLayout(self)
@@ -625,6 +641,7 @@ class TouchpadTab(QWidget):
         touchpad_layout.addLayout(drag_layout)
         touchpad_layout.addWidget(self.disable_external_mouse_checkbox)
         touchpad_layout.addWidget(self.dwt_checkbox)
+        touchpad_layout.addWidget(self.dwtp_checkbox)
         touchpad_layout.addWidget(self.left_handed_checkbox)
         touchpad_layout.addLayout(clickmethod_layout)
         touchpad_layout.addSpacing(10)

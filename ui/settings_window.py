@@ -166,13 +166,16 @@ class SettingsWindow(QMainWindow):
             if (self.behavior_tab.app_decide_radio.isChecked()):
                 f.write('    default-column-width { }\n')
 
-
             if (self.behavior_tab.column_never_radio.isChecked()):
                 f.write('    center-focused-column "never"\n')
             if (self.behavior_tab.column_always_radio.isChecked()):
                 f.write('    center-focused-column "always"\n' )
             if (self.behavior_tab.column_on_overflow_radio.isChecked()):
                 f.write('    center-focused-column "on-overflow"\n')
+            if self.behavior_tab.empty_workspace_above_checkbox.isChecked():
+                f.write('    empty-workspace-above-first\n')
+            else:
+                f.write('    // empty-workspace-above-first\n')
 
             f.write('\n    struts {\n')
             f.write(f'        left {self.appearance_tab.struts_left_spin.value()}\n')
@@ -201,7 +204,7 @@ class SettingsWindow(QMainWindow):
             f.write(f'        active-color "{self.appearance_tab.current_color}"\n')
             f.write(f'        inactive-color "{self.appearance_tab.current_inactive_color}"\n')
 
-            # Tab Indicator block
+            # Tab Indicator block inside layout block
             f.write('    }\n\n    insert-hint {\n')
             if self.appearance_tab.hint_enable_checkbox.isChecked():
                 f.write('        // off\n')
@@ -218,9 +221,12 @@ class SettingsWindow(QMainWindow):
             f.write(f'        length total-proportion={self.appearance_tab.length_spinbox.value()}\n')
             f.write(f'        gap {self.appearance_tab.tab_gap_spinbox.value()}\n')
             f.write(f'        gaps-between-tabs {self.appearance_tab.gap_between_spinbox.value()}\n')
+            f.write('    }\n}\n')
 
-
-            f.write('    }\n}')
+            # Window rule block for corner rounding
+            f.write('\nwindow-rule {\n    geometry-corner-radius ')
+            f.write(f'{self.appearance_tab.corner_rounding_spinbox.value()}\n')
+            f.write('    clip-to-geometry true\n    draw-border-with-background false\n}')
 
             # Input block
             f.write(' \n\ninput {\n')
@@ -261,6 +267,10 @@ class SettingsWindow(QMainWindow):
                 f.write('        dwt\n')
             else:
                 f.write('        // dwt\n')
+            if self.touchpad_tab.dwtp_checkbox.isChecked():
+                f.write('        dwtp\n')
+            else:
+                f.write('        // dwtp\n')
             if self.touchpad_tab.natural_scroll_checkbox.isChecked():
                 f.write('        natural-scroll\n')
             else:
@@ -554,6 +564,9 @@ class SettingsWindow(QMainWindow):
                 self.behavior_tab.workspace_auto_back_forth_checkbox.setChecked(
                     '// workspace-auto-back-and-forth' not in content
                 )
+                self.behavior_tab.empty_workspace_above_checkbox.setChecked(
+                    '// empty-workspace-above-first' not in content
+                )
                 self.behavior_tab.focus_follows_mouse_checkbox.setChecked(
                     '// focus-follows-mouse' not in content
                 )
@@ -619,30 +632,34 @@ class SettingsWindow(QMainWindow):
                 msg.exec()
 
             try:
-                # Parse Touchpad settings
-                self.touchpad_tab.tap_checkbox.setChecked(
-                    'tap' in content and '// tap' not in content
-                )
-                self.touchpad_tab.dwt_checkbox.setChecked(
-                    'dwt' in content and '// dwt' not in content
-                )
-                self.touchpad_tab.natural_scroll_checkbox.setChecked(
-                    'natural-scroll' in content and '// natural-scroll' not in content
-                )
-                self.touchpad_tab.drag_checkbox.setChecked(
-                    'drag false' not in content
-                )
-                self.touchpad_tab.drag_lock_checkbox.setChecked(
-                    'drag-lock' in content and '// drag-lock' not in content
-                )
-                self.touchpad_tab.disable_external_mouse_checkbox.setChecked(
-                    'disabled-on-external-mouse' in content and '// disabled-on-external-mouse' not in content
-                )
-                self.touchpad_tab.left_handed_checkbox.setChecked(
-                    'left-handed' in content and '// left-handed' not in content
-                )
+                # Parse Touchpad block settings
                 touchpad_match = re.search(r'touchpad\s*\{([^}]+)\}', content)
                 touchpad_content = touchpad_match.group(1)
+
+                self.touchpad_tab.tap_checkbox.setChecked(
+                    '// tap' not in touchpad_content
+                )
+                self.touchpad_tab.dwt_checkbox.setChecked(
+                    '// dwt' not in touchpad_content
+                )
+                self.touchpad_tab.dwtp_checkbox.setChecked(
+                    '// dwtp' not in touchpad_content
+                )
+                self.touchpad_tab.natural_scroll_checkbox.setChecked(
+                    '// natural-scroll' in touchpad_content
+                )
+                self.touchpad_tab.drag_checkbox.setChecked(
+                    'drag false' not in touchpad_content
+                )
+                self.touchpad_tab.drag_lock_checkbox.setChecked(
+                    '// drag-lock' not in touchpad_content
+                )
+                self.touchpad_tab.disable_external_mouse_checkbox.setChecked(
+                    '// disabled-on-external-mouse' not in content
+                )
+                self.touchpad_tab.left_handed_checkbox.setChecked(
+                    '// left-handed' not in touchpad_content
+                )
 
                 speed_match = re.search(r'accel-speed\s+(-?[\d.]+)', touchpad_content)
 
