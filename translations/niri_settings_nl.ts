@@ -59,7 +59,7 @@
         <translation>Inactieve kleur: </translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="312"/>
+        <location filename="../ui/all_tabs.py" line="324"/>
         <location filename="../ui/all_tabs.py" line="137"/>
         <source>Width:</source>
         <translation>Breedte:</translation>
@@ -80,323 +80,330 @@
         <translation>Kader</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="193"/>
+        <location filename="../ui/all_tabs.py" line="192"/>
+        <source>Corner rounding:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="205"/>
         <source>Enable insert hint</source>
         <translation>Hint tonen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="196"/>
+        <location filename="../ui/all_tabs.py" line="208"/>
         <source>Color: </source>
         <translation>Kleur: </translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="215"/>
+        <location filename="../ui/all_tabs.py" line="227"/>
         <source>Margins</source>
         <translation>Marges</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="220"/>
+        <location filename="../ui/all_tabs.py" line="232"/>
         <source>Gaps:</source>
         <translation>Tussenruimtes:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="241"/>
+        <location filename="../ui/all_tabs.py" line="253"/>
         <source>Left:</source>
         <translation>Links:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="247"/>
+        <location filename="../ui/all_tabs.py" line="259"/>
         <source>Right:</source>
         <translation>Rechts:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="253"/>
+        <location filename="../ui/all_tabs.py" line="265"/>
         <source>Top:</source>
         <translation>Bovenaan:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="259"/>
+        <location filename="../ui/all_tabs.py" line="271"/>
         <source>Bottom:</source>
         <translation>Onderaan:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="277"/>
+        <location filename="../ui/all_tabs.py" line="289"/>
         <source>Struts:</source>
         <translation>Ondersteuning:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="284"/>
+        <location filename="../ui/all_tabs.py" line="296"/>
         <source>Tab Indicator</source>
         <translation>Tabbladindicator</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="290"/>
+        <location filename="../ui/all_tabs.py" line="302"/>
         <source>Hide when single tab</source>
         <translation>Verbergen als er maar één tabblad is</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="293"/>
+        <location filename="../ui/all_tabs.py" line="305"/>
         <source>Place within column</source>
         <translation>Binnen kolom plaatsen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="299"/>
+        <location filename="../ui/all_tabs.py" line="311"/>
         <source>Corner radius:</source>
         <translation>Hoekstraal:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="319"/>
+        <location filename="../ui/all_tabs.py" line="331"/>
         <source>Length:</source>
         <translation>Lengte:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="336"/>
+        <location filename="../ui/all_tabs.py" line="348"/>
         <source>Gap:</source>
         <translation>Tussenruimte:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="343"/>
+        <location filename="../ui/all_tabs.py" line="355"/>
         <source>Gap between:</source>
         <translation>Ruimte tussen:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="360"/>
+        <location filename="../ui/all_tabs.py" line="372"/>
         <source>Position:</source>
         <translation>Locatie:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="362"/>
+        <location filename="../ui/all_tabs.py" line="374"/>
         <source>left</source>
         <translation>links</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="363"/>
+        <location filename="../ui/all_tabs.py" line="375"/>
         <source>top</source>
         <translation>bovenaan</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="364"/>
+        <location filename="../ui/all_tabs.py" line="376"/>
         <source>right</source>
         <translation>rechts</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="365"/>
+        <location filename="../ui/all_tabs.py" line="377"/>
         <source>bottom</source>
         <translation>onderaan</translation>
     </message>
-</context>
-<context>
+</context><context>
     <name>BehaviorTab</name>
     <message>
-        <location filename="../ui/all_tabs.py" line="398"/>
+        <location filename="../ui/all_tabs.py" line="410"/>
         <source>Show hotkeys at login</source>
         <translation>Sneltoetsen tonen na aanmelden</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="400"/>
+        <location filename="../ui/all_tabs.py" line="412"/>
         <source>Warp mouse to focus</source>
         <translation>Muis verplaatsen om te focussen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="401"/>
+        <location filename="../ui/all_tabs.py" line="413"/>
         <source>Focus follows mouse</source>
         <translation>Muis volgen om te focussen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="402"/>
+        <location filename="../ui/all_tabs.py" line="414"/>
         <source>Always focus windows on request</source>
         <translation>Vensters alleen op verzoek focussen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="403"/>
+        <location filename="../ui/all_tabs.py" line="415"/>
         <source>Always center single column</source>
         <translation>Centreren bij gebruik van één kolom</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="404"/>
+        <location filename="../ui/all_tabs.py" line="416"/>
         <source>Disable power key handling</source>
         <translation>Energietoetsen uitschakelen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="405"/>
+        <location filename="../ui/all_tabs.py" line="417"/>
         <source>Workspace auto back and forth</source>
         <translation>Automatisch wisselen van werkblad</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="406"/>
+        <location filename="../ui/all_tabs.py" line="418"/>
+        <source>Add also an empty workspace above</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="419"/>
         <source>Disable hot corners</source>
         <translation>Snelhoeken uitschakelen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="407"/>
+        <location filename="../ui/all_tabs.py" line="420"/>
         <source>Hide cursor while typing</source>
         <translation>Cursor verbergen tijdens typen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="413"/>
+        <location filename="../ui/all_tabs.py" line="426"/>
         <source>Columns</source>
         <translation>Kolommen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="418"/>
+        <location filename="../ui/all_tabs.py" line="431"/>
         <source>Default layout:</source>
         <translation>Standaardindeling:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="422"/>
+        <location filename="../ui/all_tabs.py" line="435"/>
         <source>Tabbed</source>
         <translation>Tabbladen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="423"/>
+        <location filename="../ui/all_tabs.py" line="436"/>
         <source>Normal</source>
         <translation>Normaal</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="435"/>
+        <location filename="../ui/all_tabs.py" line="448"/>
         <source>Default width:</source>
         <translation>Standaardbreedte:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="441"/>
+        <location filename="../ui/all_tabs.py" line="454"/>
         <source>Proportion:</source>
         <translation>Verhouding:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="442"/>
+        <location filename="../ui/all_tabs.py" line="455"/>
         <source>Fixed width:</source>
         <translation>Vaste breedte:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="443"/>
+        <location filename="../ui/all_tabs.py" line="456"/>
         <source>Applications may decide</source>
-        <translation>Programma&apos;s laten kiezen</translation>
+        <translation>Programma's laten kiezen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="476"/>
+        <location filename="../ui/all_tabs.py" line="489"/>
         <source>Center focused column:</source>
         <translation>Middelste kolom centreren:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="480"/>
+        <location filename="../ui/all_tabs.py" line="493"/>
         <source>never</source>
         <translation>nooit</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="482"/>
+        <location filename="../ui/all_tabs.py" line="495"/>
         <source>always</source>
         <translation>altijd</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="483"/>
+        <location filename="../ui/all_tabs.py" line="496"/>
         <source>on overflow</source>
         <translation>bij ruimtetekort</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="520"/>
-        <location filename="../ui/all_tabs.py" line="512"/>
+        <location filename="../ui/all_tabs.py" line="535"/>
+        <location filename="../ui/all_tabs.py" line="527"/>
         <source>Mod Key:</source>
         <translation>Modtoets:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="514"/>
+        <location filename="../ui/all_tabs.py" line="529"/>
         <source>Super</source>
         <translation>Super</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="515"/>
+        <location filename="../ui/all_tabs.py" line="530"/>
         <source>Alt</source>
         <translation>Alt</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="516"/>
+        <location filename="../ui/all_tabs.py" line="531"/>
         <source>Ctrl</source>
         <translation>Ctrl</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="532"/>
+        <location filename="../ui/all_tabs.py" line="547"/>
         <source>Screenshots:</source>
-        <translation>Schermfoto&apos;s:</translation>
+        <translation>Schermfoto's:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="544"/>
+        <location filename="../ui/all_tabs.py" line="559"/>
         <source>Cursor</source>
         <translation>Cursor</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="546"/>
+        <location filename="../ui/all_tabs.py" line="561"/>
         <source>Enable</source>
         <translation>Inschakelen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="550"/>
+        <location filename="../ui/all_tabs.py" line="565"/>
         <source>hiding after inactive for:</source>
         <translation>verbergen na inactiviteit, gedurende:</translation>
     </message>
-</context>
-<context>
+</context><context>
     <name>FilesTab</name>
     <message>
-        <location filename="../ui/all_tabs.py" line="930"/>
+        <location filename="../ui/all_tabs.py" line="945"/>
         <source>KDL Files in Configuration</source>
         <translation>KDL-bestanden in instellingen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="940"/>
+        <location filename="../ui/all_tabs.py" line="955"/>
         <source>Refresh</source>
         <translation>Herladen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="1036"/>
-        <location filename="../ui/all_tabs.py" line="944"/>
+        <location filename="../ui/all_tabs.py" line="1051"/>
+        <location filename="../ui/all_tabs.py" line="959"/>
         <source>Open</source>
         <translation>Openen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="948"/>
+        <location filename="../ui/all_tabs.py" line="963"/>
         <source>Validate file</source>
         <translation>Bestand verifiëren</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="951"/>
+        <location filename="../ui/all_tabs.py" line="966"/>
         <source>Backup file</source>
         <translation>Reservekopiebestand</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="986"/>
+        <location filename="../ui/all_tabs.py" line="1001"/>
         <source>Directory does not exist:
 {base_path}</source>
         <translation>Deze map bestaat niet:
 {base_path}</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="1015"/>
-        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
+        <location filename="../ui/all_tabs.py" line="1030"/>
+        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
         <translation>xdg-open is niet aangetroffen. Controleer de installatie en PATH.</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="1040"/>
+        <location filename="../ui/all_tabs.py" line="1055"/>
         <source>Show in file manager</source>
         <translation>Tonen in bestandsbeheerder</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="1046"/>
+        <location filename="../ui/all_tabs.py" line="1061"/>
         <source>Copy path to clipboard</source>
         <translation>Locatie kopiëren naar klembord</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="1097"/>
-        <location filename="../ui/all_tabs.py" line="1070"/>
+        <location filename="../ui/all_tabs.py" line="1112"/>
+        <location filename="../ui/all_tabs.py" line="1085"/>
         <source>No file selected.</source>
         <translation>Er is geen bestand gekozen.</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="1085"/>
+        <location filename="../ui/all_tabs.py" line="1100"/>
         <source>Permission denied. Cannot create backup.</source>
         <translation>Toegang geweigerd: de reservekopie kan niet worden gemaakt.</translation>
     </message>
-</context>
-<context>
+</context><context>
     <name>KeybindsFileEditor</name>
     <message>
         <location filename="../ui/keybinds_tab.py" line="62"/>
@@ -465,12 +472,12 @@
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="163"/>
-        <source>Add &quot;Mod&quot;</source>
+        <source>Add "Mod"</source>
         <translation>‘Mod’ toevoegen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="166"/>
-        <source>Add &quot;AltGr&quot;</source>
+        <source>Add "AltGr"</source>
         <translation>‘AltGr’ toevoegen</translation>
     </message>
     <message>
@@ -485,8 +492,8 @@
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="185"/>
-        <source>Note: ).</source>
-        <translation>Let op: ).</translation>
+        <source>Note:</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="193"/>
@@ -498,99 +505,96 @@
         <source>Created new keybinds file</source>
         <translation>Nieuw sneltoetsbestand aangemaakt</translation>
     </message>
-</context>
-<context>
+</context><context>
     <name>KeyboardTab</name>
     <message>
-        <location filename="../ui/all_tabs.py" line="795"/>
+        <location filename="../ui/all_tabs.py" line="810"/>
         <source>Enable num lock at startup</source>
         <translation>NumLock inschakelen na opstarten</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="801"/>
+        <location filename="../ui/all_tabs.py" line="816"/>
         <source>Track keyboard layout:</source>
         <translation>Toetsenbordindeling bijhouden:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="811"/>
+        <location filename="../ui/all_tabs.py" line="826"/>
         <source>Keyboard Layout</source>
         <translation>Toetsenbordindeling</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="816"/>
+        <location filename="../ui/all_tabs.py" line="831"/>
         <source>Layout:</source>
         <translation>Indeling:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="831"/>
+        <location filename="../ui/all_tabs.py" line="846"/>
         <source>Variant:</source>
         <translation>Variant:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="845"/>
+        <location filename="../ui/all_tabs.py" line="860"/>
         <source>Options:</source>
         <translation>Opties:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="858"/>
+        <location filename="../ui/all_tabs.py" line="873"/>
         <source>Model:</source>
         <translation>Model:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="872"/>
+        <location filename="../ui/all_tabs.py" line="887"/>
         <source>File:</source>
         <translation>Bestand:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="887"/>
+        <location filename="../ui/all_tabs.py" line="902"/>
         <source>Repeat Settings</source>
         <translation>Herhaalinstellingen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="892"/>
+        <location filename="../ui/all_tabs.py" line="907"/>
         <source>Repeat delay:</source>
         <translation>Herhaalvertraging:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="906"/>
+        <location filename="../ui/all_tabs.py" line="921"/>
         <source>Repeat rate:</source>
         <translation>Herhaalsnelheid:</translation>
     </message>
-</context>
-<context>
+</context><context>
     <name>MouseTab</name>
     <message>
-        <location filename="../ui/all_tabs.py" line="730"/>
+        <location filename="../ui/all_tabs.py" line="745"/>
         <source>Natural scroll</source>
         <translation>Natuurlijk scrollen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="731"/>
+        <location filename="../ui/all_tabs.py" line="746"/>
         <source>Left handed</source>
         <translation>Linkshandig</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="732"/>
+        <location filename="../ui/all_tabs.py" line="747"/>
         <source>Middle button emulation</source>
         <translation>Middelste muisknop emuleren</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="740"/>
+        <location filename="../ui/all_tabs.py" line="755"/>
         <source>Acceleration speed:</source>
         <translation>Versnelling:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="754"/>
+        <location filename="../ui/all_tabs.py" line="769"/>
         <source>Acceleration profile:</source>
         <translation>Versnellingsprofiel:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="765"/>
+        <location filename="../ui/all_tabs.py" line="780"/>
         <source>Scroll factor:</source>
         <translation>Scrolfactor:</translation>
     </message>
-</context>
-<context>
+</context><context>
     <name>SettingsWindow</name>
     <message>
         <location filename="../ui/settings_window.py" line="33"/>
@@ -653,39 +657,38 @@
         <translation>Sluiten</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="795"/>
-        <location filename="../ui/settings_window.py" line="770"/>
-        <location filename="../ui/settings_window.py" line="722"/>
-        <location filename="../ui/settings_window.py" line="685"/>
-        <location filename="../ui/settings_window.py" line="616"/>
-        <location filename="../ui/settings_window.py" line="525"/>
+        <location filename="../ui/settings_window.py" line="826"/>
+        <location filename="../ui/settings_window.py" line="801"/>
+        <location filename="../ui/settings_window.py" line="753"/>
+        <location filename="../ui/settings_window.py" line="716"/>
+        <location filename="../ui/settings_window.py" line="630"/>
+        <location filename="../ui/settings_window.py" line="536"/>
         <source>Configuration Parsing Error</source>
         <translation>Instellingen-verwerkingsfout</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="797"/>
-        <location filename="../ui/settings_window.py" line="772"/>
-        <location filename="../ui/settings_window.py" line="724"/>
-        <location filename="../ui/settings_window.py" line="687"/>
-        <location filename="../ui/settings_window.py" line="618"/>
-        <location filename="../ui/settings_window.py" line="527"/>
+        <location filename="../ui/settings_window.py" line="828"/>
+        <location filename="../ui/settings_window.py" line="803"/>
+        <location filename="../ui/settings_window.py" line="755"/>
+        <location filename="../ui/settings_window.py" line="718"/>
+        <location filename="../ui/settings_window.py" line="632"/>
+        <location filename="../ui/settings_window.py" line="538"/>
         <source>Applying changes will reset to defaults some values, please check this file.</source>
         <translation>Door de wijzigingen toe te passen, worden sommige instellingen teruggezet. Controleer daarom dit bestand.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="784"/>
+        <location filename="../ui/settings_window.py" line="815"/>
         <source>Niri Settings: Configuration not found</source>
         <translation>Niri-instellingen: instellingen niet aangetroffen</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="786"/>
+        <location filename="../ui/settings_window.py" line="817"/>
         <source>This line is needed to make this application work. 
 Identical settings before this line will be ignored after.</source>
         <translation>Deze regel is nodig om het programma te laten werken.
 Identieke instellingen ná deze regel worden genegeerd.</translation>
     </message>
-</context>
-<context>
+</context><context>
     <name>ToolsTab</name>
     <message>
         <location filename="../ui/tools_tab.py" line="20"/>
@@ -794,113 +797,106 @@ with PID {}?</source>
         <translation>Weet u zeker dat het venster met PID {}
 gedwongen wilt afsluiten?</translation>
     </message>
-</context>
-<context>
+</context><context>
     <name>TouchpadTab</name>
     <message>
-        <location filename="../ui/all_tabs.py" line="594"/>
+        <location filename="../ui/all_tabs.py" line="609"/>
         <source>Tap to click</source>
         <translation>Tik om te klikken</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="596"/>
+        <location filename="../ui/all_tabs.py" line="611"/>
         <source>Natural scroll</source>
         <translation>Natuurlijk scrollen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="598"/>
+        <location filename="../ui/all_tabs.py" line="613"/>
         <source>Tap and Drag</source>
         <translation>Tikken en verslepen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="599"/>
+        <location filename="../ui/all_tabs.py" line="614"/>
         <source>Drag lock</source>
         <translation>Sleepvergrendeling</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="607"/>
+        <location filename="../ui/all_tabs.py" line="622"/>
         <source>Disable when external mouse connected</source>
         <translation>Uitschakelen als er een externe muis verbonden is</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="608"/>
+        <location filename="../ui/all_tabs.py" line="623"/>
         <source>Disable while typing</source>
         <translation>Uitschakelen tijdens typen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="609"/>
+        <location filename="../ui/all_tabs.py" line="624"/>
+        <source>Disable while trackpointing</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="625"/>
         <source>Left handed</source>
         <translation>Linkshandig</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="612"/>
+        <location filename="../ui/all_tabs.py" line="628"/>
         <source>Click method:</source>
         <translation>Klikmethode:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="613"/>
+        <location filename="../ui/all_tabs.py" line="629"/>
         <source>Clickfinger</source>
         <translation>Klikken met vinger</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="615"/>
+        <location filename="../ui/all_tabs.py" line="631"/>
         <source>Button areas</source>
         <translation>Knopgebieden</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="634"/>
+        <location filename="../ui/all_tabs.py" line="651"/>
         <source>No scroll</source>
         <translation>Niet scrollen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="635"/>
+        <location filename="../ui/all_tabs.py" line="652"/>
         <source>Two finger</source>
         <translation>Met twee vingers</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="636"/>
+        <location filename="../ui/all_tabs.py" line="653"/>
         <source>Edge</source>
         <translation>Op de rand</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="637"/>
+        <location filename="../ui/all_tabs.py" line="654"/>
         <source>Button</source>
         <translation>Met een knop</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="645"/>
+        <location filename="../ui/all_tabs.py" line="662"/>
         <source>Scroll method</source>
         <translation>Scrolmethode</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="659"/>
+        <location filename="../ui/all_tabs.py" line="677"/>
         <source>Acceleration speed:</source>
         <translation>Versnelling:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="673"/>
+        <location filename="../ui/all_tabs.py" line="691"/>
         <source>Acceleration profile:</source>
         <translation>Versnellingsprofiel:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="684"/>
+        <location filename="../ui/all_tabs.py" line="702"/>
         <source>Scroll factor:</source>
         <translation>Scrolfactor:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="697"/>
-        <source>Tap Button Map:</source>
-        <translation>Knoppen toewijzen:</translation>
+        <location filename="../ui/all_tabs.py" line="716"/>
+        <source>Tap button map:</source>
+        <translation type="unfinished"/>
     </message>
-    <message>
-        <location filename="../ui/all_tabs.py" line="701"/>
-        <source>left-middle-right</source>
-        <translation>links-midden-rechts</translation>
-    </message>
-    <message>
-        <location filename="../ui/all_tabs.py" line="702"/>
-        <source>left-right-middle</source>
-        <translation>links-rechts-midden</translation>
-    </message>
-</context>
-</TS>
+</context></TS>

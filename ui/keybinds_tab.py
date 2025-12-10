@@ -182,7 +182,7 @@ class KeybindsFileEditor(QWidget):
         bottom_layout.addLayout(button_layout)
         bottom_layout.addSpacing(15)
         # Notes
-        self.notes_label = QLabel(self.tr("Note: )."))
+        self.notes_label = QLabel(self.tr("Note:"))
         self.notes_label.setEnabled(False)
         bottom_layout.addLayout(keypress_layout)
         bottom_layout.addLayout(options_layout)
