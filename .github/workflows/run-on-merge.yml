@@ -7,8 +7,8 @@ on:
 permissions:
   contents: write
 jobs:
-  run-only-for-weblate-bot:
-    if: github.actor == 'LXQtBot'
+  run-only-for-weblate:
+    if: contains(github.event.head_commit.message, 'weblate')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

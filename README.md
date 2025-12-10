@@ -95,8 +95,7 @@ If you have an allergy, please be aware.
 
 ## Todo list
 
-* Get feedback and testing
-* Improve parsing regex
-* Add install script for local install
-* Add  corner rounding yes|no, empty-workspace-above-first , else ?
-* Add new shortcut at current  position instead at the end
+* Get feedback and testing.
+* Improve parsing regex.
+* Add install script for local/system install.
+* Add new shortcut at current  position instead at the end.
