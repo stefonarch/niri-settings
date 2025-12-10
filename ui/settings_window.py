@@ -425,6 +425,11 @@ class SettingsWindow(QMainWindow):
 
     def load_settings(self):
         """Parse existing settings"""
+
+        if not os.path.isfile(self.config_path):
+            return  # nothing to parse
+
+
         try:
             with open(self.config_path, 'r') as f:
                 content = f.read()
