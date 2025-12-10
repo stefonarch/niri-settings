@@ -3,14 +3,14 @@
 > GUI in PyQt for configuring niri
 
 
-https://github.com/user-attachments/assets/0d2b044e-59a8-4427-bf19-e672891bd53b
+https://github.com/user-attachments/assets/22bf733e-013c-491d-8b9a-e20a1b129b9d
 
 
 ## Features
 
 * Basic settings for appearance, behavior, mouse, touchpad and keyboard.
 * Shortcut editor with filter and "add new shortcut" dialog.
-* Show, open, open in filemanager and backup niri config files- Includes a configuration validator.
+* Show, open, open in filemanager and backup niri config files, including a configuration validator.
 * Toolbox for showing infos about windows, outputs, layers and performing actions (pick color to clipboard,
 kill selected window, detect xwayland windows).
 * Detects if running under LXQt, otherwise default niri config path is used.
@@ -20,66 +20,45 @@ kill selected window, detect xwayland windows).
 
 Default niri configuration values are used everywhere, see `basicsettings.kdl` example file.
 
-The line to include `basicsettings.kdl"` at the bottom of the default configuration file (for LXQt: `~/.config/lxqt/wayland/lxqt-niri.kdl`, otherwise `~/.config/niri/config.kdl`) will be added automatically when applying the first changes. The "include" feature was added in niri version 25.11, so using this version or higher is mandatory.
+When running under LXQt `$XDG_CONFIG_HOME/lxqt/wayland/niri/` is used as configuration directory, otherwise `$XDG_CONFIG_HOME/niri/` will be used. Edit `ui/conf_path.py` to change those defaults. It will only write and `read basicsettings.kdl"` and `ḱeybinds.kdl` and not add any if already existing.
 
-If no argument is given `$XDG_CONFIG_HOME/lxqt/wayland/niri/basicsettings.kdl` is used when running
-under LXQt, otherwise `$XDG_CONFIG_HOME/niri/basicsettings.kdl` will be used. Edit `ui/conf_path.py`
-to change those defaults.
+The lines to include `basicsettings.kdl"` and `ḱeybinds.kdl` at the end of the default configuration file will be added automatically only when applying the first changes. The "include" feature was added in niri version 25.11, so using this version or higher is mandatory.
 
+Options in this file will override identical options coming _before_ and in the same way any file included _after_  will override identical niri-settings options. See [niri Documentation](https://yalter.github.io/niri/Configuration%3A-Include.html) for more details.
 ## Installation
 
-### Arch, derivatives
+#### Archlinux
 
-Install `pyqt6` and  package:
-```
-# pacman -S python-pyqt6 qt6-wayland
+An [AUR package](https://aur.archlinux.org/packages/niri-settings-git) is available:
 
 ```
+yay -S niri-settings-git
+```
 
-### Debian, derivatives
+### Dependencies:
+
+#### Debian, derivatives
 ```apt
 # apt -y install python3-pyqt6 qt6-wayland
 ```
-### Fedora
+#### Fedora
 ```
 # dnf install python-pyqt6 qt6-wayland
 ```
-
-### openSuse
+#### openSuse
 ```
 zypper install python-PyQt6 qt6-wayland
-```
 
-Manual local installation as user:
+```
+Installation as user or systemwide:
 
 ```bash
-git clone https://github.com/stefonarch/niri-settings
-cd niri-settings
-mkdir -p ~/.local/share/niri-settings/  ~/.local/share/applications
-cp niri-settings.desktop ~/.local/share/applications/
-cp -a translations/ ~/.local/share/niri-settings/
-mkdir -p ~/.local/share/icons/hicolor/scalable/apps/
-cp niri-settings.svg ~/.local/share/icons/hicolor/scalable/apps/niri-settings.svg
+git clone https://github.com/stefonarch/niri-settings /tmp
+cd /tmp/niri-settings
+chmod a+x install.sh
+./install.sh
 
 ```
-Run `./niri-settings-local` from a terminal inside the folder or customize `~/.local/share/applications/niri-settings.desktop` to match the path to `niri-settings/niri-settings.py`.
-
-### Archlinux
-
-An [AUR package](https://aur.archlinux.org/packages/niri-settings-git) is available.
-Note: package is now renamed with `-git` suffix.
-
-```
-yay -S niri-settings
-```
-
-## Shortcut editor
-
-![screenshot of the niri shortcut editor](editor.png)
-
-By default `keybinds.kdl` is used, again in relative paths both for LXQt and pure niri. It will be created and
-added to the default configuration when applying changes with the "Apply" button. Existing shortcuts can be moved there. Backup your files.
-
 ## Translations
 
 Translations should be submitted using the [Weblate platform](https://translate.lxqt-project.org/projects/stefonarch/niri-settings/).

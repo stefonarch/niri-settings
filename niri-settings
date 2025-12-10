@@ -1,3 +1,11 @@
 #!/bin/bash
 export PYTHONPYCACHEPREFIX=/tmp/pycache
-python3 /usr/lib/niri-settings/niri_settings.py $1
+
+# first try local installation
+if [ -f "$HOME/.local/lib/niri-settings/niri_settings.py" ]; then
+    exec python3 "$HOME/.local/lib/niri-settings/niri_settings.py"
+else
+    exec python3 "/usr/lib/niri-settings/niri_settings.py"
+fi
+
+

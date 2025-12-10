@@ -213,7 +213,7 @@ class KeybindsFileEditor(QWidget):
             if not os.path.exists(self.filename) or os.path.getsize(self.filename) == 0:
                 # Create initial structure
                 with open(self.filename, 'w') as file:
-                    file.write("// keybinds\nbinds {\n}\n")
+                    file.write("// keybinds managed by niri-settings. Consider moving existing binds here.\nbinds {\n}\n")
                 self.status_label.setText(self.tr("Created new keybinds file"))
 
             # Read file
