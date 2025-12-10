@@ -426,7 +426,7 @@
     <message>
         <location filename="../ui/keybinds_tab.py" line="112"/>
         <source>Move up</source>
-        <translation type="unfinished"></translation>
+        <translation>Sposta insù</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="117"/>
