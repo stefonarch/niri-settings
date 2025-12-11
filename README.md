@@ -50,10 +50,10 @@ yay -S niri-settings-git
 zypper install python-PyQt6 qt6-wayland
 
 ```
-Installation as user or systemwide:
+Installation as user (to `~/bin` → has to be in your `$PATH`) or systemwide:
 
 ```bash
-git clone https://github.com/stefonarch/niri-settings /tmp
+git clone https://github.com/stefonarch/niri-settings /tmp/niri-settings
 cd /tmp/niri-settings
 chmod a+x install.sh
 ./install.sh
@@ -76,5 +76,4 @@ If you have an allergy, please be aware.
 
 * Get feedback and testing.
 * Improve parsing regex.
-* Add install script for local/system install.
 * Add new shortcut at current  position instead at the end.
