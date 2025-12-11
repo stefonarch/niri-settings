@@ -182,12 +182,13 @@ class KeybindsFileEditor(QWidget):
         bottom_layout.addLayout(button_layout)
         bottom_layout.addSpacing(15)
         # Notes
-        self.notes_label = QLabel(self.tr("Note:"))
-        self.notes_label.setEnabled(False)
+        self.notes_label = QLabel(self.tr("Note: The input doesn't read 'Meta' and 'ALtGr' keys, use the checkboxes instead."))
+        #elf.notes_label.setEnabled(False)
+        bottom_layout.addWidget(self.notes_label)
         bottom_layout.addLayout(keypress_layout)
         bottom_layout.addLayout(options_layout)
         bottom_layout.addLayout(add_button_layout)
-        #bottom_layout.addWidget(self.notes_label)
+
 
         # Status label
         self.status_label = QLabel(self.tr("Select a keybind line to edit"))
@@ -358,11 +359,9 @@ class KeybindsFileEditor(QWidget):
                 # Select and scroll to the new line
                 new_index = last_line_index  # Because we inserted before last line
                 self.list_widget.setCurrentRow(new_index)
-
-                # Load it into the editor
-                self.text_edit.setPlainText(new_line.rstrip('\n'))
-                self.save_btn.setEnabled(True)
-
+                self.save_btn.setEnabled(False)
+                self.remove_btn.setEnabled(False)
+                self.key_edit.clear()
                 self.status_label.setText(f"Added new application shortcut at line {new_index + 1}")
 
             except Exception as e:
@@ -393,10 +392,9 @@ class KeybindsFileEditor(QWidget):
 
                 new_index = last_line_index
                 self.list_widget.setCurrentRow(new_index)
-
-                self.text_edit.setPlainText(new_line.rstrip('\n'))
-                self.save_btn.setEnabled(True)
-
+                self.save_btn.setEnabled(False)
+                self.remove_btn.setEnabled(False)
+                self.key_edit.clear()
                 self.status_label.setText(f"Added new shell keybind at line {new_index + 1}")
 
             except Exception as e:
@@ -429,9 +427,9 @@ class KeybindsFileEditor(QWidget):
                     self.filter_lines()
                     #self.filter_lines(comment)
                     #self.list_widget.item(self.selected_index).setText(display_text)
-
+                    self.save_btn.setEnabled(False)
+                    self.remove_btn.setEnabled(False)
                     self.status_label.setText(f"Comment saved at line {self.selected_index+1}")
-
 
                 except Exception as e:
                     self.status_label.setText(f"Error saving file: {str(e)}")
@@ -459,10 +457,7 @@ class KeybindsFileEditor(QWidget):
 
                 new_index = last_line_index
                 self.list_widget.setCurrentRow(new_index)
-
-                self.text_edit.setPlainText(new_line.rstrip('\n'))
-                self.save_btn.setEnabled(True)
-
+                self.key_edit.clear()
                 self.status_label.setText(f"Added new niri action keybind at line {new_index + 1}")
 
             except Exception as e:
@@ -479,7 +474,7 @@ class KeybindsFileEditor(QWidget):
         self.mod5_checkbox.setEnabled(True)
         self.allow_locked_checkbox.setEnabled(True)
         self.repeat_false_checkbox.setEnabled(True)
-        self.notes_label.setEnabled(True)
+        #self.notes_label.setEnabled(True)
 
         if self.stored_key:
             conversion = self.stored_key
