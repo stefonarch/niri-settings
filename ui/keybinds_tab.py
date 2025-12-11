@@ -276,11 +276,6 @@ class KeybindsFileEditor(QWidget):
         self.save_btn.setEnabled(False)  # disabled until content actually changes
         self.text_edit.textChanged.connect(self.on_text_changed)
 
-
-
-        #original_text = self.lines[self.selected_index].rstrip('\n')
-        #self.text_edit.setPlainText(original_text)
-        #self.save_btn.setEnabled(True)
         self.add_comment_btn.setEnabled(True)
         self.remove_btn.setEnabled(True)
         self.status_label.setText(f"Editing line {self.selected_index + 1}")
@@ -368,13 +363,21 @@ class KeybindsFileEditor(QWidget):
                 # Select and scroll to the new line
                 new_index = last_line_index  # Because we inserted before last line
                 self.list_widget.setCurrentRow(new_index)
+                self.key_edit.clear()
+                self.xkbcommon_key = ""
+                self.add_cmd_btn.setEnabled(False)
+                self.add_cmd_sh_btn.setEnabled(False)
+                self.add_action_btn.setEnabled(False)
                 self.save_btn.setEnabled(False)
                 self.remove_btn.setEnabled(False)
+                self.mod_checkbox.setEnabled(False)
+                self.mod5_checkbox.setEnabled(False)
+                self.allow_locked_checkbox.setEnabled(False)
+                self.repeat_false_checkbox.setEnabled(False)
                 self.mod_checkbox.setChecked(False)
                 self.mod5_checkbox.setChecked(False)
                 self.allow_locked_checkbox.setChecked(False)
                 self.repeat_false_checkbox.setChecked(False)
-                self.key_edit.clear()
                 self.status_label.setText(f"Added new application shortcut at line {new_index + 1}")
 
             except Exception as e:
@@ -401,13 +404,23 @@ class KeybindsFileEditor(QWidget):
                 with open(self.filename, 'w') as file:
                     file.writelines(self.lines)
 
+                # Update the list display
                 self.update_list_display()
 
-                new_index = last_line_index
+                # Select and scroll to the new line
+                new_index = last_line_index  # Because we inserted before last line
                 self.list_widget.setCurrentRow(new_index)
+                self.key_edit.clear()
+                self.xkbcommon_key = ""
+                self.add_cmd_btn.setEnabled(False)
+                self.add_cmd_sh_btn.setEnabled(False)
+                self.add_action_btn.setEnabled(False)
                 self.save_btn.setEnabled(False)
                 self.remove_btn.setEnabled(False)
-                self.key_edit.clear()
+                self.mod_checkbox.setEnabled(False)
+                self.mod5_checkbox.setEnabled(False)
+                self.allow_locked_checkbox.setEnabled(False)
+                self.repeat_false_checkbox.setEnabled(False)
                 self.mod_checkbox.setChecked(False)
                 self.mod5_checkbox.setChecked(False)
                 self.allow_locked_checkbox.setChecked(False)
@@ -470,11 +483,21 @@ class KeybindsFileEditor(QWidget):
 
                 new_index = last_line_index
                 self.list_widget.setCurrentRow(new_index)
+                self.key_edit.clear()
+                self.xkbcommon_key = ""
+                self.add_cmd_btn.setEnabled(False)
+                self.add_cmd_sh_btn.setEnabled(False)
+                self.add_action_btn.setEnabled(False)
+                self.save_btn.setEnabled(False)
+                self.remove_btn.setEnabled(False)
+                self.mod_checkbox.setEnabled(False)
+                self.mod5_checkbox.setEnabled(False)
+                self.allow_locked_checkbox.setEnabled(False)
+                self.repeat_false_checkbox.setEnabled(False)
                 self.mod_checkbox.setChecked(False)
                 self.mod5_checkbox.setChecked(False)
                 self.allow_locked_checkbox.setChecked(False)
                 self.repeat_false_checkbox.setChecked(False)
-                self.key_edit.clear()
                 self.status_label.setText(f"Added new niri action keybind at line {new_index + 1}")
 
             except Exception as e:

@@ -32,6 +32,12 @@ def main():
     # Try both full locale and language-only versions
     locale_variants = [locale, language_only]
 
+    qt_translator = QTranslator()
+    qt_translations_path = QLibraryInfo.path(QLibraryInfo.LibraryPath.TranslationsPath)
+    if qt_translator.load(f"qt_{language_only}", qt_translations_path):
+        app.installTranslator(qt_translator)
+        print(f"Loaded Qt system translation for {language_only}")
+
     for locale_var in locale_variants:
         for data_dir in data_dirs:
             trans_path = os.path.join(data_dir, "niri-settings", "translations", f"niri_settings_{locale_var}.qm")
@@ -40,16 +46,6 @@ def main():
                 print(f"Loaded translation: {trans_path}")
                 translation_loaded = True
                 break
-        if translation_loaded:
-            break
-
-    # Fallback to system Qt translations if our translation wasn't found
-    if not translation_loaded:
-        qt_translator = QTranslator()
-        qt_translations_path = QLibraryInfo.path(QLibraryInfo.LibraryPath.TranslationsPath)
-        if qt_translator.load(f"qt_{language_only}", qt_translations_path):
-            app.installTranslator(qt_translator)
-            print(f"Loaded Qt system translation for {language_only}")
 
     window = SettingsWindow()
     window.show()
