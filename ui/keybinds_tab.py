@@ -384,8 +384,7 @@ class KeybindsFileEditor(QWidget):
 
             try:
                 last_line_index = len(self.lines) - 1
-                self.lines.insert(last_line_index, new_text, new_line)
-
+                self.lines.insert(last_line_index, new_line)
 
                 with open(self.filename, 'w') as file:
                     file.writelines(self.lines)
