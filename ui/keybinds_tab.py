@@ -182,13 +182,12 @@ class KeybindsFileEditor(QWidget):
         bottom_layout.addLayout(button_layout)
         bottom_layout.addSpacing(15)
         # Notes
-        self.notes_label = QLabel(self.tr("Note: The input doesn't read 'Meta' and 'ALtGr' keys, use the checkboxes instead."))
-        #elf.notes_label.setEnabled(False)
+        self.notes_label = QLabel(self.tr("Note: The input doesn't read 'Meta' and 'ALtGr' keys, use the checkboxes instead.\nIf niri shows an error validate 'keybinds.kdl' in the next tab."))
+        #self.notes_label.setEnabled(False)
         bottom_layout.addWidget(self.notes_label)
         bottom_layout.addLayout(keypress_layout)
         bottom_layout.addLayout(options_layout)
         bottom_layout.addLayout(add_button_layout)
-
 
         # Status label
         self.status_label = QLabel(self.tr("Select a keybind line to edit"))
@@ -271,9 +270,17 @@ class KeybindsFileEditor(QWidget):
         else:
             self.selected_index = row
 
-        original_text = self.lines[self.selected_index].rstrip('\n')
-        self.text_edit.setPlainText(original_text)
-        self.save_btn.setEnabled(True)
+        self.original_text = self.lines[self.selected_index].rstrip('\n')
+        self.text_edit.setPlainText(self.original_text)
+
+        self.save_btn.setEnabled(False)  # disabled until content actually changes
+        self.text_edit.textChanged.connect(self.on_text_changed)
+
+
+
+        #original_text = self.lines[self.selected_index].rstrip('\n')
+        #self.text_edit.setPlainText(original_text)
+        #self.save_btn.setEnabled(True)
         self.add_comment_btn.setEnabled(True)
         self.remove_btn.setEnabled(True)
         self.status_label.setText(f"Editing line {self.selected_index + 1}")
@@ -296,6 +303,8 @@ class KeybindsFileEditor(QWidget):
                     self.list_widget.item(self.selected_index).setText(display_text)
 
                 self.status_label.setText(f"Line {self.selected_index + 1} saved")
+                self.text_edit.clear()
+                self.save_btn.setEnabled(False)
 
             except Exception as e:
                 self.status_label.setText(f"Error saving file: {str(e)}")
@@ -361,6 +370,10 @@ class KeybindsFileEditor(QWidget):
                 self.list_widget.setCurrentRow(new_index)
                 self.save_btn.setEnabled(False)
                 self.remove_btn.setEnabled(False)
+                self.mod_checkbox.setChecked(False)
+                self.mod5_checkbox.setChecked(False)
+                self.allow_locked_checkbox.setChecked(False)
+                self.repeat_false_checkbox.setChecked(False)
                 self.key_edit.clear()
                 self.status_label.setText(f"Added new application shortcut at line {new_index + 1}")
 
@@ -395,6 +408,10 @@ class KeybindsFileEditor(QWidget):
                 self.save_btn.setEnabled(False)
                 self.remove_btn.setEnabled(False)
                 self.key_edit.clear()
+                self.mod_checkbox.setChecked(False)
+                self.mod5_checkbox.setChecked(False)
+                self.allow_locked_checkbox.setChecked(False)
+                self.repeat_false_checkbox.setChecked(False)
                 self.status_label.setText(f"Added new shell keybind at line {new_index + 1}")
 
             except Exception as e:
@@ -417,10 +434,6 @@ class KeybindsFileEditor(QWidget):
                 try:
                     with open(self.filename, 'w') as file:
                         file.writelines(self.lines)
-
-                    # Update the list display
-                     #if self.filter_input.comment():
-#                        self.filter_lines()
 
                     #display_text = comment_to_add
                     self.filter_input.text()
@@ -457,11 +470,20 @@ class KeybindsFileEditor(QWidget):
 
                 new_index = last_line_index
                 self.list_widget.setCurrentRow(new_index)
+                self.mod_checkbox.setChecked(False)
+                self.mod5_checkbox.setChecked(False)
+                self.allow_locked_checkbox.setChecked(False)
+                self.repeat_false_checkbox.setChecked(False)
                 self.key_edit.clear()
                 self.status_label.setText(f"Added new niri action keybind at line {new_index + 1}")
 
             except Exception as e:
                 self.status_label.setText(f"Error adding niri action: {str(e)}")
+
+    def on_text_changed(self):
+        current = self.text_edit.toPlainText()
+        self.save_btn.setEnabled(current != self.original_text)
+
 
     def on_changed(self, seq):
         self.key_edit.setKeySequence(seq)
