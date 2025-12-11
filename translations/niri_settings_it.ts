@@ -82,7 +82,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="192"/>
         <source>Corner rounding:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="205"/>
@@ -142,7 +142,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="305"/>
         <source>Place within column</source>
-        <translation>Mostra all'interno della colonna</translation>
+        <translation>Mostra all&apos;interno della colonna</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="311"/>
@@ -189,7 +189,8 @@
         <source>bottom</source>
         <translation>in fondo</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>BehaviorTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="410"/>
@@ -229,7 +230,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="418"/>
         <source>Add also an empty workspace above</source>
-        <translation type="unfinished"/>
+        <translation>Aggiungi uno spazio di lavoro vuoto anche sopra</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="419"/>
@@ -342,7 +343,8 @@
         <source>hiding after inactive for:</source>
         <translation>nascondi dopo inattivo per:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>FilesTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="945"/>
@@ -379,7 +381,7 @@
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="1030"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>xdg-open non trovato, assicurati che è installato e nel PATH.</translation>
     </message>
     <message>
@@ -403,7 +405,8 @@
         <source>Permission denied. Cannot create backup.</source>
         <translation>Impossibile creare il backup, autorizzazion negata.</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeybindsFileEditor</name>
     <message>
         <location filename="../ui/keybinds_tab.py" line="62"/>
@@ -438,7 +441,7 @@
     <message>
         <location filename="../ui/keybinds_tab.py" line="117"/>
         <source>Move down</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="122"/>
@@ -472,13 +475,13 @@
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="163"/>
-        <source>Add "Mod"</source>
-        <translation>Aggiungi "Mod"</translation>
+        <source>Add &quot;Mod&quot;</source>
+        <translation>Aggiungi &quot;Mod&quot;</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="166"/>
-        <source>Add "AltGr"</source>
-        <translation>Aggiungi "AltGr"</translation>
+        <source>Add &quot;AltGr&quot;</source>
+        <translation>Aggiungi &quot;AltGr&quot;</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="169"/>
@@ -493,7 +496,7 @@
     <message>
         <location filename="../ui/keybinds_tab.py" line="185"/>
         <source>Note:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="193"/>
@@ -505,7 +508,8 @@
         <source>Created new keybinds file</source>
         <translation>Creato nuovo file per le scorciatoie</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeyboardTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="810"/>
@@ -562,7 +566,8 @@
         <source>Repeat rate:</source>
         <translation>Velocità ripetizione:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>MouseTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="745"/>
@@ -594,7 +599,8 @@
         <source>Scroll factor:</source>
         <translation>Fattore scroll:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>SettingsWindow</name>
     <message>
         <location filename="../ui/settings_window.py" line="33"/>
@@ -688,7 +694,8 @@ Identical settings before this line will be ignored after.</source>
         <translation>Questa riga è necessaria per far funzionare questo programma.
 Impostazioni identiche prima di questa riga verranno ignorati dopo.</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>ToolsTab</name>
     <message>
         <location filename="../ui/tools_tab.py" line="20"/>
@@ -698,7 +705,7 @@ Impostazioni identiche prima di questa riga verranno ignorati dopo.</translation
     <message>
         <location filename="../ui/tools_tab.py" line="23"/>
         <source>:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="24"/>
@@ -773,7 +780,7 @@ Impostazioni identiche prima di questa riga verranno ignorati dopo.</translation
     <message>
         <location filename="../ui/tools_tab.py" line="83"/>
         <source>New action</source>
-        <translation type="unfinished"/>
+        <translation>Nuova azione</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="168"/>
@@ -797,7 +804,8 @@ with PID {}?</source>
         <translation>Si è sicuro di voler uccidere questa
 finestra con PID {}?</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>TouchpadTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="609"/>
@@ -832,7 +840,7 @@ finestra con PID {}?</translation>
     <message>
         <location filename="../ui/all_tabs.py" line="624"/>
         <source>Disable while trackpointing</source>
-        <translation type="unfinished"/>
+        <translation>Disabilita se trackpoint in uso</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="625"/>
@@ -897,6 +905,7 @@ finestra con PID {}?</translation>
     <message>
         <location filename="../ui/all_tabs.py" line="716"/>
         <source>Tap button map:</source>
-        <translation type="unfinished"/>
+        <translation>Mappatura dei pulsanti:</translation>
     </message>
-</context></TS>
+</context>
+</TS>
