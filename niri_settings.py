@@ -36,7 +36,6 @@ def main():
     qt_translations_path = QLibraryInfo.path(QLibraryInfo.LibraryPath.TranslationsPath)
     if qt_translator.load(f"qt_{language_only}", qt_translations_path):
         app.installTranslator(qt_translator)
-        print(f"Loaded Qt system translation for {language_only}")
 
     for locale_var in locale_variants:
         for data_dir in data_dirs:

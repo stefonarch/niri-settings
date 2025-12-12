@@ -20,7 +20,6 @@ class ToolsTab(QWidget):
         button_group = QGroupBox(self.tr("Lists"))
         button_layout = QHBoxLayout(button_group)
 
-        List_label = QLabel(self.tr(':'))
         windows_btn = QPushButton(self.tr("Windows"))
         windows_btn.clicked.connect(self.list_windows)
         button_layout.addWidget(windows_btn)

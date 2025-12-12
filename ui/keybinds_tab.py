@@ -48,7 +48,11 @@ class KeybindsFileEditor(QWidget):
         layout = QVBoxLayout(self)
 
         # Label
-        self.label = QLabel(f"Editing: {self.filename}")
+        self.label = QLabel()
+        self.label.setText(
+        self.tr("Editing: %1").replace("%1", str(self.filename))
+        )
+        #self.label = QLabel(f"Editing: {self.filename}")
         layout.addWidget(self.label)
 
         # Create a splitter for horizontal division
@@ -221,7 +225,10 @@ class KeybindsFileEditor(QWidget):
                 self.lines = file.readlines()
 
             self.update_list_display()
-            self.status_label.setText(f"Loaded {len(self.lines)} lines")
+            self.status_label.setText(
+            self.tr("Loaded %1 lines").replace("%1", str(len(self.lines)))
+            )
+            #self.status_label.setText(f"Loaded {len(self.lines)} lines")
 
         except Exception as e:
             self.status_label.setText(f"Error loading file: {str(e)}")
@@ -242,8 +249,9 @@ class KeybindsFileEditor(QWidget):
                 display_text = self.lines[i].rstrip('\n')
                 self.list_widget.addItem(display_text)
                 filtered_count += 1
-
-        self.filter_count.setText(f"({filtered_count} matching)")
+        self.filter_count.setText(
+        self.tr("%1 matching").replace("%1", str(filtered_count))
+        )
 
     def update_list_display(self):
         self.list_widget.clear()
@@ -278,7 +286,9 @@ class KeybindsFileEditor(QWidget):
 
         self.add_comment_btn.setEnabled(True)
         self.remove_btn.setEnabled(True)
-        self.status_label.setText(f"Editing line {self.selected_index + 1}")
+        self.status_label.setText(
+        self.tr("Editing line: %1").replace("%1", str(self.selected_index + 1))
+        )
 
     def save_line(self):
         if hasattr(self, 'selected_index'):
@@ -297,12 +307,19 @@ class KeybindsFileEditor(QWidget):
                     display_text = new_text
                     self.list_widget.item(self.selected_index).setText(display_text)
 
-                self.status_label.setText(f"Line {self.selected_index + 1} saved")
+                self.status_label.setText(
+                self.tr("Saved line %1").replace("%1", str(self.selected_index + 1))
+                )
+
+                #self.status_label.setText(f"Line {self.selected_index + 1} saved")
+
                 self.text_edit.clear()
                 self.save_btn.setEnabled(False)
 
             except Exception as e:
-                self.status_label.setText(f"Error saving file: {str(e)}")
+                self.status_label.setText(
+                self.tr("Error saving file: %1").replace("%1", str(e))
+                )
 
     def delete_line(self):
         if hasattr(self, 'selected_index'):
@@ -314,9 +331,10 @@ class KeybindsFileEditor(QWidget):
                 with open(self.filename, 'w') as file:
                     file.writelines(self.lines)
 
-                # Update UI
                 self.list_widget.takeItem(self.selected_index)
-                self.status_label.setText(f"Line {self.selected_index + 1} deleted")
+                self.status_label.setText(
+                self.tr("Line %1 deleted").replace("%1", str(self.selected_index + 1))
+                )
 
                 # Clear selection & editor
                 self.selected_index = None #FIXME doesn't remove selection
@@ -327,7 +345,9 @@ class KeybindsFileEditor(QWidget):
                     self.filter_lines()
 
             except Exception as e:
-                self.status_label.setText(f"Error deleting line: {str(e)}")
+                self.status_label.setText(
+                self.tr("Error deleting line: %1").replace("%1", str(e))
+                )
 
     def add_application(self):
         new_line, ok = QInputDialog.getText(
@@ -378,10 +398,14 @@ class KeybindsFileEditor(QWidget):
                 self.mod5_checkbox.setChecked(False)
                 self.allow_locked_checkbox.setChecked(False)
                 self.repeat_false_checkbox.setChecked(False)
-                self.status_label.setText(f"Added new application shortcut at line {new_index + 1}")
+                self.status_label.setText(
+                self.tr("Added new shortcut at line %1").replace("%1", str(new_index + 1))
+                )
 
             except Exception as e:
-                self.status_label.setText(f"Error adding application shortcut: {str(e)}")
+                self.status_label.setText(
+                self.tr("Error adding shortcut: %1").replace("%1", str(e))
+                )
 
     def add_cmd_sh(self):
         """Add a shell cmd before closing bracket"""
@@ -425,10 +449,14 @@ class KeybindsFileEditor(QWidget):
                 self.mod5_checkbox.setChecked(False)
                 self.allow_locked_checkbox.setChecked(False)
                 self.repeat_false_checkbox.setChecked(False)
-                self.status_label.setText(f"Added new shell keybind at line {new_index + 1}")
+                self.status_label.setText(
+                    self.tr("Added new shortcut at line %1").replace("%1", str(new_index + 1))
+                )
 
             except Exception as e:
-                self.status_label.setText(f"Error adding shell command: {str(e)}")
+                self.status_label.setText(
+                self.tr("Error adding shortcut: %1").replace("%1", str(e))
+                )
 
     def add_comment(self):
         if hasattr(self, 'selected_index'):
@@ -455,10 +483,14 @@ class KeybindsFileEditor(QWidget):
                     #self.list_widget.item(self.selected_index).setText(display_text)
                     self.save_btn.setEnabled(False)
                     self.remove_btn.setEnabled(False)
-                    self.status_label.setText(f"Comment saved at line {self.selected_index+1}")
+                    self.status_label.setText(
+                    self.tr("Comment saved at line %1").replace("%1", str(self.selected_index+1))
+                    )
 
                 except Exception as e:
-                    self.status_label.setText(f"Error saving file: {str(e)}")
+                    self.status_label.setText(
+                    self.tr("Error saving comment: %1").replace("%1", str(e))
+                    )
 
     def add_niri_action(self):
         new_line, ok = QInputDialog.getText(
@@ -498,15 +530,18 @@ class KeybindsFileEditor(QWidget):
                 self.mod5_checkbox.setChecked(False)
                 self.allow_locked_checkbox.setChecked(False)
                 self.repeat_false_checkbox.setChecked(False)
-                self.status_label.setText(f"Added new niri action keybind at line {new_index + 1}")
+                self.status_label.setText(
+                self.tr("Added new shortcut at line %1").replace("%1", str(new_index + 1))
+                )
 
             except Exception as e:
-                self.status_label.setText(f"Error adding niri action: {str(e)}")
+                self.status_label.setText(
+                self.tr("Error adding shortcut: %1").replace("%1", str(e))
+                )
 
     def on_text_changed(self):
         current = self.text_edit.toPlainText()
         self.save_btn.setEnabled(current != self.original_text)
-
 
     def on_changed(self, seq):
         self.key_edit.setKeySequence(seq)
@@ -519,7 +554,8 @@ class KeybindsFileEditor(QWidget):
         self.mod5_checkbox.setEnabled(True)
         self.allow_locked_checkbox.setEnabled(True)
         self.repeat_false_checkbox.setEnabled(True)
-        #self.notes_label.setEnabled(True)
+        self.text_edit.clear()
+        self.save_btn.setEnabled(False)
 
         if self.stored_key:
             conversion = self.stored_key
