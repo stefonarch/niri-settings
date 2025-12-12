@@ -76,4 +76,3 @@ If you have an allergy, please be aware.
 
 * Get feedback and testing.
 * Improve parsing regex.
-* Add new shortcut at current  position instead at the end.

@@ -69,6 +69,7 @@ class KeybindsFileEditor(QWidget):
         self.filter_input.setPlaceholderText(self.tr("Type to filter..."))
         self.filter_input.textChanged.connect(self.filter_lines)
         self.filter_input.setClearButtonEnabled(True)
+        self.filter_input.setClearButtonEnabled(True)
 
         filter_layout.addWidget(self.filter_input)
 
@@ -159,12 +160,10 @@ class KeybindsFileEditor(QWidget):
         self.key_edit.setClearButtonEnabled(True)
         self.key_edit.setMaximumSequenceLength(1)
         self.key_edit.keySequenceChanged.connect(self.on_changed)
+
         keypress_layout.addRow(self.label, self.key_edit)
 
         options_layout = QHBoxLayout()
-        self.mod_checkbox = QCheckBox(self.tr('Add "Mod"'))
-        self.mod_checkbox.setEnabled(False)
-        self.mod_checkbox.toggled.connect(self.on_toggled_mod)
         self.mod5_checkbox = QCheckBox(self.tr('Add "AltGr"'))
         self.mod5_checkbox.setEnabled(False)
         self.mod5_checkbox.toggled.connect(self.on_toggled_mod5)
@@ -175,7 +174,6 @@ class KeybindsFileEditor(QWidget):
         self.allow_locked_checkbox.setEnabled(False)
         self.allow_locked_checkbox.toggled.connect(self.on_toggled_locked)
 
-        options_layout.addWidget(self.mod_checkbox)
         options_layout.addWidget(self.mod5_checkbox)
         options_layout.addWidget(self.repeat_false_checkbox)
         options_layout.addWidget(self.allow_locked_checkbox)
@@ -184,7 +182,7 @@ class KeybindsFileEditor(QWidget):
         bottom_layout.addLayout(button_layout)
         bottom_layout.addSpacing(15)
         # Notes
-        self.notes_label = QLabel(self.tr("Notes: 'Super' (Meta) key is identical with 'Mod' by default.\nThe shortcut field doesn’t detect AltGr, use the checkbox instead.\nIf niri shows an error validate 'keybinds.kdl' in the next tab."))
+        self.notes_label = QLabel(self.tr("Note: Already existing shortcuts will not register. For AltGr use the checkbox.\nIf niri shows an error validate 'keybinds.kdl' in the next tab."))
         #self.notes_label.setEnabled(False)
         bottom_layout.addWidget(self.notes_label)
         bottom_layout.addLayout(keypress_layout)
@@ -309,6 +307,8 @@ class KeybindsFileEditor(QWidget):
                 self.tr("Saved line %1").replace("%1", str(self.selected_index + 1))
                 )
 
+                #self.status_label.setText(f"Line {self.selected_index + 1} saved")
+
                 self.text_edit.clear()
                 self.save_btn.setEnabled(False)
 
@@ -333,7 +333,7 @@ class KeybindsFileEditor(QWidget):
                 )
 
                 # Clear selection & editor
-                self.selected_index = None
+                self.selected_index = None #FIXME doesn't remove selection
                 self.text_edit.clear()
 
                 # Reapply filter if needed
@@ -357,28 +357,43 @@ class KeybindsFileEditor(QWidget):
         if ok and new_line:
             if 'LXQt' in desktop_list:
                 command = f'spawn-sh "lxqt-qdbus run {new_line}"'
-                new_line = f"    {self.mod}{self.mod5}{self.xkbcommon_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
+                new_line = f"    {self.mod5}{self.xkbcommon_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
             else:
                 command = f'spawn "{new_line}"'
-                new_line = f"    {self.mod}{self.mod5}{self.xkbcommon_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
+                new_line = f"    {self.mod5}{self.xkbcommon_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
 
             try:
-                if not hasattr(self, 'selected_index'):
-                    self.selected_index = len(self.lines) - 1
-                else:
-                    self.selected_index = self.selected_index + 1
+                # Find the last line (should be "}") #FIXME add at current index if there is
+                last_line_index = len(self.lines) - 1
 
-                self.lines.insert(self.selected_index, new_line)
+                # Insert before the last line
+                self.lines.insert(last_line_index, new_line)
 
+                # Write back to file
                 with open(self.filename, 'w') as file:
                     file.writelines(self.lines)
 
-                self.filter_input.text()
-                self.filter_lines()
-                self.list_widget.setCurrentRow(self.selected_index)
-                self.reset_add_keybind()
+                # Update the list display
+                self.update_list_display()
+
+                # Select and scroll to the new line
+                new_index = last_line_index  # Because we inserted before last line
+                self.list_widget.setCurrentRow(new_index)
+                self.key_edit.clear()
+                self.xkbcommon_key = ""
+                self.add_cmd_btn.setEnabled(False)
+                self.add_cmd_sh_btn.setEnabled(False)
+                self.add_action_btn.setEnabled(False)
+                self.save_btn.setEnabled(False)
+                self.remove_btn.setEnabled(False)
+                self.mod5_checkbox.setEnabled(False)
+                self.allow_locked_checkbox.setEnabled(False)
+                self.repeat_false_checkbox.setEnabled(False)
+                self.mod5_checkbox.setChecked(False)
+                self.allow_locked_checkbox.setChecked(False)
+                self.repeat_false_checkbox.setChecked(False)
                 self.status_label.setText(
-                self.tr("Added new shortcut at line %1").replace("%1", str(self.selected_index + 1))
+                self.tr("Added new shortcut at line %1").replace("%1", str(new_index + 1))
                 )
 
             except Exception as e:
@@ -387,6 +402,7 @@ class KeybindsFileEditor(QWidget):
                 )
 
     def add_cmd_sh(self):
+        """Add a shell cmd before closing bracket"""
         new_command, ok = QInputDialog.getText(
             self,
             "Add Command",
@@ -397,13 +413,13 @@ class KeybindsFileEditor(QWidget):
 
         if ok and new_command:
             command = f'spawn-sh "{new_command}"'
-            new_line = f"    {self.mod}{self.mod5}{self.xkbcommon_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
+            new_line = f"    {self.mod5}{self.xkbcommon_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
 
             try:
+
                 if not hasattr(self, 'selected_index'):
+
                     self.selected_index = len(self.lines) - 1
-                else:
-                    self.selected_index = self.selected_index + 1
 
                 self.lines.insert(self.selected_index, new_line)
 
@@ -412,10 +428,24 @@ class KeybindsFileEditor(QWidget):
 
                 self.filter_input.text()
                 self.filter_lines()
-                self.list_widget.setCurrentRow(self.selected_index)
-                self.reset_add_keybind()
+                # Select and scroll to the new line
+                #new_index = last_line_index  # Because we inserted before last line
+                self.list_widget.setCurrentRow(selected_index)
+                self.key_edit.clear()
+                self.xkbcommon_key = ""
+                self.add_cmd_btn.setEnabled(False)
+                self.add_cmd_sh_btn.setEnabled(False)
+                self.add_action_btn.setEnabled(False)
+                self.save_btn.setEnabled(False)
+                self.remove_btn.setEnabled(False)
+                self.mod5_checkbox.setEnabled(False)
+                self.allow_locked_checkbox.setEnabled(False)
+                self.repeat_false_checkbox.setEnabled(False)
+                self.mod5_checkbox.setChecked(False)
+                self.allow_locked_checkbox.setChecked(False)
+                self.repeat_false_checkbox.setChecked(False)
                 self.status_label.setText(
-                    self.tr("Added new shortcut at line %1").replace("%1", str(self.selected_index + 1))
+                self.tr("Added new shortcut at line %1").replace("%1", str(self.selected_index + 1))
                 )
 
             except Exception as e:
@@ -441,8 +471,11 @@ class KeybindsFileEditor(QWidget):
                     with open(self.filename, 'w') as file:
                         file.writelines(self.lines)
 
+                    #display_text = comment_to_add
                     self.filter_input.text()
                     self.filter_lines()
+                    #self.filter_lines(comment)
+                    #self.list_widget.item(self.selected_index).setText(display_text)
                     self.save_btn.setEnabled(False)
                     self.remove_btn.setEnabled(False)
                     self.status_label.setText(
@@ -464,25 +497,34 @@ class KeybindsFileEditor(QWidget):
         )
 
         if ok and new_line:
-            new_line = f"    {self.mod}{self.mod5}{self.xkbcommon_key} {self.allow_locked} {self.repeat_false}{{ {new_line}; }}\n"
+            new_line = f"    {self.mod5}{self.xkbcommon_key} {self.allow_locked} {self.repeat_false}{{ {new_line}; }}\n"
 
             try:
-                if not hasattr(self, 'selected_index'):
-                    self.selected_index = len(self.lines) - 1
-                else:
-                    self.selected_index = self.selected_index + 1
-
-                self.lines.insert(self.selected_index, new_line)
+                last_line_index = len(self.lines) - 1
+                self.lines.insert(last_line_index, new_line)
 
                 with open(self.filename, 'w') as file:
                     file.writelines(self.lines)
 
-                self.filter_input.text()
-                self.filter_lines()
-                self.list_widget.setCurrentRow(self.selected_index)
-                self.reset_add_keybind()
+                self.update_list_display()
+
+                new_index = last_line_index
+                self.list_widget.setCurrentRow(new_index)
+                self.key_edit.clear()
+                self.xkbcommon_key = ""
+                self.add_cmd_btn.setEnabled(False)
+                self.add_cmd_sh_btn.setEnabled(False)
+                self.add_action_btn.setEnabled(False)
+                self.save_btn.setEnabled(False)
+                self.remove_btn.setEnabled(False)
+                self.mod5_checkbox.setEnabled(False)
+                self.allow_locked_checkbox.setEnabled(False)
+                self.repeat_false_checkbox.setEnabled(False)
+                self.mod5_checkbox.setChecked(False)
+                self.allow_locked_checkbox.setChecked(False)
+                self.repeat_false_checkbox.setChecked(False)
                 self.status_label.setText(
-                self.tr("Added new shortcut at line %1").replace("%1", str(self.selected_index + 1))
+                self.tr("Added new shortcut at line %1").replace("%1", str(new_index + 1))
                 )
 
             except Exception as e:
@@ -494,23 +536,6 @@ class KeybindsFileEditor(QWidget):
         current = self.text_edit.toPlainText()
         self.save_btn.setEnabled(current != self.original_text)
 
-    def reset_add_keybind(self):
-        self.key_edit.clear()
-        self.xkbcommon_key = ""
-        self.add_cmd_btn.setEnabled(False)
-        self.add_cmd_sh_btn.setEnabled(False)
-        self.add_action_btn.setEnabled(False)
-        self.save_btn.setEnabled(False)
-        self.remove_btn.setEnabled(False)
-        self.mod_checkbox.setEnabled(False)
-        self.mod5_checkbox.setEnabled(False)
-        self.allow_locked_checkbox.setEnabled(False)
-        self.repeat_false_checkbox.setEnabled(False)
-        self.mod_checkbox.setChecked(False)
-        self.mod5_checkbox.setChecked(False)
-        self.allow_locked_checkbox.setChecked(False)
-        self.repeat_false_checkbox.setChecked(False)
-
     def on_changed(self, seq):
         self.key_edit.setKeySequence(seq)
         self.stored_key = seq.toString()
@@ -518,7 +543,6 @@ class KeybindsFileEditor(QWidget):
         self.add_cmd_btn.setEnabled(True)
         self.add_cmd_sh_btn.setEnabled(True)
         self.add_action_btn.setEnabled(True)
-        self.mod_checkbox.setEnabled(True)
         self.mod5_checkbox.setEnabled(True)
         self.allow_locked_checkbox.setEnabled(True)
         self.repeat_false_checkbox.setEnabled(True)
@@ -527,7 +551,7 @@ class KeybindsFileEditor(QWidget):
 
         if self.stored_key:
             conversion = self.stored_key
-            conversion = conversion.replace("Meta", "Super")
+            conversion = conversion.replace("Meta", "Mod")
             conversion = conversion.replace("Esc", "escape")
             conversion = conversion.replace("-", "minus")
             conversion = conversion.replace("=", "equal")
@@ -563,12 +587,9 @@ class KeybindsFileEditor(QWidget):
             conversion = conversion.replace("++", "+plus") # otherwise breaks all others...
 
             self.xkbcommon_key = conversion
-
-    def on_toggled_mod(self, checked):
-        if checked:
-            self.mod = "Mod+"
-        else:
-            self.mod = ""
+        #else:
+        #    self.xkbcommon_key = ""
+        #print(f"Qt: '{self.stored_key}' -> xkbcommon: '{self.xkbcommon_key}'")
 
     def on_toggled_mod5(self, checked):
         if checked:
