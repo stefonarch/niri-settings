@@ -95,14 +95,14 @@ class KeybindsFileEditor(QWidget):
 
         # Edit area label
         edit_label = QLabel(self.tr("Edit selected shortcut:"))
-        bottom_layout.addWidget(edit_label)
+        #bottom_layout.addWidget(edit_label)
 
         # Text editor
         self.text_edit = QPlainTextEdit()
         self.text_edit.setMaximumHeight(80)
         font = QFont("Monospace")
         self.text_edit.setFont(font)
-        self.text_edit.setPlaceholderText(self.tr("Select a line to edit ..."))
+        self.text_edit.setPlaceholderText(self.tr("Select a line to edit here"))
 
         bottom_layout.addWidget(self.text_edit)
 
@@ -162,7 +162,6 @@ class KeybindsFileEditor(QWidget):
         self.allow_locked = ""
         self.repeat_false = ""
         self.mousebind = ""
-        self.cooldown = ""
 
         keypress_layout = QFormLayout(self)
         self.label = QLabel(self.tr("Add a shortcut:"))
@@ -201,52 +200,26 @@ class KeybindsFileEditor(QWidget):
         self.mousebinds_checkbox.setChecked(False)
         self.mousebinds_combobox.setEnabled(False)
 
-        self.cooldown_spinbox_label = QLabel(self.tr('Cooldown:'))
-        self.cooldown_spinbox = QSpinBox()
-        self.cooldown_spinbox.setRange(0,1000)
-        self.cooldown_spinbox.setSingleStep(50)
-        self.cooldown_spinbox.setValue(150)
-        self.cooldown_spinbox.setSuffix(" ms")
-        self.cooldown_spinbox_label.setEnabled(False)
-        self.cooldown_spinbox.setEnabled(False)
-
         self.mousebinds_checkbox.toggled.connect(self.on_mousebinds)
         self.mousebinds_checkbox.toggled.connect(self.on_mousebind_checked)
         self.mousebinds_checkbox.toggled.connect(self.mousebinds_combobox.setEnabled)
-        #self.cooldown_spinbox_label.setEnabled(self.cooldown_checkbox.isChecked())
-        self.cooldown_spinbox.setEnabled(self.mousebinds_checkbox.isChecked())
         self.mousebinds_combobox.setEnabled(self.mousebinds_checkbox.isChecked())
 
         self.mod_checkbox.setChecked(self.mousebinds_checkbox.isChecked())
         self.mod_checkbox.setEnabled(self.mousebinds_checkbox.isChecked())
         self.mousebinds_checkbox.toggled.connect(self.mod_checkbox.setChecked)
-        #self.mousebinds_checkbox.toggled.connect(self.mod_checkbox.setEnabled)
-
-        self.mousebinds_combobox.currentTextChanged.connect(
-        lambda text: self.cooldown_spinbox.setEnabled("Mouse" not in text)
-        )
-        self.mousebinds_combobox.currentTextChanged.connect(
-        lambda text: self.cooldown_spinbox_label.setEnabled("Mouse" not in text)
-        )
-
-        # When the spinbox value changes
-        self.cooldown_spinbox.valueChanged.connect(lambda _: self.on_cooldown(True))
-
-        # When the checkbox toggles (which enables/disables the spinbox)
-        self.mousebinds_checkbox.toggled.connect(lambda _: self.on_cooldown(True))
+        self.mousebinds_combobox.currentTextChanged.connect(self.on_mousebind_changed)
 
         mousebinds_layout.addWidget(self.mousebinds_checkbox)
         mousebinds_layout.addWidget(self.mousebinds_combobox)
         mousebinds_layout.addSpacing(20)
-        mousebinds_layout.addWidget(self.cooldown_spinbox_label)
-        mousebinds_layout.addWidget(self.cooldown_spinbox)
         mousebinds_layout.addStretch()
 
         bottom_layout.addLayout(button_layout)
         bottom_layout.addSpacing(15)
         bottom_layout.addLayout(keypress_layout)
         bottom_layout.addLayout(options_layout)
-        #bottom_layout.addLayout(mousebinds_layout)
+        bottom_layout.addLayout(mousebinds_layout)
         bottom_layout.addSpacing(10)
         bottom_layout.addLayout(add_button_layout)
 
@@ -392,9 +365,11 @@ class KeybindsFileEditor(QWidget):
                 self.tr("Line %1 deleted").replace("%1", str(self.selected_index + 1))
                 )
 
-                # Clear selection & editor
-                self.selected_index = None
                 self.text_edit.clear()
+
+                self.filter_input.text()
+                self.filter_lines()
+                self.list_widget.setCurrentRow(self.selected_index)
 
                 # Reapply filter if needed
                 if self.filter_input.text():
@@ -417,10 +392,10 @@ class KeybindsFileEditor(QWidget):
         if ok and new_line:
             if 'LXQt' in desktop_list:
                 command = f'spawn-sh "lxqt-qdbus run {new_line}"'
-                new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.cooldown}{self.xkbcommon_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
+                new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}{self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
             else:
                 command = f'spawn "{new_line}"'
-                new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.cooldown}{self.xkbcommon_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
+                new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}{self.allow_locked}{self.repeat_false} {{ {command} ; }}\n"
 
             try:
                 if not hasattr(self, 'selected_index'):
@@ -457,7 +432,7 @@ class KeybindsFileEditor(QWidget):
 
         if ok and new_command:
             command = f'spawn-sh "{new_command}"'
-            new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.cooldown}{self.xkbcommon_key} {self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
+            new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}{self.allow_locked}{self.repeat_false} {{ {command} ; }}\n"
 
             try:
                 if not hasattr(self, 'selected_index'):
@@ -526,7 +501,7 @@ class KeybindsFileEditor(QWidget):
         )
 
         if ok and new_line:
-            new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.cooldown}{self.xkbcommon_key} {self.allow_locked} {self.repeat_false}{{ {new_line}; }}\n"
+            new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}{self.allow_locked} {self.repeat_false}{{ {new_line}; }}\n"
 
             try:
                 if not hasattr(self, 'selected_index'):
@@ -575,8 +550,6 @@ class KeybindsFileEditor(QWidget):
         self.mousebinds_checkbox.setChecked(False)
         self.mousebinds_checkbox.setEnabled(True)
         self.mousebinds_checkbox.setChecked(False)
-        self.cooldown_spinbox_label.setEnabled(False)
-        self.cooldown_spinbox.setEnabled(False)
 
     def on_mousebind_checked(self):
         self.stored_key = ""
@@ -602,8 +575,6 @@ class KeybindsFileEditor(QWidget):
         self.repeat_false_checkbox.setEnabled(True)
         self.mousebinds_checkbox.setEnabled(False)
         self.mousebinds_checkbox.setChecked(False)
-
-
         self.text_edit.clear()
         self.save_btn.setEnabled(False)
 
@@ -660,30 +631,31 @@ class KeybindsFileEditor(QWidget):
 
     def on_toggled_locked(self, checked):
         if checked:
-            self.allow_locked = "allow-when-locked=true"
+            self.allow_locked = " allow-when-locked=true"
         else:
             self.allow_locked = ""
 
     def on_toggled_repeat(self, checked):
         if checked:
-            self.repeat_false = "repeat=false"
+            self.repeat_false = " repeat=false"
         else:
             self.repeat_false = ""
 
     def on_mousebinds(self, checked):
-        index = self.mousebinds_combobox.currentText()
         if checked:
-            self.mousebind = f"{index}"
+            self.on_mousebind_changed(self.mousebinds_combobox.currentText())
         else:
             self.mousebind = ""
 
-    def on_cooldown(self, enabled):
-        if self.cooldown_spinbox.isEnabled():
-            value = self.cooldown_spinbox.value()
-            self.cooldown = f" cooldown-ms={value}"
+    def on_mousebind_changed(self, text):
+        if self.mousebinds_checkbox.isChecked():
+            mousebind = self.mousebinds_combobox.currentText()
+            if  "Mouse" not in mousebind:
+                self.mousebind = f"{mousebind} cooldown-ms=150"
+            else:
+                self.mousebind = f"{mousebind}"
         else:
-            self.cooldown = " "
-
+            self.mousebind = ""
 
 def get_keybind_config_path():
     if len(sys.argv) > 1:
