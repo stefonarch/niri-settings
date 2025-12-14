@@ -82,7 +82,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="192"/>
         <source>Corner rounding:</source>
-        <translation type="unfinished"/>
+        <translation>圆角:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="205"/>
@@ -189,7 +189,8 @@
         <source>bottom</source>
         <translation>底部</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>BehaviorTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="410"/>
@@ -229,7 +230,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="418"/>
         <source>Add also an empty workspace above</source>
-        <translation type="unfinished"/>
+        <translation>在最上方添加一个空工作区</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="419"/>
@@ -342,7 +343,8 @@
         <source>hiding after inactive for:</source>
         <translation>不活跃……后隐藏:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>FilesTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="945"/>
@@ -379,7 +381,7 @@
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="1030"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>没找到 xdg-open。请确认它已安装且在 PATH 中。</translation>
     </message>
     <message>
@@ -403,7 +405,8 @@
         <source>Permission denied. Cannot create backup.</source>
         <translation>无权限。无法创建备份。</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeybindsFileEditor</name>
     <message>
         <location filename="../ui/keybinds_tab.py" line="62"/>
@@ -472,13 +475,13 @@
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="163"/>
-        <source>Add "Mod"</source>
-        <translation>添加 "Mod"</translation>
+        <source>Add &quot;Mod&quot;</source>
+        <translation>添加 &quot;Mod&quot;</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="166"/>
-        <source>Add "AltGr"</source>
-        <translation>添加 "AltGr"</translation>
+        <source>Add &quot;AltGr&quot;</source>
+        <translation>添加 &quot;AltGr&quot;</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="169"/>
@@ -493,7 +496,7 @@
     <message>
         <location filename="../ui/keybinds_tab.py" line="185"/>
         <source>Note:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="193"/>
@@ -505,7 +508,8 @@
         <source>Created new keybinds file</source>
         <translation>创建新的快捷键配置文件</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeyboardTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="810"/>
@@ -515,7 +519,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="816"/>
         <source>Track keyboard layout:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="826"/>
@@ -562,7 +566,8 @@
         <source>Repeat rate:</source>
         <translation>重复速率:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>MouseTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="745"/>
@@ -594,7 +599,8 @@
         <source>Scroll factor:</source>
         <translation>滚动因数:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>SettingsWindow</name>
     <message>
         <location filename="../ui/settings_window.py" line="33"/>
@@ -688,7 +694,8 @@ Identical settings before this line will be ignored after.</source>
         <translation>为使本应用工作，这一行是必需的。
 在这一行之前的个性化设置将会被忽略。</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>ToolsTab</name>
     <message>
         <location filename="../ui/tools_tab.py" line="20"/>
@@ -796,7 +803,8 @@ Identical settings before this line will be ignored after.</source>
 with PID {}?</source>
         <translation type="unfinished">你确认要杀死 PID 为 {} 的这个窗口吗？</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>TouchpadTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="609"/>
@@ -831,7 +839,7 @@ with PID {}?</source>
     <message>
         <location filename="../ui/all_tabs.py" line="624"/>
         <source>Disable while trackpointing</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="625"/>
@@ -896,6 +904,7 @@ with PID {}?</source>
     <message>
         <location filename="../ui/all_tabs.py" line="716"/>
         <source>Tap button map:</source>
-        <translation type="unfinished"/>
+        <translation>轻触按键映射:</translation>
     </message>
-</context></TS>
+</context>
+</TS>
