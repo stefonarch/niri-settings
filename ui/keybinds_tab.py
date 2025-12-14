@@ -102,6 +102,7 @@ class KeybindsFileEditor(QWidget):
         self.text_edit.setMaximumHeight(80)
         font = QFont("Monospace")
         self.text_edit.setFont(font)
+        self.text_edit.setPlaceholderText(self.tr("Select a line to edit ..."))
 
         bottom_layout.addWidget(self.text_edit)
 
@@ -149,7 +150,7 @@ class KeybindsFileEditor(QWidget):
         add_button_layout.addWidget(self.add_action_btn)
         add_button_layout.addStretch()
 
-        self.add_comment_btn = QPushButton(self.tr("Insert comment"))
+        self.add_comment_btn = QPushButton(self.tr("Insert custom line"))
         self.add_comment_btn.clicked.connect(self.add_comment)
         self.add_comment_btn.setEnabled(False)
         button_layout.addWidget(self.add_comment_btn)
@@ -208,9 +209,6 @@ class KeybindsFileEditor(QWidget):
         self.cooldown_spinbox.setSuffix(" ms")
         self.cooldown_spinbox_label.setEnabled(False)
         self.cooldown_spinbox.setEnabled(False)
-
-
-        #
 
         self.mousebinds_checkbox.toggled.connect(self.on_mousebinds)
         self.mousebinds_checkbox.toggled.connect(self.on_mousebind_checked)
@@ -356,7 +354,6 @@ class KeybindsFileEditor(QWidget):
             new_text = self.text_edit.toPlainText()
             self.lines[self.selected_index] = new_text + '\n'
 
-            # Write back to file
             try:
                 with open(self.filename, 'w') as file:
                     file.writelines(self.lines)
@@ -486,18 +483,19 @@ class KeybindsFileEditor(QWidget):
                 self.tr("Error adding shortcut: %1").replace("%1", str(e))
                 )
 
-    def add_comment(self):
+    def add_comment(self): # now: add custom line
         if hasattr(self, 'selected_index'):
             comment, ok = QInputDialog.getText(
                 self,
-                "Add a comment",
-                "Add a comment for this keybind:",
+                "Add a custom line",
+                "Add a comment, 'e.g. // my comment', an empty line or else:",
                 QLineEdit.EchoMode.Normal,
                 ""
             )
 
-            if ok and comment:
-                comment_to_add = f"    // {comment}\n"
+            if ok:
+                comment_to_add = f"    {comment}\n"
+                self.selected_index = self.selected_index + 1
                 self.lines.insert(self.selected_index, comment_to_add)
 
                 try:
@@ -508,13 +506,14 @@ class KeybindsFileEditor(QWidget):
                     self.filter_lines()
                     self.save_btn.setEnabled(False)
                     self.remove_btn.setEnabled(False)
+                    self.text_edit.clear()
                     self.status_label.setText(
-                    self.tr("Comment saved at line %1").replace("%1", str(self.selected_index+1))
+                    self.tr("Custom line saved at line %1").replace("%1", str(self.selected_index+1))
                     )
 
                 except Exception as e:
                     self.status_label.setText(
-                    self.tr("Error saving comment: %1").replace("%1", str(e))
+                    self.tr("Error saving custom line: %1").replace("%1", str(e))
                     )
 
     def add_niri_action(self):
