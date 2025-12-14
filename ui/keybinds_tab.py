@@ -7,7 +7,7 @@ from PyQt6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout, QR
 import sys
 
 from PyQt6.QtCore import Qt, QTimer, QProcess
-from PyQt6.QtGui import QFont, QColor, QAction, QCursor
+from PyQt6.QtGui import QFont, QColor, QAction, QCursor, QShortcut, QKeySequence
 
 from pathlib import Path
 import os, re, sys, subprocess, shutil
@@ -71,6 +71,8 @@ class KeybindsFileEditor(QWidget):
         self.filter_input.setPlaceholderText(self.tr("Type to filter..."))
         self.filter_input.textChanged.connect(self.filter_lines)
         self.filter_input.setClearButtonEnabled(True)
+        shortcut = QShortcut(QKeySequence("Ctrl+F"), self)
+        shortcut.activated.connect(self.filter_input.setFocus)
 
         filter_layout.addWidget(self.filter_input)
 
@@ -111,15 +113,21 @@ class KeybindsFileEditor(QWidget):
         add_button_layout = QHBoxLayout()
 
         self.save_btn = QPushButton(self.tr("Save edit"))
+        self.save_btn.setToolTip("Ctrl+S")
         self.save_btn.clicked.connect(self.save_line)
         self.save_btn.setEnabled(False)
         button_layout.addWidget(self.save_btn)
+        shortcut = QShortcut(QKeySequence("Ctrl+S"), self)
+        shortcut.activated.connect(self.save_btn.click)
 
         self.remove_btn = QPushButton(self.tr("Remove this line"))
+        self.remove_btn.setToolTip("Canc")
         self.remove_btn.clicked.connect(self.delete_line)
         self.remove_btn.setEnabled(False)
         button_layout.addWidget(self.remove_btn)
         button_layout.addStretch()
+        shortcut = QShortcut(QKeySequence("Canc"), self)
+        shortcut.activated.connect(self.remove_btn.click)
 
         self.move_up_btn = QPushButton(self.tr("Move up"))
         self.move_up_btn.clicked.connect(self.delete_line)
@@ -151,9 +159,12 @@ class KeybindsFileEditor(QWidget):
         add_button_layout.addStretch()
 
         self.add_comment_btn = QPushButton(self.tr("Insert custom line"))
+        self.add_comment_btn.setToolTip("Ins")
         self.add_comment_btn.clicked.connect(self.add_comment)
         self.add_comment_btn.setEnabled(False)
         button_layout.addWidget(self.add_comment_btn)
+        shortcut = QShortcut(QKeySequence("Ins"), self)
+        shortcut.activated.connect(self.add_comment_btn.click)
 
         self.stored_key = ""
         self.xkbcommon_key = ""

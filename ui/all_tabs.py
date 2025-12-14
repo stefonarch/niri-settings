@@ -3,7 +3,7 @@ from PyQt6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout, QR
                              QDoubleSpinBox, QComboBox, QSpinBox, QLineEdit, QGroupBox, QColorDialog,
                              QListWidget, QListWidgetItem, QMenu, QMessageBox, QPlainTextEdit)
 from PyQt6.QtCore import Qt, QTimer, QProcess
-from PyQt6.QtGui import QFont, QColor, QAction, QCursor
+from PyQt6.QtGui import QFont, QColor, QAction, QCursor, QShortcut, QKeySequence
 
 from pathlib import Path
 import os, re, sys, subprocess, shutil
@@ -953,19 +953,31 @@ class FilesTab(QWidget):
         button_layout = QHBoxLayout()
 
         refresh_btn = QPushButton(self.tr("Refresh"))
+        refresh_btn.setToolTip("Ctrl+R")
         refresh_btn.clicked.connect(self.refresh_files)
         button_layout.addWidget(refresh_btn)
+        shortcut = QShortcut(QKeySequence("Ctrl+R"), self)
+        shortcut.activated.connect(refresh_btn.click)
 
         open_btn = QPushButton(self.tr("Open"))
+        open_btn.setToolTip("Ctrl+O")
         open_btn.clicked.connect(self.open_selected)
         button_layout.addWidget(open_btn)
+        shortcut = QShortcut(QKeySequence("Ctrl+O"), self)
+        shortcut.activated.connect(open_btn.click)
 
         validate_btn = QPushButton(self.tr("Validate file"))
+        validate_btn.setToolTip("Ctrl+V")
         validate_btn.clicked.connect(self.validate_selected)
+        shortcut = QShortcut(QKeySequence("Ctrl+V"), self)
+        shortcut.activated.connect(validate_btn.click)
 
         backup_btn = QPushButton(self.tr("Backup file"))
+        backup_btn.setToolTip("Ctrl+B")
         backup_btn.clicked.connect(self.backup_selected)
         button_layout.addWidget(backup_btn)
+        shortcut = QShortcut(QKeySequence("Ctrl+B"), self)
+        shortcut.activated.connect(backup_btn.click)
 
         button_layout.addWidget(validate_btn)
 
