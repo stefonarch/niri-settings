@@ -82,7 +82,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="192"/>
         <source>Corner rounding:</source>
-        <translation type="unfinished"></translation>
+        <translation>Arrotondamento angoli:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="205"/>
@@ -441,7 +441,7 @@
     <message>
         <location filename="../ui/keybinds_tab.py" line="117"/>
         <source>Move down</source>
-        <translation type="unfinished"></translation>
+        <translation>Sposta in giù</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="122"/>
@@ -496,7 +496,7 @@
     <message>
         <location filename="../ui/keybinds_tab.py" line="185"/>
         <source>Note:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota:</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="193"/>
@@ -705,7 +705,7 @@ Impostazioni identiche prima di questa riga verranno ignorati dopo.</translation
     <message>
         <location filename="../ui/tools_tab.py" line="23"/>
         <source>:</source>
-        <translation type="unfinished"></translation>
+        <translation>:</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="24"/>
