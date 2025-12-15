@@ -43,7 +43,7 @@ class KeybindsFileEditor(QWidget):
         self.initUI()
         self.load_file()
 
-        # get niri actions:
+        # Get niri actions:
         completed = subprocess.run(
             ["niri", "msg", "action"],
             stderr=subprocess.PIPE,
@@ -198,10 +198,12 @@ class KeybindsFileEditor(QWidget):
         self.mod5_checkbox.setEnabled(False)
         self.mod5_checkbox.toggled.connect(self.on_toggled_mod5)
 
-        self.repeat_false_checkbox = QCheckBox(self.tr('No repeating'))
+        self.repeat_false_checkbox = QCheckBox(self.tr('No repeat'))
+        self.repeat_false_checkbox.setToolTip(self.tr("Do not repeat the action. Repeating is default"))
         self.repeat_false_checkbox.setEnabled(False)
         self.repeat_false_checkbox.toggled.connect(self.on_toggled_repeat)
         self.allow_locked_checkbox = QCheckBox(self.tr('Allow when locked'))
+        self.allow_locked_checkbox.setToolTip(self.tr("Allow execution when screen is locked"))
         self.allow_locked_checkbox.setEnabled(False)
         self.allow_locked_checkbox.toggled.connect(self.on_toggled_locked)
 
@@ -212,6 +214,8 @@ class KeybindsFileEditor(QWidget):
         options_layout.addStretch()
 
         mousebinds_layout =QHBoxLayout()
+        self.overlay_checkbox = QCheckBox(self.tr("No overlay"))
+        self.overlay_checkbox.setToolTip(self.tr("Do not show in the hotkey overlay"))
         self.mousebinds_checkbox = QCheckBox(self.tr("Add mousebind:"))
         self.mousebinds_combobox = QComboBox()
         self.mousebinds_combobox.addItems(["MouseLeft", "MouseRight" ,"MouseMiddle","MouseForward", "MouseBack","WheelScrollDown","WheelScrollUp", "WheelScrollRight","WheelScrollLeft","TouchpadScrollDown","TouchpadScrollUp"])
@@ -228,6 +232,7 @@ class KeybindsFileEditor(QWidget):
         self.mousebinds_checkbox.toggled.connect(self.mod_checkbox.setChecked)
         self.mousebinds_combobox.currentTextChanged.connect(self.on_mousebind_changed)
 
+        #mousebinds_layout.addWidget(self.overlay_checkbox)
         mousebinds_layout.addWidget(self.mousebinds_checkbox)
         mousebinds_layout.addWidget(self.mousebinds_combobox)
         mousebinds_layout.addSpacing(20)
@@ -311,7 +316,16 @@ class KeybindsFileEditor(QWidget):
         self.filter_count.setText("")
 
     def on_item_clicked(self, item):
+        # safeguards for brackets: no deleting, no adding after closing bracket
+        second_item = self.list_widget.item(1)
+        second_item.setFlags(second_item.flags() & ~Qt.ItemFlag.ItemIsSelectable)
+        second_item.setFlags(second_item.flags() & ~Qt.ItemFlag.ItemIsEnabled)
+        last_item = self.list_widget.item(self.list_widget.count() - 1)
+        last_item.setFlags(last_item.flags() & ~Qt.ItemFlag.ItemIsSelectable)
+        last_item.setFlags(last_item.flags() & ~Qt.ItemFlag.ItemIsEnabled)
         row = self.list_widget.row(item)
+        if row == self.list_widget.count() - 1:
+            return
 
         # If filtered, find the actual index in original lines
         if self.filter_input.text():
@@ -579,24 +593,33 @@ class KeybindsFileEditor(QWidget):
         self.add_action_btn.setEnabled(True)
         self.mod_checkbox.setEnabled(True)
         self.mod5_checkbox.setEnabled(True)
-#       self.allow_locked_checkbox.setEnabled(True)
-       # self.repeat_false_checkbox.setEnabled(True)
 
     def on_changed(self, seq):
-        self.key_edit.setKeySequence(seq)
-        self.stored_key = seq.toString()
-        self.trigger_label.setEnabled(True)
-        self.add_cmd_btn.setEnabled(True)
-        self.add_cmd_sh_btn.setEnabled(True)
-        self.add_action_btn.setEnabled(True)
-        self.mod_checkbox.setEnabled(True)
-        self.mod5_checkbox.setEnabled(True)
-        self.allow_locked_checkbox.setEnabled(True)
-        self.repeat_false_checkbox.setEnabled(True)
-        self.mousebinds_checkbox.setEnabled(False)
-        self.mousebinds_checkbox.setChecked(False)
-        self.text_edit.clear()
-        self.save_btn.setEnabled(False)
+        if seq.isEmpty():
+            self.stored_key = ""
+            self.trigger_label.setEnabled(False)
+            self.add_cmd_btn.setEnabled(False)
+            self.add_cmd_sh_btn.setEnabled(False)
+            self.add_action_btn.setEnabled(False)
+            self.mousebinds_checkbox.setEnabled(True)
+            self.mod_checkbox.setEnabled(False)
+            self.mod5_checkbox.setEnabled(False)
+            self.allow_locked_checkbox.setEnabled(False)
+            self.repeat_false_checkbox.setEnabled(False)
+        else:
+            self.stored_key = seq.toString()
+            self.trigger_label.setEnabled(True)
+            self.add_cmd_btn.setEnabled(True)
+            self.add_cmd_sh_btn.setEnabled(True)
+            self.add_action_btn.setEnabled(True)
+            self.mod_checkbox.setEnabled(True)
+            self.mod5_checkbox.setEnabled(True)
+            self.allow_locked_checkbox.setEnabled(True)
+            self.repeat_false_checkbox.setEnabled(True)
+            self.mousebinds_checkbox.setEnabled(False)
+            self.mousebinds_checkbox.setChecked(False)
+            self.text_edit.clear()
+            self.save_btn.setEnabled(False)
 
         if self.stored_key:
             conversion = self.stored_key
