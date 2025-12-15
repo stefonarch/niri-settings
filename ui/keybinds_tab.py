@@ -4,7 +4,7 @@ from PyQt6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout, QR
                              QListWidget, QListWidgetItem, QMenu, QMessageBox, QPlainTextEdit, QSplitter,
                              QDialog, QDialogButtonBox,QInputDialog, QFormLayout, QLabel, QKeySequenceEdit
                              )
-import sys
+import sys, subprocess
 
 from PyQt6.QtCore import Qt, QTimer, QProcess
 from PyQt6.QtGui import QFont, QColor, QAction, QCursor, QShortcut, QKeySequence
@@ -29,7 +29,6 @@ class KeyBindsTab(QScrollArea):
         # Get the config file path
         config_file = get_keybind_config_path()
 
-        # Create the file editor widget
         file_editor = KeybindsFileEditor(config_file)
         layout.addWidget(file_editor)
 
@@ -44,13 +43,26 @@ class KeybindsFileEditor(QWidget):
         self.initUI()
         self.load_file()
 
+        # get niri actions:
+        completed = subprocess.run(
+            ["niri", "msg", "action"],
+            stderr=subprocess.PIPE,
+            text=True
+        )
+
+        lines = completed.stderr.splitlines()
+        lines = lines[5:]
+        lines = lines[::2]
+        lines = [line[2:] for line in lines]
+        actions = lines[:-3]
+        self.niri_actions = sorted(actions)
+
     def initUI(self):
         layout = QVBoxLayout(self)
 
-        # Label
         self.label = QLabel()
         self.label.setText(
-        self.tr("Editing: %1").replace("%1", str(self.filename))
+        self.tr("Editing %1").replace("%1", str(self.filename))
         )
         font = QFont()
         font.setItalic(True)
@@ -60,7 +72,7 @@ class KeybindsFileEditor(QWidget):
         # Create a splitter for horizontal division
         splitter = QSplitter(Qt.Orientation.Vertical)
 
-        # TOP PANEL: Filter and List
+        # Top panel: Filter and List
         top_panel = QWidget()
         top_layout = QVBoxLayout(top_panel)
 
@@ -89,17 +101,12 @@ class KeybindsFileEditor(QWidget):
 
         top_layout.addWidget(self.list_widget)
 
-        # Add top panel to splitter
         splitter.addWidget(top_panel)
 
         bottom_panel = QWidget()
         bottom_layout = QVBoxLayout(bottom_panel)
 
-        # Edit area label
-        edit_label = QLabel(self.tr("Edit selected shortcut:"))
-        #bottom_layout.addWidget(edit_label)
-
-        # Text editor
+        # Shortcut editor
         self.text_edit = QPlainTextEdit()
         self.text_edit.setMaximumHeight(80)
         font = QFont("Monospace")
@@ -330,7 +337,7 @@ class KeybindsFileEditor(QWidget):
         self.add_comment_btn.setEnabled(True)
         self.remove_btn.setEnabled(True)
         self.status_label.setText(
-        self.tr("Editing line: %1").replace("%1", str(self.selected_index + 1))
+        self.tr("Editing line %1").replace("%1", str(self.selected_index + 1))
         )
 
     def save_line(self):
@@ -388,7 +395,7 @@ class KeybindsFileEditor(QWidget):
 
             except Exception as e:
                 self.status_label.setText(
-                self.tr("Error deleting line: %1").replace("%1", str(e))
+                self.tr("Error deleting line %1").replace("%1", str(e))
                 )
 
     def add_application(self):
@@ -503,16 +510,18 @@ class KeybindsFileEditor(QWidget):
                     )
 
     def add_niri_action(self):
-        new_line, ok = QInputDialog.getText(
+        actions = self.niri_actions
+        action, ok = QInputDialog.getItem(
             self,
             "Add niri action",
-            "Add a niri action\nExamples: consume-or-expel-window-right\ntoggle-overview\n\nSee `niri msg action` for all actions.",
-            QLineEdit.EchoMode.Normal,
-            ""
+            "Select a niri action:",
+            actions,
+            0,
+            editable=True
         )
 
-        if ok and new_line:
-            new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}{self.allow_locked} {self.repeat_false}{{ {new_line}; }}\n"
+        if ok and action:
+            new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}{self.allow_locked} {self.repeat_false}{{ {action}; }}\n"
 
             try:
                 if not hasattr(self, 'selected_index'):
