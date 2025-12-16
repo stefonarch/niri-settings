@@ -306,7 +306,7 @@ class SettingsWindow(QMainWindow):
             elif self.touchpad_tab.button_radio.isChecked():
                 f.write('        scroll-method "on-button-down"\n')
 
-            f.write(f'        accel-speed {self.touchpad_tab.accel_speed_spinbox.value()}\n')
+            f.write(f'        accel-speed {self.touchpad_tab.accel_speed_slider.value() / 100:.2f}\n')
             f.write(f'        accel-profile "{self.touchpad_tab.accel_profile_combobox.currentText()}"\n')
             f.write(f'        tap-button-map "{self.touchpad_tab.tap_button_map_combobox.currentText()}"\n')
             f.write(f'        scroll-factor {self.touchpad_tab.scroll_factor_spinbox.value()}\n')
@@ -330,7 +330,7 @@ class SettingsWindow(QMainWindow):
             else:
                 f.write('        // middle-emulation\n')
 
-            f.write(f'        accel-speed {self.mouse_tab.accel_speed_spinbox.value()}\n')
+            f.write(f'        accel-speed {self.mouse_tab.accel_speed_slider.value() / 100:.2f}\n')
             f.write(f'        accel-profile "{self.mouse_tab.accel_profile_combobox.currentText()}"\n')
             f.write(f'        scroll-factor {self.mouse_tab.scroll_factor_spinbox.value()}\n')
 
@@ -670,7 +670,9 @@ class SettingsWindow(QMainWindow):
 
                 speed_match = re.search(r'accel-speed\s+(-?[\d.]+)', touchpad_content)
 
-                self.touchpad_tab.accel_speed_spinbox.setValue(float(speed_match.group(1)))
+                self.touchpad_tab.accel_speed_slider.setValue(
+                int(float(speed_match.group(1)) * 100)
+                )
 
                 profile_match = re.search(r'accel-profile\s+"([^"]+)"', touchpad_content)
                 if profile_match:
@@ -738,7 +740,9 @@ class SettingsWindow(QMainWindow):
                     '// middle-emulation' not in mouse_content
                 )
                 speed_match = re.search(r'accel-speed\s+(-?[\d.]+)', mouse_content)
-                self.mouse_tab.accel_speed_spinbox.setValue(float(speed_match.group(1)))
+                self.mouse_tab.accel_speed_slider.setValue(
+                int(float(speed_match.group(1)) * 100)
+                )
 
                 profile_match = re.search(r'accel-profile\s+"([^"]+)"', mouse_content)
                 profile_value = profile_match.group(1)

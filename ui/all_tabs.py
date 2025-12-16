@@ -1,7 +1,7 @@
 from PyQt6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout, QRadioButton,
                              QLabel, QScrollArea, QFrame, QButtonGroup, QPushButton, QCheckBox,QGridLayout,
                              QDoubleSpinBox, QComboBox, QSpinBox, QLineEdit, QGroupBox, QColorDialog,
-                             QListWidget, QListWidgetItem, QMenu, QMessageBox, QPlainTextEdit)
+                             QListWidget, QListWidgetItem, QMenu, QMessageBox, QPlainTextEdit, QSlider)
 from PyQt6.QtCore import Qt, QTimer, QProcess
 from PyQt6.QtGui import QFont, QColor, QAction, QCursor, QShortcut, QKeySequence
 
@@ -636,16 +636,6 @@ class TouchpadTab(QWidget):
         clickmethod_layout.addWidget(self.btn_areas_radio)
         clickmethod_layout.addStretch()
 
-        touchpad_layout.addWidget(self.tap_checkbox)
-        touchpad_layout.addWidget(self.natural_scroll_checkbox)
-        touchpad_layout.addLayout(drag_layout)
-        touchpad_layout.addWidget(self.disable_external_mouse_checkbox)
-        touchpad_layout.addWidget(self.dwt_checkbox)
-        touchpad_layout.addWidget(self.dwtp_checkbox)
-        touchpad_layout.addWidget(self.left_handed_checkbox)
-        touchpad_layout.addLayout(clickmethod_layout)
-        touchpad_layout.addSpacing(10)
-
         # Scroll method selection
         self.scroll_group = QButtonGroup(self)
         self.no_scroll_radio = QRadioButton(self.tr('No scroll'))
@@ -669,22 +659,19 @@ class TouchpadTab(QWidget):
         scroll_groupbox_layout.addWidget(self.edge_radio, 1, 0)        # row 1, col 0
         scroll_groupbox_layout.addWidget(self.button_radio, 1, 1)
         scroll_groupbox_layout.rowStretch(1)     # row 1, col 1
-        touchpad_layout.addWidget(scroll_groupbox)
-        touchpad_layout.addSpacing(20)
 
         # Acceleration speed
         accel_speed_layout = QHBoxLayout()
         accel_speed_label = QLabel(self.tr('Acceleration speed:'))
-        self.accel_speed_spinbox = QDoubleSpinBox()
-        self.accel_speed_spinbox.setRange(-1.0, 1.0)
-        self.accel_speed_spinbox.setSingleStep(0.05)
-        self.accel_speed_spinbox.setValue(0.2)
-        self.accel_speed_spinbox.setDecimals(2)
+        self.accel_speed_slider = QSlider(Qt.Orientation.Horizontal)
+        self.accel_speed_slider.setRange(-100, 100)
+        self.accel_speed_slider.setSingleStep(5)
+        self.accel_speed_slider.setValue(int(20))
+
 
         accel_speed_layout.addWidget(accel_speed_label)
-        accel_speed_layout.addWidget(self.accel_speed_spinbox)
+        accel_speed_layout.addWidget(self.accel_speed_slider)
         accel_speed_layout.addStretch()
-        touchpad_layout.addLayout(accel_speed_layout)
 
         # Acceleration profile
         accel_profile_layout = QHBoxLayout()
@@ -695,7 +682,6 @@ class TouchpadTab(QWidget):
         accel_profile_layout.addWidget(accel_profile_label)
         accel_profile_layout.addWidget(self.accel_profile_combobox)
         accel_profile_layout.addStretch()
-        touchpad_layout.addLayout(accel_profile_layout)
 
         # Scroll factor
         scroll_factor_layout = QHBoxLayout()
@@ -709,7 +695,6 @@ class TouchpadTab(QWidget):
         scroll_factor_layout.addWidget(scroll_factor_label)
         scroll_factor_layout.addWidget(self.scroll_factor_spinbox)
         scroll_factor_layout.addStretch()
-        touchpad_layout.addLayout(scroll_factor_layout)
 
         # Tap Button Map
         tap_button_map_layout = QHBoxLayout()
@@ -720,10 +705,25 @@ class TouchpadTab(QWidget):
         tap_button_map_layout.addWidget(tap_button_map_label)
         tap_button_map_layout.addWidget(self.tap_button_map_combobox)
         tap_button_map_layout.addStretch()
-        touchpad_layout.addLayout(tap_button_map_layout)
 
         layout.addWidget(touchpad_frame)
         layout.addStretch()
+
+        # Order
+        touchpad_layout.addWidget(self.tap_checkbox)
+        touchpad_layout.addLayout(drag_layout)
+        touchpad_layout.addLayout(tap_button_map_layout)
+        touchpad_layout.addSpacing(10)
+        touchpad_layout.addLayout(accel_speed_layout)
+        touchpad_layout.addLayout(accel_profile_layout)
+        touchpad_layout.addSpacing(10)
+        touchpad_layout.addWidget(self.natural_scroll_checkbox)
+        touchpad_layout.addWidget(scroll_groupbox)
+        touchpad_layout.addWidget(self.disable_external_mouse_checkbox)
+        touchpad_layout.addWidget(self.dwt_checkbox)
+        touchpad_layout.addWidget(self.dwtp_checkbox)
+        touchpad_layout.addWidget(self.left_handed_checkbox)
+        touchpad_layout.addLayout(clickmethod_layout)
 
 class MouseTab(QWidget):
     def __init__(self, parent=None):
@@ -733,10 +733,7 @@ class MouseTab(QWidget):
 
     def init_ui(self):
         layout = QVBoxLayout(self)
-        #layout.setSpacing(20)
-        #layout.setContentsMargins(20, 10, 20, 20)
 
-        # Mouse configuration section
         mouse_frame = QFrame()
         mouse_frame.setFrameStyle(QFrame.Shape.StyledPanel)
         mouse_layout = QVBoxLayout(mouse_frame)
@@ -746,23 +743,17 @@ class MouseTab(QWidget):
         self.left_handed_checkbox = QCheckBox(self.tr('Left handed'))
         self.middle_emulation_checkbox = QCheckBox(self.tr('Middle button emulation'))
 
-        mouse_layout.addWidget(self.natural_scroll_checkbox)
-        mouse_layout.addWidget(self.left_handed_checkbox)
-        mouse_layout.addWidget(self.middle_emulation_checkbox)
-
         # Acceleration speed
         accel_speed_layout = QHBoxLayout()
         accel_speed_label = QLabel(self.tr('Acceleration speed:'))
-        self.accel_speed_spinbox = QDoubleSpinBox()
-        self.accel_speed_spinbox.setRange(-1.0, 1.0)
-        self.accel_speed_spinbox.setSingleStep(0.05)
-        self.accel_speed_spinbox.setValue(0.2)
-        self.accel_speed_spinbox.setDecimals(2)
+        self.accel_speed_slider = QSlider(Qt.Orientation.Horizontal)
+        self.accel_speed_slider.setRange(-100, 100)
+        self.accel_speed_slider.setSingleStep(5)
+        self.accel_speed_slider.setValue(int(20))
 
         accel_speed_layout.addWidget(accel_speed_label)
-        accel_speed_layout.addWidget(self.accel_speed_spinbox)
+        accel_speed_layout.addWidget(self.accel_speed_slider)
         accel_speed_layout.addStretch()
-        mouse_layout.addLayout(accel_speed_layout)
 
         # Acceleration profile
         accel_profile_layout = QHBoxLayout()
@@ -773,7 +764,6 @@ class MouseTab(QWidget):
         accel_profile_layout.addWidget(accel_profile_label)
         accel_profile_layout.addWidget(self.accel_profile_combobox)
         accel_profile_layout.addStretch()
-        mouse_layout.addLayout(accel_profile_layout)
 
         # Scroll factor
         scroll_factor_layout = QHBoxLayout()
@@ -787,7 +777,17 @@ class MouseTab(QWidget):
         scroll_factor_layout.addWidget(scroll_factor_label)
         scroll_factor_layout.addWidget(self.scroll_factor_spinbox)
         scroll_factor_layout.addStretch()
+
+        # Order
+        mouse_layout.addWidget(self.natural_scroll_checkbox)
         mouse_layout.addLayout(scroll_factor_layout)
+        mouse_layout.addLayout(scroll_factor_layout)
+        mouse_layout.addSpacing(20)
+        mouse_layout.addLayout(accel_speed_layout)
+        mouse_layout.addLayout(accel_profile_layout)
+        mouse_layout.addSpacing(10)
+        mouse_layout.addWidget(self.left_handed_checkbox)
+        mouse_layout.addWidget(self.middle_emulation_checkbox)
 
         layout.addWidget(mouse_frame)
         layout.addStretch()
