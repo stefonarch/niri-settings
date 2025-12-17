@@ -85,6 +85,9 @@ class KeybindsFileEditor(QWidget):
         self.filter_input.setClearButtonEnabled(True)
         shortcut = QShortcut(QKeySequence("Ctrl+F"), self)
         shortcut.activated.connect(self.filter_input.setFocus)
+        esc = QShortcut(QKeySequence("Escape"), self.filter_input)
+        esc.activated.connect(self.filter_input.clear)
+
 
         filter_layout.addWidget(self.filter_input)
 
@@ -511,7 +514,7 @@ class KeybindsFileEditor(QWidget):
                 self.tr("Error adding shortcut: %1").replace("%1", str(e))
                 )
 
-    def add_comment(self): # now is add custom line
+    def add_comment(self): # now "add custom line"
         if hasattr(self, 'selected_index'):
             comment, ok = QInputDialog.getText(
                 self,
