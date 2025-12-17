@@ -142,7 +142,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="305"/>
         <source>Place within column</source>
-        <translation>Mostra all'interno della colonna</translation>
+        <translation>Mostra all&apos;interno della colonna</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="311"/>
@@ -189,7 +189,8 @@
         <source>bottom</source>
         <translation>in fondo</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>BehaviorTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="410"/>
@@ -342,7 +343,8 @@
         <source>hiding after inactive for:</source>
         <translation>nascondi dopo inattivo per:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>FilesTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="945"/>
@@ -379,7 +381,7 @@
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="1042"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>xdg-open non trovato, assicurati che è installato e nel PATH.</translation>
     </message>
     <message>
@@ -403,12 +405,13 @@
         <source>Permission denied. Cannot create backup.</source>
         <translation>Impossibile creare il backup, autorizzazion negata.</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeybindsFileEditor</name>
     <message>
         <location filename="../ui/keybinds_tab.py" line="53"/>
         <source>Editing: %1</source>
-        <translation type="unfinished"/>
+        <translation>Modifica: %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="68"/>
@@ -428,7 +431,7 @@
     <message>
         <location filename="../ui/keybinds_tab.py" line="107"/>
         <source>Select a line to edit here</source>
-        <translation type="unfinished"/>
+        <translation>Seleziona una riga da modificare qui</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="115"/>
@@ -473,7 +476,7 @@
     <message>
         <location filename="../ui/keybinds_tab.py" line="161"/>
         <source>Insert custom line</source>
-        <translation type="unfinished"/>
+        <translation>Inserisci una riga</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="178"/>
@@ -482,21 +485,24 @@
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="180"/>
-        <source>'Super' (Meta) key is identical with 'Mod' by default.
+        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
 The shortcut field doesn’t detect AltGr, use the checkbox instead.
-If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
-        <translation type="unfinished"/>
+If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
+        <translation>Il tasto &apos;Super&apos; (Meta) è identico a &apos;Mod&apos; per impostazione predefinita.
+Seleziona una riga per inserire la scorciatoia, altrimenti verrà aggiunta in fondo.
+Il campo scorciatoia non rileva AltGr, utilizza la casella di controllo.
+Se niri mostra un errore, convalida &apos;keybinds.kdl&apos; nella scheda successiva.</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="187"/>
-        <source>Add "Mod"</source>
-        <translation>Aggiungi "Mod"</translation>
+        <source>Add &quot;Mod&quot;</source>
+        <translation>Aggiungi &quot;Mod&quot;</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="190"/>
-        <source>Add "AltGr"</source>
-        <translation>Aggiungi "AltGr"</translation>
+        <source>Add &quot;AltGr&quot;</source>
+        <translation>Aggiungi &quot;AltGr&quot;</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="194"/>
@@ -511,7 +517,7 @@ If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
     <message>
         <location filename="../ui/keybinds_tab.py" line="208"/>
         <source>Add mousebind:</source>
-        <translation type="unfinished"/>
+        <translation>Aggiungi scorciatoia per mouse:</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="265"/>
@@ -521,63 +527,64 @@ If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
     <message>
         <location filename="../ui/keybinds_tab.py" line="273"/>
         <source>Loaded %1 lines</source>
-        <translation type="unfinished"/>
+        <translation>Caricate %1 righe</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="296"/>
         <source>%1 matching</source>
-        <translation type="unfinished"/>
+        <translation>%1 corrispondenze</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="333"/>
         <source>Editing line: %1</source>
-        <translation type="unfinished"/>
+        <translation>Modifica riga: %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="353"/>
         <source>Saved line %1</source>
-        <translation type="unfinished"/>
+        <translation>Salvato riga %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="361"/>
         <source>Error saving file: %1</source>
-        <translation type="unfinished"/>
+        <translation>Errore salvando il file: %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="376"/>
         <source>Line %1 deleted</source>
-        <translation type="unfinished"/>
+        <translation>Cancellata riga %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="391"/>
         <source>Error deleting line: %1</source>
-        <translation type="unfinished"/>
+        <translation>Errore cancellando riga: %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="533"/>
         <location filename="../ui/keybinds_tab.py" line="464"/>
         <location filename="../ui/keybinds_tab.py" line="427"/>
         <source>Added new shortcut at line %1</source>
-        <translation type="unfinished"/>
+        <translation>Aggiunta nuova scorciatoia alla riga %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="538"/>
         <location filename="../ui/keybinds_tab.py" line="469"/>
         <location filename="../ui/keybinds_tab.py" line="432"/>
         <source>Error adding shortcut: %1</source>
-        <translation type="unfinished"/>
+        <translation>Errore aggiungere scorciatoia: %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="497"/>
         <source>Custom line saved at line %1</source>
-        <translation type="unfinished"/>
+        <translation>Riga personalizzata salvata a riga %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="502"/>
         <source>Error saving custom line: %1</source>
-        <translation type="unfinished"/>
+        <translation>Errore salvando riga: %1</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeyboardTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="810"/>
@@ -634,7 +641,8 @@ If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
         <source>Repeat rate:</source>
         <translation>Velocità ripetizione:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>MouseTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="745"/>
@@ -666,7 +674,8 @@ If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
         <source>Scroll factor:</source>
         <translation>Fattore scroll:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>SettingsWindow</name>
     <message>
         <location filename="../ui/settings_window.py" line="33"/>
@@ -760,7 +769,8 @@ Identical settings before this line will be ignored after.</source>
         <translation>Questa riga è necessaria per far funzionare questo programma.
 Impostazioni identiche prima di questa riga verranno ignorati dopo.</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>ToolsTab</name>
     <message>
         <location filename="../ui/tools_tab.py" line="20"/>
@@ -864,7 +874,8 @@ with PID {}?</source>
         <translation>Si è sicuro di voler uccidere questa
 finestra con PID {}?</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>TouchpadTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="609"/>
@@ -966,4 +977,5 @@ finestra con PID {}?</translation>
         <source>Tap button map:</source>
         <translation>Mappatura dei pulsanti:</translation>
     </message>
-</context></TS>
+</context>
+</TS>
