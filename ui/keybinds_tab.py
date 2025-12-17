@@ -316,13 +316,14 @@ class KeybindsFileEditor(QWidget):
         self.filter_count.setText("")
 
     def on_item_clicked(self, item):
-        # safeguards for brackets: no deleting, no adding after closing bracket
-        second_item = self.list_widget.item(1)
-        second_item.setFlags(second_item.flags() & ~Qt.ItemFlag.ItemIsSelectable)
-        second_item.setFlags(second_item.flags() & ~Qt.ItemFlag.ItemIsEnabled)
-        last_item = self.list_widget.item(self.list_widget.count() - 1)
-        last_item.setFlags(last_item.flags() & ~Qt.ItemFlag.ItemIsSelectable)
-        last_item.setFlags(last_item.flags() & ~Qt.ItemFlag.ItemIsEnabled)
+        # safeguards brackets: no del, no add below closing bracket #FIXME second is selectable
+        if not self.filter_input.text():
+            second_item = self.list_widget.item(1)
+            second_item.setFlags(second_item.flags() & ~Qt.ItemFlag.ItemIsSelectable)
+            second_item.setFlags(second_item.flags() & ~Qt.ItemFlag.ItemIsEnabled)
+            last_item = self.list_widget.item(self.list_widget.count() - 1)
+            last_item.setFlags(last_item.flags() & ~Qt.ItemFlag.ItemIsSelectable)
+            last_item.setFlags(last_item.flags() & ~Qt.ItemFlag.ItemIsEnabled)
         row = self.list_widget.row(item)
         if row == self.list_widget.count() - 1:
             return
