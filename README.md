@@ -3,7 +3,7 @@
 > GUI in PyQt for configuring niri
 
 
-https://github.com/user-attachments/assets/22bf733e-013c-491d-8b9a-e20a1b129b9d
+https://github.com/user-attachments/assets/cbd55c8f-163c-40a9-b882-86813ddd7c69
 
 
 ## Features

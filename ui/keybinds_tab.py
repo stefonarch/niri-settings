@@ -181,6 +181,7 @@ class KeybindsFileEditor(QWidget):
         self.repeat_false = ""
         self.mousebind = ""
         self.no_overlay = ""
+        self.lastline = ""
 
         keypress_layout = QFormLayout(self)
         self.label = QLabel(self.tr("Add a shortcut:"))
@@ -319,19 +320,9 @@ class KeybindsFileEditor(QWidget):
             self.list_widget.addItem(display_text)
         self.filter_count.setText("")
 
-    def on_item_clicked(self, item):
-        # safeguards brackets: no del, no add below closing bracket #FIXME second is selectable
-        if not self.filter_input.text():
-            second_item = self.list_widget.item(1)
-            second_item.setFlags(second_item.flags() & ~Qt.ItemFlag.ItemIsSelectable)
-            second_item.setFlags(second_item.flags() & ~Qt.ItemFlag.ItemIsEnabled)
-            last_item = self.list_widget.item(self.list_widget.count() - 1)
-            last_item.setFlags(last_item.flags() & ~Qt.ItemFlag.ItemIsSelectable)
-            last_item.setFlags(last_item.flags() & ~Qt.ItemFlag.ItemIsEnabled)
-        row = self.list_widget.row(item)
-        if row == self.list_widget.count() - 1:
-            return
 
+    def on_item_clicked(self, item):
+        row = self.list_widget.row(item)
         # If filtered, find the actual index in original lines
         if self.filter_input.text():
             filter_text = self.filter_input.text().lower()
@@ -358,6 +349,15 @@ class KeybindsFileEditor(QWidget):
         self.status_label.setText(
         self.tr("Editing line %1").replace("%1", str(self.selected_index + 1))
         )
+        # check if we are at the closing bracket #FIXME doesn't work when using arrows
+        text = item.text()
+        if text.strip() == "}":
+            self.lastline = "lastline"
+            self.remove_btn.setEnabled(False)
+            self.text_edit.clear()
+            self.save_btn.setEnabled(False)
+        else:
+            self.lastline = ""
 
     def save_line(self):
         if hasattr(self, 'selected_index'):
@@ -396,6 +396,12 @@ class KeybindsFileEditor(QWidget):
                 # Rewrite file
                 with open(self.filename, 'w') as file:
                     file.writelines(self.lines)
+                # Update the list display
+                if self.filter_input.text():
+                    self.filter_lines()
+                else:
+                    display_text = ""
+                    self.list_widget.item(self.selected_index).setText(display_text)
 
                 self.list_widget.takeItem(self.selected_index)
                 self.status_label.setText(
@@ -403,7 +409,7 @@ class KeybindsFileEditor(QWidget):
                 )
 
                 self.text_edit.clear()
-
+                self.save_btn.setEnabled(False)
                 self.filter_input.text()
                 self.filter_lines()
                 self.list_widget.setCurrentRow(self.selected_index)
@@ -435,10 +441,10 @@ class KeybindsFileEditor(QWidget):
                 new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}{self.allow_locked}{self.repeat_false}{self.no_overlay} {{ {command} ; }}\n"
 
             try:
-                if not hasattr(self, 'selected_index'):
+                if not hasattr(self, 'selected_index') or self.lastline == "lastline":
                     self.selected_index = len(self.lines) - 1
                 else:
-                    self.selected_index = self.selected_index + 1
+                    self.selected_index += 1
 
                 shortcut = f"{self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}"
                 if '+' not in shortcut:
@@ -477,10 +483,10 @@ class KeybindsFileEditor(QWidget):
             new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}{self.allow_locked}{self.repeat_false}{self.no_overlay} {{ {command} ; }}\n"
 
             try:
-                if not hasattr(self, 'selected_index'):
+                if not hasattr(self, 'selected_index') or self.lastline == "lastline":
                     self.selected_index = len(self.lines) - 1
                 else:
-                    self.selected_index = self.selected_index + 1
+                    self.selected_index += 1
 
                 self.lines.insert(self.selected_index, new_line)
 
@@ -505,7 +511,7 @@ class KeybindsFileEditor(QWidget):
                 self.tr("Error adding shortcut: %1").replace("%1", str(e))
                 )
 
-    def add_comment(self): # now: add custom line
+    def add_comment(self): # now is add custom line
         if hasattr(self, 'selected_index'):
             comment, ok = QInputDialog.getText(
                 self,
@@ -553,10 +559,10 @@ class KeybindsFileEditor(QWidget):
             new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}{self.allow_locked} {self.repeat_false}{self.no_overlay}{{ {action}; }}\n"
 
             try:
-                if not hasattr(self, 'selected_index'):
+                if not hasattr(self, 'selected_index') or self.lastline == "lastline":
                     self.selected_index = len(self.lines) - 1
                 else:
-                    self.selected_index = self.selected_index + 1
+                    self.selected_index += 1
 
                 self.lines.insert(self.selected_index, new_line)
 
