@@ -180,6 +180,7 @@ class KeybindsFileEditor(QWidget):
         self.allow_locked = ""
         self.repeat_false = ""
         self.mousebind = ""
+        self.no_overlay = ""
 
         keypress_layout = QFormLayout(self)
         self.label = QLabel(self.tr("Add a shortcut:"))
@@ -214,8 +215,10 @@ class KeybindsFileEditor(QWidget):
         options_layout.addStretch()
 
         mousebinds_layout =QHBoxLayout()
-        self.overlay_checkbox = QCheckBox(self.tr("No overlay"))
-        self.overlay_checkbox.setToolTip(self.tr("Do not show in the hotkey overlay"))
+        self.no_overlay_checkbox = QCheckBox(self.tr("No overlay"))
+        self.no_overlay_checkbox.setEnabled(False)
+        self.no_overlay_checkbox.setToolTip(self.tr("Do not show this shortcut in the hotkey overlay.\nIt also allows adding a custom title after editing."))
+        self.no_overlay_checkbox.toggled.connect(self.on_toggled_overlay)
         self.mousebinds_checkbox = QCheckBox(self.tr("Add mousebind:"))
         self.mousebinds_combobox = QComboBox()
         self.mousebinds_combobox.addItems(["MouseLeft", "MouseRight" ,"MouseMiddle","MouseForward", "MouseBack","WheelScrollDown","WheelScrollUp", "WheelScrollRight","WheelScrollLeft","TouchpadScrollDown","TouchpadScrollUp"])
@@ -232,7 +235,8 @@ class KeybindsFileEditor(QWidget):
         self.mousebinds_checkbox.toggled.connect(self.mod_checkbox.setChecked)
         self.mousebinds_combobox.currentTextChanged.connect(self.on_mousebind_changed)
 
-        #mousebinds_layout.addWidget(self.overlay_checkbox)
+        mousebinds_layout.addWidget(self.no_overlay_checkbox)
+        mousebinds_layout.addSpacing(30)
         mousebinds_layout.addWidget(self.mousebinds_checkbox)
         mousebinds_layout.addWidget(self.mousebinds_combobox)
         mousebinds_layout.addSpacing(20)
@@ -425,10 +429,10 @@ class KeybindsFileEditor(QWidget):
         if ok and new_line:
             if 'LXQt' in desktop_list:
                 command = f'spawn-sh "lxqt-qdbus run {new_line}"'
-                new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}{self.allow_locked} {self.repeat_false} {{ {command} ; }}\n"
+                new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}{self.allow_locked} {self.repeat_false}{self.no_overlay} {{ {command} ; }}\n"
             else:
                 command = f'spawn "{new_line}"'
-                new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}{self.allow_locked}{self.repeat_false} {{ {command} ; }}\n"
+                new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}{self.allow_locked}{self.repeat_false}{self.no_overlay} {{ {command} ; }}\n"
 
             try:
                 if not hasattr(self, 'selected_index'):
@@ -436,18 +440,23 @@ class KeybindsFileEditor(QWidget):
                 else:
                     self.selected_index = self.selected_index + 1
 
-                self.lines.insert(self.selected_index, new_line)
+                shortcut = f"{self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}"
+                if '+' not in shortcut:
+                    QMessageBox.warning(self, "Error", f"Shortcut '{self.xkbcommon_key}' without modifier key! ",
+                    QMessageBox.StandardButton.Abort)
+                else:
+                    self.lines.insert(self.selected_index, new_line)
 
-                with open(self.filename, 'w') as file:
-                    file.writelines(self.lines)
+                    with open(self.filename, 'w') as file:
+                        file.writelines(self.lines)
 
-                self.filter_input.text()
-                self.filter_lines()
-                self.list_widget.setCurrentRow(self.selected_index)
-                self.reset_add_keybind()
-                self.status_label.setText(
-                self.tr("Added new shortcut at line %1").replace("%1", str(self.selected_index + 1))
-                )
+                    self.filter_input.text()
+                    self.filter_lines()
+                    self.list_widget.setCurrentRow(self.selected_index)
+                    self.reset_add_keybind()
+                    self.status_label.setText(
+                    self.tr("Added new shortcut at line %1").replace("%1", str(self.selected_index + 1))
+                    )
 
             except Exception as e:
                 self.status_label.setText(
@@ -465,7 +474,7 @@ class KeybindsFileEditor(QWidget):
 
         if ok and new_command:
             command = f'spawn-sh "{new_command}"'
-            new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}{self.allow_locked}{self.repeat_false} {{ {command} ; }}\n"
+            new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}{self.allow_locked}{self.repeat_false}{self.no_overlay} {{ {command} ; }}\n"
 
             try:
                 if not hasattr(self, 'selected_index'):
@@ -475,16 +484,21 @@ class KeybindsFileEditor(QWidget):
 
                 self.lines.insert(self.selected_index, new_line)
 
-                with open(self.filename, 'w') as file:
-                    file.writelines(self.lines)
+                shortcut = f"{self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}"
+                if '+' not in shortcut:
+                    QMessageBox.warning(self, "Error", "Shortcut without modifier key! ",
+                    QMessageBox.StandardButton.Abort)
+                else:
+                    with open(self.filename, 'w') as file:
+                        file.writelines(self.lines)
 
-                self.filter_input.text()
-                self.filter_lines()
-                self.list_widget.setCurrentRow(self.selected_index)
-                self.reset_add_keybind()
-                self.status_label.setText(
-                    self.tr("Added new shortcut at line %1").replace("%1", str(self.selected_index + 1))
-                )
+                    self.filter_input.text()
+                    self.filter_lines()
+                    self.list_widget.setCurrentRow(self.selected_index)
+                    self.reset_add_keybind()
+                    self.status_label.setText(
+                        self.tr("Added new shortcut at line %1").replace("%1", str(self.selected_index + 1))
+                    )
 
             except Exception as e:
                 self.status_label.setText(
@@ -536,7 +550,7 @@ class KeybindsFileEditor(QWidget):
         )
 
         if ok and action:
-            new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}{self.allow_locked} {self.repeat_false}{{ {action}; }}\n"
+            new_line = f"    {self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}{self.allow_locked} {self.repeat_false}{self.no_overlay}{{ {action}; }}\n"
 
             try:
                 if not hasattr(self, 'selected_index'):
@@ -546,16 +560,21 @@ class KeybindsFileEditor(QWidget):
 
                 self.lines.insert(self.selected_index, new_line)
 
-                with open(self.filename, 'w') as file:
-                    file.writelines(self.lines)
+                shortcut = f"{self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}"
+                if '+' not in shortcut:
+                    QMessageBox.warning(self, "Error", f"Shortcut '{self.xkbcommon_key}' without modifier key! ",
+                    QMessageBox.StandardButton.Abort)
+                else:
+                    with open(self.filename, 'w') as file:
+                        file.writelines(self.lines)
 
-                self.filter_input.text()
-                self.filter_lines()
-                self.list_widget.setCurrentRow(self.selected_index)
-                self.reset_add_keybind()
-                self.status_label.setText(
-                self.tr("Added new shortcut at line %1").replace("%1", str(self.selected_index + 1))
-                )
+                    self.filter_input.text()
+                    self.filter_lines()
+                    self.list_widget.setCurrentRow(self.selected_index)
+                    self.reset_add_keybind()
+                    self.status_label.setText(
+                    self.tr("Added new shortcut at line %1").replace("%1", str(self.selected_index + 1))
+                    )
 
             except Exception as e:
                 self.status_label.setText(
@@ -582,6 +601,8 @@ class KeybindsFileEditor(QWidget):
         self.mod5_checkbox.setChecked(False)
         self.allow_locked_checkbox.setChecked(False)
         self.repeat_false_checkbox.setChecked(False)
+        self.no_overlay_checkbox.setEnabled(False)
+        self.no_overlay_checkbox.setChecked(False)
         self.mousebinds_checkbox.setChecked(False)
         self.mousebinds_checkbox.setEnabled(True)
         self.mousebinds_checkbox.setChecked(False)
@@ -605,6 +626,7 @@ class KeybindsFileEditor(QWidget):
             self.mousebinds_checkbox.setEnabled(True)
             self.mod_checkbox.setEnabled(False)
             self.mod5_checkbox.setEnabled(False)
+            self.no_overlay_checkbox.setEnabled(False)
             self.allow_locked_checkbox.setEnabled(False)
             self.repeat_false_checkbox.setEnabled(False)
         else:
@@ -615,6 +637,7 @@ class KeybindsFileEditor(QWidget):
             self.add_action_btn.setEnabled(True)
             self.mod_checkbox.setEnabled(True)
             self.mod5_checkbox.setEnabled(True)
+            self.no_overlay_checkbox.setEnabled(True)
             self.allow_locked_checkbox.setEnabled(True)
             self.repeat_false_checkbox.setEnabled(True)
             self.mousebinds_checkbox.setEnabled(False)
@@ -684,6 +707,12 @@ class KeybindsFileEditor(QWidget):
             self.repeat_false = " repeat=false"
         else:
             self.repeat_false = ""
+
+    def on_toggled_overlay(self, checked):
+        if checked:
+            self.no_overlay = " hotkey-overlay-title=null"
+        else:
+            self.no_overlay = ""
 
     def on_mousebinds(self, checked):
         if checked:
