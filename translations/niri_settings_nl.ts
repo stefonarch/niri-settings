@@ -189,7 +189,8 @@
         <source>bottom</source>
         <translation>onderaan</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>BehaviorTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="410"/>
@@ -279,7 +280,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="456"/>
         <source>Applications may decide</source>
-        <translation>Programma's laten kiezen</translation>
+        <translation>Programma&apos;s laten kiezen</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="489"/>
@@ -325,7 +326,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="547"/>
         <source>Screenshots:</source>
-        <translation>Schermfoto's:</translation>
+        <translation>Schermfoto&apos;s:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="559"/>
@@ -342,7 +343,8 @@
         <source>hiding after inactive for:</source>
         <translation>verbergen na inactiviteit, gedurende:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>FilesTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="945"/>
@@ -379,7 +381,7 @@
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="1042"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>xdg-open is niet aangetroffen. Controleer de installatie en PATH.</translation>
     </message>
     <message>
@@ -403,12 +405,13 @@
         <source>Permission denied. Cannot create backup.</source>
         <translation>Toegang geweigerd: de reservekopie kan niet worden gemaakt.</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeybindsFileEditor</name>
     <message>
         <location filename="../ui/keybinds_tab.py" line="53"/>
         <source>Editing: %1</source>
-        <translation type="unfinished"/>
+        <translation>Bewerken van ‘%1’</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="68"/>
@@ -428,7 +431,7 @@
     <message>
         <location filename="../ui/keybinds_tab.py" line="107"/>
         <source>Select a line to edit here</source>
-        <translation type="unfinished"/>
+        <translation>Kies een te bewerken regel</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="115"/>
@@ -473,7 +476,7 @@
     <message>
         <location filename="../ui/keybinds_tab.py" line="161"/>
         <source>Insert custom line</source>
-        <translation type="unfinished"/>
+        <translation>Eigen regel invoegen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="178"/>
@@ -482,20 +485,23 @@
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="180"/>
-        <source>'Super' (Meta) key is identical with 'Mod' by default.
+        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
 The shortcut field doesn’t detect AltGr, use the checkbox instead.
-If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
-        <translation type="unfinished"/>
+If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
+        <translation>‘Super’ (Meta) is standaard gelijk aan ‘Mod’.
+ Klik op een regel om de sneltoets daar in te kunnen voeren — anders gebeurt dit onderaan.
+Let op: het invoerveld herkent AltGr niet — gebruik daarvoor het aankruisvakje.
+Als niri een foutmelding toont, verifieer dan ‘keybinds.kdl’ op het volgende tabblad.</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="187"/>
-        <source>Add "Mod"</source>
+        <source>Add &quot;Mod&quot;</source>
         <translation>‘Mod’ toevoegen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="190"/>
-        <source>Add "AltGr"</source>
+        <source>Add &quot;AltGr&quot;</source>
         <translation>‘AltGr’ toevoegen</translation>
     </message>
     <message>
@@ -511,7 +517,7 @@ If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
     <message>
         <location filename="../ui/keybinds_tab.py" line="208"/>
         <source>Add mousebind:</source>
-        <translation type="unfinished"/>
+        <translation>Muistoets toevoegen:</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="265"/>
@@ -521,63 +527,64 @@ If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
     <message>
         <location filename="../ui/keybinds_tab.py" line="273"/>
         <source>Loaded %1 lines</source>
-        <translation type="unfinished"/>
+        <translation>%1 regels geladen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="296"/>
         <source>%1 matching</source>
-        <translation type="unfinished"/>
+        <translation>%1 overeenkomsten</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="333"/>
         <source>Editing line: %1</source>
-        <translation type="unfinished"/>
+        <translation>Bewerken van ‘%1’</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="353"/>
         <source>Saved line %1</source>
-        <translation type="unfinished"/>
+        <translation>‘%1’ is opgeslagen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="361"/>
         <source>Error saving file: %1</source>
-        <translation type="unfinished"/>
+        <translation>‘%1’ kan niet worden opgeslagen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="376"/>
         <source>Line %1 deleted</source>
-        <translation type="unfinished"/>
+        <translation>Regel %1 is verwijderd</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="391"/>
         <source>Error deleting line: %1</source>
-        <translation type="unfinished"/>
+        <translation>Regel %1 kan niet worden verwijderd</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="533"/>
         <location filename="../ui/keybinds_tab.py" line="464"/>
         <location filename="../ui/keybinds_tab.py" line="427"/>
         <source>Added new shortcut at line %1</source>
-        <translation type="unfinished"/>
+        <translation>Sneltoets ingevoerd op regel %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="538"/>
         <location filename="../ui/keybinds_tab.py" line="469"/>
         <location filename="../ui/keybinds_tab.py" line="432"/>
         <source>Error adding shortcut: %1</source>
-        <translation type="unfinished"/>
+        <translation>De sneltoets kan niet worden toegevoegd: %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="497"/>
         <source>Custom line saved at line %1</source>
-        <translation type="unfinished"/>
+        <translation>Eigen regel op %1 opgeslagen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="502"/>
         <source>Error saving custom line: %1</source>
-        <translation type="unfinished"/>
+        <translation>De eigen regel kan niet worden opgeslagen: %1</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeyboardTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="810"/>
@@ -634,7 +641,8 @@ If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
         <source>Repeat rate:</source>
         <translation>Herhaalsnelheid:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>MouseTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="745"/>
@@ -666,7 +674,8 @@ If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
         <source>Scroll factor:</source>
         <translation>Scrolfactor:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>SettingsWindow</name>
     <message>
         <location filename="../ui/settings_window.py" line="33"/>
@@ -760,7 +769,8 @@ Identical settings before this line will be ignored after.</source>
         <translation>Deze regel is nodig om het programma te laten werken.
 Identieke instellingen ná deze regel worden genegeerd.</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>ToolsTab</name>
     <message>
         <location filename="../ui/tools_tab.py" line="20"/>
@@ -864,7 +874,8 @@ with PID {}?</source>
         <translation>Weet u zeker dat het venster met PID {}
 gedwongen wilt afsluiten?</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>TouchpadTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="609"/>
@@ -966,4 +977,5 @@ gedwongen wilt afsluiten?</translation>
         <source>Tap button map:</source>
         <translation>Tikknop toewijzen aan:</translation>
     </message>
-</context></TS>
+</context>
+</TS>

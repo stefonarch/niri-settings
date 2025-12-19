@@ -189,7 +189,8 @@
         <source>bottom</source>
         <translation>底部</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>BehaviorTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="410"/>
@@ -224,7 +225,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="417"/>
         <source>Workspace auto back and forth</source>
-        <translation type="unfinished">往返切换工作区(Workspace auto back and forth)</translation>
+        <translation>往返切换工作区(Workspace auto back and forth)</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="418"/>
@@ -342,7 +343,8 @@
         <source>hiding after inactive for:</source>
         <translation>不活跃……后隐藏:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>FilesTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="945"/>
@@ -379,7 +381,7 @@
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="1042"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>没找到 xdg-open。请确认它已安装且在 PATH 中。</translation>
     </message>
     <message>
@@ -403,12 +405,13 @@
         <source>Permission denied. Cannot create backup.</source>
         <translation>无权限。无法创建备份。</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeybindsFileEditor</name>
     <message>
         <location filename="../ui/keybinds_tab.py" line="53"/>
         <source>Editing: %1</source>
-        <translation type="unfinished"/>
+        <translation>正在编辑: %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="68"/>
@@ -428,7 +431,7 @@
     <message>
         <location filename="../ui/keybinds_tab.py" line="107"/>
         <source>Select a line to edit here</source>
-        <translation type="unfinished"/>
+        <translation>选择一行以在此编辑</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="115"/>
@@ -473,7 +476,7 @@
     <message>
         <location filename="../ui/keybinds_tab.py" line="161"/>
         <source>Insert custom line</source>
-        <translation type="unfinished"/>
+        <translation>插入自定义行</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="178"/>
@@ -482,21 +485,24 @@
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="180"/>
-        <source>'Super' (Meta) key is identical with 'Mod' by default.
+        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
 The shortcut field doesn’t detect AltGr, use the checkbox instead.
-If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
-        <translation type="unfinished"/>
+If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
+        <translation>&apos;Super&apos; (Meta) 键默认下与 &apos;Mod&apos; 是一样的。
+ 选择一行以插入快捷键否则它会被加在底部。
+快捷键区并不检测 AltGr，请使用这个选框。
+若 niri 显示了一个错误，请在下一标签页中检查 &apos;keybinds.kdl&apos; 有效性。</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="187"/>
-        <source>Add "Mod"</source>
-        <translation>添加 "Mod"</translation>
+        <source>Add &quot;Mod&quot;</source>
+        <translation>添加 &quot;Mod&quot;</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="190"/>
-        <source>Add "AltGr"</source>
-        <translation>添加 "AltGr"</translation>
+        <source>Add &quot;AltGr&quot;</source>
+        <translation>添加 &quot;AltGr&quot;</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="194"/>
@@ -511,7 +517,7 @@ If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
     <message>
         <location filename="../ui/keybinds_tab.py" line="208"/>
         <source>Add mousebind:</source>
-        <translation type="unfinished"/>
+        <translation>添加鼠标绑定:</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="265"/>
@@ -521,63 +527,64 @@ If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
     <message>
         <location filename="../ui/keybinds_tab.py" line="273"/>
         <source>Loaded %1 lines</source>
-        <translation type="unfinished"/>
+        <translation>加载了 %1 行</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="296"/>
         <source>%1 matching</source>
-        <translation type="unfinished"/>
+        <translation>共 %1 处匹配</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="333"/>
         <source>Editing line: %1</source>
-        <translation type="unfinished"/>
+        <translation>正在编辑第 %1 行</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="353"/>
         <source>Saved line %1</source>
-        <translation type="unfinished"/>
+        <translation>已保存第 %1 行</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="361"/>
         <source>Error saving file: %1</source>
-        <translation type="unfinished"/>
+        <translation>保存文件时出错: %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="376"/>
         <source>Line %1 deleted</source>
-        <translation type="unfinished"/>
+        <translation>已删除第 %1 行</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="391"/>
         <source>Error deleting line: %1</source>
-        <translation type="unfinished"/>
+        <translation>删除行时出错: %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="533"/>
         <location filename="../ui/keybinds_tab.py" line="464"/>
         <location filename="../ui/keybinds_tab.py" line="427"/>
         <source>Added new shortcut at line %1</source>
-        <translation type="unfinished"/>
+        <translation>在第 %1 行添加了新的快捷键</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="538"/>
         <location filename="../ui/keybinds_tab.py" line="469"/>
         <location filename="../ui/keybinds_tab.py" line="432"/>
         <source>Error adding shortcut: %1</source>
-        <translation type="unfinished"/>
+        <translation>添加快捷键时出现错误: %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="497"/>
         <source>Custom line saved at line %1</source>
-        <translation type="unfinished"/>
+        <translation>已保存第 %1 行的自定义</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="502"/>
         <source>Error saving custom line: %1</source>
-        <translation type="unfinished"/>
+        <translation>保存自定义行时出现错误: %1</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeyboardTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="810"/>
@@ -587,7 +594,7 @@ If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
     <message>
         <location filename="../ui/all_tabs.py" line="816"/>
         <source>Track keyboard layout:</source>
-        <translation type="unfinished"/>
+        <translation>键盘布局跟踪:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="826"/>
@@ -634,7 +641,8 @@ If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
         <source>Repeat rate:</source>
         <translation>重复速率:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>MouseTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="745"/>
@@ -666,7 +674,8 @@ If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
         <source>Scroll factor:</source>
         <translation>滚动因数:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>SettingsWindow</name>
     <message>
         <location filename="../ui/settings_window.py" line="33"/>
@@ -760,7 +769,8 @@ Identical settings before this line will be ignored after.</source>
         <translation>为使本应用工作，这一行是必需的。
 在这一行之前的个性化设置将会被忽略。</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>ToolsTab</name>
     <message>
         <location filename="../ui/tools_tab.py" line="20"/>
@@ -861,9 +871,10 @@ Identical settings before this line will be ignored after.</source>
         <location filename="../ui/tools_tab.py" line="173"/>
         <source>Are you sure to kill this window
 with PID {}?</source>
-        <translation type="unfinished">你确认要杀死 PID 为 {} 的这个窗口吗？</translation>
+        <translation>你确认要杀死 PID 为 {} 的这个窗口吗？</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>TouchpadTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="609"/>
@@ -898,7 +909,7 @@ with PID {}?</source>
     <message>
         <location filename="../ui/all_tabs.py" line="624"/>
         <source>Disable while trackpointing</source>
-        <translation type="unfinished"/>
+        <translation>使用 TrackPoint 时禁用</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="625"/>
@@ -965,4 +976,5 @@ with PID {}?</source>
         <source>Tap button map:</source>
         <translation>轻触按键映射:</translation>
     </message>
-</context></TS>
+</context>
+</TS>
