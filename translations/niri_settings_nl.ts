@@ -189,7 +189,8 @@
         <source>bottom</source>
         <translation>onderaan</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>BehaviorTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="410"/>
@@ -279,7 +280,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="456"/>
         <source>Applications may decide</source>
-        <translation>Programma's laten kiezen</translation>
+        <translation>Programma&apos;s laten kiezen</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="489"/>
@@ -325,7 +326,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="547"/>
         <source>Screenshots:</source>
-        <translation>Schermfoto's:</translation>
+        <translation>Schermfoto&apos;s:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="559"/>
@@ -342,7 +343,8 @@
         <source>hiding after inactive for:</source>
         <translation>verbergen na inactiviteit, gedurende:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>FilesTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="945"/>
@@ -379,7 +381,7 @@
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="1042"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>xdg-open is niet aangetroffen. Controleer de installatie en PATH.</translation>
     </message>
     <message>
@@ -403,12 +405,13 @@
         <source>Permission denied. Cannot create backup.</source>
         <translation>Toegang geweigerd: de reservekopie kan niet worden gemaakt.</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeybindsFileEditor</name>
     <message>
         <location filename="../ui/keybinds_tab.py" line="65"/>
         <source>Editing %1</source>
-        <translation type="unfinished"/>
+        <translation>Bewerken van %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="80"/>
@@ -477,10 +480,10 @@
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="192"/>
-        <source>'Super' (Meta) key is identical with 'Mod' by default.
+        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
 The shortcut field doesn’t detect AltGr, use the checkbox instead.
-If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
+If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
         <translation>‘Super’ (Meta) is standaard gelijk aan ‘Mod’.
  Klik op een regel om de sneltoets daar in te kunnen voeren — anders gebeurt dit onderaan.
 Let op: het invoerveld herkent AltGr niet — gebruik daarvoor het aankruisvakje.
@@ -488,23 +491,23 @@ Als niri een foutmelding toont, verifieer dan ‘keybinds.kdl’ op het volgende
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="199"/>
-        <source>Add "Mod"</source>
+        <source>Add &quot;Mod&quot;</source>
         <translation>‘Mod’ toevoegen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="202"/>
-        <source>Add "AltGr"</source>
+        <source>Add &quot;AltGr&quot;</source>
         <translation>‘AltGr’ toevoegen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="206"/>
         <source>No repeat</source>
-        <translation type="unfinished"/>
+        <translation>Niet herhalen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="207"/>
         <source>Do not repeat the action. Repeating is default</source>
-        <translation type="unfinished"/>
+        <translation>Herhaal de actie niet (standaard wordt wel herhaald)</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="210"/>
@@ -514,18 +517,18 @@ Als niri een foutmelding toont, verifieer dan ‘keybinds.kdl’ op het volgende
     <message>
         <location filename="../ui/keybinds_tab.py" line="211"/>
         <source>Allow execution when screen is locked</source>
-        <translation type="unfinished"/>
+        <translation>Uitvoeren tijdens schermvergrendeling toestaan</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="222"/>
         <source>No overlay</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="224"/>
         <source>Do not show this shortcut in the hotkey overlay.
 It also allows adding a custom title after editing.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="226"/>
@@ -550,7 +553,7 @@ It also allows adding a custom title after editing.</source>
     <message>
         <location filename="../ui/keybinds_tab.py" line="353"/>
         <source>Editing line %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="382"/>
@@ -570,7 +573,7 @@ It also allows adding a custom title after editing.</source>
     <message>
         <location filename="../ui/keybinds_tab.py" line="426"/>
         <source>Error deleting line %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="585"/>
@@ -596,7 +599,8 @@ It also allows adding a custom title after editing.</source>
         <source>Error saving custom line: %1</source>
         <translation>De eigen regel kan niet worden opgeslagen: %1</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeyboardTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="810"/>
@@ -653,7 +657,8 @@ It also allows adding a custom title after editing.</source>
         <source>Repeat rate:</source>
         <translation>Herhaalsnelheid:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>MouseTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="742"/>
@@ -685,7 +690,8 @@ It also allows adding a custom title after editing.</source>
         <source>Scroll factor:</source>
         <translation>Scrolfactor:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>SettingsWindow</name>
     <message>
         <location filename="../ui/settings_window.py" line="33"/>
@@ -779,7 +785,8 @@ Identical settings before this line will be ignored after.</source>
         <translation>Deze regel is nodig om het programma te laten werken.
 Identieke instellingen ná deze regel worden genegeerd.</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>ToolsTab</name>
     <message>
         <location filename="../ui/tools_tab.py" line="20"/>
@@ -883,7 +890,8 @@ with PID {}?</source>
         <translation>Weet u zeker dat het venster met PID {}
 gedwongen wilt afsluiten?</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>TouchpadTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="609"/>
@@ -985,4 +993,5 @@ gedwongen wilt afsluiten?</translation>
         <source>Tap button map:</source>
         <translation>Tikknop toewijzen aan:</translation>
     </message>
-</context></TS>
+</context>
+</TS>
