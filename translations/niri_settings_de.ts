@@ -189,7 +189,8 @@
         <source>bottom</source>
         <translation>unten</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>BehaviorTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="410"/>
@@ -342,7 +343,8 @@
         <source>hiding after inactive for:</source>
         <translation>Verbergen nach Inaktivität für:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>FilesTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="945"/>
@@ -379,7 +381,7 @@
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="1042"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>xdg-open nicht gefunden. Stellen Sie sicher, dass es installiert und in Ihrem PATH ist.</translation>
     </message>
     <message>
@@ -403,12 +405,13 @@
         <source>Permission denied. Cannot create backup.</source>
         <translation>Berechtigung verweigert. Kann keine Sicherung erstellen.</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeybindsFileEditor</name>
     <message>
         <location filename="../ui/keybinds_tab.py" line="65"/>
         <source>Editing %1</source>
-        <translation type="unfinished"/>
+        <translation>Bearbeitung %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="80"/>
@@ -477,10 +480,10 @@
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="192"/>
-        <source>'Super' (Meta) key is identical with 'Mod' by default.
+        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
 The shortcut field doesn’t detect AltGr, use the checkbox instead.
-If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
+If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
         <translation>Die „Super“-Taste (Meta-Taste) entspricht standardmäßig der „Mod“-Taste.
 Eine Zeile auswählen um die Tastenkombination einzufügen, andernfalls wird sie unten hinzugefügt. 
 Das Tastenkombinationsfeld erkennt AltGr nicht, stattdessen das Kontrollkästchen verwenden.
@@ -488,23 +491,23 @@ Das Tastenkombinationsfeld erkennt AltGr nicht, stattdessen das Kontrollkästche
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="199"/>
-        <source>Add "Mod"</source>
-        <translation>"Mod" hinzufügen</translation>
+        <source>Add &quot;Mod&quot;</source>
+        <translation>&quot;Mod&quot; hinzufügen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="202"/>
-        <source>Add "AltGr"</source>
-        <translation>"AltGr" hinzufügen</translation>
+        <source>Add &quot;AltGr&quot;</source>
+        <translation>&quot;AltGr&quot; hinzufügen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="206"/>
         <source>No repeat</source>
-        <translation type="unfinished"/>
+        <translation>Nicht wiederholen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="207"/>
         <source>Do not repeat the action. Repeating is default</source>
-        <translation type="unfinished"/>
+        <translation>Die Aktion nicht wiederholen. Wiederholung ist Standard</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="210"/>
@@ -514,18 +517,19 @@ Das Tastenkombinationsfeld erkennt AltGr nicht, stattdessen das Kontrollkästche
     <message>
         <location filename="../ui/keybinds_tab.py" line="211"/>
         <source>Allow execution when screen is locked</source>
-        <translation type="unfinished"/>
+        <translation>Ausführung zulassen auch wenn der Bildschirm gesperrt ist</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="222"/>
         <source>No overlay</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="224"/>
         <source>Do not show this shortcut in the hotkey overlay.
 It also allows adding a custom title after editing.</source>
-        <translation type="unfinished"/>
+        <translation>Diese Tastenkombination nicht in der Hotkey-Übersicht anzeigen.
+Ermöglicht außerdem das Hinzufügen eines benutzerdefinierten Titels nach einer Bearbeitung.</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="226"/>
@@ -550,7 +554,7 @@ It also allows adding a custom title after editing.</source>
     <message>
         <location filename="../ui/keybinds_tab.py" line="353"/>
         <source>Editing line %1</source>
-        <translation type="unfinished"/>
+        <translation>Bearbeitungszeile %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="382"/>
@@ -570,7 +574,7 @@ It also allows adding a custom title after editing.</source>
     <message>
         <location filename="../ui/keybinds_tab.py" line="426"/>
         <source>Error deleting line %1</source>
-        <translation type="unfinished"/>
+        <translation>Fehler beim Löschen der Zeile %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="585"/>
@@ -596,7 +600,8 @@ It also allows adding a custom title after editing.</source>
         <source>Error saving custom line: %1</source>
         <translation>Fehler beim hinzufügen: %1</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeyboardTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="810"/>
@@ -653,7 +658,8 @@ It also allows adding a custom title after editing.</source>
         <source>Repeat rate:</source>
         <translation>Wiederholungsrate:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>MouseTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="742"/>
@@ -685,7 +691,8 @@ It also allows adding a custom title after editing.</source>
         <source>Scroll factor:</source>
         <translation>Scroll-Faktor:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>SettingsWindow</name>
     <message>
         <location filename="../ui/settings_window.py" line="33"/>
@@ -779,7 +786,8 @@ Identical settings before this line will be ignored after.</source>
         <translation>Diese Zeile ist erforderlich, damit diese Anwendung funktioniert.
 Identische Einstellungen vor dieser Zeile werden danach ignoriert.</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>ToolsTab</name>
     <message>
         <location filename="../ui/tools_tab.py" line="20"/>
@@ -883,7 +891,8 @@ with PID {}?</source>
         <translation>Sind Sie sicher, dass Sie dieses Fenster
 mit PID {} beenden wollen?</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>TouchpadTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="609"/>
@@ -985,4 +994,5 @@ mit PID {} beenden wollen?</translation>
         <source>Tap button map:</source>
         <translation>Tipp-Tasten-Zuordnung:</translation>
     </message>
-</context></TS>
+</context>
+</TS>
