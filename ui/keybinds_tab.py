@@ -1,8 +1,7 @@
-from PyQt6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout, QRadioButton,
-                             QLabel, QScrollArea, QFrame, QButtonGroup, QPushButton, QCheckBox,QGridLayout,
-                             QDoubleSpinBox, QComboBox, QSpinBox, QLineEdit, QGroupBox, QColorDialog,
-                             QListWidget, QListWidgetItem, QMenu, QMessageBox, QPlainTextEdit, QSplitter,
-                             QDialog, QDialogButtonBox,QInputDialog, QFormLayout, QLabel, QKeySequenceEdit
+from PyQt6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QScrollArea,
+                             QFrame, QPushButton, QCheckBox, QGridLayout, QComboBox, QLineEdit, QGroupBox,
+                             QListWidget, QListWidgetItem, QMessageBox, QPlainTextEdit, QSplitter,
+                             QInputDialog, QFormLayout, QLabel, QKeySequenceEdit, QStyle
                              )
 import sys, subprocess
 
@@ -124,6 +123,7 @@ class KeybindsFileEditor(QWidget):
 
         self.save_btn = QPushButton(self.tr("Save edit"))
         self.save_btn.setToolTip("Ctrl+S")
+        self.save_btn.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_DialogSaveButton))
         self.save_btn.clicked.connect(self.save_line)
         self.save_btn.setEnabled(False)
         button_layout.addWidget(self.save_btn)
@@ -132,6 +132,7 @@ class KeybindsFileEditor(QWidget):
 
         self.remove_btn = QPushButton(self.tr("Remove this line"))
         self.remove_btn.setToolTip("Canc")
+        self.remove_btn.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_TrashIcon))
         self.remove_btn.clicked.connect(self.delete_line)
         self.remove_btn.setEnabled(False)
         button_layout.addWidget(self.remove_btn)
@@ -170,6 +171,7 @@ class KeybindsFileEditor(QWidget):
 
         self.add_comment_btn = QPushButton(self.tr("Insert custom line"))
         self.add_comment_btn.setToolTip("Ins")
+        self.add_comment_btn.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_FileDialogListView))
         self.add_comment_btn.clicked.connect(self.add_comment)
         self.add_comment_btn.setEnabled(False)
         button_layout.addWidget(self.add_comment_btn)

@@ -423,6 +423,10 @@ class SettingsWindow(QMainWindow):
             if path:
                 f.write(f'\nscreenshot-path "{path}"\n')
 
+            # niri-settings settings
+            if self.files_tab.exclude_backups_checkbox.isChecked():
+                f.write('/n    // Settings of niri-settings\n    // * do not show backups\n')
+
     def load_settings(self):
         """Parse existing settings"""
 
@@ -804,6 +808,11 @@ class SettingsWindow(QMainWindow):
                 file_match = re.search(r'xkb\s*{.*?file\s+"([^"]+)"', content, re.DOTALL)
                 if file_match:
                     self.keyboard_tab.file_edit.setText(file_match.group(1))
+
+                # own settings
+                self.files_tab.exclude_backups_checkbox.setChecked(
+                    'do not show backups' in content
+                )
 
             except Exception as e:
                 print(f"Error parsing some keyboard settings: {e} ")

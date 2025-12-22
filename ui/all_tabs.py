@@ -1,8 +1,8 @@
 from PyQt6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout, QRadioButton,
                              QLabel, QScrollArea, QFrame, QButtonGroup, QPushButton, QCheckBox,QGridLayout,
                              QDoubleSpinBox, QComboBox, QSpinBox, QLineEdit, QGroupBox, QColorDialog,
-                             QListWidget, QListWidgetItem, QMenu, QMessageBox, QPlainTextEdit, QSlider)
-from PyQt6.QtCore import Qt, QTimer, QProcess
+                             QListWidget, QListWidgetItem, QMenu, QMessageBox, QPlainTextEdit, QSlider, QStyle)
+from PyQt6.QtCore import Qt, QTimer, QProcess, QTimer
 from PyQt6.QtGui import QFont, QColor, QAction, QCursor, QShortcut, QKeySequence
 
 from pathlib import Path
@@ -891,7 +891,6 @@ class KeyboardTab(QWidget):
         self.file_edit.setClearButtonEnabled(True)
 
         file_layout.addWidget(file_label)
-        #file_layout.addSpacing(34)
         file_layout.addWidget(self.file_edit)
         file_layout.addStretch()
         xkb_layout.addLayout(file_layout)
@@ -942,7 +941,7 @@ class FilesTab(QWidget):
 
     def init_ui(self):
         layout = QVBoxLayout(self)
-        title = QLabel(self.tr("KDL Files in Configuration"))#specific title?
+        title = QLabel(self.tr("Configuration Files"))
         title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(title)
 
@@ -950,42 +949,54 @@ class FilesTab(QWidget):
         self.list_widget.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         layout.addWidget(self.list_widget)
 
+        self.home = os.path.expanduser("~")
+
         button_layout = QHBoxLayout()
 
         refresh_btn = QPushButton(self.tr("Refresh"))
         refresh_btn.setToolTip("Ctrl+R")
+        refresh_btn.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_BrowserReload))
         refresh_btn.clicked.connect(self.refresh_files)
-        button_layout.addWidget(refresh_btn)
         shortcut = QShortcut(QKeySequence("Ctrl+R"), self)
         shortcut.activated.connect(refresh_btn.click)
 
         open_btn = QPushButton(self.tr("Open"))
         open_btn.setToolTip("Ctrl+O")
+        open_btn.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_FileIcon))
         open_btn.clicked.connect(self.open_selected)
-        button_layout.addWidget(open_btn)
         shortcut = QShortcut(QKeySequence("Ctrl+O"), self)
         shortcut.activated.connect(open_btn.click)
 
         validate_btn = QPushButton(self.tr("Validate file"))
         validate_btn.setToolTip("Ctrl+V")
+        validate_btn.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_MessageBoxWarning))
         validate_btn.clicked.connect(self.validate_selected)
         shortcut = QShortcut(QKeySequence("Ctrl+V"), self)
         shortcut.activated.connect(validate_btn.click)
 
         backup_btn = QPushButton(self.tr("Backup file"))
         backup_btn.setToolTip("Ctrl+B")
+        backup_btn.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_FileLinkIcon))
         backup_btn.clicked.connect(self.backup_selected)
-        button_layout.addWidget(backup_btn)
         shortcut = QShortcut(QKeySequence("Ctrl+B"), self)
         shortcut.activated.connect(backup_btn.click)
 
+        button_layout.addWidget(open_btn)
+        button_layout.addWidget(backup_btn)
         button_layout.addWidget(validate_btn)
+        button_layout.addWidget(refresh_btn)
 
         button_layout.addStretch()
         layout.addLayout(button_layout)
 
+        self.exclude_backups_checkbox = QCheckBox(self.tr('Hide backups'))
+        button_layout.addWidget(self.exclude_backups_checkbox)
+        self.exclude_backups_checkbox.toggled.connect(self.refresh_files)
+
         self.terminal = QPlainTextEdit()
         self.terminal.setReadOnly(True)
+        font = QFont("Monospace")
+        self.terminal.setFont(font)
 
         layout.addWidget(self.terminal)
 
@@ -1009,28 +1020,29 @@ class FilesTab(QWidget):
         else:
             base_path = Path(xdg_config_home) / 'niri'
 
-        if not base_path.exists():  #needed?
+        if not base_path.exists():  # is that needed?
             self.show_error(self.tr("Directory does not exist:\n{base_path}"))
             return
 
-        # Find all .kdl files recursively
-        kdl_files = list(base_path.rglob('*.kdl*'))
+        if self.exclude_backups_checkbox.isChecked():
+            kdl_files = list(base_path.rglob('*.kdl'))
+        else:
+            kdl_files = list(base_path.rglob('*.kdl*'))
 
         if not kdl_files:
             self.show_info(self.tr(f"No .kdl files found in:\n{base_path}"))
             return
 
         for file_path in sorted(kdl_files):
-            # Get relative path from base directory for cleaner display
             try:
                 rel_path = file_path.relative_to(base_path)
                 display_text = str(rel_path)
             except ValueError:
                 display_text = str(file_path)
 
-            # Create list item with full path as tooltip
+            tooltip_path = str(file_path).replace(self.home, "~", 1)
             item = QListWidgetItem(display_text)
-            item.setToolTip(str(file_path))
+            item.setToolTip(str(tooltip_path))
             item.setData(Qt.ItemDataRole.UserRole, str(file_path))  # Store full path
             self.list_widget.addItem(item)
 
@@ -1088,6 +1100,10 @@ class FilesTab(QWidget):
         self.list_widget.clear()
         self.load_kdl_files()
 
+    def no_backups(self):
+        self.list_widget.clear()
+        self.load_kdl_files()
+
     def open_selected(self):
         current_item = self.list_widget.currentItem()
         if current_item:
@@ -1104,6 +1120,10 @@ class FilesTab(QWidget):
 
             backup_path = f"{file_path}~"
             shutil.copy2(file_path, backup_path)
+
+            info_path = str(backup_path).replace(self.home, "~", 1)
+            self.terminal.setPlainText(f"Backup saved as {info_path}")
+            QTimer.singleShot(5000, self.terminal.clear)
 
             self.refresh_files()
             return True
@@ -1151,7 +1171,8 @@ class FilesTab(QWidget):
             )
         )
 
+        info_path = str(file_path).replace(self.home, "~", 1)
         self.terminal.clear()
-        self.terminal.appendPlainText(f"$ niri validate -c {file_path}\n")
+        self.terminal.appendPlainText(f"$ niri validate -c {info_path}\n")
 
         self.proc.start()
