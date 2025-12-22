@@ -425,7 +425,7 @@ class SettingsWindow(QMainWindow):
 
             # niri-settings settings
             if self.files_tab.exclude_backups_checkbox.isChecked():
-                f.write('/n    // Settings of niri-settings\n    // * do not show backups\n')
+                f.write('\n    // Settings of niri-settings\n    // * do not show backups\n')
 
     def load_settings(self):
         """Parse existing settings"""
