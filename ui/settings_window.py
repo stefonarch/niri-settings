@@ -545,6 +545,9 @@ class SettingsWindow(QMainWindow):
 
             try:
                 # Parse behavior settings
+                behavior_match = re.search(r'touchpad\s*\{([^}]+)\}', content)
+                behavior_content = behavior_match.group(1)
+
                 self.behavior_tab.hotkey_overlay_checkbox.setChecked(
                     '// skip-at-startup' in content
                 )
@@ -596,7 +599,6 @@ class SettingsWindow(QMainWindow):
                 if path:
                     self.behavior_tab.screenshot_path_edit.setText(path.group(1))
 
-
                 match = re.search(r"default-column-width\s*\{\s*\}", content)
                 if match:
                     self.behavior_tab.app_decide_radio.setChecked(True)
@@ -614,9 +616,9 @@ class SettingsWindow(QMainWindow):
                         self.behavior_tab.column_proportion_radio.setChecked(True)
                         self.behavior_tab.column_proportion_spinbox.setValue(float(value))
 
-                self.behavior_tab.column_never_radio.setChecked('never' in content)
-                self.behavior_tab.column_always_radio.setChecked('always' in content)
-                self.behavior_tab.column_on_overflow_radio.setChecked('on-overflow' in content)
+                self.behavior_tab.column_never_radio.setChecked('column "never"' in content)
+                self.behavior_tab.column_always_radio.setChecked('column "always"' in content)
+                self.behavior_tab.column_on_overflow_radio.setChecked('column "on-overflow"' in content)
 
                 match = re.search(r'mod-key\s+"([^"]+)"', content)
                 if match:
