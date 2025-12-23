@@ -9,8 +9,9 @@ from PyQt6.QtCore import Qt, QTranslator, QLocale, QLibraryInfo
 from PyQt6.QtGui import QIcon
 
 from .conf_path import get_config_path, get_niri_config_path
-from .all_tabs import AppearanceTab, BehaviorTab ,TouchpadTab, MouseTab,KeyboardTab,FilesTab
+from .all_tabs import AppearanceTab, BehaviorTab ,TouchpadTab, MouseTab,KeyboardTab
 from .keybinds_tab import KeyBindsTab
+from .files_tab import FilesTab
 from .tools_tab import ToolsTab
 
 # Where are we?

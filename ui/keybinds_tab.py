@@ -87,7 +87,6 @@ class KeybindsFileEditor(QWidget):
         esc = QShortcut(QKeySequence("Escape"), self.filter_input)
         esc.activated.connect(self.filter_input.clear)
 
-
         filter_layout.addWidget(self.filter_input)
 
         self.filter_count = QLabel("")
