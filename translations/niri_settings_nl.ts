@@ -522,13 +522,14 @@ Als niri een foutmelding toont, verifieer dan ‘keybinds.kdl’ op het volgende
     <message>
         <location filename="../ui/keybinds_tab.py" line="222"/>
         <source>No overlay</source>
-        <translation type="unfinished"></translation>
+        <translation>Niet tonen op overzicht</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="224"/>
         <source>Do not show this shortcut in the hotkey overlay.
 It also allows adding a custom title after editing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Toon deze sneltoets niet op het sneltoetsoverzicht.
+Ook kan na het bewerken desgewenst een eigen naam worden gekozen.</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="226"/>
@@ -553,7 +554,7 @@ It also allows adding a custom title after editing.</source>
     <message>
         <location filename="../ui/keybinds_tab.py" line="353"/>
         <source>Editing line %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Bewerken van regel %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="382"/>
@@ -573,7 +574,7 @@ It also allows adding a custom title after editing.</source>
     <message>
         <location filename="../ui/keybinds_tab.py" line="426"/>
         <source>Error deleting line %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Regel %1 kan niet worden gewist</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="585"/>
