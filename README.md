@@ -10,7 +10,7 @@ https://github.com/user-attachments/assets/cbd55c8f-163c-40a9-b882-86813ddd7c69
 
 * Basic settings for appearance, behavior, mouse, touchpad and keyboard.
 * Shortcut editor with filter and "Add new shortcut" dialog, including list of `niri msg action` commands.
-* Show, open, open in filemanager and backup niri config files, including a configuration validator.
+* Display, edit, open and backup niri config files, including a configuration validator.
 * Toolbox for showing infos about windows, outputs, layers and performing actions (pick color to clipboard,
 kill selected window, detect xwayland windows).
 * Detects if running under LXQt, otherwise default niri config path is used.
