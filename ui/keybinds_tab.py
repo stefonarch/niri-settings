@@ -1,17 +1,17 @@
-from PyQt6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QScrollArea,
-                             QFrame, QPushButton, QCheckBox, QGridLayout, QComboBox, QLineEdit, QGroupBox,
+from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QLabel, QScrollArea,
+                             QPushButton, QCheckBox, QComboBox, QLineEdit,
                              QListWidget, QListWidgetItem, QMessageBox, QPlainTextEdit, QSplitter,
                              QInputDialog, QFormLayout, QLabel, QKeySequenceEdit, QStyle
                              )
-import sys, subprocess
 
-from PyQt6.QtCore import Qt, QTimer, QProcess
-from PyQt6.QtGui import QFont, QColor, QAction, QCursor, QShortcut, QKeySequence
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QFont, QShortcut, QKeySequence
 
 from pathlib import Path
 import os, re, sys, subprocess, shutil
+from .kdl_highlighter import KdlHighlighter
 
-# Are we on LXQt or not?
+# Are we running under LXQt or not?
 current_desktop = os.environ.get('XDG_CURRENT_DESKTOP', '')
 desktop_list = [item.strip() for item in current_desktop.split(':')]
 
@@ -113,6 +113,7 @@ class KeybindsFileEditor(QWidget):
         font = QFont("Monospace")
         self.text_edit.setFont(font)
         self.text_edit.setPlaceholderText(self.tr("Select a line to edit here"))
+        self.preview_highlighter = KdlHighlighter(self.text_edit.document())
 
         bottom_layout.addWidget(self.text_edit)
 
@@ -270,6 +271,8 @@ class KeybindsFileEditor(QWidget):
 
         # Add splitter to layout
         layout.addWidget(splitter)
+
+        pass
 
     def showEvent(self, event):
         super().showEvent(event)

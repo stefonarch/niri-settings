@@ -2,11 +2,12 @@ from PyQt6.QtWidgets import (QApplication, QInputDialog, QWidget, QVBoxLayout, Q
                              QPushButton, QCheckBox,QListWidget, QListWidgetItem, QMenu, QMessageBox,
                              QPlainTextEdit, QStyle, QSplitter
                              )
-from PyQt6.QtCore import Qt, QTimer, QProcess, QTimer, QFile
-from PyQt6.QtGui import QFont, QAction, QShortcut, QKeySequence
+from PyQt6.QtCore import Qt, QTimer, QProcess, QFile,QRegularExpression
+from PyQt6.QtGui import QFont, QAction, QShortcut, QKeySequence, QPalette, QColor,QSyntaxHighlighter,                                                 QTextCharFormat
 
 from pathlib import Path
 import os, re, sys, subprocess, shutil
+from .kdl_highlighter import KdlHighlighter
 
 class FilesTab(QWidget):
     def __init__(self, parent=None):
@@ -14,6 +15,9 @@ class FilesTab(QWidget):
         self.parent = parent
         self.init_ui()
         self.load_kdl_files()
+        self.kdl_highlighter = KdlHighlighter(
+            self.terminal.document()
+        )
 
     def init_ui(self):
         layout = QVBoxLayout(self)
@@ -92,6 +96,7 @@ class FilesTab(QWidget):
         self.terminal.setLineWrapMode(QPlainTextEdit.LineWrapMode.NoWrap)
         self.terminal.setReadOnly(True)
 
+        KdlHighlighter(self.terminal.document())
         bottom_layout.addWidget(self.terminal)
 
         self.list_widget.itemClicked.connect(self.on_item_clicked)
@@ -104,6 +109,8 @@ class FilesTab(QWidget):
 
         # Add splitter to layout
         layout.addWidget(splitter)
+
+        pass
 
     def load_kdl_files(self):
         """Load and display all .kdl* files from the configuration directory."""
@@ -363,3 +370,5 @@ class FilesTab(QWidget):
         self.terminal.appendPlainText(f"$ niri validate -c {info_path}\n")
 
         self.proc.start()
+
+

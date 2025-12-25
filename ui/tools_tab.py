@@ -1,9 +1,10 @@
-from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout,QLabel, QPushButton,
+from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton,
                              QGroupBox,QMessageBox, QPlainTextEdit)
 from PyQt6.QtCore import Qt, QProcess
 from PyQt6.QtGui import QFont
 
 import subprocess
+from .kdl_highlighter import KdlHighlighter
 
 class ToolsTab(QWidget):
     def __init__(self, parent=None):
@@ -91,8 +92,11 @@ class ToolsTab(QWidget):
         self.terminal.setReadOnly(True)
         font = QFont("Monospace")
         self.terminal.setFont(font)
+        self.preview_highlighter = KdlHighlighter(self.terminal.document())
 
         layout.addWidget(self.terminal)
+
+        pass
 
     def run_proc(self, program, args):
         proc = QProcess(self)
@@ -114,7 +118,6 @@ class ToolsTab(QWidget):
 
     def list_windows(self):
         self.proc = self.run_proc("niri", ["msg", "windows"])
-
 
     def list_workspaces(self):
         self.proc = self.run_proc("niri", ["msg", "workspaces"])
