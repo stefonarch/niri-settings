@@ -215,6 +215,11 @@ class FilesTab(QWidget):
         new_file_action.triggered.connect(self.new_file)
         menu.addAction(new_file_action)
 
+        restore_action = QAction(self.tr("Restore from backup"), self)
+        restore_action.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_BrowserReload))
+        restore_action.triggered.connect(self.restore_from_backup)
+        menu.addAction(restore_action)
+
         trash_action = QAction(self.tr("Move to trash"), self)
         trash_action.setIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_TrashIcon))
         trash_action.triggered.connect(self.move_to_trash)
@@ -263,7 +268,50 @@ class FilesTab(QWidget):
             )
             return
 
+        with open(path, 'a', encoding='utf-8') as f:
+                f.write('// Added by niri-settings\n')
+
+        file = str(path).replace(self.home, "~", 1)
+        self.terminal.setPlainText(f"File {file} created.\nIt needs to be included in the main configuration file.")
         self.refresh_files()
+
+    def restore_from_backup(self):
+        current_item = self.list_widget.currentItem()
+        file_path = current_item.data(Qt.ItemDataRole.UserRole)
+
+        if file_path.endswith(".kdl~"):
+            self.show_info(self.tr("Selected a backup file!"))
+            return False
+
+        backup_path = file_path + "~"
+        ok = QMessageBox.question(
+            self,
+            self.tr("Confirm"),
+            self.tr("Overwrite this file with its backup?"),
+        ) == QMessageBox.StandardButton.Yes
+
+        if not ok:
+            return
+
+        try:
+            if QFile.exists(file_path):
+                if not QFile.remove(file_path):
+                    raise RuntimeError("Could not remove existing file")
+
+                if not QFile.copy(backup_path, file_path):
+                    raise RuntimeError("Could not copy backup file")
+        except Exception as e:
+            QMessageBox.critical(
+                self,
+                "Error",
+                f"Could not restore from backup: \n{e}"
+            )
+            return
+
+        info_path = str(file_path).replace(self.home, "~", 1)
+        self.terminal.setPlainText(f"File {info_path} restored from backup")
+        self.refresh_files()
+        QTimer.singleShot(2500, self.clear_terminal)
 
     def move_to_trash(self):
         reply = QMessageBox.question(
@@ -295,9 +343,11 @@ class FilesTab(QWidget):
           self.save_btn.setEnabled(self.terminal.toPlainText() != self.text)
 
     def clear_terminal(self):
-        self.terminal.textChanged.disconnect(self.on_text_changed)
+       # self.terminal.textChanged.disconnect(self.on_text_changed)
+        self.terminal.blockSignals(True)
         self.terminal.clear()
-        self.terminal.textChanged.connect(self.on_text_changed)
+        self.terminal.blockSignals(False)
+       # self.terminal.textChanged.connect(self.on_text_changed)
 
     def save_selected(self):
         current_item = self.list_widget.currentItem()
@@ -309,7 +359,7 @@ class FilesTab(QWidget):
         self.terminal.setPlainText(f"File {save_path} saved")
         self.terminal.setReadOnly(True)
         self.refresh_files()
-        QTimer.singleShot(3000, self.clear_terminal)
+        QTimer.singleShot(2500, self.clear_terminal)
 
     def backup_selected(self):
         current_item = self.list_widget.currentItem()
@@ -326,7 +376,7 @@ class FilesTab(QWidget):
             info_path = str(backup_path).replace(self.home, "~", 1)
             self.terminal.setPlainText(f"Backup saved as {info_path}")
             self.refresh_files()
-            QTimer.singleShot(3000, self.clear_terminal)
+            QTimer.singleShot(2500, self.clear_terminal)
 
             return True
 
@@ -370,5 +420,3 @@ class FilesTab(QWidget):
         self.terminal.appendPlainText(f"$ niri validate -c {info_path}\n")
 
         self.proc.start()
-
-
