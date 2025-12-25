@@ -3,16 +3,17 @@
 > GUI in PyQt for configuring niri
 
 
-https://github.com/user-attachments/assets/cbd55c8f-163c-40a9-b882-86813ddd7c69
+https://github.com/user-attachments/assets/23edec87-6165-4446-b54f-735c01999471
 
 
 ## Features
 
 * Basic settings for appearance, behavior, mouse, touchpad and keyboard.
-* Shortcut editor with filter and "Add new shortcut" dialog, including list of `niri msg action` commands.
-* Display, edit, open and backup niri config files, including a configuration validator.
+* Shortcut editor with filter and "Add new shortcut" dialog, including the list of `niri msg action` commands.
+* Display, edit, open and backup all niri config files, including a configuration validator.
 * Toolbox for showing infos about windows, outputs, layers and performing actions (pick color to clipboard,
 kill selected window, detect xwayland windows).
+* Syntax highlighting in configuration files.
 * Detects if running under LXQt, otherwise default niri config path is used.
 
 
@@ -76,3 +77,4 @@ If you have an allergy, please be aware.
 
 * Get feedback and testing.
 * Improve parsing regex.
+* Who knows?

@@ -195,6 +195,7 @@ class AppearanceTab(QScrollArea):
         self.corner_rounding_spinbox.setRange(0,30)
         self.corner_rounding_spinbox.setSingleStep(1)
         self.corner_rounding_spinbox.setValue(8)
+        self.corner_rounding_spinbox.setSuffix(' px')
         corner_rounding_layout.addWidget(corner_rounding_label)
         corner_rounding_layout.addWidget(self.corner_rounding_spinbox)
         corner_rounding_layout.addStretch()
