@@ -132,17 +132,17 @@
     <message>
         <location filename="../ui/all_tabs.py" line="297"/>
         <source>Tab Indicator</source>
-        <translation>Indicatore tab</translation>
+        <translation>Indicatore schede</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="303"/>
         <source>Hide when single tab</source>
-        <translation>Nascondi con un tab singolo</translation>
+        <translation>Nascondi con una scheda singola</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="306"/>
         <source>Place within column</source>
-        <translation>Mostra all'interno della colonna</translation>
+        <translation>Mostra all&apos;interno della colonna</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="312"/>
@@ -189,7 +189,8 @@
         <source>bottom</source>
         <translation>in fondo</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>BehaviorTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="411"/>
@@ -340,29 +341,30 @@
     <message>
         <location filename="../ui/all_tabs.py" line="566"/>
         <source>hiding after inactive for:</source>
-        <translation>nascondi dopo inattivo per:</translation>
+        <translation>nascondi quando inattivo per:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>FilesTab</name>
     <message>
         <location filename="../ui/files_tab.py" line="20"/>
         <source>Configuration Files</source>
-        <translation type="unfinished"/>
+        <translation>File di configuratione</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="39"/>
         <source>Save</source>
-        <translation type="unfinished"/>
+        <translation>Salva</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="47"/>
         <source>Validate</source>
-        <translation type="unfinished"/>
+        <translation>Convalida</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="55"/>
         <source>Backup</source>
-        <translation type="unfinished"/>
+        <translation>Backup</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="63"/>
@@ -372,14 +374,16 @@
     <message>
         <location filename="../ui/files_tab.py" line="77"/>
         <source>Hide backups</source>
-        <translation type="unfinished"/>
+        <translation>Nascondi backup</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="91"/>
         <source>Click file to edit here
 Double click to open in text editor
 Right click for other options</source>
-        <translation type="unfinished"/>
+        <translation>Clicca per editare qui
+Doppio click per aprire nel editor di testo
+Click destro per ulteriori opzioni</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="126"/>
@@ -390,7 +394,7 @@ Right click for other options</source>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="156"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>xdg-open non trovato, assicurati che è installato e nel PATH.</translation>
     </message>
     <message>
@@ -411,29 +415,30 @@ Right click for other options</source>
     <message>
         <location filename="../ui/files_tab.py" line="206"/>
         <source>Create new file here</source>
-        <translation type="unfinished"/>
+        <translation>Crea file nuovo qui</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="211"/>
         <source>Move to trash</source>
-        <translation type="unfinished"/>
+        <translation>Cestina</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="264"/>
         <source>Confirm</source>
-        <translation type="unfinished">Conferma</translation>
+        <translation>Conferma</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="265"/>
         <source>Move file to trash?</source>
-        <translation type="unfinished"/>
+        <translation>Spostare questo file nel cestino?</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="327"/>
         <source>Permission denied. Cannot create backup.</source>
         <translation>Impossibile creare il backup, autorizzazion negata.</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeybindsFileEditor</name>
     <message>
         <location filename="../ui/keybinds_tab.py" line="64"/>
@@ -507,24 +512,24 @@ Right click for other options</source>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="193"/>
-        <source>'Super' (Meta) key is identical with 'Mod' by default.
+        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
 The shortcut field doesn’t detect AltGr, use the checkbox instead.
-If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
-        <translation>Il tasto 'Super' (Meta) è identico a 'Mod' per impostazione predefinita.
+If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
+        <translation>Il tasto &apos;Super&apos; (Meta) è identico a &apos;Mod&apos; per impostazione predefinita.
 Seleziona una riga per inserire la scorciatoia, altrimenti verrà aggiunta in fondo.
 Il campo scorciatoia non rileva AltGr, utilizza la casella di controllo.
-Se niri mostra un errore, convalida 'keybinds.kdl' nella scheda successiva.</translation>
+Se niri mostra un errore, convalida &apos;keybinds.kdl&apos; nella scheda successiva.</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="200"/>
-        <source>Add "Mod"</source>
-        <translation>Aggiungi "Mod"</translation>
+        <source>Add &quot;Mod&quot;</source>
+        <translation>Aggiungi &quot;Mod&quot;</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="203"/>
-        <source>Add "AltGr"</source>
-        <translation>Aggiungi "AltGr"</translation>
+        <source>Add &quot;AltGr&quot;</source>
+        <translation>Aggiungi &quot;AltGr&quot;</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="207"/>
@@ -534,7 +539,7 @@ Se niri mostra un errore, convalida 'keybinds.kdl' nella scheda successiva.</tra
     <message>
         <location filename="../ui/keybinds_tab.py" line="208"/>
         <source>Do not repeat the action. Repeating is default</source>
-        <translation>Non ripetere l'azione. La ripetizione è comportamento predefinito</translation>
+        <translation>Non ripetere l&apos;azione. La ripetizione è comportamento predefinito</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="211"/>
@@ -544,7 +549,7 @@ Se niri mostra un errore, convalida 'keybinds.kdl' nella scheda successiva.</tra
     <message>
         <location filename="../ui/keybinds_tab.py" line="212"/>
         <source>Allow execution when screen is locked</source>
-        <translation>Consentire l'azione quando lo schermo è bloccato</translation>
+        <translation>Consentire l&apos;azione quando lo schermo è bloccato</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="223"/>
@@ -627,7 +632,8 @@ Modificandolo dopo permette di usare un titolo personalizzato.</translation>
         <source>Error saving custom line: %1</source>
         <translation>Errore salvando riga: %1</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeyboardTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="811"/>
@@ -684,12 +690,13 @@ Modificandolo dopo permette di usare un titolo personalizzato.</translation>
         <source>Repeat rate:</source>
         <translation>Velocità ripetizione:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>MouseTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="743"/>
         <source>Natural scroll</source>
-        <translation>Scroll naturale</translation>
+        <translation>Scorrimento naturale</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="744"/>
@@ -714,9 +721,10 @@ Modificandolo dopo permette di usare un titolo personalizzato.</translation>
     <message>
         <location filename="../ui/all_tabs.py" line="771"/>
         <source>Scroll factor:</source>
-        <translation>Fattore scroll:</translation>
+        <translation>Fattore scorrimento:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>SettingsWindow</name>
     <message>
         <location filename="../ui/settings_window.py" line="34"/>
@@ -810,7 +818,8 @@ Identical settings before this line will be ignored after.</source>
         <translation>Questa riga è necessaria per far funzionare questo programma.
 Impostazioni identiche prima di questa riga verranno ignorati dopo.</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>ToolsTab</name>
     <message>
         <location filename="../ui/tools_tab.py" line="20"/>
@@ -914,7 +923,8 @@ with PID {}?</source>
         <translation>Si è sicuro di voler uccidere questa
 finestra con PID {}?</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>TouchpadTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="610"/>
@@ -924,7 +934,7 @@ finestra con PID {}?</translation>
     <message>
         <location filename="../ui/all_tabs.py" line="612"/>
         <source>Natural scroll</source>
-        <translation>Scroll naturale</translation>
+        <translation>Scorrimento naturale</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="614"/>
@@ -974,7 +984,7 @@ finestra con PID {}?</translation>
     <message>
         <location filename="../ui/all_tabs.py" line="642"/>
         <source>No scroll</source>
-        <translation>Nessuno scroll</translation>
+        <translation>Nessuno scorrimento</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="643"/>
@@ -994,7 +1004,7 @@ finestra con PID {}?</translation>
     <message>
         <location filename="../ui/all_tabs.py" line="653"/>
         <source>Scroll method</source>
-        <translation>Metodo di scroll</translation>
+        <translation>Metodo di scorrimento</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="666"/>
@@ -1009,11 +1019,12 @@ finestra con PID {}?</translation>
     <message>
         <location filename="../ui/all_tabs.py" line="689"/>
         <source>Scroll factor:</source>
-        <translation>Fattore scroll:</translation>
+        <translation>Fattore di scorrimento:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="702"/>
         <source>Tap button map:</source>
         <translation>Mappatura dei pulsanti:</translation>
     </message>
-</context></TS>
+</context>
+</TS>

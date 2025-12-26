@@ -189,7 +189,8 @@
         <source>bottom</source>
         <translation>onderaan</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>BehaviorTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="411"/>
@@ -279,7 +280,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="457"/>
         <source>Applications may decide</source>
-        <translation>Programma's laten kiezen</translation>
+        <translation>Programma&apos;s laten kiezen</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="490"/>
@@ -325,7 +326,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="548"/>
         <source>Screenshots:</source>
-        <translation>Schermfoto's:</translation>
+        <translation>Schermfoto&apos;s:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="560"/>
@@ -342,27 +343,28 @@
         <source>hiding after inactive for:</source>
         <translation>verbergen na inactiviteit, gedurende:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>FilesTab</name>
     <message>
         <location filename="../ui/files_tab.py" line="20"/>
         <source>Configuration Files</source>
-        <translation type="unfinished"/>
+        <translation>Instellingenbestanden</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="39"/>
         <source>Save</source>
-        <translation type="unfinished"/>
+        <translation>Opslaan</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="47"/>
         <source>Validate</source>
-        <translation type="unfinished"/>
+        <translation>Verifiëren</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="55"/>
         <source>Backup</source>
-        <translation type="unfinished"/>
+        <translation>Reservekopie maken</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="63"/>
@@ -372,14 +374,16 @@
     <message>
         <location filename="../ui/files_tab.py" line="77"/>
         <source>Hide backups</source>
-        <translation type="unfinished"/>
+        <translation>Reservekopieën verbergen</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="91"/>
         <source>Click file to edit here
 Double click to open in text editor
 Right click for other options</source>
-        <translation type="unfinished"/>
+        <translation>Klik op een bestand om het hier te bewerken
+Dubbelklik om te openen in een tekstbewerker
+Rechtsklik voor andere mogelijkheden</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="126"/>
@@ -390,7 +394,7 @@ Right click for other options</source>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="156"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>xdg-open is niet aangetroffen. Controleer de installatie en PATH.</translation>
     </message>
     <message>
@@ -411,29 +415,30 @@ Right click for other options</source>
     <message>
         <location filename="../ui/files_tab.py" line="206"/>
         <source>Create new file here</source>
-        <translation type="unfinished"/>
+        <translation>Nieuw bestand maken</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="211"/>
         <source>Move to trash</source>
-        <translation type="unfinished"/>
+        <translation>Verplaatsen naar prullenbak</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="264"/>
         <source>Confirm</source>
-        <translation type="unfinished">Bevestigen</translation>
+        <translation>Bevestigen</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="265"/>
         <source>Move file to trash?</source>
-        <translation type="unfinished"/>
+        <translation>Weet je zeker dat je het bestand wilt weggooien?</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="327"/>
         <source>Permission denied. Cannot create backup.</source>
         <translation>Toegang geweigerd: de reservekopie kan niet worden gemaakt.</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeybindsFileEditor</name>
     <message>
         <location filename="../ui/keybinds_tab.py" line="64"/>
@@ -507,10 +512,10 @@ Right click for other options</source>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="193"/>
-        <source>'Super' (Meta) key is identical with 'Mod' by default.
+        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
 The shortcut field doesn’t detect AltGr, use the checkbox instead.
-If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
+If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
         <translation>‘Super’ (Meta) is standaard gelijk aan ‘Mod’.
  Klik op een regel om de sneltoets daar in te kunnen voeren — anders gebeurt dit onderaan.
 Let op: het invoerveld herkent AltGr niet — gebruik daarvoor het aankruisvakje.
@@ -518,12 +523,12 @@ Als niri een foutmelding toont, verifieer dan ‘keybinds.kdl’ op het volgende
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="200"/>
-        <source>Add "Mod"</source>
+        <source>Add &quot;Mod&quot;</source>
         <translation>‘Mod’ toevoegen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="203"/>
-        <source>Add "AltGr"</source>
+        <source>Add &quot;AltGr&quot;</source>
         <translation>‘AltGr’ toevoegen</translation>
     </message>
     <message>
@@ -627,7 +632,8 @@ Ook kan na het bewerken desgewenst een eigen naam worden gekozen.</translation>
         <source>Error saving custom line: %1</source>
         <translation>De eigen regel kan niet worden opgeslagen: %1</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeyboardTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="811"/>
@@ -684,7 +690,8 @@ Ook kan na het bewerken desgewenst een eigen naam worden gekozen.</translation>
         <source>Repeat rate:</source>
         <translation>Herhaalsnelheid:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>MouseTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="743"/>
@@ -716,7 +723,8 @@ Ook kan na het bewerken desgewenst een eigen naam worden gekozen.</translation>
         <source>Scroll factor:</source>
         <translation>Scrolfactor:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>SettingsWindow</name>
     <message>
         <location filename="../ui/settings_window.py" line="34"/>
@@ -810,7 +818,8 @@ Identical settings before this line will be ignored after.</source>
         <translation>Deze regel is nodig om het programma te laten werken.
 Identieke instellingen ná deze regel worden genegeerd.</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>ToolsTab</name>
     <message>
         <location filename="../ui/tools_tab.py" line="20"/>
@@ -914,7 +923,8 @@ with PID {}?</source>
         <translation>Weet u zeker dat het venster met PID {}
 gedwongen wilt afsluiten?</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>TouchpadTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="610"/>
@@ -1016,4 +1026,5 @@ gedwongen wilt afsluiten?</translation>
         <source>Tap button map:</source>
         <translation>Tikknop toewijzen aan:</translation>
     </message>
-</context></TS>
+</context>
+</TS>

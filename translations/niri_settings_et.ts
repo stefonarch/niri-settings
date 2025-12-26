@@ -189,7 +189,8 @@
         <source>bottom</source>
         <translation>all</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>BehaviorTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="411"/>
@@ -199,7 +200,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="413"/>
         <source>Warp mouse to focus</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="414"/>
@@ -209,7 +210,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="415"/>
         <source>Always focus windows on request</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="416"/>
@@ -224,7 +225,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="418"/>
         <source>Workspace auto back and forth</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="419"/>
@@ -234,7 +235,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="420"/>
         <source>Disable hot corners</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="421"/>
@@ -335,34 +336,35 @@
     <message>
         <location filename="../ui/all_tabs.py" line="562"/>
         <source>Enable</source>
-        <translation type="unfinished"/>
+        <translation>Võta kasutusele</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="566"/>
         <source>hiding after inactive for:</source>
-        <translation type="unfinished"/>
+        <translation>peitmine, kui pole aktiivne:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>FilesTab</name>
     <message>
         <location filename="../ui/files_tab.py" line="20"/>
         <source>Configuration Files</source>
-        <translation type="unfinished"/>
+        <translation>Seadistusfailid</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="39"/>
         <source>Save</source>
-        <translation type="unfinished"/>
+        <translation>Salvesta</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="47"/>
         <source>Validate</source>
-        <translation type="unfinished"/>
+        <translation>Kontrolli õigsust</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="55"/>
         <source>Backup</source>
-        <translation type="unfinished"/>
+        <translation>Varunda</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="63"/>
@@ -372,14 +374,16 @@
     <message>
         <location filename="../ui/files_tab.py" line="77"/>
         <source>Hide backups</source>
-        <translation type="unfinished"/>
+        <translation>Peida varukoopiad</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="91"/>
         <source>Click file to edit here
 Double click to open in text editor
 Right click for other options</source>
-        <translation type="unfinished"/>
+        <translation>Klõpsa siin samas muutmiseks
+Topeltklõpsuga ava tekstitoimeti
+Parema klõpsuga näed muid valikuid</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="126"/>
@@ -390,7 +394,7 @@ Right click for other options</source>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="156"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>xdg-open pole tuvastatav. Palun kontrolli, et ta oleks paigaldatud ja leidub sinu OTSITEEL.</translation>
     </message>
     <message>
@@ -411,34 +415,35 @@ Right click for other options</source>
     <message>
         <location filename="../ui/files_tab.py" line="206"/>
         <source>Create new file here</source>
-        <translation type="unfinished"/>
+        <translation>Loo uus fail siia</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="211"/>
         <source>Move to trash</source>
-        <translation type="unfinished"/>
+        <translation>Viska prügikasti</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="264"/>
         <source>Confirm</source>
-        <translation type="unfinished">Kinnita</translation>
+        <translation>Kinnita</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="265"/>
         <source>Move file to trash?</source>
-        <translation type="unfinished"/>
+        <translation>Kas viskad faili prügikasti?</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="327"/>
         <source>Permission denied. Cannot create backup.</source>
         <translation>Õigused on puudu. Varukoopiat ei saa teha.</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeybindsFileEditor</name>
     <message>
         <location filename="../ui/keybinds_tab.py" line="64"/>
         <source>Editing %1</source>
-        <translation type="unfinished"/>
+        <translation>%1 on muutmisel</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="79"/>
@@ -498,7 +503,7 @@ Right click for other options</source>
     <message>
         <location filename="../ui/keybinds_tab.py" line="171"/>
         <source>Insert custom line</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="191"/>
@@ -507,31 +512,31 @@ Right click for other options</source>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="193"/>
-        <source>'Super' (Meta) key is identical with 'Mod' by default.
+        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
 The shortcut field doesn’t detect AltGr, use the checkbox instead.
-If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
-        <translation type="unfinished"/>
+If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="200"/>
-        <source>Add "Mod"</source>
+        <source>Add &quot;Mod&quot;</source>
         <translation>Lisa „Mod“</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="203"/>
-        <source>Add "AltGr"</source>
+        <source>Add &quot;AltGr&quot;</source>
         <translation>Lisa „AltGr“</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="207"/>
         <source>No repeat</source>
-        <translation type="unfinished"/>
+        <translation>Kordust pole</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="208"/>
         <source>Do not repeat the action. Repeating is default</source>
-        <translation type="unfinished"/>
+        <translation>Ära korda tegevust. Vaikimisi on kordus kasutusel</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="211"/>
@@ -541,28 +546,28 @@ If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
     <message>
         <location filename="../ui/keybinds_tab.py" line="212"/>
         <source>Allow execution when screen is locked</source>
-        <translation type="unfinished"/>
+        <translation>Kui ekraan on lukus, luba käivitamine</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="223"/>
         <source>No overlay</source>
-        <translation type="unfinished"/>
+        <translation>Ülekatet pole</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="225"/>
         <source>Do not show this shortcut in the hotkey overlay.
 It also allows adding a custom title after editing.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="227"/>
         <source>Add mousebind:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="286"/>
         <source>Created new keybinds file</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="294"/>
@@ -577,7 +582,7 @@ It also allows adding a custom title after editing.</source>
     <message>
         <location filename="../ui/keybinds_tab.py" line="354"/>
         <source>Editing line %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="383"/>
@@ -597,7 +602,7 @@ It also allows adding a custom title after editing.</source>
     <message>
         <location filename="../ui/keybinds_tab.py" line="427"/>
         <source>Error deleting line %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="586"/>
@@ -623,7 +628,8 @@ It also allows adding a custom title after editing.</source>
         <source>Error saving custom line: %1</source>
         <translation>Viga enda lisatud rea salvestamisel: %1</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeyboardTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="811"/>
@@ -680,7 +686,8 @@ It also allows adding a custom title after editing.</source>
         <source>Repeat rate:</source>
         <translation>Korduse sagedus:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>MouseTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="743"/>
@@ -712,7 +719,8 @@ It also allows adding a custom title after editing.</source>
         <source>Scroll factor:</source>
         <translation>Kerimise faktor:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>SettingsWindow</name>
     <message>
         <location filename="../ui/settings_window.py" line="34"/>
@@ -803,9 +811,10 @@ It also allows adding a custom title after editing.</source>
         <location filename="../ui/settings_window.py" line="838"/>
         <source>This line is needed to make this application work. 
 Identical settings before this line will be ignored after.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>ToolsTab</name>
     <message>
         <location filename="../ui/tools_tab.py" line="20"/>
@@ -909,7 +918,8 @@ with PID {}?</source>
         <translation>Kas oled kindel, et soovid sundkorras
 sulgeda akna protsessi tunnusega {}?</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>TouchpadTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="610"/>
@@ -1009,6 +1019,7 @@ sulgeda akna protsessi tunnusega {}?</translation>
     <message>
         <location filename="../ui/all_tabs.py" line="702"/>
         <source>Tap button map:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
-</context></TS>
+</context>
+</TS>

@@ -189,7 +189,8 @@
         <source>bottom</source>
         <translation>底部</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>BehaviorTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="411"/>
@@ -342,27 +343,28 @@
         <source>hiding after inactive for:</source>
         <translation>不活跃……后隐藏:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>FilesTab</name>
     <message>
         <location filename="../ui/files_tab.py" line="20"/>
         <source>Configuration Files</source>
-        <translation type="unfinished"/>
+        <translation>配置文件</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="39"/>
         <source>Save</source>
-        <translation type="unfinished"/>
+        <translation>保存</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="47"/>
         <source>Validate</source>
-        <translation type="unfinished"/>
+        <translation>验证</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="55"/>
         <source>Backup</source>
-        <translation type="unfinished"/>
+        <translation>备份</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="63"/>
@@ -372,14 +374,16 @@
     <message>
         <location filename="../ui/files_tab.py" line="77"/>
         <source>Hide backups</source>
-        <translation type="unfinished"/>
+        <translation>隐藏备份</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="91"/>
         <source>Click file to edit here
 Double click to open in text editor
 Right click for other options</source>
-        <translation type="unfinished"/>
+        <translation>点击文件以在此编辑
+双击以在文本编辑器中打开
+右键以使用其他选项</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="126"/>
@@ -390,7 +394,7 @@ Right click for other options</source>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="156"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>没找到 xdg-open。请确认它已安装且在 PATH 中。</translation>
     </message>
     <message>
@@ -411,34 +415,35 @@ Right click for other options</source>
     <message>
         <location filename="../ui/files_tab.py" line="206"/>
         <source>Create new file here</source>
-        <translation type="unfinished"/>
+        <translation>在此创建新文件</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="211"/>
         <source>Move to trash</source>
-        <translation type="unfinished"/>
+        <translation>移动至回收站</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="264"/>
         <source>Confirm</source>
-        <translation type="unfinished">确认</translation>
+        <translation>确认</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="265"/>
         <source>Move file to trash?</source>
-        <translation type="unfinished"/>
+        <translation>要移至回收站吗？</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="327"/>
         <source>Permission denied. Cannot create backup.</source>
         <translation>无权限。无法创建备份。</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeybindsFileEditor</name>
     <message>
         <location filename="../ui/keybinds_tab.py" line="64"/>
         <source>Editing %1</source>
-        <translation type="unfinished"/>
+        <translation>正在编辑 %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="79"/>
@@ -507,34 +512,34 @@ Right click for other options</source>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="193"/>
-        <source>'Super' (Meta) key is identical with 'Mod' by default.
+        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
 The shortcut field doesn’t detect AltGr, use the checkbox instead.
-If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
-        <translation>'Super' (Meta) 键默认下与 'Mod' 是一样的。
+If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
+        <translation>&apos;Super&apos; (Meta) 键默认下与 &apos;Mod&apos; 是一样的。
  选择一行以插入快捷键否则它会被加在底部。
 快捷键区并不检测 AltGr，请使用这个选框。
-若 niri 显示了一个错误，请在下一标签页中检查 'keybinds.kdl' 有效性。</translation>
+若 niri 显示了一个错误，请在下一标签页中检查 &apos;keybinds.kdl&apos; 有效性。</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="200"/>
-        <source>Add "Mod"</source>
-        <translation>添加 "Mod"</translation>
+        <source>Add &quot;Mod&quot;</source>
+        <translation>添加 &quot;Mod&quot;</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="203"/>
-        <source>Add "AltGr"</source>
-        <translation>添加 "AltGr"</translation>
+        <source>Add &quot;AltGr&quot;</source>
+        <translation>添加 &quot;AltGr&quot;</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="207"/>
         <source>No repeat</source>
-        <translation type="unfinished"/>
+        <translation>不反复触发</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="208"/>
         <source>Do not repeat the action. Repeating is default</source>
-        <translation type="unfinished"/>
+        <translation>不要反复触发该行为。反复触发是默认选项</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="211"/>
@@ -544,18 +549,19 @@ If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
     <message>
         <location filename="../ui/keybinds_tab.py" line="212"/>
         <source>Allow execution when screen is locked</source>
-        <translation type="unfinished"/>
+        <translation>允许在锁屏时执行</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="223"/>
         <source>No overlay</source>
-        <translation type="unfinished"/>
+        <translation>不在快捷键提示中显示</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="225"/>
         <source>Do not show this shortcut in the hotkey overlay.
 It also allows adding a custom title after editing.</source>
-        <translation type="unfinished"/>
+        <translation>不在快捷键提示中显示该快捷键。
+也可以在编辑后添加一个自定义的标题。</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="227"/>
@@ -580,7 +586,7 @@ It also allows adding a custom title after editing.</source>
     <message>
         <location filename="../ui/keybinds_tab.py" line="354"/>
         <source>Editing line %1</source>
-        <translation type="unfinished"/>
+        <translation>正在编辑行 %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="383"/>
@@ -600,7 +606,7 @@ It also allows adding a custom title after editing.</source>
     <message>
         <location filename="../ui/keybinds_tab.py" line="427"/>
         <source>Error deleting line %1</source>
-        <translation type="unfinished"/>
+        <translation>在删除时出错 %1</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="586"/>
@@ -626,7 +632,8 @@ It also allows adding a custom title after editing.</source>
         <source>Error saving custom line: %1</source>
         <translation>保存自定义行时出现错误: %1</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeyboardTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="811"/>
@@ -683,7 +690,8 @@ It also allows adding a custom title after editing.</source>
         <source>Repeat rate:</source>
         <translation>重复速率:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>MouseTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="743"/>
@@ -715,7 +723,8 @@ It also allows adding a custom title after editing.</source>
         <source>Scroll factor:</source>
         <translation>滚动因数:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>SettingsWindow</name>
     <message>
         <location filename="../ui/settings_window.py" line="34"/>
@@ -809,7 +818,8 @@ Identical settings before this line will be ignored after.</source>
         <translation>为使本应用工作，这一行是必需的。
 在这一行之前的个性化设置将会被忽略。</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>ToolsTab</name>
     <message>
         <location filename="../ui/tools_tab.py" line="20"/>
@@ -912,7 +922,8 @@ Identical settings before this line will be ignored after.</source>
 with PID {}?</source>
         <translation>你确认要杀死 PID 为 {} 的这个窗口吗？</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>TouchpadTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="610"/>
@@ -1014,4 +1025,5 @@ with PID {}?</source>
         <source>Tap button map:</source>
         <translation>轻触按键映射:</translation>
     </message>
-</context></TS>
+</context>
+</TS>
