@@ -72,7 +72,6 @@ class SettingsWindow(QMainWindow):
         main_layout.addWidget(self.tabs)
         touchpad = self.tabs.indexOf(self.touchpad_tab)
         self.tabs.setTabVisible(touchpad, self.has_touchpad())
-        print(self.has_touchpad)
 
         # Button layout
         button_layout = QHBoxLayout()
@@ -96,29 +95,16 @@ class SettingsWindow(QMainWindow):
 
         main_layout.addLayout(button_layout)
 
-
     def has_touchpad(self):
-        """Detect if a touchpad exists by checking input devices"""
-        try:
-            if not os.path.exists("/proc/bus/input/devices"):
-                return False
 
+        if os.path.exists("/proc/bus/input/devices"):
+            with open(self.config_path, 'r') as f:
+                settings = f.read()
             with open("/proc/bus/input/devices", "r") as f:
-                content = f.read()
-
-            # Touchpads usually have "TouchPad" in the Name field
-            sections = content.split("\n\n")
-            for section in sections:
-                lines = section.split("\n")
-                for line in lines:
-                    if line.startswith("N: Name="):
-                        name = line[8:].strip().strip('"').lower()
-                        if any(pattern in name for pattern in
-                            ["touchpad", "trackpad", "synaptics", "elan"]):
-                            return True
-
-        except Exception as e:
-            return False
+                devices = f.read()
+                return "Touchpad" in devices or 'show all tabs' in settings
+        else:
+            return True
 
     def apply_settings(self):
         """Save settings in KDL format"""
@@ -448,9 +434,11 @@ class SettingsWindow(QMainWindow):
             if path:
                 f.write(f'\nscreenshot-path "{path}"\n')
 
-            # niri-settings settings
+            # own settings
             if self.files_tab.exclude_backups_checkbox.isChecked():
-                f.write('\n    // Settings of niri-settings\n    // * do not show backups\n')
+                f.write('\n    // * do not show backups\n')
+            if self.tools_tab.show_all_tabs_checkbox.isChecked():
+                f.write('\n    // * show all tabs\n')
 
     def load_settings(self):
         """Parse existing settings"""
@@ -838,6 +826,13 @@ class SettingsWindow(QMainWindow):
                 self.files_tab.exclude_backups_checkbox.setChecked(
                     'do not show backups' in content
                 )
+                self.files_tab.exclude_backups_checkbox.setChecked(
+                    'do not show backups' in content
+                )
+                self.tools_tab.show_all_tabs_checkbox.setChecked(
+                    'show all tabs' in content
+                )
+
 
             except Exception as e:
                 print(f"Error parsing some keyboard settings: {e} ")

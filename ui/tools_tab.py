@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton,
-                             QGroupBox,QMessageBox, QPlainTextEdit)
+                             QGroupBox,QMessageBox, QPlainTextEdit, QCheckBox)
 from PyQt6.QtCore import Qt, QProcess
 from PyQt6.QtGui import QFont
 
@@ -95,6 +95,14 @@ class ToolsTab(QWidget):
         self.preview_highlighter = KdlHighlighter(self.terminal.document())
 
         layout.addWidget(self.terminal)
+
+         # Settings
+        settings_group = QGroupBox(self.tr("Settings"))
+        checkbox_layout = QHBoxLayout(settings_group)
+        self.show_all_tabs_checkbox = QCheckBox(self.tr("Show all tabs"))
+        self.show_all_tabs_checkbox.setToolTip(self.tr("Touchpad tab is hidden when no touchpad is detected"))
+        checkbox_layout.addWidget(self.show_all_tabs_checkbox)
+        layout.addWidget(settings_group)
 
         pass
 

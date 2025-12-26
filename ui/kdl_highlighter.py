@@ -24,7 +24,7 @@ class KdlHighlighter(QSyntaxHighlighter):
         """Optional cleanup method for explicit disconnection."""
         if hasattr(self, '_connected') and self._connected:
             app = QApplication.instance()
-            app.paletteChanged.disconnect(self.handle_palette_change)
+            #app.paletteChanged.disconnect(self.handle_palette_change)
             self._connected = False
 
     def __del__(self):
