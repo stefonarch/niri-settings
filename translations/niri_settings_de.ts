@@ -189,7 +189,8 @@
         <source>bottom</source>
         <translation>unten</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>BehaviorTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="411"/>
@@ -269,7 +270,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="455"/>
         <source>Proportion:</source>
-        <translation>Proportion:</translation>
+        <translation>Anteil:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="456"/>
@@ -342,27 +343,28 @@
         <source>hiding after inactive for:</source>
         <translation>Verbergen nach Inaktivität für:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>FilesTab</name>
     <message>
         <location filename="../ui/files_tab.py" line="20"/>
         <source>Configuration Files</source>
-        <translation type="unfinished"/>
+        <translation>Konfigurationsdateien</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="39"/>
         <source>Save</source>
-        <translation type="unfinished"/>
+        <translation>Speichern</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="47"/>
         <source>Validate</source>
-        <translation type="unfinished"/>
+        <translation>Validieren</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="55"/>
         <source>Backup</source>
-        <translation type="unfinished"/>
+        <translation>Backup</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="63"/>
@@ -372,14 +374,16 @@
     <message>
         <location filename="../ui/files_tab.py" line="77"/>
         <source>Hide backups</source>
-        <translation type="unfinished"/>
+        <translation>Backups verbergen</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="91"/>
         <source>Click file to edit here
 Double click to open in text editor
 Right click for other options</source>
-        <translation type="unfinished"/>
+        <translation>Klick zum hier bearbeiten
+Doppelklick öffnet im Texteditor
+Rechtsklick für weitere Optzionen</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="126"/>
@@ -390,7 +394,7 @@ Right click for other options</source>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="156"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>xdg-open nicht gefunden. Stellen Sie sicher, dass es installiert und in Ihrem PATH ist.</translation>
     </message>
     <message>
@@ -411,29 +415,30 @@ Right click for other options</source>
     <message>
         <location filename="../ui/files_tab.py" line="206"/>
         <source>Create new file here</source>
-        <translation type="unfinished"/>
+        <translation>Neue Datei hier erstellen</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="211"/>
         <source>Move to trash</source>
-        <translation type="unfinished"/>
+        <translation>Verschiebe in Papierkorb</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="264"/>
         <source>Confirm</source>
-        <translation type="unfinished">Bestätigen</translation>
+        <translation>Bestätigen</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="265"/>
         <source>Move file to trash?</source>
-        <translation type="unfinished"/>
+        <translation>Datei in Papierkorb verschieben?</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="327"/>
         <source>Permission denied. Cannot create backup.</source>
         <translation>Berechtigung verweigert. Kann keine Sicherung erstellen.</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeybindsFileEditor</name>
     <message>
         <location filename="../ui/keybinds_tab.py" line="64"/>
@@ -507,10 +512,10 @@ Right click for other options</source>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="193"/>
-        <source>'Super' (Meta) key is identical with 'Mod' by default.
+        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
 The shortcut field doesn’t detect AltGr, use the checkbox instead.
-If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
+If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
         <translation>Die „Super“-Taste (Meta-Taste) entspricht standardmäßig der „Mod“-Taste.
 Eine Zeile auswählen um die Tastenkombination einzufügen, andernfalls wird sie unten hinzugefügt. 
 Das Tastenkombinationsfeld erkennt AltGr nicht, stattdessen das Kontrollkästchen verwenden.
@@ -518,13 +523,13 @@ Das Tastenkombinationsfeld erkennt AltGr nicht, stattdessen das Kontrollkästche
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="200"/>
-        <source>Add "Mod"</source>
-        <translation>"Mod" hinzufügen</translation>
+        <source>Add &quot;Mod&quot;</source>
+        <translation>&quot;Mod&quot; hinzufügen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="203"/>
-        <source>Add "AltGr"</source>
-        <translation>"AltGr" hinzufügen</translation>
+        <source>Add &quot;AltGr&quot;</source>
+        <translation>&quot;AltGr&quot; hinzufügen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="207"/>
@@ -549,7 +554,7 @@ Das Tastenkombinationsfeld erkennt AltGr nicht, stattdessen das Kontrollkästche
     <message>
         <location filename="../ui/keybinds_tab.py" line="223"/>
         <source>No overlay</source>
-        <translation type="unfinished"/>
+        <translation>Kein Overlay</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="225"/>
@@ -627,7 +632,8 @@ Ermöglicht außerdem das Hinzufügen eines benutzerdefinierten Titels nach eine
         <source>Error saving custom line: %1</source>
         <translation>Fehler beim hinzufügen: %1</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeyboardTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="811"/>
@@ -684,7 +690,8 @@ Ermöglicht außerdem das Hinzufügen eines benutzerdefinierten Titels nach eine
         <source>Repeat rate:</source>
         <translation>Wiederholungsrate:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>MouseTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="743"/>
@@ -716,7 +723,8 @@ Ermöglicht außerdem das Hinzufügen eines benutzerdefinierten Titels nach eine
         <source>Scroll factor:</source>
         <translation>Scroll-Faktor:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>SettingsWindow</name>
     <message>
         <location filename="../ui/settings_window.py" line="34"/>
@@ -810,7 +818,8 @@ Identical settings before this line will be ignored after.</source>
         <translation>Diese Zeile ist erforderlich, damit diese Anwendung funktioniert.
 Identische Einstellungen vor dieser Zeile werden danach ignoriert.</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>ToolsTab</name>
     <message>
         <location filename="../ui/tools_tab.py" line="20"/>
@@ -914,7 +923,8 @@ with PID {}?</source>
         <translation>Sind Sie sicher, dass Sie dieses Fenster
 mit PID {} beenden wollen?</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>TouchpadTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="610"/>
@@ -1016,4 +1026,5 @@ mit PID {} beenden wollen?</translation>
         <source>Tap button map:</source>
         <translation>Tipp-Tasten-Zuordnung:</translation>
     </message>
-</context></TS>
+</context>
+</TS>
