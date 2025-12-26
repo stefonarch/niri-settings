@@ -1,8 +1,4 @@
-import sys
-import subprocess
-import os
-import re
-import webbrowser
+import sys, subprocess, os, re, webbrowser
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
                              QHBoxLayout, QPushButton, QTabWidget, QStyle, QMessageBox)
 from PyQt6.QtCore import Qt, QTranslator, QLocale, QLibraryInfo
@@ -63,6 +59,7 @@ class SettingsWindow(QMainWindow):
         self.files_tab = FilesTab(self)
         self.tools_tab = ToolsTab(self)
 
+
         self.tabs.addTab(self.appearance_tab, self.tr("Appearance"))
         self.tabs.addTab(self.behavior_tab, self.tr("Behavior"))
         self.tabs.addTab(self.touchpad_tab, self.tr("Touchpad"))
@@ -73,6 +70,9 @@ class SettingsWindow(QMainWindow):
         self.tabs.addTab(self.tools_tab, self.tr("Tools"))
 
         main_layout.addWidget(self.tabs)
+        touchpad = self.tabs.indexOf(self.touchpad_tab)
+        self.tabs.setTabVisible(touchpad, self.has_touchpad())
+        print(self.has_touchpad)
 
         # Button layout
         button_layout = QHBoxLayout()
@@ -95,6 +95,30 @@ class SettingsWindow(QMainWindow):
         button_layout.addWidget(close_btn)
 
         main_layout.addLayout(button_layout)
+
+
+    def has_touchpad(self):
+        """Detect if a touchpad exists by checking input devices"""
+        try:
+            if not os.path.exists("/proc/bus/input/devices"):
+                return False
+
+            with open("/proc/bus/input/devices", "r") as f:
+                content = f.read()
+
+            # Touchpads usually have "TouchPad" in the Name field
+            sections = content.split("\n\n")
+            for section in sections:
+                lines = section.split("\n")
+                for line in lines:
+                    if line.startswith("N: Name="):
+                        name = line[8:].strip().strip('"').lower()
+                        if any(pattern in name for pattern in
+                            ["touchpad", "trackpad", "synaptics", "elan"]):
+                            return True
+
+        except Exception as e:
+            return False
 
     def apply_settings(self):
         """Save settings in KDL format"""
