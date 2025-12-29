@@ -433,8 +433,8 @@ class KeybindsFileEditor(QWidget):
     def add_application(self):
         new_line, ok = QInputDialog.getText(
             self,
-            "Add Command",
-            "Add a single command without arguments\nExample: firefox" ,
+            self.tr("Add Command"),
+            self.tr("Add a single command without arguments\nExample: firefox"),
             QLineEdit.EchoMode.Normal,
             ""
         )
@@ -479,8 +479,8 @@ class KeybindsFileEditor(QWidget):
     def add_cmd_sh(self):
         new_command, ok = QInputDialog.getText(
             self,
-            "Add Command",
-            "Add a shell command with arguments\n\nExamples: firefox -p myprofile\ncopy show\n",
+            self.tr("Add Command"),
+            self.tr("Add a shell command with arguments\n\nExamples: firefox -p myprofile\ncopy show\n"),
             QLineEdit.EchoMode.Normal,
             ""
         )
@@ -522,8 +522,8 @@ class KeybindsFileEditor(QWidget):
         if hasattr(self, 'selected_index'):
             comment, ok = QInputDialog.getText(
                 self,
-                "Add a custom line",
-                "Add a comment, 'e.g. // my comment', an empty line or else:",
+                self.tr("Add a custom line"),
+                self.tr("Add a comment, 'e.g. // my comment', an empty line or else:"),
                 QLineEdit.EchoMode.Normal,
                 ""
             )
@@ -555,8 +555,8 @@ class KeybindsFileEditor(QWidget):
         actions = self.niri_actions
         action, ok = QInputDialog.getItem(
             self,
-            "Add niri action",
-            "Select a niri action:",
+            self.tr("Add niri action"),
+            self.tr("Select a niri action:"),
             actions,
             0,
             editable=True
