@@ -98,11 +98,9 @@ class SettingsWindow(QMainWindow):
     def has_touchpad(self):
 
         if os.path.exists("/proc/bus/input/devices"):
-            with open(self.config_path, 'r') as f:
-                settings = f.read()
             with open("/proc/bus/input/devices", "r") as f:
                 devices = f.read()
-                return "Touchpad" in devices or 'show all tabs' in settings
+                return "Touchpad" in devices
         else:
             return True
 

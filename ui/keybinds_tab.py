@@ -480,7 +480,7 @@ class KeybindsFileEditor(QWidget):
         new_command, ok = QInputDialog.getText(
             self,
             self.tr("Add Command"),
-            self.tr("Add a shell command with arguments\n\nExamples: firefox -p myprofile\ncopy show\n"),
+            self.tr("Add a shell command with arguments\n\nExamples: firefox -p myprofile\ncopyq show\n"),
             QLineEdit.EchoMode.Normal,
             ""
         )
