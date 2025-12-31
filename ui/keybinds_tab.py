@@ -113,6 +113,7 @@ class KeybindsFileEditor(QWidget):
         font = QFont("Monospace")
         self.text_edit.setFont(font)
         self.text_edit.setPlaceholderText(self.tr("Select a line to edit here"))
+        self.text_edit.setLineWrapMode(QPlainTextEdit.LineWrapMode.NoWrap)
         self.preview_highlighter = KdlHighlighter(self.text_edit.document())
 
         bottom_layout.addWidget(self.text_edit)
@@ -188,10 +189,10 @@ class KeybindsFileEditor(QWidget):
         self.no_overlay = ""
         self.lastline = ""
 
-        keypress_layout = QFormLayout(self)
+        keypress_layout = QFormLayout()
         self.label = QLabel(self.tr("Add a shortcut:"))
         self.key_edit = QKeySequenceEdit()
-        self.key_edit.setToolTip(self.tr("'Super' (Meta) key is identical with 'Mod' by default.\n Select a line to insert the shortcut otherwise it will be added at the bottom.\nThe shortcut field doesn’t detect AltGr, use the checkbox instead.\nIf niri shows an error validate 'keybinds.kdl' in the next tab."))
+        self.key_edit.setToolTip(self.tr("'Super' (Meta) key is identical with 'Mod' by default.\n Select a line to insert the shortcut otherwise it will be added at the bottom.\nThe shortcut field doesn't detect AltGr, use the checkbox instead.\nIf niri shows an error validate 'keybinds.kdl' in the next tab."))
         self.key_edit.setClearButtonEnabled(True)
         self.key_edit.setMaximumSequenceLength(1)
         self.key_edit.keySequenceChanged.connect(self.on_changed)
@@ -220,7 +221,7 @@ class KeybindsFileEditor(QWidget):
         options_layout.addWidget(self.allow_locked_checkbox)
         options_layout.addStretch()
 
-        mousebinds_layout =QHBoxLayout()
+        mousebinds_layout = QHBoxLayout()
         self.no_overlay_checkbox = QCheckBox(self.tr("No overlay"))
         self.no_overlay_checkbox.setEnabled(False)
         self.no_overlay_checkbox.setToolTip(self.tr("Do not show this shortcut in the hotkey overlay.\nIt also allows adding a custom title after editing."))
@@ -271,8 +272,6 @@ class KeybindsFileEditor(QWidget):
 
         # Add splitter to layout
         layout.addWidget(splitter)
-
-        pass
 
     def showEvent(self, event):
         super().showEvent(event)
@@ -326,7 +325,6 @@ class KeybindsFileEditor(QWidget):
             display_text = line.rstrip('\n')
             self.list_widget.addItem(display_text)
         self.filter_count.setText("")
-
 
     def on_item_clicked(self, item):
         row = self.list_widget.row(item)

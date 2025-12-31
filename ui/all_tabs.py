@@ -605,7 +605,7 @@ class TouchpadTab(QWidget):
         touchpad_frame.setFrameStyle(QFrame.Shape.StyledPanel)
         touchpad_layout = QVBoxLayout(touchpad_frame)
 
-        drag_layout = QHBoxLayout(self)
+        drag_layout = QHBoxLayout()
 
         # Touchpad checkboxes
         self.tap_checkbox = QCheckBox(self.tr('Tap to click'))
@@ -626,7 +626,8 @@ class TouchpadTab(QWidget):
         self.dwtp_checkbox = QCheckBox(self.tr('Disable while trackpointing'))
         self.left_handed_checkbox = QCheckBox(self.tr('Left handed'))
 
-        clickmethod_layout = QHBoxLayout(self)
+
+        clickmethod_layout = QHBoxLayout()
         clickmethod_label = QLabel(self.tr("Click method:"))
         self.clickfinger_radio = QRadioButton(self.tr("Clickfinger"))
         self.clickfinger_radio.setChecked(True)
@@ -642,6 +643,7 @@ class TouchpadTab(QWidget):
         self.scroll_group = QButtonGroup(self)
         self.no_scroll_radio = QRadioButton(self.tr('No scroll'))
         self.two_finger_radio = QRadioButton(self.tr('Two finger'))
+        self.two_finger_radio.setChecked(True)
         self.edge_radio = QRadioButton(self.tr('Edge'))
         self.button_radio = QRadioButton(self.tr('Button'))
 
@@ -649,18 +651,15 @@ class TouchpadTab(QWidget):
         self.scroll_group.addButton(self.two_finger_radio)
         self.scroll_group.addButton(self.edge_radio)
         self.scroll_group.addButton(self.button_radio)
-        self.two_finger_radio.setChecked(True)
 
         scroll_groupbox = QGroupBox(self.tr('Scroll method'))
         scroll_groupbox_layout = QGridLayout(scroll_groupbox)
         scroll_groupbox.setFixedWidth(500)
 
-        scroll_groupbox_layout.addWidget(self.no_scroll_radio, 0, 0)   # row 0, col 0
-        scroll_groupbox_layout.addWidget(self.two_finger_radio, 0, 1)  # row 0, col 1
-        scroll_groupbox_layout.rowStretch(0)
-        scroll_groupbox_layout.addWidget(self.edge_radio, 1, 0)        # row 1, col 0
+        scroll_groupbox_layout.addWidget(self.no_scroll_radio, 0, 0)
+        scroll_groupbox_layout.addWidget(self.two_finger_radio, 0, 1)
+        scroll_groupbox_layout.addWidget(self.edge_radio, 1, 0)
         scroll_groupbox_layout.addWidget(self.button_radio, 1, 1)
-        scroll_groupbox_layout.rowStretch(1)     # row 1, col 1
 
         # Acceleration speed
         accel_speed_layout = QHBoxLayout()
@@ -669,7 +668,6 @@ class TouchpadTab(QWidget):
         self.accel_speed_slider.setRange(-100, 100)
         self.accel_speed_slider.setSingleStep(5)
         self.accel_speed_slider.setValue(int(20))
-
 
         accel_speed_layout.addWidget(accel_speed_label)
         accel_speed_layout.addWidget(self.accel_speed_slider)
@@ -708,9 +706,6 @@ class TouchpadTab(QWidget):
         tap_button_map_layout.addWidget(self.tap_button_map_combobox)
         tap_button_map_layout.addStretch()
 
-        layout.addWidget(touchpad_frame)
-        layout.addStretch()
-
         # Order
         touchpad_layout.addWidget(self.tap_checkbox)
         touchpad_layout.addLayout(drag_layout)
@@ -726,6 +721,10 @@ class TouchpadTab(QWidget):
         touchpad_layout.addWidget(self.dwtp_checkbox)
         touchpad_layout.addWidget(self.left_handed_checkbox)
         touchpad_layout.addLayout(clickmethod_layout)
+
+        # Add touchpad_frame to main layout
+        layout.addWidget(touchpad_frame)
+        layout.addStretch()
 
 class MouseTab(QWidget):
     def __init__(self, parent=None):

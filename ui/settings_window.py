@@ -59,7 +59,6 @@ class SettingsWindow(QMainWindow):
         self.files_tab = FilesTab(self)
         self.tools_tab = ToolsTab(self)
 
-
         self.tabs.addTab(self.appearance_tab, self.tr("Appearance"))
         self.tabs.addTab(self.behavior_tab, self.tr("Behavior"))
         self.tabs.addTab(self.touchpad_tab, self.tr("Touchpad"))
@@ -97,10 +96,15 @@ class SettingsWindow(QMainWindow):
 
     def has_touchpad(self):
 
+        if not os.path.isfile(self.config_path):
+           return True
+
         if os.path.exists("/proc/bus/input/devices"):
             with open("/proc/bus/input/devices", "r") as f:
                 devices = f.read()
-                return "Touchpad" in devices
+            with open(self.config_path, 'r') as f:
+                settings = f.read()
+                return "Touchpad" in devices or 'show all tabs' in settings
         else:
             return True
 
@@ -440,11 +444,6 @@ class SettingsWindow(QMainWindow):
 
     def load_settings(self):
         """Parse existing settings"""
-
-        if not os.path.isfile(self.config_path):
-            return  # nothing to parse
-
-
         try:
             with open(self.config_path, 'r') as f:
                 content = f.read()
@@ -831,7 +830,6 @@ class SettingsWindow(QMainWindow):
                     'show all tabs' in content
                 )
 
-
             except Exception as e:
                 print(f"Error parsing some keyboard settings: {e} ")
                 msg= QMessageBox()
@@ -843,26 +841,24 @@ class SettingsWindow(QMainWindow):
 
         except FileNotFoundError:
             # If file doesn't exist, use defaults
+            self.home = os.path.expanduser("~")
+            message_path = str(self.config_path).replace(self.home, "~", 1)
+            message_niri_path = str(self.niri_config_path).replace(self.home, "~", 1)
             print(f"No existing config file found at {self.config_path}, applying default settings")
-
-            current_desktop = os.environ.get('XDG_CURRENT_DESKTOP', '')
-            desktop_list = [item.strip() for item in current_desktop.split(':')]
 
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Icon.Information)
             msg.setWindowTitle(self.tr("Niri Settings: Configuration not found"))
-            msg.setText(self.tr(f"No existing configuration file found at {self.config_path}. \n\nA new line to include \"basicsettings.kdl\" will be added at the bottom in {self.niri_config_path} when applying changes."))
-            msg.setInformativeText(self.tr("This line is needed to make this application work. \nIdentical settings before this line will be ignored after."))
+            msg.setText(self.tr(f"The configuration file {message_path} will be added when applying the first changes. A line to include it will be added at the end of {message_niri_path} as well."))
+            msg.setInformativeText(self.tr("This is needed to make niri-settings work. \nIdentical settings before this line will be ignored then."))
             msg.exec()
-            pass
+
         except Exception as e:
             print(f"Error loading configuration: {e}")
 
-            # Create error message box
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Icon.Critical)
             msg.setWindowTitle(self.tr("Configuration Parsing Error"))
             msg.setText(self.tr(f"Error reading settings in {self.config_path}"))
             msg.setInformativeText(self.tr("Applying changes will reset to defaults some values, please check this file."))
             msg.exec()
-
