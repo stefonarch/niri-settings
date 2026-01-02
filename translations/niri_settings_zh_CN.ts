@@ -189,7 +189,8 @@
         <source>bottom</source>
         <translation>底部</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>BehaviorTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="412"/>
@@ -342,7 +343,8 @@
         <source>hiding after inactive for:</source>
         <translation>不活跃……后隐藏:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>FilesTab</name>
     <message>
         <location filename="../ui/files_tab.py" line="24"/>
@@ -392,7 +394,7 @@ Right click for other options</source>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="163"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>没找到 xdg-open。请确认它已安装且在 PATH 中。</translation>
     </message>
     <message>
@@ -418,7 +420,7 @@ Right click for other options</source>
     <message>
         <location filename="../ui/files_tab.py" line="218"/>
         <source>Restore from backup</source>
-        <translation type="unfinished"/>
+        <translation>从备份中恢复</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="223"/>
@@ -428,7 +430,7 @@ Right click for other options</source>
     <message>
         <location filename="../ui/files_tab.py" line="283"/>
         <source>Selected a backup file!</source>
-        <translation type="unfinished"/>
+        <translation>选择了一个备份文件！</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="319"/>
@@ -439,7 +441,7 @@ Right click for other options</source>
     <message>
         <location filename="../ui/files_tab.py" line="290"/>
         <source>Overwrite this file with its backup?</source>
-        <translation type="unfinished"/>
+        <translation>要用这个文件的备份来覆盖它吗？</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="320"/>
@@ -451,7 +453,8 @@ Right click for other options</source>
         <source>Permission denied. Cannot create backup.</source>
         <translation>无权限。无法创建备份。</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeybindsFileEditor</name>
     <message>
         <location filename="../ui/keybinds_tab.py" line="64"/>
@@ -525,24 +528,24 @@ Right click for other options</source>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="194"/>
-        <source>'Super' (Meta) key is identical with 'Mod' by default.
+        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
 The shortcut field doesn’t detect AltGr, use the checkbox instead.
-If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
-        <translation>'Super' (Meta) 键默认下与 'Mod' 是一样的。
+If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
+        <translation>&apos;Super&apos; (Meta) 键默认下与 &apos;Mod&apos; 是一样的。
  选择一行以插入快捷键否则它会被加在底部。
 快捷键区并不检测 AltGr，请使用这个选框。
-若 niri 显示了一个错误，请在下一标签页中检查 'keybinds.kdl' 有效性。</translation>
+若 niri 显示了一个错误，请在下一标签页中检查 &apos;keybinds.kdl&apos; 有效性。</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="201"/>
-        <source>Add "Mod"</source>
-        <translation>添加 "Mod"</translation>
+        <source>Add &quot;Mod&quot;</source>
+        <translation>添加 &quot;Mod&quot;</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="204"/>
-        <source>Add "AltGr"</source>
-        <translation>添加 "AltGr"</translation>
+        <source>Add &quot;AltGr&quot;</source>
+        <translation>添加 &quot;AltGr&quot;</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="208"/>
@@ -625,13 +628,14 @@ It also allows adding a custom title after editing.</source>
         <location filename="../ui/keybinds_tab.py" line="482"/>
         <location filename="../ui/keybinds_tab.py" line="436"/>
         <source>Add Command</source>
-        <translation type="unfinished"/>
+        <translation>添加命令</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="437"/>
         <source>Add a single command without arguments
 Example: firefox</source>
-        <translation type="unfinished"/>
+        <translation>添加一个单独的、无参数的命令
+例如: firefox</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="589"/>
@@ -654,17 +658,21 @@ Example: firefox</source>
 Examples: firefox -p myprofile
 copy show
 </source>
-        <translation type="unfinished"/>
+        <translation>添加一个可含参数的 shell 命令
+
+例如: firefox -p myprofile
+copy show
+</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="525"/>
         <source>Add a custom line</source>
-        <translation type="unfinished"/>
+        <translation>添加一个自定义行</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="526"/>
-        <source>Add a comment, 'e.g. // my comment', an empty line or else:</source>
-        <translation type="unfinished"/>
+        <source>Add a comment, &apos;e.g. // my comment&apos;, an empty line or else:</source>
+        <translation>添加一个注释， &apos;e.g. // my comment&apos;, 一个空行或是其他的:</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="546"/>
@@ -679,14 +687,15 @@ copy show
     <message>
         <location filename="../ui/keybinds_tab.py" line="558"/>
         <source>Add niri action</source>
-        <translation type="unfinished"/>
+        <translation>添加 niri 动作</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="559"/>
         <source>Select a niri action:</source>
-        <translation type="unfinished"/>
+        <translation>选择一个 niri 动作：</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeyboardTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="812"/>
@@ -743,7 +752,8 @@ copy show
         <source>Repeat rate:</source>
         <translation>重复速率:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>MouseTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="744"/>
@@ -775,7 +785,8 @@ copy show
         <source>Scroll factor:</source>
         <translation>滚动因数:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>SettingsWindow</name>
     <message>
         <location filename="../ui/settings_window.py" line="30"/>
@@ -869,7 +880,8 @@ Identical settings before this line will be ignored after.</source>
         <translation>为使本应用工作，这一行是必需的。
 在这一行之前的个性化设置将会被忽略。</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>ToolsTab</name>
     <message>
         <location filename="../ui/tools_tab.py" line="21"/>
@@ -954,17 +966,17 @@ Identical settings before this line will be ignored after.</source>
     <message>
         <location filename="../ui/tools_tab.py" line="100"/>
         <source>Settings</source>
-        <translation type="unfinished"/>
+        <translation>设置</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="102"/>
         <source>Show all tabs</source>
-        <translation type="unfinished"/>
+        <translation>显示所有标签</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="103"/>
         <source>Touchpad tab is hidden when no touchpad is detected</source>
-        <translation type="unfinished"/>
+        <translation>当没有检测到触控板时触控板标签会被隐藏</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="178"/>
@@ -987,7 +999,8 @@ Identical settings before this line will be ignored after.</source>
 with PID {}?</source>
         <translation>你确认要杀死 PID 为 {} 的这个窗口吗？</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>TouchpadTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="611"/>
@@ -1089,4 +1102,5 @@ with PID {}?</source>
         <source>Tap button map:</source>
         <translation>轻触按键映射:</translation>
     </message>
-</context></TS>
+</context>
+</TS>
