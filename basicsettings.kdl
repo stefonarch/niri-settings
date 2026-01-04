@@ -62,7 +62,7 @@ window-rule {
     geometry-corner-radius 8
     clip-to-geometry true
     draw-border-with-background false
-} 
+}
 
 input {
     warp-mouse-to-focus
@@ -70,7 +70,7 @@ input {
     disable-power-key-handling
     workspace-auto-back-and-forth
     mod-key "Super"
-    
+
     touchpad {
         tap
         // dwt
@@ -82,24 +82,27 @@ input {
         // left-handed
         click-method "clickfinger"
         scroll-method "two-finger"
-        accel-speed 0.2
+        accel-speed 0.20
         accel-profile "adaptive"
         tap-button-map "left-right-middle"
         scroll-factor 1.0
     }
-    
+
     mouse {
         // natural-scroll
         // left-handed
         // middle-emulation
-        accel-speed 0.2
+        accel-speed 0.20
         accel-profile "adaptive"
         scroll-factor 1.0
     }
-    
+
     keyboard {
         track-layout "window"
         // numlock
+        // XKB block will only be written when there are values
+        //xkb {
+        //}
         repeat-delay 600
         repeat-rate 25
     }
@@ -117,10 +120,10 @@ gestures {
 }
 
 debug {
-    honor-xdg-activation-with-invalid-serial 
+    honor-xdg-activation-with-invalid-serial
 }
 
 cursor {
-    hide-when-typing 
+    hide-when-typing
     hide-after-inactive-ms 3000
 }

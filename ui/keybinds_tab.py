@@ -291,6 +291,11 @@ class KeybindsFileEditor(QWidget):
             with open(self.filename, 'r') as file:
                 self.lines = file.readlines()
 
+            # Get initial index of closing bracket
+            indices = [i for i, line in enumerate(self.lines) if line.strip() == '}']
+            self.closing_bracket = indices[-1]
+
+            self.trim_empty_lines() # from end only
             self.update_list_display()
             self.status_label.setText(
             self.tr("Loaded %1 lines").replace("%1", str(len(self.lines)))
@@ -301,6 +306,10 @@ class KeybindsFileEditor(QWidget):
 
     def filter_lines(self):
         filter_text = self.filter_input.text().lower()
+
+        # new index of closing bracket
+        indices = [i for i, line in enumerate(self.lines) if line.strip() == '}']
+        self.closing_bracket = indices[-1]
 
         if not filter_text:
             self.update_list_display()
@@ -321,6 +330,7 @@ class KeybindsFileEditor(QWidget):
 
     def update_list_display(self):
         self.list_widget.clear()
+
         for line in self.lines:
             display_text = line.rstrip('\n')
             self.list_widget.addItem(display_text)
@@ -354,15 +364,26 @@ class KeybindsFileEditor(QWidget):
         self.status_label.setText(
         self.tr("Editing line %1").replace("%1", str(self.selected_index + 1))
         )
-        # check if we are at the closing bracket #FIXME doesn't work when using arrows
+        # check if closing bracket is selected, works only if there's nothing else
         text = item.text()
         if text.strip() == "}":
             self.lastline = "lastline"
             self.remove_btn.setEnabled(False)
-            self.text_edit.clear()
-            self.save_btn.setEnabled(False)
+            #.text_edit.clear()
+            #self.save_btn.setEnabled(False)
         else:
             self.lastline = ""
+
+    def trim_empty_lines(self):
+        """Remove all lines after the last line with content."""
+        i = len(self.lines) - 1
+
+        while i >= 0 and not self.lines[i].strip():
+            i -= 1
+
+        if i >= 0:
+            # Remove everything after index i
+            del self.lines[i+1:]
 
     def save_line(self):
         if hasattr(self, 'selected_index'):
@@ -447,7 +468,7 @@ class KeybindsFileEditor(QWidget):
 
             try:
                 if not hasattr(self, 'selected_index') or self.lastline == "lastline":
-                    self.selected_index = len(self.lines) - 1
+                    self.selected_index = self.closing_bracket # insert above closing bracket
                 else:
                     self.selected_index += 1
 
@@ -489,10 +510,9 @@ class KeybindsFileEditor(QWidget):
 
             try:
                 if not hasattr(self, 'selected_index') or self.lastline == "lastline":
-                    self.selected_index = len(self.lines) - 1
+                    self.selected_index = self.closing_bracket
                 else:
                     self.selected_index += 1
-
                 self.lines.insert(self.selected_index, new_line)
 
                 shortcut = f"{self.mod}{self.mod5}{self.mousebind}{self.xkbcommon_key}"
@@ -528,7 +548,12 @@ class KeybindsFileEditor(QWidget):
 
             if ok:
                 comment_to_add = f"    {comment}\n"
-                self.selected_index = self.selected_index + 1
+
+                if not hasattr(self, 'selected_index') or self.lastline == "lastline":
+                    self.selected_index = self.closing_bracket
+                else:
+                    self.selected_index += 1
+
                 self.lines.insert(self.selected_index, comment_to_add)
 
                 try:
@@ -565,7 +590,7 @@ class KeybindsFileEditor(QWidget):
 
             try:
                 if not hasattr(self, 'selected_index') or self.lastline == "lastline":
-                    self.selected_index = len(self.lines) - 1
+                    self.selected_index = self.closing_bracket
                 else:
                     self.selected_index += 1
 
