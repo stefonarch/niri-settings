@@ -101,7 +101,13 @@ class ToolsTab(QWidget):
         checkbox_layout = QHBoxLayout(settings_group)
         self.show_all_tabs_checkbox = QCheckBox(self.tr("Show all tabs"))
         self.show_all_tabs_checkbox.setToolTip(self.tr("Touchpad tab is hidden when no touchpad is detected"))
+        self.exclude_backups_checkbox = QCheckBox(self.tr('Hide backups'))
+        self.exclude_backups_checkbox.setToolTip(self.tr(" Hide by default backup files in 'Files' tab"))
+        self.exclude_backups_checkbox.setChecked(True)
         checkbox_layout.addWidget(self.show_all_tabs_checkbox)
+        checkbox_layout.addWidget(self.exclude_backups_checkbox)
+        checkbox_layout.addStretch()
+
         layout.addWidget(settings_group)
 
         pass

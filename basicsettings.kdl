@@ -80,7 +80,7 @@ input {
         // drag-lock
         // disabled-on-external-mouse
         // left-handed
-        click-method "clickfinger"
+        click-method "button-areas"
         scroll-method "two-finger"
         accel-speed 0.20
         accel-profile "adaptive"

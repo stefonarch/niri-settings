@@ -78,7 +78,8 @@ class FilesTab(QWidget):
 
         button_layout.addStretch()
 
-        self.exclude_backups_checkbox = QCheckBox(self.tr('Hide backups'))
+        self.exclude_backups_checkbox = QCheckBox(self.tr('Show backups'))
+        self.exclude_backups_checkbox.setToolTip(self.tr("Set permanent in 'Tools → Settings'"))
         button_layout.addWidget(self.exclude_backups_checkbox)
         self.exclude_backups_checkbox.toggled.connect(self.refresh_files)
 
@@ -134,9 +135,9 @@ class FilesTab(QWidget):
             return
 
         if self.exclude_backups_checkbox.isChecked():
-            kdl_files = list(base_path.rglob('*.kdl'))
-        else:
             kdl_files = list(base_path.rglob('*.kdl*'))
+        else:
+            kdl_files = list(base_path.rglob('*.kdl'))
 
         if not kdl_files:
             self.show_info(self.tr(f"No .kdl files found in:\n{base_path}"))

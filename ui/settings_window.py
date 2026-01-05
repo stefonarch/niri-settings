@@ -94,6 +94,14 @@ class SettingsWindow(QMainWindow):
 
         main_layout.addLayout(button_layout)
 
+        # Disable apply btn on some tabs
+        disabled_tabs = {self.keybinds_tab, self.files_tab}
+        def on_tab_changed(index):
+            apply_btn.setEnabled(self.tabs.widget(index) not in disabled_tabs)
+
+        self.tabs.currentChanged.connect(on_tab_changed)
+
+
     def has_touchpad(self):
 
         if not os.path.isfile(self.config_path):
@@ -437,7 +445,7 @@ class SettingsWindow(QMainWindow):
                 f.write(f'\nscreenshot-path "{path}"\n')
 
             # own settings
-            if self.files_tab.exclude_backups_checkbox.isChecked():
+            if self.tools_tab.exclude_backups_checkbox.isChecked():
                 f.write('\n    // * do not show backups\n')
             if self.tools_tab.show_all_tabs_checkbox.isChecked():
                 f.write('\n    // * show all tabs\n')
@@ -820,11 +828,11 @@ class SettingsWindow(QMainWindow):
                     self.keyboard_tab.file_edit.setText(file_match.group(1))
 
                 # own settings
-                self.files_tab.exclude_backups_checkbox.setChecked(
+                self.tools_tab.exclude_backups_checkbox.setChecked(
                     'do not show backups' in content
                 )
                 self.files_tab.exclude_backups_checkbox.setChecked(
-                    'do not show backups' in content
+                    'do not show backups' not in content
                 )
                 self.tools_tab.show_all_tabs_checkbox.setChecked(
                     'show all tabs' in content
