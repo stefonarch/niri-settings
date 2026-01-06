@@ -31,27 +31,28 @@ Options in this file will override identical options coming _before_ and in the 
 
 ## Installation
 
+[![Packaging status](https://repology.org/badge/vertical-allrepos/niri-settings.svg)](https://repology.org/project/niri-settings/versions)
 
-
-
-#### Archlinux
-
- [AUR package](https://aur.archlinux.org/packages/niri-settings-git) :
-
+#### Arch, derivatives
 ```
 yay -S niri-settings-git
 ```
-### Dependencies:
+#### Fedora
+```
+sudo dnf install niri-settings
+```
+#### OpenSuse
+```
+zypper install niri-settings
+```
+### Manual installation
+
 #### Debian, derivatives
 ```apt
 # apt -y install python3-pyqt6 qt6-wayland git
 ```
-#### openSuse
-```
-zypper install python-PyQt6 qt6-wayland git
 
-```
-Installation as user (to `~/bin` → has to be in your `$PATH`) or systemwide:
+Installation system-wide or as user (= install in `~/bin` → this has to be in your `$PATH`):
 
 ```bash
 git clone https://github.com/stefonarch/niri-settings /tmp/niri-settings
@@ -59,8 +60,7 @@ cd /tmp/niri-settings
 chmod a+x install.sh
 ./install.sh
 ```
-### Packages
-[![Packaging status](https://repology.org/badge/vertical-allrepos/niri-settings.svg)](https://repology.org/project/niri-settings/versions)
+
 ## Translations
 
 Translations should be submitted using the [Weblate platform](https://translate.lxqt-project.org/projects/stefonarch/niri-settings/).

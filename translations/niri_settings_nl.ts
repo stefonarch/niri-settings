@@ -189,8 +189,7 @@
         <source>bottom</source>
         <translation>onderaan</translation>
     </message>
-</context>
-<context>
+</context><context>
     <name>BehaviorTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="412"/>
@@ -280,7 +279,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="458"/>
         <source>Applications may decide</source>
-        <translation>Programma&apos;s laten kiezen</translation>
+        <translation>Programma's laten kiezen</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="491"/>
@@ -326,7 +325,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="549"/>
         <source>Screenshots:</source>
-        <translation>Schermfoto&apos;s:</translation>
+        <translation>Schermfoto's:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="561"/>
@@ -343,8 +342,7 @@
         <source>hiding after inactive for:</source>
         <translation>verbergen na inactiviteit, gedurende:</translation>
     </message>
-</context>
-<context>
+</context><context>
     <name>FilesTab</name>
     <message>
         <location filename="../ui/files_tab.py" line="24"/>
@@ -373,11 +371,16 @@
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="81"/>
-        <source>Hide backups</source>
-        <translation>Reservekopieën verbergen</translation>
+        <source>Show backups</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="95"/>
+        <location filename="../ui/files_tab.py" line="82"/>
+        <source>Set permanent in 'Tools → Settings'</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/files_tab.py" line="96"/>
         <source>Click file to edit here
 Double click to open in text editor
 Right click for other options</source>
@@ -386,75 +389,74 @@ Dubbelklik om te openen in een tekstbewerker
 Rechtsklik voor andere mogelijkheden</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="133"/>
+        <location filename="../ui/files_tab.py" line="134"/>
         <source>Directory does not exist:
 {base_path}</source>
         <translation>Deze map bestaat niet:
 {base_path}</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="163"/>
-        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
+        <location filename="../ui/files_tab.py" line="164"/>
+        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
         <translation>xdg-open is niet aangetroffen. Controleer de installatie en PATH.</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="194"/>
+        <location filename="../ui/files_tab.py" line="195"/>
         <source>Open</source>
         <translation>Openen</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="199"/>
+        <location filename="../ui/files_tab.py" line="200"/>
         <source>Show in file manager</source>
         <translation>Tonen in bestandsbeheerder</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="206"/>
+        <location filename="../ui/files_tab.py" line="207"/>
         <source>Copy path to clipboard</source>
         <translation>Locatie kopiëren naar klembord</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="213"/>
+        <location filename="../ui/files_tab.py" line="214"/>
         <source>Create new file here</source>
         <translation>Nieuw bestand maken</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="218"/>
+        <location filename="../ui/files_tab.py" line="219"/>
         <source>Restore from backup</source>
         <translation>Herstellen uit reservekopie</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="223"/>
+        <location filename="../ui/files_tab.py" line="224"/>
         <source>Move to trash</source>
         <translation>Verplaatsen naar prullenbak</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="283"/>
+        <location filename="../ui/files_tab.py" line="284"/>
         <source>Selected a backup file!</source>
         <translation>Reservekopiebestand gekozen!</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="319"/>
-        <location filename="../ui/files_tab.py" line="289"/>
+        <location filename="../ui/files_tab.py" line="320"/>
+        <location filename="../ui/files_tab.py" line="290"/>
         <source>Confirm</source>
         <translation>Bevestigen</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="290"/>
+        <location filename="../ui/files_tab.py" line="291"/>
         <source>Overwrite this file with its backup?</source>
         <translation>Weet je zeker dat je dit bestand wilt overschrijven met de reservekopie?</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="320"/>
+        <location filename="../ui/files_tab.py" line="321"/>
         <source>Move file to trash?</source>
         <translation>Weet je zeker dat je het bestand wilt weggooien?</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="384"/>
+        <location filename="../ui/files_tab.py" line="385"/>
         <source>Permission denied. Cannot create backup.</source>
         <translation>Toegang geweigerd: de reservekopie kan niet worden gemaakt.</translation>
     </message>
-</context>
-<context>
+</context><context>
     <name>KeybindsFileEditor</name>
     <message>
         <location filename="../ui/keybinds_tab.py" line="64"/>
@@ -477,316 +479,306 @@ Rechtsklik voor andere mogelijkheden</translation>
         <translation>Kies een te bewerken regel</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="124"/>
+        <location filename="../ui/keybinds_tab.py" line="125"/>
         <source>Save edit</source>
         <translation>Opslaan</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="133"/>
+        <location filename="../ui/keybinds_tab.py" line="134"/>
         <source>Remove this line</source>
         <translation>Regel verwijderen</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="143"/>
+        <location filename="../ui/keybinds_tab.py" line="144"/>
         <source>Move up</source>
         <translation>Omhoog</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="148"/>
+        <location filename="../ui/keybinds_tab.py" line="149"/>
         <source>Move down</source>
         <translation>Omlaag</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="153"/>
+        <location filename="../ui/keybinds_tab.py" line="154"/>
         <source>Trigger:</source>
         <translation>Aanroeping:</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="156"/>
+        <location filename="../ui/keybinds_tab.py" line="157"/>
         <source>Application</source>
         <translation>Programma</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="161"/>
+        <location filename="../ui/keybinds_tab.py" line="162"/>
         <source>Shell command</source>
         <translation>Shellopdracht</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="166"/>
+        <location filename="../ui/keybinds_tab.py" line="167"/>
         <source>niri action</source>
         <translation>niri-actie</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="172"/>
+        <location filename="../ui/keybinds_tab.py" line="173"/>
         <source>Insert custom line</source>
         <translation>Eigen regel invoegen</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="192"/>
+        <location filename="../ui/keybinds_tab.py" line="193"/>
         <source>Add a shortcut:</source>
         <translation>Sneltoets toevoegen:</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="194"/>
-        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
+        <location filename="../ui/keybinds_tab.py" line="195"/>
+        <source>'Super' (Meta) key is identical with 'Mod' by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
-The shortcut field doesn’t detect AltGr, use the checkbox instead.
-If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
-        <translation>‘Super’ (Meta) is standaard gelijk aan ‘Mod’.
- Klik op een regel om de sneltoets daar in te kunnen voeren — anders gebeurt dit onderaan.
-Let op: het invoerveld herkent AltGr niet — gebruik daarvoor het aankruisvakje.
-Als niri een foutmelding toont, verifieer dan ‘keybinds.kdl’ op het volgende tabblad.</translation>
+The shortcut field doesn't detect AltGr, use the checkbox instead.
+If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="201"/>
-        <source>Add &quot;Mod&quot;</source>
+        <location filename="../ui/keybinds_tab.py" line="202"/>
+        <source>Add "Mod"</source>
         <translation>‘Mod’ toevoegen</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="204"/>
-        <source>Add &quot;AltGr&quot;</source>
+        <location filename="../ui/keybinds_tab.py" line="205"/>
+        <source>Add "AltGr"</source>
         <translation>‘AltGr’ toevoegen</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="208"/>
+        <location filename="../ui/keybinds_tab.py" line="209"/>
         <source>No repeat</source>
         <translation>Niet herhalen</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="209"/>
+        <location filename="../ui/keybinds_tab.py" line="210"/>
         <source>Do not repeat the action. Repeating is default</source>
         <translation>Herhaal de actie niet (standaard wordt wel herhaald)</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="212"/>
+        <location filename="../ui/keybinds_tab.py" line="213"/>
         <source>Allow when locked</source>
         <translation>Toestaan op vergrendelscherm</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="213"/>
+        <location filename="../ui/keybinds_tab.py" line="214"/>
         <source>Allow execution when screen is locked</source>
         <translation>Uitvoeren tijdens schermvergrendeling toestaan</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="224"/>
+        <location filename="../ui/keybinds_tab.py" line="225"/>
         <source>No overlay</source>
         <translation>Niet tonen op overzicht</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="226"/>
+        <location filename="../ui/keybinds_tab.py" line="227"/>
         <source>Do not show this shortcut in the hotkey overlay.
 It also allows adding a custom title after editing.</source>
         <translation>Toon deze sneltoets niet op het sneltoetsoverzicht.
 Ook kan na het bewerken desgewenst een eigen naam worden gekozen.</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="228"/>
+        <location filename="../ui/keybinds_tab.py" line="229"/>
         <source>Add mousebind:</source>
         <translation>Muistoets toevoegen:</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="289"/>
+        <location filename="../ui/keybinds_tab.py" line="288"/>
         <source>Created new keybinds file</source>
         <translation>Nieuw sneltoetsbestand aangemaakt</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="297"/>
+        <location filename="../ui/keybinds_tab.py" line="301"/>
         <source>Loaded %1 lines</source>
         <translation>%1 regels geladen</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="320"/>
+        <location filename="../ui/keybinds_tab.py" line="328"/>
         <source>%1 matching</source>
         <translation>%1 overeenkomsten</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="357"/>
+        <location filename="../ui/keybinds_tab.py" line="365"/>
         <source>Editing line %1</source>
         <translation>Bewerken van regel %1</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="386"/>
+        <location filename="../ui/keybinds_tab.py" line="405"/>
         <source>Saved line %1</source>
         <translation>‘%1’ is opgeslagen</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="394"/>
+        <location filename="../ui/keybinds_tab.py" line="413"/>
         <source>Error saving file: %1</source>
         <translation>‘%1’ kan niet worden opgeslagen</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="415"/>
+        <location filename="../ui/keybinds_tab.py" line="434"/>
         <source>Line %1 deleted</source>
         <translation>Regel %1 is verwijderd</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="430"/>
+        <location filename="../ui/keybinds_tab.py" line="449"/>
         <source>Error deleting line %1</source>
         <translation>Regel %1 kan niet worden gewist</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="482"/>
-        <location filename="../ui/keybinds_tab.py" line="436"/>
+        <location filename="../ui/keybinds_tab.py" line="501"/>
+        <location filename="../ui/keybinds_tab.py" line="455"/>
         <source>Add Command</source>
         <translation>Opdracht toevoegen</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="437"/>
+        <location filename="../ui/keybinds_tab.py" line="456"/>
         <source>Add a single command without arguments
 Example: firefox</source>
         <translation>Voeg een opdracht zonder verdere opties toe.
 Voorbeeld: firefox</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="589"/>
-        <location filename="../ui/keybinds_tab.py" line="513"/>
-        <location filename="../ui/keybinds_tab.py" line="471"/>
+        <location filename="../ui/keybinds_tab.py" line="612"/>
+        <location filename="../ui/keybinds_tab.py" line="531"/>
+        <location filename="../ui/keybinds_tab.py" line="490"/>
         <source>Added new shortcut at line %1</source>
         <translation>Sneltoets ingevoerd op regel %1</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="594"/>
-        <location filename="../ui/keybinds_tab.py" line="518"/>
-        <location filename="../ui/keybinds_tab.py" line="476"/>
+        <location filename="../ui/keybinds_tab.py" line="617"/>
+        <location filename="../ui/keybinds_tab.py" line="536"/>
+        <location filename="../ui/keybinds_tab.py" line="495"/>
         <source>Error adding shortcut: %1</source>
         <translation>De sneltoets kan niet worden toegevoegd: %1</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="483"/>
+        <location filename="../ui/keybinds_tab.py" line="502"/>
         <source>Add a shell command with arguments
 
 Examples: firefox -p myprofile
-copy show
+copyq show
 </source>
-        <translation>Voeg een shellopdracht met opties toe.
-
-Voorbeelden: firefox -p mijnprofiel
-copy show
-</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="525"/>
+        <location filename="../ui/keybinds_tab.py" line="543"/>
         <source>Add a custom line</source>
         <translation>Eigen regel toevoegen</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="526"/>
-        <source>Add a comment, &apos;e.g. // my comment&apos;, an empty line or else:</source>
+        <location filename="../ui/keybinds_tab.py" line="544"/>
+        <source>Add a comment, 'e.g. // my comment', an empty line or else:</source>
         <translation>Voeg een opmerking toe, bijvoorbeeld ‘// mijn opmerking’, een blanco regel of iets anders:</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="546"/>
+        <location filename="../ui/keybinds_tab.py" line="569"/>
         <source>Custom line saved at line %1</source>
         <translation>Eigen regel op %1 opgeslagen</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="551"/>
+        <location filename="../ui/keybinds_tab.py" line="574"/>
         <source>Error saving custom line: %1</source>
         <translation>De eigen regel kan niet worden opgeslagen: %1</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="558"/>
+        <location filename="../ui/keybinds_tab.py" line="581"/>
         <source>Add niri action</source>
         <translation>Niri-actie toevoegen</translation>
     </message>
     <message>
-        <location filename="../ui/keybinds_tab.py" line="559"/>
+        <location filename="../ui/keybinds_tab.py" line="582"/>
         <source>Select a niri action:</source>
         <translation>Kies een niri-actie:</translation>
     </message>
-</context>
-<context>
+</context><context>
     <name>KeyboardTab</name>
     <message>
-        <location filename="../ui/all_tabs.py" line="812"/>
+        <location filename="../ui/all_tabs.py" line="810"/>
         <source>Enable num lock at startup</source>
         <translation>NumLock inschakelen na opstarten</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="818"/>
+        <location filename="../ui/all_tabs.py" line="816"/>
         <source>Track keyboard layout:</source>
         <translation>Toetsenbordindeling bijhouden:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="828"/>
+        <location filename="../ui/all_tabs.py" line="826"/>
         <source>Keyboard Layout</source>
         <translation>Toetsenbordindeling</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="833"/>
+        <location filename="../ui/all_tabs.py" line="831"/>
         <source>Layout:</source>
         <translation>Indeling:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="848"/>
+        <location filename="../ui/all_tabs.py" line="846"/>
         <source>Variant:</source>
         <translation>Variant:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="862"/>
+        <location filename="../ui/all_tabs.py" line="860"/>
         <source>Options:</source>
         <translation>Opties:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="875"/>
+        <location filename="../ui/all_tabs.py" line="873"/>
         <source>Model:</source>
         <translation>Model:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="889"/>
+        <location filename="../ui/all_tabs.py" line="887"/>
         <source>File:</source>
         <translation>Bestand:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="903"/>
+        <location filename="../ui/all_tabs.py" line="901"/>
         <source>Repeat Settings</source>
         <translation>Herhaalinstellingen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="908"/>
+        <location filename="../ui/all_tabs.py" line="906"/>
         <source>Repeat delay:</source>
         <translation>Herhaalvertraging:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="922"/>
+        <location filename="../ui/all_tabs.py" line="920"/>
         <source>Repeat rate:</source>
         <translation>Herhaalsnelheid:</translation>
     </message>
-</context>
-<context>
+</context><context>
     <name>MouseTab</name>
     <message>
-        <location filename="../ui/all_tabs.py" line="744"/>
+        <location filename="../ui/all_tabs.py" line="742"/>
         <source>Natural scroll</source>
         <translation>Natuurlijk scrollen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="745"/>
+        <location filename="../ui/all_tabs.py" line="743"/>
         <source>Left handed</source>
         <translation>Linkshandig</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="746"/>
+        <location filename="../ui/all_tabs.py" line="744"/>
         <source>Middle button emulation</source>
         <translation>Middelste muisknop emuleren</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="750"/>
+        <location filename="../ui/all_tabs.py" line="748"/>
         <source>Acceleration speed:</source>
         <translation>Versnelling:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="762"/>
+        <location filename="../ui/all_tabs.py" line="760"/>
         <source>Acceleration profile:</source>
         <translation>Versnellingsprofiel:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="772"/>
+        <location filename="../ui/all_tabs.py" line="770"/>
         <source>Scroll factor:</source>
         <translation>Scrolfactor:</translation>
     </message>
-</context>
-<context>
+</context><context>
     <name>SettingsWindow</name>
     <message>
         <location filename="../ui/settings_window.py" line="30"/>
@@ -794,94 +786,92 @@ copy show
         <translation>Niri-instellingen</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="63"/>
+        <location filename="../ui/settings_window.py" line="62"/>
         <source>Appearance</source>
         <translation>Vormgeving</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="64"/>
+        <location filename="../ui/settings_window.py" line="63"/>
         <source>Behavior</source>
         <translation>Gedrag</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="65"/>
+        <location filename="../ui/settings_window.py" line="64"/>
         <source>Touchpad</source>
         <translation>Touchpad</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="66"/>
+        <location filename="../ui/settings_window.py" line="65"/>
         <source>Mouse</source>
         <translation>Muis</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="67"/>
+        <location filename="../ui/settings_window.py" line="66"/>
         <source>Keyboard</source>
         <translation>Toetsenbord</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="68"/>
+        <location filename="../ui/settings_window.py" line="67"/>
         <source>Shortcuts</source>
         <translation>Sneltoetsen</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="69"/>
+        <location filename="../ui/settings_window.py" line="68"/>
         <source>Files</source>
         <translation>Bestanden</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="70"/>
+        <location filename="../ui/settings_window.py" line="69"/>
         <source>Tools</source>
         <translation>Hulpmiddelen</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="79"/>
+        <location filename="../ui/settings_window.py" line="78"/>
         <source>Wiki</source>
         <translation>Wiki</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="83"/>
+        <location filename="../ui/settings_window.py" line="82"/>
         <source>Apply</source>
         <translation>Toepassen</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="87"/>
+        <location filename="../ui/settings_window.py" line="86"/>
         <source>Close</source>
         <translation>Sluiten</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="866"/>
-        <location filename="../ui/settings_window.py" line="841"/>
-        <location filename="../ui/settings_window.py" line="781"/>
-        <location filename="../ui/settings_window.py" line="742"/>
-        <location filename="../ui/settings_window.py" line="654"/>
-        <location filename="../ui/settings_window.py" line="558"/>
+        <location filename="../ui/settings_window.py" line="869"/>
+        <location filename="../ui/settings_window.py" line="845"/>
+        <location filename="../ui/settings_window.py" line="786"/>
+        <location filename="../ui/settings_window.py" line="747"/>
+        <location filename="../ui/settings_window.py" line="659"/>
+        <location filename="../ui/settings_window.py" line="563"/>
         <source>Configuration Parsing Error</source>
         <translation>Instellingen-verwerkingsfout</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="868"/>
-        <location filename="../ui/settings_window.py" line="843"/>
-        <location filename="../ui/settings_window.py" line="783"/>
-        <location filename="../ui/settings_window.py" line="744"/>
-        <location filename="../ui/settings_window.py" line="656"/>
-        <location filename="../ui/settings_window.py" line="560"/>
+        <location filename="../ui/settings_window.py" line="871"/>
+        <location filename="../ui/settings_window.py" line="847"/>
+        <location filename="../ui/settings_window.py" line="788"/>
+        <location filename="../ui/settings_window.py" line="749"/>
+        <location filename="../ui/settings_window.py" line="661"/>
+        <location filename="../ui/settings_window.py" line="565"/>
         <source>Applying changes will reset to defaults some values, please check this file.</source>
         <translation>Door de wijzigingen toe te passen, worden sommige instellingen teruggezet. Controleer daarom dit bestand.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="855"/>
+        <location filename="../ui/settings_window.py" line="859"/>
         <source>Niri Settings: Configuration not found</source>
         <translation>Niri-instellingen: instellingen niet aangetroffen</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="857"/>
-        <source>This line is needed to make this application work. 
-Identical settings before this line will be ignored after.</source>
-        <translation>Deze regel is nodig om het programma te laten werken.
-Identieke instellingen ná deze regel worden genegeerd.</translation>
+        <location filename="../ui/settings_window.py" line="861"/>
+        <source>This is needed to make niri-settings work. 
+Identical settings before this line will be ignored then.</source>
+        <translation type="unfinished"/>
     </message>
-</context>
-<context>
+</context><context>
     <name>ToolsTab</name>
     <message>
         <location filename="../ui/tools_tab.py" line="21"/>
@@ -979,29 +969,38 @@ Identieke instellingen ná deze regel worden genegeerd.</translation>
         <translation>Het touchpadtabblad wordt verborgen als er geen touchpad is aangetroffen</translation>
     </message>
     <message>
-        <location filename="../ui/tools_tab.py" line="178"/>
+        <location filename="../ui/tools_tab.py" line="104"/>
+        <source>Hide backups</source>
+        <translation type="unfinished">Reservekopieën verbergen</translation>
+    </message>
+    <message>
+        <location filename="../ui/tools_tab.py" line="105"/>
+        <source> Hide by default backup files in 'Files' tab</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/tools_tab.py" line="184"/>
         <source>Error</source>
         <translation>Foutmelding</translation>
     </message>
     <message>
-        <location filename="../ui/tools_tab.py" line="178"/>
+        <location filename="../ui/tools_tab.py" line="184"/>
         <source>Not a window but maybe a layer surface?</source>
         <translation>Dit is geen venster — is het een laag?</translation>
     </message>
     <message>
-        <location filename="../ui/tools_tab.py" line="183"/>
+        <location filename="../ui/tools_tab.py" line="189"/>
         <source>Confirm</source>
         <translation>Bevestigen</translation>
     </message>
     <message>
-        <location filename="../ui/tools_tab.py" line="184"/>
+        <location filename="../ui/tools_tab.py" line="190"/>
         <source>Are you sure to kill this window
 with PID {}?</source>
         <translation>Weet u zeker dat het venster met PID {}
 gedwongen wilt afsluiten?</translation>
     </message>
-</context>
-<context>
+</context><context>
     <name>TouchpadTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="611"/>
@@ -1050,13 +1049,13 @@ gedwongen wilt afsluiten?</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="631"/>
-        <source>Clickfinger</source>
-        <translation>Klikken met vinger</translation>
+        <source>Button areas</source>
+        <translation>Knopgebieden</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="633"/>
-        <source>Button areas</source>
-        <translation>Knopgebieden</translation>
+        <source>Clickfinger</source>
+        <translation>Klikken met vinger</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="643"/>
@@ -1069,12 +1068,12 @@ gedwongen wilt afsluiten?</translation>
         <translation>Met twee vingers</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="645"/>
+        <location filename="../ui/all_tabs.py" line="646"/>
         <source>Edge</source>
         <translation>Op de rand</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="646"/>
+        <location filename="../ui/all_tabs.py" line="647"/>
         <source>Button</source>
         <translation>Met een knop</translation>
     </message>
@@ -1084,24 +1083,23 @@ gedwongen wilt afsluiten?</translation>
         <translation>Scrolmethode</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="667"/>
+        <location filename="../ui/all_tabs.py" line="665"/>
         <source>Acceleration speed:</source>
         <translation>Versnelling:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="680"/>
+        <location filename="../ui/all_tabs.py" line="677"/>
         <source>Acceleration profile:</source>
         <translation>Versnellingsprofiel:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="690"/>
+        <location filename="../ui/all_tabs.py" line="687"/>
         <source>Scroll factor:</source>
         <translation>Scrolfactor:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="703"/>
+        <location filename="../ui/all_tabs.py" line="700"/>
         <source>Tap button map:</source>
         <translation>Tikknop toewijzen aan:</translation>
     </message>
-</context>
-</TS>
+</context></TS>
