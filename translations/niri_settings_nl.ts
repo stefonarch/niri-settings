@@ -189,7 +189,8 @@
         <source>bottom</source>
         <translation>onderaan</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>BehaviorTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="412"/>
@@ -279,7 +280,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="458"/>
         <source>Applications may decide</source>
-        <translation>Programma's laten kiezen</translation>
+        <translation>Programma&apos;s laten kiezen</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="491"/>
@@ -325,7 +326,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="549"/>
         <source>Screenshots:</source>
-        <translation>Schermfoto's:</translation>
+        <translation>Schermfoto&apos;s:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="561"/>
@@ -342,7 +343,8 @@
         <source>hiding after inactive for:</source>
         <translation>verbergen na inactiviteit, gedurende:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>FilesTab</name>
     <message>
         <location filename="../ui/files_tab.py" line="24"/>
@@ -372,12 +374,12 @@
     <message>
         <location filename="../ui/files_tab.py" line="81"/>
         <source>Show backups</source>
-        <translation type="unfinished"/>
+        <translation>Reservekopieën tonen</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="82"/>
-        <source>Set permanent in 'Tools → Settings'</source>
-        <translation type="unfinished"/>
+        <source>Set permanent in &apos;Tools → Settings&apos;</source>
+        <translation>Stel dit permanent in via ‘Hulpmiddelen → Instellingen’</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="96"/>
@@ -397,7 +399,7 @@ Rechtsklik voor andere mogelijkheden</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="164"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>xdg-open is niet aangetroffen. Controleer de installatie en PATH.</translation>
     </message>
     <message>
@@ -456,7 +458,8 @@ Rechtsklik voor andere mogelijkheden</translation>
         <source>Permission denied. Cannot create backup.</source>
         <translation>Toegang geweigerd: de reservekopie kan niet worden gemaakt.</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeybindsFileEditor</name>
     <message>
         <location filename="../ui/keybinds_tab.py" line="64"/>
@@ -530,20 +533,23 @@ Rechtsklik voor andere mogelijkheden</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="195"/>
-        <source>'Super' (Meta) key is identical with 'Mod' by default.
+        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
-The shortcut field doesn't detect AltGr, use the checkbox instead.
-If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
-        <translation type="unfinished"/>
+The shortcut field doesn&apos;t detect AltGr, use the checkbox instead.
+If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
+        <translation>De supertoets (meta) is standaard gelijk aan de modtoets.
+ Klik op een regel om de sneltoets in te voeren, anders wordt deze aan de onderzijde toegevoegd.
+Let op: het sneltoetsveld heeft geen ondersteuning voor AltGr — gebruik hiervoor het aankruisvakje.
+Als Niri een foutmelding toont, verifieer dan ‘keybinds.kdl’ op het volgende tabblad.</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="202"/>
-        <source>Add "Mod"</source>
+        <source>Add &quot;Mod&quot;</source>
         <translation>‘Mod’ toevoegen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="205"/>
-        <source>Add "AltGr"</source>
+        <source>Add &quot;AltGr&quot;</source>
         <translation>‘AltGr’ toevoegen</translation>
     </message>
     <message>
@@ -657,7 +663,11 @@ Voorbeeld: firefox</translation>
 Examples: firefox -p myprofile
 copyq show
 </source>
-        <translation type="unfinished"/>
+        <translation>Voeg een shellopdracht met eventuele opties toe.
+
+Voorbeelden: firefox -p mijnprofiel
+copyq show
+</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="543"/>
@@ -666,7 +676,7 @@ copyq show
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="544"/>
-        <source>Add a comment, 'e.g. // my comment', an empty line or else:</source>
+        <source>Add a comment, &apos;e.g. // my comment&apos;, an empty line or else:</source>
         <translation>Voeg een opmerking toe, bijvoorbeeld ‘// mijn opmerking’, een blanco regel of iets anders:</translation>
     </message>
     <message>
@@ -689,7 +699,8 @@ copyq show
         <source>Select a niri action:</source>
         <translation>Kies een niri-actie:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeyboardTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="810"/>
@@ -746,7 +757,8 @@ copyq show
         <source>Repeat rate:</source>
         <translation>Herhaalsnelheid:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>MouseTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="742"/>
@@ -778,7 +790,8 @@ copyq show
         <source>Scroll factor:</source>
         <translation>Scrolfactor:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>SettingsWindow</name>
     <message>
         <location filename="../ui/settings_window.py" line="30"/>
@@ -869,9 +882,11 @@ copyq show
         <location filename="../ui/settings_window.py" line="861"/>
         <source>This is needed to make niri-settings work. 
 Identical settings before this line will be ignored then.</source>
-        <translation type="unfinished"/>
+        <translation>Dit is benodigd voor de werking van niri-settings.
+Identieke instellingen voorafgaand aan deze regel worden genegeerd.</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>ToolsTab</name>
     <message>
         <location filename="../ui/tools_tab.py" line="21"/>
@@ -971,12 +986,12 @@ Identical settings before this line will be ignored then.</source>
     <message>
         <location filename="../ui/tools_tab.py" line="104"/>
         <source>Hide backups</source>
-        <translation type="unfinished">Reservekopieën verbergen</translation>
+        <translation>Reservekopieën verbergen</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="105"/>
-        <source> Hide by default backup files in 'Files' tab</source>
-        <translation type="unfinished"/>
+        <source> Hide by default backup files in &apos;Files&apos; tab</source>
+        <translation> Verberg reservekopiebestanden op het tabblad ‘Bestanden’</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="184"/>
@@ -1000,7 +1015,8 @@ with PID {}?</source>
         <translation>Weet u zeker dat het venster met PID {}
 gedwongen wilt afsluiten?</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>TouchpadTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="611"/>
@@ -1102,4 +1118,5 @@ gedwongen wilt afsluiten?</translation>
         <source>Tap button map:</source>
         <translation>Tikknop toewijzen aan:</translation>
     </message>
-</context></TS>
+</context>
+</TS>
