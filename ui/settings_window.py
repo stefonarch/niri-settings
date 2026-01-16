@@ -368,9 +368,9 @@ class SettingsWindow(QMainWindow):
                 f.write('        // numlock\n')
             lines = [
                 f'           layout "{self.keyboard_tab.layout_edit.text()}"\n',
-                f'           variant "{self.keyboard_tab.variant_edit.text()}"\n',
-                f'           options "{self.keyboard_tab.options_edit.text()}"\n',
-                f'           model "{self.keyboard_tab.model_edit.text()}"\n',
+                f'           variant "{self.keyboard_tab.variant_combobox.currentText()}"\n',
+                f'           options "{self.keyboard_tab.options_combobox.currentText()}"\n',
+                f'           model "{self.keyboard_tab.model_combobox.currentText()}"\n',
                 f'           file "{self.keyboard_tab.file_edit.text()}"\n',
             ]
 
@@ -381,13 +381,13 @@ class SettingsWindow(QMainWindow):
             layout = self.keyboard_tab.layout_edit.text()
             if layout:
                 f.write(f'            layout "{layout}"\n')
-            variant = self.keyboard_tab.variant_edit.text()
+            variant = self.keyboard_tab.variant_combobox.currentText()
             if variant:
                 f.write(f'            variant "{variant}"\n')
-            options = self.keyboard_tab.options_edit.text()
+            options = self.keyboard_tab.options_combobox.currentText()
             if options:
                 f.write(f'            options "{options}"\n')
-            model = self.keyboard_tab.model_edit.text()
+            model = self.keyboard_tab.model_combobox.currentText()
             if model:
                 f.write(f'            model "{model}"\n')
             file_ = self.keyboard_tab.file_edit.text()
@@ -716,7 +716,6 @@ class SettingsWindow(QMainWindow):
                     if index >= 0:
                         self.touchpad_tab.tap_button_map_combobox.setCurrentIndex(index)
 
-
                 scroll_match = re.search(r'scroll-factor\s+([\d.]+)', touchpad_content)
                 self.touchpad_tab.scroll_factor_spinbox.setValue(float(scroll_match.group(1)))
 
@@ -806,22 +805,35 @@ class SettingsWindow(QMainWindow):
                 if index >= 0:
                         self.keyboard_tab.track_layout_combobox.setCurrentIndex(index)
 
-
                 xkb_match = re.search(r'xkb\s*{.*?layout\s+"([^"]+)"', content, re.DOTALL)
                 if xkb_match:
                     self.keyboard_tab.layout_edit.setText(xkb_match.group(1))
 
                 variant_match = re.search(r'xkb\s*{.*?variant\s+"([^"]+)"', content, re.DOTALL)
                 if variant_match:
-                    self.keyboard_tab.variant_edit.setText(variant_match.group(1))
+                    variant = variant_match.group(1)
+                    index = self.keyboard_tab.variant_combobox.findText(variant)
+                    if index >= 0:
+                        self.keyboard_tab.variant_combobox.setCurrentIndex(index)
+
+
 
                 options_match = re.search(r'xkb\s*{.*?options\s+"([^"]+)"', content, re.DOTALL)
                 if options_match:
-                    self.keyboard_tab.options_edit.setText(options_match.group(1))
+                    options = options_match.group(1)
+                    index = self.keyboard_tab.options_combobox.findText(options)
+                    if index >= 0:
+                        self.keyboard_tab.options_combobox.setCurrentIndex(index)
+
+
 
                 model_match = re.search(r'xkb\s*{.*?model\s+"([^"]+)"', content, re.DOTALL)
                 if model_match:
-                    self.keyboard_tab.model_edit.setText(model_match.group(1))
+                    model = model_match.group(1)
+                    index = self.keyboard_tab.model_combobox.findText(model)
+                    if index >= 0:
+                        self.keyboard_tab.model_combobox.setCurrentIndex(index)
+
 
                 file_match = re.search(r'xkb\s*{.*?file\s+"([^"]+)"', content, re.DOTALL)
                 if file_match:

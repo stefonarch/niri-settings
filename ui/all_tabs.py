@@ -826,6 +826,97 @@ class KeyboardTab(QWidget):
         xkb_group = QGroupBox(self.tr("Keyboard Layout"))
         xkb_layout = QVBoxLayout(xkb_group)
 
+        # Get layout list:
+        try:
+            layouts = []
+            with open("/usr/share/X11/xkb/rules/evdev.lst") as f:
+                in_layouts = False
+                for line in f:
+                    line = line.rstrip()
+
+                    if line.startswith("! layout"):
+                        in_layouts = True
+                        continue
+
+                    if in_layouts:
+                        if line.startswith("!"):
+                            break
+                        line = line.strip()
+                        if line:
+                            layouts.append(line)
+
+            layouts.sort()
+            layouts.insert(0, "Layout List")
+            self.xkb_layouts = layouts
+
+            # Get xkb options:
+            grp_options = []
+            with open("/usr/share/X11/xkb/rules/evdev.lst") as f:
+                in_options = False
+                for line in f:
+                    line = line.rstrip()
+
+                    if line.startswith("! option"):
+                        in_options = True
+                        continue
+
+                    if in_options:
+                        if line.startswith("!"):
+                            break
+                        line = line.strip()
+                        if line.startswith("grp:"):
+                            grp_options.append(line.split()[0])
+
+            grp_options.sort()
+            grp_options.insert(0, "")
+            self.xkb_options = grp_options
+
+            # Get xkb variants:
+            variants = []
+            in_variants = False
+            with open("/usr/share/X11/xkb/rules/evdev.lst") as f:
+                for line in f:
+                    line = line.rstrip()
+
+                    if line.startswith("! variant"):
+                        in_variants = True
+                        continue
+
+                    if in_variants:
+                        if line.startswith("!"):
+                            break  # next section
+                        if line.strip():
+                            variants.append(line.split()[0])
+
+            variants.sort()
+            variants.insert(0, "")
+            self.xkb_variants = variants
+
+        # Get xkb models:
+            models = []
+            in_models = False
+            with open("/usr/share/X11/xkb/rules/evdev.lst") as f:
+                for line in f:
+                    line = line.rstrip()
+
+                    if line.startswith("! model"):
+                        in_models = True
+                        continue
+
+                    if in_models:
+                        if line.startswith("!"):
+                            break  # next section
+                        if line.strip():
+                            models.append(line.split()[0])
+
+            models.sort()
+            models.insert(0, "")
+            self.xkb_models = models
+
+        except FileNotFoundError:
+            print("File /usr/share/X11/xkb/rules/evdev.lst not found")
+            pass
+
         # Layout
         layout_layout = QHBoxLayout()
         layout_label = QLabel(self.tr('Layout:'))
@@ -834,51 +925,59 @@ class KeyboardTab(QWidget):
         self.layout_edit.setMaximumWidth(120)
         self.layout_edit.setClearButtonEnabled(True)
 
+        self.list_combobox = QComboBox()
+        if hasattr(self, 'xkb_layouts') and self.xkb_layouts:
+            self.list_combobox.addItems(self.xkb_layouts)
+
         layout_layout.addWidget(layout_label)
-        #layout_layout.addSpacing(5)
         layout_layout.addWidget(self.layout_edit)
+        layout_layout.addSpacing(20)
+        layout_layout.addWidget(self.list_combobox)
         layout_layout.addStretch()
-        #layout_layout.addSpacing(10)
         xkb_layout.addLayout(layout_layout)
 
         # Variant
         variant_layout = QHBoxLayout()
         variant_label = QLabel(self.tr('Variant:'))
-        self.variant_edit = QLineEdit()
-        self.variant_edit.setPlaceholderText("e.g., colemak_dh_ortho")
-        self.variant_edit.setMinimumWidth(300)
-        self.variant_edit.setClearButtonEnabled(True)
+        self.variant_combobox = QComboBox()
+        self.variant_combobox.setEditable(True)
+
+        if hasattr(self, 'xkb_variants') and self.xkb_variants:
+            self.variant_combobox.addItems(self.xkb_variants)
 
         variant_layout.addWidget(variant_label)
-        #variant_layout.addSpacing(5)
-        variant_layout.addWidget(self.variant_edit)
+        variant_layout.addWidget(self.variant_combobox)
         variant_layout.addStretch()
         xkb_layout.addLayout(variant_layout)
 
         # Options
         options_layout = QHBoxLayout()
         options_label = QLabel(self.tr('Options:'))
-        self.options_edit = QLineEdit()
-        self.options_edit.setPlaceholderText("grp:alt_shift_toggle,compose:rctrl")
-        self.options_edit.setMinimumWidth(400)
-        self.options_edit.setClearButtonEnabled(True)
+        self.options_combobox = QComboBox()
+        self.options_combobox.setEditable(True)
+
+        if hasattr(self, 'xkb_options') and self.xkb_options:
+            self.options_combobox.addItems(self.xkb_options)
+        else:
+            common_options = ["alt_shift_toggle", "ctrl_shift_toggle", "caps_toggle", "shift_caps_toggle"]
+            self.options_combobox.addItems([""] + common_options)
 
         options_layout.addWidget(options_label)
-        options_layout.addWidget(self.options_edit)
+        options_layout.addWidget(self.options_combobox)
         options_layout.addStretch()
         xkb_layout.addLayout(options_layout)
 
         # Model
         model_layout = QHBoxLayout()
         model_label = QLabel(self.tr('Model:'))
-        self.model_edit = QLineEdit()
-        self.model_edit.setPlaceholderText("e.g., pc_105")
-        self.model_edit.setMinimumWidth(200)
-        self.model_edit.setClearButtonEnabled(True)
+        self.model_combobox = QComboBox()
+        self.model_combobox.setEditable(True)
+
+        if hasattr(self, 'xkb_models') and self.xkb_models:
+            self.model_combobox.addItems(self.xkb_models)
 
         model_layout.addWidget(model_label)
-        #model_layout.addSpacing(14)
-        model_layout.addWidget(self.model_edit)
+        model_layout.addWidget(self.model_combobox)
         model_layout.addStretch()
         xkb_layout.addLayout(model_layout)
 
