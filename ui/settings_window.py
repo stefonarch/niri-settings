@@ -5,7 +5,8 @@ from PyQt6.QtCore import Qt, QTranslator, QLocale, QLibraryInfo
 from PyQt6.QtGui import QIcon
 
 from .conf_path import get_config_path, get_niri_config_path
-from .all_tabs import AppearanceTab, BehaviorTab ,TouchpadTab, MouseTab,KeyboardTab
+from .all_tabs import AppearanceTab, BehaviorTab ,TouchpadTab, MouseTab
+from .keyboard_tab import KeyboardTab
 from .keybinds_tab import KeyBindsTab
 from .files_tab import FilesTab
 from .tools_tab import ToolsTab
@@ -369,7 +370,7 @@ class SettingsWindow(QMainWindow):
             lines = [
                 f'           layout "{self.keyboard_tab.layout_edit.text()}"\n',
                 f'           variant "{self.keyboard_tab.variant_combobox.currentText()}"\n',
-                f'           options "{self.keyboard_tab.options_combobox.currentText()}"\n',
+                f'           options "{self.keyboard_tab.options_edit.text()}"\n',
                 f'           model "{self.keyboard_tab.model_combobox.currentText()}"\n',
                 f'           file "{self.keyboard_tab.file_edit.text()}"\n',
             ]
@@ -384,7 +385,7 @@ class SettingsWindow(QMainWindow):
             variant = self.keyboard_tab.variant_combobox.currentText()
             if variant:
                 f.write(f'            variant "{variant}"\n')
-            options = self.keyboard_tab.options_combobox.currentText()
+            options = self.keyboard_tab.options_edit.text()
             if options:
                 f.write(f'            options "{options}"\n')
             model = self.keyboard_tab.model_combobox.currentText()
@@ -816,16 +817,9 @@ class SettingsWindow(QMainWindow):
                     if index >= 0:
                         self.keyboard_tab.variant_combobox.setCurrentIndex(index)
 
-
-
                 options_match = re.search(r'xkb\s*{.*?options\s+"([^"]+)"', content, re.DOTALL)
                 if options_match:
-                    options = options_match.group(1)
-                    index = self.keyboard_tab.options_combobox.findText(options)
-                    if index >= 0:
-                        self.keyboard_tab.options_combobox.setCurrentIndex(index)
-
-
+                   self.keyboard_tab.options_edit.setText(options_match.group(1))
 
                 model_match = re.search(r'xkb\s*{.*?model\s+"([^"]+)"', content, re.DOTALL)
                 if model_match:
