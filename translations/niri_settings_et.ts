@@ -200,7 +200,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="414"/>
         <source>Warp mouse to focus</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="415"/>
@@ -210,7 +210,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="416"/>
         <source>Always focus windows on request</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="417"/>
@@ -225,7 +225,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="419"/>
         <source>Workspace auto back and forth</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="420"/>
@@ -378,7 +378,7 @@
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="82"/>
-        <source>Set permanent in &apos;Tools → Settings&apos;</source>
+        <source>Set permanent in 'Tools → Settings'</source>
         <translation>Muuda seadistustest „Tarvikud“ → „Seadistused“ püsivaks</translation>
     </message>
     <message>
@@ -399,7 +399,7 @@ Parema klõpsuga näed muid valikuid</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="164"/>
-        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
         <translation>xdg-open pole tuvastatav. Palun kontrolli, et ta oleks paigaldatud ja leidub sinu OTSITEEL.</translation>
     </message>
     <message>
@@ -533,20 +533,20 @@ Parema klõpsuga näed muid valikuid</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="195"/>
-        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
+        <source>'Super' (Meta) key is identical with 'Mod' by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
-The shortcut field doesn&apos;t detect AltGr, use the checkbox instead.
-If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
-        <translation type="unfinished"></translation>
+The shortcut field doesn't detect AltGr, use the checkbox instead.
+If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="202"/>
-        <source>Add &quot;Mod&quot;</source>
+        <source>Add "Mod"</source>
         <translation>Lisa „Mod“</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="205"/>
-        <source>Add &quot;AltGr&quot;</source>
+        <source>Add "AltGr"</source>
         <translation>Lisa „AltGr“</translation>
     </message>
     <message>
@@ -578,17 +578,17 @@ If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</sourc
         <location filename="../ui/keybinds_tab.py" line="227"/>
         <source>Do not show this shortcut in the hotkey overlay.
 It also allows adding a custom title after editing.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="229"/>
         <source>Add mousebind:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="288"/>
         <source>Created new keybinds file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="301"/>
@@ -672,7 +672,7 @@ copyq show
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="544"/>
-        <source>Add a comment, &apos;e.g. // my comment&apos;, an empty line or else:</source>
+        <source>Add a comment, 'e.g. // my comment', an empty line or else:</source>
         <translation>Lisa tühjale reale kommentaar, nagu näiteks „// minu kommentaar“ või muidu:</translation>
     </message>
     <message>
@@ -699,57 +699,67 @@ copyq show
 <context>
     <name>KeyboardTab</name>
     <message>
-        <location filename="../ui/all_tabs.py" line="810"/>
+        <location filename="../ui/keyboard_tab.py" line="23"/>
         <source>Enable num lock at startup</source>
         <translation>Lülita numbrilukustus (Num Lock) käivitamisel sisse</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="816"/>
+        <location filename="../ui/keyboard_tab.py" line="29"/>
         <source>Track keyboard layout:</source>
         <translation>Jälgi klahvistiku paigutust:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="826"/>
+        <location filename="../ui/keyboard_tab.py" line="39"/>
         <source>Keyboard Layout</source>
         <translation>Klahvistiku paigutus</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="831"/>
+        <location filename="../ui/keyboard_tab.py" line="109"/>
         <source>Layout:</source>
         <translation>Paigutus:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="846"/>
+        <location filename="../ui/keyboard_tab.py" line="116"/>
+        <source>Select a layout to add</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/keyboard_tab.py" line="130"/>
         <source>Variant:</source>
         <translation>Variant:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="860"/>
+        <location filename="../ui/keyboard_tab.py" line="144"/>
         <source>Options:</source>
         <translation>Valikud:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="873"/>
+        <location filename="../ui/keyboard_tab.py" line="148"/>
+        <source>Options (double click to add)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/keyboard_tab.py" line="159"/>
         <source>Model:</source>
         <translation>Mudel:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="887"/>
+        <location filename="../ui/keyboard_tab.py" line="173"/>
         <source>File:</source>
         <translation>Fail:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="901"/>
+        <location filename="../ui/keyboard_tab.py" line="187"/>
         <source>Repeat Settings</source>
         <translation>Korduse seadistused</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="906"/>
+        <location filename="../ui/keyboard_tab.py" line="192"/>
         <source>Repeat delay:</source>
         <translation>Viivitus kordamisel:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="920"/>
+        <location filename="../ui/keyboard_tab.py" line="206"/>
         <source>Repeat rate:</source>
         <translation>Korduse sagedus:</translation>
     </message>
@@ -790,92 +800,92 @@ copyq show
 <context>
     <name>SettingsWindow</name>
     <message>
-        <location filename="../ui/settings_window.py" line="30"/>
+        <location filename="../ui/settings_window.py" line="31"/>
         <source>Niri Settings</source>
         <translation>Niri seadistused</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="62"/>
+        <location filename="../ui/settings_window.py" line="63"/>
         <source>Appearance</source>
         <translation>Välimus</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="63"/>
+        <location filename="../ui/settings_window.py" line="64"/>
         <source>Behavior</source>
         <translation>Käitumine</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="64"/>
+        <location filename="../ui/settings_window.py" line="65"/>
         <source>Touchpad</source>
         <translation>Puuteplaat</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="65"/>
+        <location filename="../ui/settings_window.py" line="66"/>
         <source>Mouse</source>
         <translation>Hiir</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="66"/>
+        <location filename="../ui/settings_window.py" line="67"/>
         <source>Keyboard</source>
         <translation>Klaviatuur</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="67"/>
+        <location filename="../ui/settings_window.py" line="68"/>
         <source>Shortcuts</source>
         <translation>Kiirklahvid</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="68"/>
+        <location filename="../ui/settings_window.py" line="69"/>
         <source>Files</source>
         <translation>Failid</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="69"/>
+        <location filename="../ui/settings_window.py" line="70"/>
         <source>Tools</source>
         <translation>Tarvikud</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="78"/>
+        <location filename="../ui/settings_window.py" line="79"/>
         <source>Wiki</source>
         <translation>Viki</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="82"/>
+        <location filename="../ui/settings_window.py" line="83"/>
         <source>Apply</source>
         <translation>Rakenda</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="86"/>
+        <location filename="../ui/settings_window.py" line="87"/>
         <source>Close</source>
         <translation>Sulge</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="869"/>
-        <location filename="../ui/settings_window.py" line="845"/>
+        <location filename="../ui/settings_window.py" line="875"/>
+        <location filename="../ui/settings_window.py" line="851"/>
         <location filename="../ui/settings_window.py" line="786"/>
         <location filename="../ui/settings_window.py" line="747"/>
-        <location filename="../ui/settings_window.py" line="659"/>
-        <location filename="../ui/settings_window.py" line="563"/>
+        <location filename="../ui/settings_window.py" line="660"/>
+        <location filename="../ui/settings_window.py" line="564"/>
         <source>Configuration Parsing Error</source>
         <translation>Seadistuste lugemise viga</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="871"/>
-        <location filename="../ui/settings_window.py" line="847"/>
+        <location filename="../ui/settings_window.py" line="877"/>
+        <location filename="../ui/settings_window.py" line="853"/>
         <location filename="../ui/settings_window.py" line="788"/>
         <location filename="../ui/settings_window.py" line="749"/>
-        <location filename="../ui/settings_window.py" line="661"/>
-        <location filename="../ui/settings_window.py" line="565"/>
+        <location filename="../ui/settings_window.py" line="662"/>
+        <location filename="../ui/settings_window.py" line="566"/>
         <source>Applying changes will reset to defaults some values, please check this file.</source>
         <translation>Muudatuste rakendamisel mõned väärtused lähtestuvad, vajadusel palun kontrolli faili sisu.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="859"/>
+        <location filename="../ui/settings_window.py" line="865"/>
         <source>Niri Settings: Configuration not found</source>
         <translation>Niri seadistused: seadistusi ei leidu</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="861"/>
+        <location filename="../ui/settings_window.py" line="867"/>
         <source>This is needed to make niri-settings work. 
 Identical settings before this line will be ignored then.</source>
         <translation>See on vajalik niri seadistuste toimimiseks.
@@ -986,7 +996,7 @@ Sel puhul enne seda rida asuvaid identseid seadistusi eiratakse.</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="105"/>
-        <source> Hide by default backup files in &apos;Files&apos; tab</source>
+        <source> Hide by default backup files in 'Files' tab</source>
         <translation> Vaikimisi peida vahekaardilt „Failid“ varukoopiad</translation>
     </message>
     <message>
@@ -1112,7 +1122,6 @@ sulgeda akna protsessi tunnusega {}?</translation>
     <message>
         <location filename="../ui/all_tabs.py" line="700"/>
         <source>Tap button map:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
-</context>
-</TS>
+</context></TS>

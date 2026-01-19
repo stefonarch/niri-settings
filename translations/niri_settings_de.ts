@@ -378,7 +378,7 @@
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="82"/>
-        <source>Set permanent in &apos;Tools → Settings&apos;</source>
+        <source>Set permanent in 'Tools → Settings'</source>
         <translation>In „Werkzeuge → Einstellungen“ als dauerhaft festlegen</translation>
     </message>
     <message>
@@ -399,7 +399,7 @@ Rechtsklick für weitere Optzionen</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="164"/>
-        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
         <translation>xdg-open nicht gefunden. Stellen Sie sicher, dass es installiert und in Ihrem PATH ist.</translation>
     </message>
     <message>
@@ -533,10 +533,10 @@ Rechtsklick für weitere Optzionen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="195"/>
-        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
+        <source>'Super' (Meta) key is identical with 'Mod' by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
-The shortcut field doesn&apos;t detect AltGr, use the checkbox instead.
-If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
+The shortcut field doesn't detect AltGr, use the checkbox instead.
+If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
         <translation>Die „Super“-Taste (Meta) entspricht standardmäßig der „Mod“-Taste.
 Eine Zeile auswählen um die Tastenkombination einzufügen, andernfalls wird sie unten hinzugefügt.
 Das Tastenkombinationsfeld erkennt AltGr nicht. Stattdessen das Kontrollkästchen verwenden.
@@ -544,13 +544,13 @@ Falls Niri einen Fehler anzeigt, überprüfen Sie die Datei „keybinds.kdl“ i
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="202"/>
-        <source>Add &quot;Mod&quot;</source>
-        <translation>&quot;Mod&quot; hinzufügen</translation>
+        <source>Add "Mod"</source>
+        <translation>"Mod" hinzufügen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="205"/>
-        <source>Add &quot;AltGr&quot;</source>
-        <translation>&quot;AltGr&quot; hinzufügen</translation>
+        <source>Add "AltGr"</source>
+        <translation>"AltGr" hinzufügen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="209"/>
@@ -676,8 +676,8 @@ copyq show
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="544"/>
-        <source>Add a comment, &apos;e.g. // my comment&apos;, an empty line or else:</source>
-        <translation>Einen Kommentar, zB: &apos;// Anmerkung&apos;, eine Leerzeile 
+        <source>Add a comment, 'e.g. // my comment', an empty line or else:</source>
+        <translation>Einen Kommentar, zB: '// Anmerkung', eine Leerzeile 
 oder anderes einfügen:</translation>
     </message>
     <message>
@@ -704,57 +704,67 @@ oder anderes einfügen:</translation>
 <context>
     <name>KeyboardTab</name>
     <message>
-        <location filename="../ui/all_tabs.py" line="810"/>
+        <location filename="../ui/keyboard_tab.py" line="23"/>
         <source>Enable num lock at startup</source>
         <translation>Num Lock beim Start aktivieren</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="816"/>
+        <location filename="../ui/keyboard_tab.py" line="29"/>
         <source>Track keyboard layout:</source>
         <translation>Tastaturlayout verfolgen:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="826"/>
+        <location filename="../ui/keyboard_tab.py" line="39"/>
         <source>Keyboard Layout</source>
         <translation>Tastaturlayout</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="831"/>
+        <location filename="../ui/keyboard_tab.py" line="109"/>
         <source>Layout:</source>
         <translation>Layout:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="846"/>
+        <location filename="../ui/keyboard_tab.py" line="116"/>
+        <source>Select a layout to add</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/keyboard_tab.py" line="130"/>
         <source>Variant:</source>
         <translation>Variante:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="860"/>
+        <location filename="../ui/keyboard_tab.py" line="144"/>
         <source>Options:</source>
         <translation>Optionen:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="873"/>
+        <location filename="../ui/keyboard_tab.py" line="148"/>
+        <source>Options (double click to add)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/keyboard_tab.py" line="159"/>
         <source>Model:</source>
         <translation>Modell:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="887"/>
+        <location filename="../ui/keyboard_tab.py" line="173"/>
         <source>File:</source>
         <translation>Datei:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="901"/>
+        <location filename="../ui/keyboard_tab.py" line="187"/>
         <source>Repeat Settings</source>
         <translation>Wiederholungseinstellungen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="906"/>
+        <location filename="../ui/keyboard_tab.py" line="192"/>
         <source>Repeat delay:</source>
         <translation>Wiederholungsverzögerung:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="920"/>
+        <location filename="../ui/keyboard_tab.py" line="206"/>
         <source>Repeat rate:</source>
         <translation>Wiederholungsrate:</translation>
     </message>
@@ -795,92 +805,92 @@ oder anderes einfügen:</translation>
 <context>
     <name>SettingsWindow</name>
     <message>
-        <location filename="../ui/settings_window.py" line="30"/>
+        <location filename="../ui/settings_window.py" line="31"/>
         <source>Niri Settings</source>
         <translation>Niri-Einstellungen</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="62"/>
+        <location filename="../ui/settings_window.py" line="63"/>
         <source>Appearance</source>
         <translation>Erscheinungsbild</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="63"/>
+        <location filename="../ui/settings_window.py" line="64"/>
         <source>Behavior</source>
         <translation>Verhalten</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="64"/>
+        <location filename="../ui/settings_window.py" line="65"/>
         <source>Touchpad</source>
         <translation>Touchpad</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="65"/>
+        <location filename="../ui/settings_window.py" line="66"/>
         <source>Mouse</source>
         <translation>Maus</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="66"/>
+        <location filename="../ui/settings_window.py" line="67"/>
         <source>Keyboard</source>
         <translation>Tastatur</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="67"/>
+        <location filename="../ui/settings_window.py" line="68"/>
         <source>Shortcuts</source>
         <translation>Tastenkombinationen</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="68"/>
+        <location filename="../ui/settings_window.py" line="69"/>
         <source>Files</source>
         <translation>Dateien</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="69"/>
+        <location filename="../ui/settings_window.py" line="70"/>
         <source>Tools</source>
         <translation>Werkzeuge</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="78"/>
+        <location filename="../ui/settings_window.py" line="79"/>
         <source>Wiki</source>
         <translation>Wiki</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="82"/>
+        <location filename="../ui/settings_window.py" line="83"/>
         <source>Apply</source>
         <translation>Übernehmen</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="86"/>
+        <location filename="../ui/settings_window.py" line="87"/>
         <source>Close</source>
         <translation>Schließen</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="869"/>
-        <location filename="../ui/settings_window.py" line="845"/>
+        <location filename="../ui/settings_window.py" line="875"/>
+        <location filename="../ui/settings_window.py" line="851"/>
         <location filename="../ui/settings_window.py" line="786"/>
         <location filename="../ui/settings_window.py" line="747"/>
-        <location filename="../ui/settings_window.py" line="659"/>
-        <location filename="../ui/settings_window.py" line="563"/>
+        <location filename="../ui/settings_window.py" line="660"/>
+        <location filename="../ui/settings_window.py" line="564"/>
         <source>Configuration Parsing Error</source>
         <translation>Konfigurationsparsungsfehler</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="871"/>
-        <location filename="../ui/settings_window.py" line="847"/>
+        <location filename="../ui/settings_window.py" line="877"/>
+        <location filename="../ui/settings_window.py" line="853"/>
         <location filename="../ui/settings_window.py" line="788"/>
         <location filename="../ui/settings_window.py" line="749"/>
-        <location filename="../ui/settings_window.py" line="661"/>
-        <location filename="../ui/settings_window.py" line="565"/>
+        <location filename="../ui/settings_window.py" line="662"/>
+        <location filename="../ui/settings_window.py" line="566"/>
         <source>Applying changes will reset to defaults some values, please check this file.</source>
         <translation>Das Anwenden der Änderungen wird einige Werte auf die Standardeinstellungen zurücksetzen, bitte überprüfen Sie diese Datei.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="859"/>
+        <location filename="../ui/settings_window.py" line="865"/>
         <source>Niri Settings: Configuration not found</source>
         <translation>Niri-Einstellungen: Konfiguration nicht gefunden</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="861"/>
+        <location filename="../ui/settings_window.py" line="867"/>
         <source>This is needed to make niri-settings work. 
 Identical settings before this line will be ignored then.</source>
         <translation>Dies ist erforderlich damit niri-settings funktioniert.
@@ -982,7 +992,7 @@ Identische Einstellungen vor dieser Zeile werden dann ignoriert.</translation>
     <message>
         <location filename="../ui/tools_tab.py" line="103"/>
         <source>Touchpad tab is hidden when no touchpad is detected</source>
-        <translation>Das &apos;Touchpad&apos; Tab wird ausgeblendet wenn keiner erkannt wird</translation>
+        <translation>Das 'Touchpad' Tab wird ausgeblendet wenn keiner erkannt wird</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="104"/>
@@ -991,7 +1001,7 @@ Identische Einstellungen vor dieser Zeile werden dann ignoriert.</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="105"/>
-        <source> Hide by default backup files in &apos;Files&apos; tab</source>
+        <source> Hide by default backup files in 'Files' tab</source>
         <translation> Sicherungsdateien standardmäßig im Tab „Dateien“ ausblenden</translation>
     </message>
     <message>
@@ -1119,5 +1129,4 @@ mit PID {} beenden wollen?</translation>
         <source>Tap button map:</source>
         <translation>Tipp-Tasten-Zuordnung:</translation>
     </message>
-</context>
-</TS>
+</context></TS>

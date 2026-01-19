@@ -189,7 +189,8 @@
         <source>bottom</source>
         <translation>bawah</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>BehaviorTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="412"/>
@@ -342,7 +343,8 @@
         <source>hiding after inactive for:</source>
         <translation>sembunyi setelah tidak aktif selama:</translation>
     </message>
-</context><context>
+</context>
+<context>
     <name>FilesTab</name>
     <message>
         <location filename="../ui/files_tab.py" line="24"/>
@@ -453,7 +455,8 @@ Right click for other options</source>
         <source>Permission denied. Cannot create backup.</source>
         <translation type="unfinished"/>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeybindsFileEditor</name>
     <message>
         <location filename="../ui/keybinds_tab.py" line="64"/>
@@ -684,64 +687,76 @@ copyq show
         <source>Select a niri action:</source>
         <translation type="unfinished"/>
     </message>
-</context><context>
+</context>
+<context>
     <name>KeyboardTab</name>
     <message>
-        <location filename="../ui/all_tabs.py" line="810"/>
+        <location filename="../ui/keyboard_tab.py" line="23"/>
         <source>Enable num lock at startup</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="816"/>
+        <location filename="../ui/keyboard_tab.py" line="29"/>
         <source>Track keyboard layout:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="826"/>
+        <location filename="../ui/keyboard_tab.py" line="39"/>
         <source>Keyboard Layout</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="831"/>
+        <location filename="../ui/keyboard_tab.py" line="109"/>
         <source>Layout:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="846"/>
+        <location filename="../ui/keyboard_tab.py" line="116"/>
+        <source>Select a layout to add</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/keyboard_tab.py" line="130"/>
         <source>Variant:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="860"/>
+        <location filename="../ui/keyboard_tab.py" line="144"/>
         <source>Options:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="873"/>
+        <location filename="../ui/keyboard_tab.py" line="148"/>
+        <source>Options (double click to add)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/keyboard_tab.py" line="159"/>
         <source>Model:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="887"/>
+        <location filename="../ui/keyboard_tab.py" line="173"/>
         <source>File:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="901"/>
+        <location filename="../ui/keyboard_tab.py" line="187"/>
         <source>Repeat Settings</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="906"/>
+        <location filename="../ui/keyboard_tab.py" line="192"/>
         <source>Repeat delay:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="920"/>
+        <location filename="../ui/keyboard_tab.py" line="206"/>
         <source>Repeat rate:</source>
         <translation type="unfinished"/>
     </message>
-</context><context>
+</context>
+<context>
     <name>MouseTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="742"/>
@@ -773,100 +788,102 @@ copyq show
         <source>Scroll factor:</source>
         <translation type="unfinished"/>
     </message>
-</context><context>
+</context>
+<context>
     <name>SettingsWindow</name>
     <message>
-        <location filename="../ui/settings_window.py" line="30"/>
+        <location filename="../ui/settings_window.py" line="31"/>
         <source>Niri Settings</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="62"/>
+        <location filename="../ui/settings_window.py" line="63"/>
         <source>Appearance</source>
         <translation>Tampilan</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="63"/>
+        <location filename="../ui/settings_window.py" line="64"/>
         <source>Behavior</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="64"/>
+        <location filename="../ui/settings_window.py" line="65"/>
         <source>Touchpad</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="65"/>
+        <location filename="../ui/settings_window.py" line="66"/>
         <source>Mouse</source>
         <translation>Tetikus</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="66"/>
+        <location filename="../ui/settings_window.py" line="67"/>
         <source>Keyboard</source>
         <translation>Kibor</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="67"/>
+        <location filename="../ui/settings_window.py" line="68"/>
         <source>Shortcuts</source>
         <translation>Pintasan</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="68"/>
+        <location filename="../ui/settings_window.py" line="69"/>
         <source>Files</source>
         <translation>Berkas</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="69"/>
+        <location filename="../ui/settings_window.py" line="70"/>
         <source>Tools</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="78"/>
+        <location filename="../ui/settings_window.py" line="79"/>
         <source>Wiki</source>
         <translation type="unfinished">Wiki</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="82"/>
+        <location filename="../ui/settings_window.py" line="83"/>
         <source>Apply</source>
         <translation>Terapkan</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="86"/>
+        <location filename="../ui/settings_window.py" line="87"/>
         <source>Close</source>
         <translation>Tutup</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="869"/>
-        <location filename="../ui/settings_window.py" line="845"/>
+        <location filename="../ui/settings_window.py" line="875"/>
+        <location filename="../ui/settings_window.py" line="851"/>
         <location filename="../ui/settings_window.py" line="786"/>
         <location filename="../ui/settings_window.py" line="747"/>
-        <location filename="../ui/settings_window.py" line="659"/>
-        <location filename="../ui/settings_window.py" line="563"/>
+        <location filename="../ui/settings_window.py" line="660"/>
+        <location filename="../ui/settings_window.py" line="564"/>
         <source>Configuration Parsing Error</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="871"/>
-        <location filename="../ui/settings_window.py" line="847"/>
+        <location filename="../ui/settings_window.py" line="877"/>
+        <location filename="../ui/settings_window.py" line="853"/>
         <location filename="../ui/settings_window.py" line="788"/>
         <location filename="../ui/settings_window.py" line="749"/>
-        <location filename="../ui/settings_window.py" line="661"/>
-        <location filename="../ui/settings_window.py" line="565"/>
+        <location filename="../ui/settings_window.py" line="662"/>
+        <location filename="../ui/settings_window.py" line="566"/>
         <source>Applying changes will reset to defaults some values, please check this file.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="859"/>
+        <location filename="../ui/settings_window.py" line="865"/>
         <source>Niri Settings: Configuration not found</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="861"/>
+        <location filename="../ui/settings_window.py" line="867"/>
         <source>This is needed to make niri-settings work. 
 Identical settings before this line will be ignored then.</source>
         <translation type="unfinished"/>
     </message>
-</context><context>
+</context>
+<context>
     <name>ToolsTab</name>
     <message>
         <location filename="../ui/tools_tab.py" line="21"/>
@@ -994,7 +1011,8 @@ Identical settings before this line will be ignored then.</source>
 with PID {}?</source>
         <translation type="unfinished"/>
     </message>
-</context><context>
+</context>
+<context>
     <name>TouchpadTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="611"/>

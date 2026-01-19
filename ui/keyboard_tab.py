@@ -15,7 +15,6 @@ class KeyboardTab(QWidget):
     def init_ui(self):
         layout = QVBoxLayout(self)
 
-        # Keyboard configuration section
         keyboard_frame = QFrame()
         keyboard_frame.setFrameStyle(QFrame.Shape.StyledPanel)
         keyboard_layout = QVBoxLayout(keyboard_frame)
@@ -42,7 +41,6 @@ class KeyboardTab(QWidget):
 
         # Get layout list:
         try:
-
             with open("/usr/share/X11/xkb/rules/evdev.lst") as f:
                 self.evdev_lines = [line.rstrip() for line in f]
 
@@ -62,29 +60,7 @@ class KeyboardTab(QWidget):
                             layouts.append(line)
 
             layouts.sort()
-            layouts.insert(0, "Layout List (click to add)")
             self.xkb_layouts = layouts
-
-            # Get xkb options:
-            grp_options = []
-            in_options = False
-            for line in self.evdev_lines:
-                line = line.rstrip()
-
-                if line.startswith("! option"):
-                    in_options = True
-                    continue
-
-                if in_options:
-                    if line.startswith("!"):
-                        break
-                    line = line.strip()
-                    if line.startswith("grp:"):
-                        grp_options.append(line.split()[0])
-
-            grp_options.sort()
-            grp_options.insert(0, "")
-            self.xkb_options = grp_options
 
             # Get xkb variants:
             variants = []
@@ -133,19 +109,20 @@ class KeyboardTab(QWidget):
         layout_label = QLabel(self.tr('Layout:'))
         self.layout_edit = QLineEdit()
         self.layout_edit.setPlaceholderText("e.g. us,ru,de")
-        #self.layout_edit.setMaximumWidth(120)
+        self.layout_edit.setWidth(120)
         self.layout_edit.setClearButtonEnabled(True)
 
         self.list_combobox = QComboBox()
+        self.list_combobox.setPlaceholderText(self.tr("Select a layout to add"))
+
         self.list_combobox.currentIndexChanged.connect(self.on_select)
         if hasattr(self, 'xkb_layouts') and self.xkb_layouts:
             self.list_combobox.addItems(self.xkb_layouts)
 
         layout_layout.addWidget(layout_label)
         layout_layout.addWidget(self.layout_edit)
-        layout_layout.addSpacing(30)
         layout_layout.addWidget(self.list_combobox)
-        #layout_layout.addStretch()
+        layout_layout.addStretch()
         xkb_layout.addLayout(layout_layout)
 
         # Variant
@@ -173,9 +150,8 @@ class KeyboardTab(QWidget):
 
         options_layout.addWidget(options_label)
         options_layout.addWidget(self.options_edit)
-        options_layout.addSpacing(15)
         options_layout.addWidget(self.show_options_btn)
-        #.addStretch()
+        options_layout.addStretch()
         xkb_layout.addLayout(options_layout)
 
         # Model
