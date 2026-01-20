@@ -109,7 +109,7 @@ class KeyboardTab(QWidget):
         layout_label = QLabel(self.tr('Layout:'))
         self.layout_edit = QLineEdit()
         self.layout_edit.setPlaceholderText("e.g. us,ru,de")
-        self.layout_edit.setWidth(120)
+        self.layout_edit.setFixedWidth(200)
         self.layout_edit.setClearButtonEnabled(True)
 
         self.list_combobox = QComboBox()
