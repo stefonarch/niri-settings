@@ -280,7 +280,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="458"/>
         <source>Applications may decide</source>
-        <translation>Programma's laten kiezen</translation>
+        <translation>Programma&apos;s laten kiezen</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="491"/>
@@ -326,7 +326,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="549"/>
         <source>Screenshots:</source>
-        <translation>Schermfoto's:</translation>
+        <translation>Schermfoto&apos;s:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="561"/>
@@ -378,7 +378,7 @@
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="82"/>
-        <source>Set permanent in 'Tools → Settings'</source>
+        <source>Set permanent in &apos;Tools → Settings&apos;</source>
         <translation>Stel dit permanent in via ‘Hulpmiddelen → Instellingen’</translation>
     </message>
     <message>
@@ -399,7 +399,7 @@ Rechtsklik voor andere mogelijkheden</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="164"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>xdg-open is niet aangetroffen. Controleer de installatie en PATH.</translation>
     </message>
     <message>
@@ -533,10 +533,10 @@ Rechtsklik voor andere mogelijkheden</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="195"/>
-        <source>'Super' (Meta) key is identical with 'Mod' by default.
+        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
-The shortcut field doesn't detect AltGr, use the checkbox instead.
-If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
+The shortcut field doesn&apos;t detect AltGr, use the checkbox instead.
+If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
         <translation>De supertoets (meta) is standaard gelijk aan de modtoets.
  Klik op een regel om de sneltoets in te voeren, anders wordt deze aan de onderzijde toegevoegd.
 Let op: het sneltoetsveld heeft geen ondersteuning voor AltGr — gebruik hiervoor het aankruisvakje.
@@ -544,12 +544,12 @@ Als Niri een foutmelding toont, verifieer dan ‘keybinds.kdl’ op het volgende
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="202"/>
-        <source>Add "Mod"</source>
+        <source>Add &quot;Mod&quot;</source>
         <translation>‘Mod’ toevoegen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="205"/>
-        <source>Add "AltGr"</source>
+        <source>Add &quot;AltGr&quot;</source>
         <translation>‘AltGr’ toevoegen</translation>
     </message>
     <message>
@@ -676,7 +676,7 @@ copyq show
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="544"/>
-        <source>Add a comment, 'e.g. // my comment', an empty line or else:</source>
+        <source>Add a comment, &apos;e.g. // my comment&apos;, an empty line or else:</source>
         <translation>Voeg een opmerking toe, bijvoorbeeld ‘// mijn opmerking’, een blanco regel of iets anders:</translation>
     </message>
     <message>
@@ -725,7 +725,7 @@ copyq show
     <message>
         <location filename="../ui/keyboard_tab.py" line="116"/>
         <source>Select a layout to add</source>
-        <translation type="unfinished"/>
+        <translation>Kies een toe te voegen indeling</translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="130"/>
@@ -740,7 +740,7 @@ copyq show
     <message>
         <location filename="../ui/keyboard_tab.py" line="148"/>
         <source>Options (double click to add)</source>
-        <translation type="unfinished"/>
+        <translation>Opties (dubbelklik om toe te voegen)</translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="159"/>
@@ -1000,7 +1000,7 @@ Identieke instellingen voorafgaand aan deze regel worden genegeerd.</translation
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="105"/>
-        <source> Hide by default backup files in 'Files' tab</source>
+        <source> Hide by default backup files in &apos;Files&apos; tab</source>
         <translation> Verberg reservekopiebestanden op het tabblad ‘Bestanden’</translation>
     </message>
     <message>
@@ -1128,4 +1128,5 @@ gedwongen wilt afsluiten?</translation>
         <source>Tap button map:</source>
         <translation>Tikknop toewijzen aan:</translation>
     </message>
-</context></TS>
+</context>
+</TS>
