@@ -200,7 +200,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="414"/>
         <source>Warp mouse to focus</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="415"/>
@@ -210,7 +210,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="416"/>
         <source>Always focus windows on request</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="417"/>
@@ -225,7 +225,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="419"/>
         <source>Workspace auto back and forth</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="420"/>
@@ -378,7 +378,7 @@
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="82"/>
-        <source>Set permanent in 'Tools → Settings'</source>
+        <source>Set permanent in &apos;Tools → Settings&apos;</source>
         <translation>Muuda seadistustest „Tarvikud“ → „Seadistused“ püsivaks</translation>
     </message>
     <message>
@@ -399,7 +399,7 @@ Parema klõpsuga näed muid valikuid</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="164"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>xdg-open pole tuvastatav. Palun kontrolli, et ta oleks paigaldatud ja leidub sinu OTSITEEL.</translation>
     </message>
     <message>
@@ -533,20 +533,20 @@ Parema klõpsuga näed muid valikuid</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="195"/>
-        <source>'Super' (Meta) key is identical with 'Mod' by default.
+        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
-The shortcut field doesn't detect AltGr, use the checkbox instead.
-If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
-        <translation type="unfinished"/>
+The shortcut field doesn&apos;t detect AltGr, use the checkbox instead.
+If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="202"/>
-        <source>Add "Mod"</source>
+        <source>Add &quot;Mod&quot;</source>
         <translation>Lisa „Mod“</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="205"/>
-        <source>Add "AltGr"</source>
+        <source>Add &quot;AltGr&quot;</source>
         <translation>Lisa „AltGr“</translation>
     </message>
     <message>
@@ -578,17 +578,17 @@ If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
         <location filename="../ui/keybinds_tab.py" line="227"/>
         <source>Do not show this shortcut in the hotkey overlay.
 It also allows adding a custom title after editing.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="229"/>
         <source>Add mousebind:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="288"/>
         <source>Created new keybinds file</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="301"/>
@@ -672,7 +672,7 @@ copyq show
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="544"/>
-        <source>Add a comment, 'e.g. // my comment', an empty line or else:</source>
+        <source>Add a comment, &apos;e.g. // my comment&apos;, an empty line or else:</source>
         <translation>Lisa tühjale reale kommentaar, nagu näiteks „// minu kommentaar“ või muidu:</translation>
     </message>
     <message>
@@ -721,7 +721,7 @@ copyq show
     <message>
         <location filename="../ui/keyboard_tab.py" line="116"/>
         <source>Select a layout to add</source>
-        <translation type="unfinished"/>
+        <translation>Vali lisatav paigutus</translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="130"/>
@@ -736,7 +736,7 @@ copyq show
     <message>
         <location filename="../ui/keyboard_tab.py" line="148"/>
         <source>Options (double click to add)</source>
-        <translation type="unfinished"/>
+        <translation>Valikud (lisamiseks topeltklõpsa)</translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="159"/>
@@ -996,7 +996,7 @@ Sel puhul enne seda rida asuvaid identseid seadistusi eiratakse.</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="105"/>
-        <source> Hide by default backup files in 'Files' tab</source>
+        <source> Hide by default backup files in &apos;Files&apos; tab</source>
         <translation> Vaikimisi peida vahekaardilt „Failid“ varukoopiad</translation>
     </message>
     <message>
@@ -1122,6 +1122,7 @@ sulgeda akna protsessi tunnusega {}?</translation>
     <message>
         <location filename="../ui/all_tabs.py" line="700"/>
         <source>Tap button map:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
-</context></TS>
+</context>
+</TS>
