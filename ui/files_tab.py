@@ -100,6 +100,15 @@ class FilesTab(QWidget):
         KdlHighlighter(self.terminal.document())
         bottom_layout.addWidget(self.terminal)
 
+        # Status bar
+        self.status_label = QLabel()
+        bottom_layout.addWidget(self.status_label)
+        font = QFont()
+        font.setItalic(True)
+        self.status_label.setFont(font)
+
+        bottom_layout.addWidget(self.status_label)
+
         self.list_widget.itemClicked.connect(self.on_item_clicked)
         self.list_widget.itemDoubleClicked.connect(self.on_item_double_clicked)
         self.list_widget.customContextMenuRequested.connect(self.show_context_menu)
@@ -310,9 +319,9 @@ class FilesTab(QWidget):
             return
 
         info_path = str(file_path).replace(self.home, "~", 1)
-        self.terminal.setPlainText(f"File {info_path} restored from backup")
+        self.status_label.setText(f"File {info_path} restored from backup")
+        QTimer.singleShot(3000, self.clear_statusbar)
         self.refresh_files()
-        QTimer.singleShot(2500, self.clear_terminal)
 
     def move_to_trash(self):
         reply = QMessageBox.question(
@@ -344,11 +353,12 @@ class FilesTab(QWidget):
           self.save_btn.setEnabled(self.terminal.toPlainText() != self.text)
 
     def clear_terminal(self):
-       # self.terminal.textChanged.disconnect(self.on_text_changed)
         self.terminal.blockSignals(True)
         self.terminal.clear()
         self.terminal.blockSignals(False)
-       # self.terminal.textChanged.connect(self.on_text_changed)
+
+    def clear_statusbar(self):
+        self.status_label.setText("")
 
     def save_selected(self):
         current_item = self.list_widget.currentItem()
@@ -357,10 +367,9 @@ class FilesTab(QWidget):
         with open(file_path, "w", encoding="utf-8") as f:
             f.write(self.terminal.toPlainText())
         save_path = str(file_path).replace(self.home, "~", 1)
-        self.terminal.setPlainText(f"File {save_path} saved")
-        self.terminal.setReadOnly(True)
+        self.status_label.setText(f"File {save_path} saved")
+        QTimer.singleShot(3000, self.clear_statusbar)
         self.refresh_files()
-        QTimer.singleShot(2500, self.clear_terminal)
 
     def backup_selected(self):
         current_item = self.list_widget.currentItem()
@@ -375,9 +384,9 @@ class FilesTab(QWidget):
             shutil.copy2(file_path, backup_path)
 
             info_path = str(backup_path).replace(self.home, "~", 1)
-            self.terminal.setPlainText(f"Backup saved as {info_path}")
+            self.status_label.setText(f"Backup saved as {info_path}")
             self.refresh_files()
-            QTimer.singleShot(2500, self.clear_terminal)
+            QTimer.singleShot(3000, self.clear_statusbar)
 
             return True
 
