@@ -369,7 +369,7 @@ class FilesTab(QWidget):
         save_path = str(file_path).replace(self.home, "~", 1)
         self.status_label.setText(f"File {save_path} saved")
         QTimer.singleShot(3000, self.clear_statusbar)
-        self.refresh_files()
+        self.save_btn.setEnabled(False)
 
     def backup_selected(self):
         current_item = self.list_widget.currentItem()
