@@ -115,7 +115,7 @@ class FilesTab(QWidget):
 
         # Add bottom panel to splitter
         splitter.addWidget(bottom_panel)
-        splitter.setSizes([200, 400])
+        splitter.setSizes([150, 450])
 
         # Add splitter to layout
         layout.addWidget(splitter)
@@ -188,6 +188,7 @@ class FilesTab(QWidget):
         self.terminal.setPlainText(self.text)
         self.save_btn.setEnabled(False)  # disabled until content actually changes
         self.terminal.textChanged.connect(self.on_text_changed)
+        self.clear_statusbar()
 
     def on_item_double_clicked(self, item):
         file_path = item.data(Qt.ItemDataRole.UserRole)
@@ -320,7 +321,7 @@ class FilesTab(QWidget):
 
         info_path = str(file_path).replace(self.home, "~", 1)
         self.status_label.setText(f"File {info_path} restored from backup")
-        QTimer.singleShot(3000, self.clear_statusbar)
+        QTimer.singleShot(5000, self.clear_statusbar)
         self.refresh_files()
 
     def move_to_trash(self):
@@ -334,7 +335,7 @@ class FilesTab(QWidget):
         if reply == QMessageBox.StandardButton.Yes:
             QFile.moveToTrash(self.to_trash)
             self.refresh_files()
-            self.clear_terminal()
+            self.terminal.clear()
 
     def show_error(self, message):
         QMessageBox.critical(self, "Error", message)
@@ -350,12 +351,7 @@ class FilesTab(QWidget):
         self.backup_btn.setEnabled(False)
 
     def on_text_changed(self):
-          self.save_btn.setEnabled(self.terminal.toPlainText() != self.text)
-
-    def clear_terminal(self):
-        self.terminal.blockSignals(True)
-        self.terminal.clear()
-        self.terminal.blockSignals(False)
+        self.save_btn.setEnabled(self.terminal.toPlainText() != self.text)
 
     def clear_statusbar(self):
         self.status_label.setText("")
@@ -367,9 +363,11 @@ class FilesTab(QWidget):
         with open(file_path, "w", encoding="utf-8") as f:
             f.write(self.terminal.toPlainText())
         save_path = str(file_path).replace(self.home, "~", 1)
-        self.status_label.setText(f"File {save_path} saved")
-        QTimer.singleShot(3000, self.clear_statusbar)
+        self.status_label.setText(
+            self.tr("File %1 saved").replace("%1", save_path)
+            )
         self.save_btn.setEnabled(False)
+        self.validate_saved()
 
     def backup_selected(self):
         current_item = self.list_widget.currentItem()
@@ -384,9 +382,12 @@ class FilesTab(QWidget):
             shutil.copy2(file_path, backup_path)
 
             info_path = str(backup_path).replace(self.home, "~", 1)
-            self.status_label.setText(f"Backup saved as {info_path}")
+            self.status_label.setText(
+            self.tr("Backup saved as %1").replace("%1", info_path)
+            )
+
             self.refresh_files()
-            QTimer.singleShot(3000, self.clear_statusbar)
+            QTimer.singleShot(5000, self.clear_statusbar)
 
             return True
 
@@ -396,10 +397,6 @@ class FilesTab(QWidget):
         except Exception as e:
             self.show_info(self.tr(f"Backup failed: {str(e)}"))
             return False
-
-    ansi_escape = re.compile(r'\x1b\[[0-9;]*m') # clean "file is valid" output
-    def clean_ansi(self, text: str) -> str:
-        return self.ansi_escape.sub('', text)
 
     def validate_selected(self):
         item = self.list_widget.currentItem()
@@ -413,20 +410,36 @@ class FilesTab(QWidget):
         self.proc.setProgram("niri")
         self.proc.setArguments(["validate", "-c", file_path])
 
-        self.proc.readyReadStandardOutput.connect(
-            lambda: self.terminal.appendPlainText(
-                self.clean_ansi(bytes(self.proc.readAllStandardOutput()).decode())
-            )
-        )
-
-        self.proc.readyReadStandardError.connect(
-            lambda: self.terminal.appendPlainText(
-                self.clean_ansi(bytes(self.proc.readAllStandardError()).decode())
-            )
-        )
-
-        info_path = str(file_path).replace(self.home, "~", 1)
-        self.terminal.clear()
-        self.terminal.appendPlainText(f"$ niri validate -c {info_path}\n")
-
+        # Merge stdout and stderr before starting the process
+        self.proc.setProcessChannelMode(QProcess.ProcessChannelMode.MergedChannels)
         self.proc.start()
+        self.proc.waitForFinished()
+
+        output = self.proc.readAll().data().decode()
+        info_path = str(file_path).replace(self.home, "~", 1)
+
+        if "valid" in output:
+            self.status_label.setText(
+            self.tr("%1 is valid").replace("%1", info_path)
+            )
+            QTimer.singleShot(3000, self.clear_statusbar)
+        else:
+            self.status_label.setText(f"{output}")
+
+    def validate_saved(self):
+        item = self.list_widget.currentItem()
+        file_path = item.data(Qt.ItemDataRole.UserRole)
+        self.text = Path(file_path).read_text(encoding="utf-8")
+
+        self.proc = QProcess(self)
+        self.proc.setProgram("niri")
+        self.proc.setArguments(["validate", "-c", file_path])
+        self.proc.setProcessChannelMode(QProcess.ProcessChannelMode.MergedChannels)
+        self.proc.start()
+        self.proc.waitForFinished()
+
+        output = self.proc.readAll().data().decode()
+        info_path = str(file_path).replace(self.home, "~", 1)
+
+        if "valid" not in output:
+            self.status_label.setText(f"{output}")

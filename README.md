@@ -11,6 +11,7 @@ https://github.com/user-attachments/assets/23edec87-6165-4446-b54f-735c01999471
 * Basic settings for appearance, behavior, mouse, touchpad and keyboard.
 * Shortcut editor with filter and "Add new shortcut" dialog, including the list of `niri msg action` commands.
 * Display, edit, open and backup all niri config files, including a configuration validator.
+Saved changes are also validated immediately.
 * Toolbox for showing infos about windows, outputs, layers and performing actions (pick color to clipboard,
 kill selected window, detect xwayland windows).
 * Syntax highlighting in configuration files.
@@ -78,4 +79,4 @@ If you have an allergy, please be aware.
 
 * Get feedback and testing.
 * Improve parsing regex.
-* Who knows?
+* Who knows what can cross my way?
