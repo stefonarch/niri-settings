@@ -391,72 +391,87 @@ Clique duplo para abrir no editor de texto
 Clique com o botão direito para outras opções</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="134"/>
+        <location filename="../ui/files_tab.py" line="143"/>
         <source>Directory does not exist:
 {base_path}</source>
         <translation>O diretório Não existe:
 {base_path}</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="164"/>
+        <location filename="../ui/files_tab.py" line="173"/>
         <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
         <translation>xdg-open não encontrado. Certifique-se de que ele está instalado e no seu PATH.</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="195"/>
+        <location filename="../ui/files_tab.py" line="205"/>
         <source>Open</source>
         <translation>Abrir</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="200"/>
+        <location filename="../ui/files_tab.py" line="210"/>
         <source>Show in file manager</source>
         <translation>Mostrar no Gerenciador de Arquivos</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="207"/>
+        <location filename="../ui/files_tab.py" line="217"/>
         <source>Copy path to clipboard</source>
         <translation>Copiar caminho para Área de Transferência</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="214"/>
+        <location filename="../ui/files_tab.py" line="224"/>
         <source>Create new file here</source>
         <translation>Criar novo arquivo aqui</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="219"/>
+        <location filename="../ui/files_tab.py" line="229"/>
         <source>Restore from backup</source>
         <translation>Restaurar a partir do Backup</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="224"/>
+        <location filename="../ui/files_tab.py" line="234"/>
         <source>Move to trash</source>
         <translation>Mover para o Lixo</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="284"/>
+        <location filename="../ui/files_tab.py" line="294"/>
         <source>Selected a backup file!</source>
         <translation>Arquivo de Backup selecionado!</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="320"/>
-        <location filename="../ui/files_tab.py" line="290"/>
+        <location filename="../ui/files_tab.py" line="330"/>
+        <location filename="../ui/files_tab.py" line="300"/>
         <source>Confirm</source>
         <translation>Confirmar</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="291"/>
+        <location filename="../ui/files_tab.py" line="301"/>
         <source>Overwrite this file with its backup?</source>
         <translation>Sobrescrever este arquivo com o backup dele?</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="321"/>
+        <location filename="../ui/files_tab.py" line="331"/>
         <source>Move file to trash?</source>
         <translation>Mover esse arquivo para o lixo?</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="385"/>
+        <location filename="../ui/files_tab.py" line="367"/>
+        <source>File %1 saved</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/files_tab.py" line="386"/>
+        <source>Backup saved as %1</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/files_tab.py" line="395"/>
         <source>Permission denied. Cannot create backup.</source>
         <translation>Permissão negada. Não foi possível criar o Backup.</translation>
+    </message>
+    <message>
+        <location filename="../ui/files_tab.py" line="423"/>
+        <source>%1 is valid</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>

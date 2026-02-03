@@ -280,7 +280,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="458"/>
         <source>Applications may decide</source>
-        <translation>Programma&apos;s laten kiezen</translation>
+        <translation>Programma's laten kiezen</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="491"/>
@@ -326,7 +326,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="549"/>
         <source>Screenshots:</source>
-        <translation>Schermfoto&apos;s:</translation>
+        <translation>Schermfoto's:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="561"/>
@@ -378,7 +378,7 @@
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="82"/>
-        <source>Set permanent in &apos;Tools → Settings&apos;</source>
+        <source>Set permanent in 'Tools → Settings'</source>
         <translation>Stel dit permanent in via ‘Hulpmiddelen → Instellingen’</translation>
     </message>
     <message>
@@ -391,72 +391,87 @@ Dubbelklik om te openen in een tekstbewerker
 Rechtsklik voor andere mogelijkheden</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="134"/>
+        <location filename="../ui/files_tab.py" line="143"/>
         <source>Directory does not exist:
 {base_path}</source>
         <translation>Deze map bestaat niet:
 {base_path}</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="164"/>
-        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
+        <location filename="../ui/files_tab.py" line="173"/>
+        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
         <translation>xdg-open is niet aangetroffen. Controleer de installatie en PATH.</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="195"/>
+        <location filename="../ui/files_tab.py" line="205"/>
         <source>Open</source>
         <translation>Openen</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="200"/>
+        <location filename="../ui/files_tab.py" line="210"/>
         <source>Show in file manager</source>
         <translation>Tonen in bestandsbeheerder</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="207"/>
+        <location filename="../ui/files_tab.py" line="217"/>
         <source>Copy path to clipboard</source>
         <translation>Locatie kopiëren naar klembord</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="214"/>
+        <location filename="../ui/files_tab.py" line="224"/>
         <source>Create new file here</source>
         <translation>Nieuw bestand maken</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="219"/>
+        <location filename="../ui/files_tab.py" line="229"/>
         <source>Restore from backup</source>
         <translation>Herstellen uit reservekopie</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="224"/>
+        <location filename="../ui/files_tab.py" line="234"/>
         <source>Move to trash</source>
         <translation>Verplaatsen naar prullenbak</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="284"/>
+        <location filename="../ui/files_tab.py" line="294"/>
         <source>Selected a backup file!</source>
         <translation>Reservekopiebestand gekozen!</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="320"/>
-        <location filename="../ui/files_tab.py" line="290"/>
+        <location filename="../ui/files_tab.py" line="330"/>
+        <location filename="../ui/files_tab.py" line="300"/>
         <source>Confirm</source>
         <translation>Bevestigen</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="291"/>
+        <location filename="../ui/files_tab.py" line="301"/>
         <source>Overwrite this file with its backup?</source>
         <translation>Weet je zeker dat je dit bestand wilt overschrijven met de reservekopie?</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="321"/>
+        <location filename="../ui/files_tab.py" line="331"/>
         <source>Move file to trash?</source>
         <translation>Weet je zeker dat je het bestand wilt weggooien?</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="385"/>
+        <location filename="../ui/files_tab.py" line="367"/>
+        <source>File %1 saved</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/files_tab.py" line="386"/>
+        <source>Backup saved as %1</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/files_tab.py" line="395"/>
         <source>Permission denied. Cannot create backup.</source>
         <translation>Toegang geweigerd: de reservekopie kan niet worden gemaakt.</translation>
+    </message>
+    <message>
+        <location filename="../ui/files_tab.py" line="423"/>
+        <source>%1 is valid</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -533,10 +548,10 @@ Rechtsklik voor andere mogelijkheden</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="195"/>
-        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
+        <source>'Super' (Meta) key is identical with 'Mod' by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
-The shortcut field doesn&apos;t detect AltGr, use the checkbox instead.
-If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
+The shortcut field doesn't detect AltGr, use the checkbox instead.
+If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
         <translation>De supertoets (meta) is standaard gelijk aan de modtoets.
  Klik op een regel om de sneltoets in te voeren, anders wordt deze aan de onderzijde toegevoegd.
 Let op: het sneltoetsveld heeft geen ondersteuning voor AltGr — gebruik hiervoor het aankruisvakje.
@@ -544,12 +559,12 @@ Als Niri een foutmelding toont, verifieer dan ‘keybinds.kdl’ op het volgende
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="202"/>
-        <source>Add &quot;Mod&quot;</source>
+        <source>Add "Mod"</source>
         <translation>‘Mod’ toevoegen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="205"/>
-        <source>Add &quot;AltGr&quot;</source>
+        <source>Add "AltGr"</source>
         <translation>‘AltGr’ toevoegen</translation>
     </message>
     <message>
@@ -676,7 +691,7 @@ copyq show
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="544"/>
-        <source>Add a comment, &apos;e.g. // my comment&apos;, an empty line or else:</source>
+        <source>Add a comment, 'e.g. // my comment', an empty line or else:</source>
         <translation>Voeg een opmerking toe, bijvoorbeeld ‘// mijn opmerking’, een blanco regel of iets anders:</translation>
     </message>
     <message>
@@ -1000,7 +1015,7 @@ Identieke instellingen voorafgaand aan deze regel worden genegeerd.</translation
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="105"/>
-        <source> Hide by default backup files in &apos;Files&apos; tab</source>
+        <source> Hide by default backup files in 'Files' tab</source>
         <translation> Verberg reservekopiebestanden op het tabblad ‘Bestanden’</translation>
     </message>
     <message>
@@ -1128,5 +1143,4 @@ gedwongen wilt afsluiten?</translation>
         <source>Tap button map:</source>
         <translation>Tikknop toewijzen aan:</translation>
     </message>
-</context>
-</TS>
+</context></TS>

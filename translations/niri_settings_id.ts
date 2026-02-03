@@ -389,70 +389,85 @@ Right click for other options</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="134"/>
+        <location filename="../ui/files_tab.py" line="143"/>
         <source>Directory does not exist:
 {base_path}</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="164"/>
+        <location filename="../ui/files_tab.py" line="173"/>
         <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="195"/>
+        <location filename="../ui/files_tab.py" line="205"/>
         <source>Open</source>
         <translation>Buka</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="200"/>
+        <location filename="../ui/files_tab.py" line="210"/>
         <source>Show in file manager</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="207"/>
+        <location filename="../ui/files_tab.py" line="217"/>
         <source>Copy path to clipboard</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="214"/>
+        <location filename="../ui/files_tab.py" line="224"/>
         <source>Create new file here</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="219"/>
+        <location filename="../ui/files_tab.py" line="229"/>
         <source>Restore from backup</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="224"/>
+        <location filename="../ui/files_tab.py" line="234"/>
         <source>Move to trash</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="284"/>
+        <location filename="../ui/files_tab.py" line="294"/>
         <source>Selected a backup file!</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="320"/>
-        <location filename="../ui/files_tab.py" line="290"/>
+        <location filename="../ui/files_tab.py" line="330"/>
+        <location filename="../ui/files_tab.py" line="300"/>
         <source>Confirm</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="291"/>
+        <location filename="../ui/files_tab.py" line="301"/>
         <source>Overwrite this file with its backup?</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="321"/>
+        <location filename="../ui/files_tab.py" line="331"/>
         <source>Move file to trash?</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="385"/>
+        <location filename="../ui/files_tab.py" line="367"/>
+        <source>File %1 saved</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/files_tab.py" line="386"/>
+        <source>Backup saved as %1</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/files_tab.py" line="395"/>
         <source>Permission denied. Cannot create backup.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/files_tab.py" line="423"/>
+        <source>%1 is valid</source>
         <translation type="unfinished"/>
     </message>
 </context>

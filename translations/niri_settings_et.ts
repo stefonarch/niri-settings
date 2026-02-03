@@ -200,7 +200,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="414"/>
         <source>Warp mouse to focus</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="415"/>
@@ -210,7 +210,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="416"/>
         <source>Always focus windows on request</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="417"/>
@@ -225,7 +225,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="419"/>
         <source>Workspace auto back and forth</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="420"/>
@@ -378,7 +378,7 @@
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="82"/>
-        <source>Set permanent in &apos;Tools → Settings&apos;</source>
+        <source>Set permanent in 'Tools → Settings'</source>
         <translation>Muuda seadistustest „Tarvikud“ → „Seadistused“ püsivaks</translation>
     </message>
     <message>
@@ -391,72 +391,87 @@ Topeltklõpsuga ava tekstitoimeti
 Parema klõpsuga näed muid valikuid</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="134"/>
+        <location filename="../ui/files_tab.py" line="143"/>
         <source>Directory does not exist:
 {base_path}</source>
         <translation>Kausta pole olemas:
 {base_path}</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="164"/>
-        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
+        <location filename="../ui/files_tab.py" line="173"/>
+        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
         <translation>xdg-open pole tuvastatav. Palun kontrolli, et ta oleks paigaldatud ja leidub sinu OTSITEEL.</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="195"/>
+        <location filename="../ui/files_tab.py" line="205"/>
         <source>Open</source>
         <translation>Ava</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="200"/>
+        <location filename="../ui/files_tab.py" line="210"/>
         <source>Show in file manager</source>
         <translation>Näita failihalduris</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="207"/>
+        <location filename="../ui/files_tab.py" line="217"/>
         <source>Copy path to clipboard</source>
         <translation>Kopeeri asukoht lõikelauale</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="214"/>
+        <location filename="../ui/files_tab.py" line="224"/>
         <source>Create new file here</source>
         <translation>Loo uus fail siia</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="219"/>
+        <location filename="../ui/files_tab.py" line="229"/>
         <source>Restore from backup</source>
         <translation>Taasta varukoopiast</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="224"/>
+        <location filename="../ui/files_tab.py" line="234"/>
         <source>Move to trash</source>
         <translation>Viska prügikasti</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="284"/>
+        <location filename="../ui/files_tab.py" line="294"/>
         <source>Selected a backup file!</source>
         <translation>Oled valinud varukoopiafaili!</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="320"/>
-        <location filename="../ui/files_tab.py" line="290"/>
+        <location filename="../ui/files_tab.py" line="330"/>
+        <location filename="../ui/files_tab.py" line="300"/>
         <source>Confirm</source>
         <translation>Kinnita</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="291"/>
+        <location filename="../ui/files_tab.py" line="301"/>
         <source>Overwrite this file with its backup?</source>
         <translation>Kas asendad antud faili tema varukoopiaga?</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="321"/>
+        <location filename="../ui/files_tab.py" line="331"/>
         <source>Move file to trash?</source>
         <translation>Kas viskad faili prügikasti?</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="385"/>
+        <location filename="../ui/files_tab.py" line="367"/>
+        <source>File %1 saved</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/files_tab.py" line="386"/>
+        <source>Backup saved as %1</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/files_tab.py" line="395"/>
         <source>Permission denied. Cannot create backup.</source>
         <translation>Õigused on puudu. Varukoopiat ei saa teha.</translation>
+    </message>
+    <message>
+        <location filename="../ui/files_tab.py" line="423"/>
+        <source>%1 is valid</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -533,20 +548,20 @@ Parema klõpsuga näed muid valikuid</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="195"/>
-        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
+        <source>'Super' (Meta) key is identical with 'Mod' by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
-The shortcut field doesn&apos;t detect AltGr, use the checkbox instead.
-If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
-        <translation type="unfinished"></translation>
+The shortcut field doesn't detect AltGr, use the checkbox instead.
+If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="202"/>
-        <source>Add &quot;Mod&quot;</source>
+        <source>Add "Mod"</source>
         <translation>Lisa „Mod“</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="205"/>
-        <source>Add &quot;AltGr&quot;</source>
+        <source>Add "AltGr"</source>
         <translation>Lisa „AltGr“</translation>
     </message>
     <message>
@@ -578,17 +593,17 @@ If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</sourc
         <location filename="../ui/keybinds_tab.py" line="227"/>
         <source>Do not show this shortcut in the hotkey overlay.
 It also allows adding a custom title after editing.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="229"/>
         <source>Add mousebind:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="288"/>
         <source>Created new keybinds file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="301"/>
@@ -672,7 +687,7 @@ copyq show
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="544"/>
-        <source>Add a comment, &apos;e.g. // my comment&apos;, an empty line or else:</source>
+        <source>Add a comment, 'e.g. // my comment', an empty line or else:</source>
         <translation>Lisa tühjale reale kommentaar, nagu näiteks „// minu kommentaar“ või muidu:</translation>
     </message>
     <message>
@@ -996,7 +1011,7 @@ Sel puhul enne seda rida asuvaid identseid seadistusi eiratakse.</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="105"/>
-        <source> Hide by default backup files in &apos;Files&apos; tab</source>
+        <source> Hide by default backup files in 'Files' tab</source>
         <translation> Vaikimisi peida vahekaardilt „Failid“ varukoopiad</translation>
     </message>
     <message>
@@ -1122,7 +1137,6 @@ sulgeda akna protsessi tunnusega {}?</translation>
     <message>
         <location filename="../ui/all_tabs.py" line="700"/>
         <source>Tap button map:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
-</context>
-</TS>
+</context></TS>

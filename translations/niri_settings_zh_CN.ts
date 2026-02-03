@@ -378,8 +378,8 @@
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="82"/>
-        <source>Set permanent in &apos;Tools → Settings&apos;</source>
-        <translation>在 &apos;工具 → 设置&apos; 中永久设置</translation>
+        <source>Set permanent in 'Tools → Settings'</source>
+        <translation>在 '工具 → 设置' 中永久设置</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="96"/>
@@ -391,72 +391,87 @@ Right click for other options</source>
 右键以使用其他选项</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="134"/>
+        <location filename="../ui/files_tab.py" line="143"/>
         <source>Directory does not exist:
 {base_path}</source>
         <translation>文件夹不存在:
 {base_path}</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="164"/>
-        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
+        <location filename="../ui/files_tab.py" line="173"/>
+        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
         <translation>没找到 xdg-open。请确认它已安装且在 PATH 中。</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="195"/>
+        <location filename="../ui/files_tab.py" line="205"/>
         <source>Open</source>
         <translation>打开</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="200"/>
+        <location filename="../ui/files_tab.py" line="210"/>
         <source>Show in file manager</source>
         <translation>在文件管理器中显示</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="207"/>
+        <location filename="../ui/files_tab.py" line="217"/>
         <source>Copy path to clipboard</source>
         <translation>复制路径至剪贴板</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="214"/>
+        <location filename="../ui/files_tab.py" line="224"/>
         <source>Create new file here</source>
         <translation>在此创建新文件</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="219"/>
+        <location filename="../ui/files_tab.py" line="229"/>
         <source>Restore from backup</source>
         <translation>从备份中恢复</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="224"/>
+        <location filename="../ui/files_tab.py" line="234"/>
         <source>Move to trash</source>
         <translation>移动至回收站</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="284"/>
+        <location filename="../ui/files_tab.py" line="294"/>
         <source>Selected a backup file!</source>
         <translation>选择了一个备份文件！</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="320"/>
-        <location filename="../ui/files_tab.py" line="290"/>
+        <location filename="../ui/files_tab.py" line="330"/>
+        <location filename="../ui/files_tab.py" line="300"/>
         <source>Confirm</source>
         <translation>确认</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="291"/>
+        <location filename="../ui/files_tab.py" line="301"/>
         <source>Overwrite this file with its backup?</source>
         <translation>要用这个文件的备份来覆盖它吗？</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="321"/>
+        <location filename="../ui/files_tab.py" line="331"/>
         <source>Move file to trash?</source>
         <translation>要移至回收站吗？</translation>
     </message>
     <message>
-        <location filename="../ui/files_tab.py" line="385"/>
+        <location filename="../ui/files_tab.py" line="367"/>
+        <source>File %1 saved</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/files_tab.py" line="386"/>
+        <source>Backup saved as %1</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/files_tab.py" line="395"/>
         <source>Permission denied. Cannot create backup.</source>
         <translation>无权限。无法创建备份。</translation>
+    </message>
+    <message>
+        <location filename="../ui/files_tab.py" line="423"/>
+        <source>%1 is valid</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -533,24 +548,24 @@ Right click for other options</source>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="195"/>
-        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
+        <source>'Super' (Meta) key is identical with 'Mod' by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
-The shortcut field doesn&apos;t detect AltGr, use the checkbox instead.
-If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
-        <translation>&apos;Mod&apos;键默认是&apos;Super&apos; (Meta)键 。
+The shortcut field doesn't detect AltGr, use the checkbox instead.
+If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
+        <translation>'Mod'键默认是'Super' (Meta)键 。
  选择一行以插入快捷键，否则它会被添加至最底部。 
 快捷键区并不检测 AltGr，若需要请勾选复选框。
-若 niri 提示出错，请在下一标签内验证 &apos;keybinds.kdl&apos; 的有效性。</translation>
+若 niri 提示出错，请在下一标签内验证 'keybinds.kdl' 的有效性。</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="202"/>
-        <source>Add &quot;Mod&quot;</source>
-        <translation>添加 &quot;Mod&quot;</translation>
+        <source>Add "Mod"</source>
+        <translation>添加 "Mod"</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="205"/>
-        <source>Add &quot;AltGr&quot;</source>
-        <translation>添加 &quot;AltGr&quot;</translation>
+        <source>Add "AltGr"</source>
+        <translation>添加 "AltGr"</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="209"/>
@@ -676,8 +691,8 @@ copyq show
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="544"/>
-        <source>Add a comment, &apos;e.g. // my comment&apos;, an empty line or else:</source>
-        <translation>添加一个注释， &apos;e.g. // my comment&apos;, 一个空行或是其他的:</translation>
+        <source>Add a comment, 'e.g. // my comment', an empty line or else:</source>
+        <translation>添加一个注释， 'e.g. // my comment', 一个空行或是其他的:</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="569"/>
@@ -1000,8 +1015,8 @@ Identical settings before this line will be ignored then.</source>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="105"/>
-        <source> Hide by default backup files in &apos;Files&apos; tab</source>
-        <translation> 在 &apos;文件&apos; 标签页中默认隐藏备份文件</translation>
+        <source> Hide by default backup files in 'Files' tab</source>
+        <translation> 在 '文件' 标签页中默认隐藏备份文件</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="184"/>
@@ -1127,5 +1142,4 @@ with PID {}?</source>
         <source>Tap button map:</source>
         <translation>轻触按键映射:</translation>
     </message>
-</context>
-</TS>
+</context></TS>
