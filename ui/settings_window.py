@@ -24,7 +24,7 @@ class SettingsWindow(QMainWindow):
         self.load_settings()
 
     def open_wiki(self):
-        wiki_url = "https://yalter.github.io/niri/Configuration%3A-Introduction.html"
+        wiki_url = "https://niri-wm.github.io/niri/"
         webbrowser.open(wiki_url)
 
     def init_ui(self):
