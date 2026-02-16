@@ -234,112 +234,132 @@
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="421"/>
-        <source>Disable hot corners</source>
-        <translation>Lülita kuumad nurgad välja</translation>
-    </message>
-    <message>
-        <location filename="../ui/all_tabs.py" line="422"/>
         <source>Hide cursor while typing</source>
         <translation>Kahvistikult sisestamisel peida kursor</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="428"/>
+        <location filename="../ui/all_tabs.py" line="427"/>
         <source>Columns</source>
         <translation>Veerud</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="433"/>
+        <location filename="../ui/all_tabs.py" line="432"/>
         <source>Default layout:</source>
         <translation>Vaikimisi paigutus:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="437"/>
+        <location filename="../ui/all_tabs.py" line="436"/>
         <source>Tabbed</source>
         <translation>Vahekaartidena</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="438"/>
+        <location filename="../ui/all_tabs.py" line="437"/>
         <source>Normal</source>
         <translation>Tavaline</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="450"/>
+        <location filename="../ui/all_tabs.py" line="449"/>
         <source>Default width:</source>
         <translation>Vaikimisi laius:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="456"/>
+        <location filename="../ui/all_tabs.py" line="455"/>
         <source>Proportion:</source>
         <translation>Suhe:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="457"/>
+        <location filename="../ui/all_tabs.py" line="456"/>
         <source>Fixed width:</source>
         <translation>Fikseeritud laius:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="458"/>
+        <location filename="../ui/all_tabs.py" line="457"/>
         <source>Applications may decide</source>
         <translation>Rakendused võivad ise otsustada</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="491"/>
+        <location filename="../ui/all_tabs.py" line="490"/>
         <source>Center focused column:</source>
         <translation>Veeru fookus keskel:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="495"/>
+        <location filename="../ui/all_tabs.py" line="494"/>
         <source>never</source>
         <translation>Mitte kunagi</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="497"/>
+        <location filename="../ui/all_tabs.py" line="496"/>
         <source>always</source>
         <translation>Alati</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="498"/>
+        <location filename="../ui/all_tabs.py" line="497"/>
         <source>on overflow</source>
         <translation>Ülekattel</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="537"/>
+        <location filename="../ui/all_tabs.py" line="522"/>
+        <source>Hot corners</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="527"/>
+        <source>Top left</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <location filename="../ui/all_tabs.py" line="529"/>
+        <source>Top right</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="530"/>
+        <source>Bottom left</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="531"/>
+        <source>Bottom right</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/all_tabs.py" line="553"/>
+        <location filename="../ui/all_tabs.py" line="545"/>
         <source>Mod Key:</source>
         <translation>Muuteklahv:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="531"/>
+        <location filename="../ui/all_tabs.py" line="547"/>
         <source>Super</source>
         <translation>Super</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="532"/>
+        <location filename="../ui/all_tabs.py" line="548"/>
         <source>Alt</source>
         <translation>Alt</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="533"/>
+        <location filename="../ui/all_tabs.py" line="549"/>
         <source>Ctrl</source>
         <translation>Ctrl</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="549"/>
+        <location filename="../ui/all_tabs.py" line="565"/>
         <source>Screenshots:</source>
         <translation>Ekraanitõmmised:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="561"/>
+        <location filename="../ui/all_tabs.py" line="577"/>
         <source>Cursor</source>
         <translation>Kursor</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="563"/>
+        <location filename="../ui/all_tabs.py" line="579"/>
         <source>Enable</source>
         <translation>Võta kasutusele</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="567"/>
+        <location filename="../ui/all_tabs.py" line="583"/>
         <source>hiding after inactive for:</source>
         <translation>peitmine, kui pole aktiivne:</translation>
     </message>
@@ -724,6 +744,16 @@ copyq show
         <translation>Jälgi klahvistiku paigutust:</translation>
     </message>
     <message>
+        <location filename="../ui/keyboard_tab.py" line="31"/>
+        <source>window</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/keyboard_tab.py" line="31"/>
+        <source>global</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <location filename="../ui/keyboard_tab.py" line="39"/>
         <source>Keyboard Layout</source>
         <translation>Klahvistiku paigutus</translation>
@@ -782,32 +812,32 @@ copyq show
 <context>
     <name>MouseTab</name>
     <message>
-        <location filename="../ui/all_tabs.py" line="742"/>
+        <location filename="../ui/all_tabs.py" line="758"/>
         <source>Natural scroll</source>
         <translation>Loomulik kerimine</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="743"/>
+        <location filename="../ui/all_tabs.py" line="759"/>
         <source>Left handed</source>
         <translation>Vasakukäeline</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="744"/>
+        <location filename="../ui/all_tabs.py" line="760"/>
         <source>Middle button emulation</source>
         <translation>Keskmise nupu emulatsioon</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="748"/>
+        <location filename="../ui/all_tabs.py" line="764"/>
         <source>Acceleration speed:</source>
         <translation>Kiirendus:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="760"/>
+        <location filename="../ui/all_tabs.py" line="776"/>
         <source>Acceleration profile:</source>
         <translation>Kiirenduse profiil:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="770"/>
+        <location filename="../ui/all_tabs.py" line="786"/>
         <source>Scroll factor:</source>
         <translation>Kerimise faktor:</translation>
     </message>
@@ -875,32 +905,32 @@ copyq show
         <translation>Sulge</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="875"/>
-        <location filename="../ui/settings_window.py" line="851"/>
-        <location filename="../ui/settings_window.py" line="786"/>
-        <location filename="../ui/settings_window.py" line="747"/>
-        <location filename="../ui/settings_window.py" line="660"/>
-        <location filename="../ui/settings_window.py" line="564"/>
+        <location filename="../ui/settings_window.py" line="897"/>
+        <location filename="../ui/settings_window.py" line="873"/>
+        <location filename="../ui/settings_window.py" line="808"/>
+        <location filename="../ui/settings_window.py" line="769"/>
+        <location filename="../ui/settings_window.py" line="682"/>
+        <location filename="../ui/settings_window.py" line="572"/>
         <source>Configuration Parsing Error</source>
         <translation>Seadistuste lugemise viga</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="877"/>
-        <location filename="../ui/settings_window.py" line="853"/>
-        <location filename="../ui/settings_window.py" line="788"/>
-        <location filename="../ui/settings_window.py" line="749"/>
-        <location filename="../ui/settings_window.py" line="662"/>
-        <location filename="../ui/settings_window.py" line="566"/>
+        <location filename="../ui/settings_window.py" line="899"/>
+        <location filename="../ui/settings_window.py" line="875"/>
+        <location filename="../ui/settings_window.py" line="810"/>
+        <location filename="../ui/settings_window.py" line="771"/>
+        <location filename="../ui/settings_window.py" line="684"/>
+        <location filename="../ui/settings_window.py" line="574"/>
         <source>Applying changes will reset to defaults some values, please check this file.</source>
         <translation>Muudatuste rakendamisel mõned väärtused lähtestuvad, vajadusel palun kontrolli faili sisu.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="865"/>
+        <location filename="../ui/settings_window.py" line="887"/>
         <source>Niri Settings: Configuration not found</source>
         <translation>Niri seadistused: seadistusi ei leidu</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="867"/>
+        <location filename="../ui/settings_window.py" line="889"/>
         <source>This is needed to make niri-settings work. 
 Identical settings before this line will be ignored then.</source>
         <translation>See on vajalik niri seadistuste toimimiseks.
@@ -1040,102 +1070,102 @@ sulgeda akna protsessi tunnusega {}?</translation>
 <context>
     <name>TouchpadTab</name>
     <message>
-        <location filename="../ui/all_tabs.py" line="611"/>
+        <location filename="../ui/all_tabs.py" line="627"/>
         <source>Tap to click</source>
         <translation>Klõpsamiseks puuduta</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="613"/>
+        <location filename="../ui/all_tabs.py" line="629"/>
         <source>Natural scroll</source>
         <translation>Loomulik kerimine</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="615"/>
+        <location filename="../ui/all_tabs.py" line="631"/>
         <source>Tap and Drag</source>
         <translation>Puuduta ja lohista</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="616"/>
+        <location filename="../ui/all_tabs.py" line="632"/>
         <source>Drag lock</source>
         <translation>Lohistamise lukustus</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="624"/>
+        <location filename="../ui/all_tabs.py" line="640"/>
         <source>Disable when external mouse connected</source>
         <translation>Välise hiire ühendamisel lülita välja</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="625"/>
+        <location filename="../ui/all_tabs.py" line="641"/>
         <source>Disable while typing</source>
         <translation>Trükkimisel lülita välja</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="626"/>
+        <location filename="../ui/all_tabs.py" line="642"/>
         <source>Disable while trackpointing</source>
         <translation>Näpuhiire kasutamisel lülita välja</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="627"/>
+        <location filename="../ui/all_tabs.py" line="643"/>
         <source>Left handed</source>
         <translation>Vasakukäeline</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="630"/>
+        <location filename="../ui/all_tabs.py" line="646"/>
         <source>Click method:</source>
         <translation>Klõpsimise meetod:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="631"/>
+        <location filename="../ui/all_tabs.py" line="647"/>
         <source>Button areas</source>
         <translation>Nuppude alad</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="633"/>
+        <location filename="../ui/all_tabs.py" line="649"/>
         <source>Clickfinger</source>
         <translation>Klõpsimise sõrm</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="643"/>
+        <location filename="../ui/all_tabs.py" line="659"/>
         <source>No scroll</source>
         <translation>Kerimist pole</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="644"/>
+        <location filename="../ui/all_tabs.py" line="660"/>
         <source>Two finger</source>
         <translation>Kaks sõrme</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="646"/>
+        <location filename="../ui/all_tabs.py" line="662"/>
         <source>Edge</source>
         <translation>Äär</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="647"/>
+        <location filename="../ui/all_tabs.py" line="663"/>
         <source>Button</source>
         <translation>Nupp</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="654"/>
+        <location filename="../ui/all_tabs.py" line="670"/>
         <source>Scroll method</source>
         <translation>Kerimise meetod</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="665"/>
+        <location filename="../ui/all_tabs.py" line="681"/>
         <source>Acceleration speed:</source>
         <translation>Kiirendus:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="677"/>
+        <location filename="../ui/all_tabs.py" line="693"/>
         <source>Acceleration profile:</source>
         <translation>Kiirendusprofiil:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="687"/>
+        <location filename="../ui/all_tabs.py" line="703"/>
         <source>Scroll factor:</source>
         <translation>Kerimisfaktor:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="700"/>
+        <location filename="../ui/all_tabs.py" line="716"/>
         <source>Tap button map:</source>
         <translation type="unfinished"/>
     </message>
