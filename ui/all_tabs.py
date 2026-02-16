@@ -418,7 +418,6 @@ class BehaviorTab(QScrollArea):
         self.disable_power_key_checkbox = QCheckBox(self.tr('Disable power key handling'))
         self.workspace_auto_back_forth_checkbox = QCheckBox(self.tr('Workspace auto back and forth'))
         self.empty_workspace_above_checkbox = QCheckBox(self.tr('Add also an empty workspace above'))
-        self.hot_corners_checkbox = QCheckBox(self.tr('Disable hot corners'))
         self.hide_while_typing_checkbox = QCheckBox(self.tr('Hide cursor while typing'))
 
         behavior_layout.addWidget(self.hotkey_overlay_checkbox)
@@ -519,9 +518,26 @@ class BehaviorTab(QScrollArea):
 
         behavior_layout.addWidget(column_group)
 
+        # Hot corners group
+        self.hot_corners_group = QGroupBox(self.tr('Hot corners'))
+        self.hot_corners_group.setCheckable(True)
+        self.hot_corners_group.setChecked(True)
+        self.hot_corners_layout = QGridLayout(self.hot_corners_group)
+
+        self.corner_top_left_checkbox = QCheckBox(self.tr('Top left'))
+        self.corner_top_left_checkbox.setChecked(True)
+        self.corner_top_right_checkbox = QCheckBox(self.tr('Top right'))
+        self.corner_bottom_left_checkbox = QCheckBox(self.tr('Bottom left'))
+        self.corner_bottom_right_checkbox = QCheckBox(self.tr('Bottom right'))
+
+        self.hot_corners_layout.addWidget(self.corner_top_left_checkbox,0,0)
+        self.hot_corners_layout.addWidget(self.corner_top_right_checkbox,0,1)
+        self.hot_corners_layout.addWidget(self.corner_bottom_left_checkbox,1,0)
+        self.hot_corners_layout.addWidget(self.corner_bottom_right_checkbox,1,1)
+
+        behavior_layout.addWidget(self.hot_corners_group)
         behavior_layout.addWidget(self.workspace_auto_back_forth_checkbox)
         behavior_layout.addWidget(self.empty_workspace_above_checkbox)
-        behavior_layout.addWidget(self.hot_corners_checkbox)
         behavior_layout.addWidget(self.disable_power_key_checkbox)
 
         # Mod key

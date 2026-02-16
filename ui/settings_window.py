@@ -410,13 +410,21 @@ class SettingsWindow(QMainWindow):
                 f.write('    skip-at-startup\n')
             f.write('    }\n\n')
 
-            # Gestures
+            # Gestures / hot corners
             f.write('gestures {\n')
             f.write('    hot-corners {\n')
-            if self.behavior_tab.hot_corners_checkbox.isChecked():
-                f.write('        off\n')
+            if self.behavior_tab.hot_corners_group.isChecked():
+                f.write('        //off\n')
             else:
-                f.write('        // off\n')
+                f.write('        off\n')
+            if self.behavior_tab.corner_top_left_checkbox.isChecked():
+                f.write('        top-left\n')
+            if self.behavior_tab.corner_top_right_checkbox.isChecked():
+                f.write('        top-right\n')
+            if self.behavior_tab.corner_bottom_left_checkbox.isChecked():
+                f.write('        bottom-left\n')
+            if self.behavior_tab.corner_bottom_right_checkbox.isChecked():
+                f.write('        bottom-right\n')
             f.write('    }\n}\n\n')
 
             # Debug
@@ -612,11 +620,25 @@ class SettingsWindow(QMainWindow):
                 if value:
                     self.behavior_tab.inactive_spinbox.setValue(int(value.group(1)))
 
+                # hot corners
                 match = re.search(r'gestures\s*\{\s*hot-corners\s*\{[^}]*//[^}]*\}\s*\}', content)
                 if match:
-                    self.behavior_tab.hot_corners_checkbox.setChecked(False)
+                    self.behavior_tab.hot_corners_group.setChecked(True)
                 else:
-                    self.behavior_tab.hot_corners_checkbox.setChecked(True)
+                    self.behavior_tab.hot_corners_group.setChecked(False)
+
+                self.behavior_tab.corner_top_left_checkbox.setChecked(
+                    'top-left' in content
+                )
+                self.behavior_tab.corner_top_right_checkbox.setChecked(
+                    'top-right' in content
+                )
+                self.behavior_tab.corner_bottom_left_checkbox.setChecked(
+                    'bottom-left' in content
+                )
+                self.behavior_tab.corner_bottom_right_checkbox.setChecked(
+                    'bottom-right' in content
+                )
 
                 path = re.search(r'screenshot-path\s+"([^"]+)"', content)
                 if path:
