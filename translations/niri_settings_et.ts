@@ -200,7 +200,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="414"/>
         <source>Warp mouse to focus</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="415"/>
@@ -210,7 +210,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="416"/>
         <source>Always focus windows on request</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="417"/>
@@ -225,7 +225,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="419"/>
         <source>Workspace auto back and forth</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="420"/>
@@ -300,27 +300,27 @@
     <message>
         <location filename="../ui/all_tabs.py" line="522"/>
         <source>Hot corners</source>
-        <translation type="unfinished"/>
+        <translation>Kuumad nurgad</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="527"/>
         <source>Top left</source>
-        <translation type="unfinished"/>
+        <translation>Üleval vasakul</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="529"/>
         <source>Top right</source>
-        <translation type="unfinished"/>
+        <translation>Üleval paremal</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="530"/>
         <source>Bottom left</source>
-        <translation type="unfinished"/>
+        <translation>All vasakul</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="531"/>
         <source>Bottom right</source>
-        <translation type="unfinished"/>
+        <translation>All paremal</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="553"/>
@@ -398,7 +398,7 @@
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="82"/>
-        <source>Set permanent in 'Tools → Settings'</source>
+        <source>Set permanent in &apos;Tools → Settings&apos;</source>
         <translation>Muuda seadistustest „Tarvikud“ → „Seadistused“ püsivaks</translation>
     </message>
     <message>
@@ -419,7 +419,7 @@ Parema klõpsuga näed muid valikuid</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="173"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>xdg-open pole tuvastatav. Palun kontrolli, et ta oleks paigaldatud ja leidub sinu OTSITEEL.</translation>
     </message>
     <message>
@@ -476,12 +476,12 @@ Parema klõpsuga näed muid valikuid</translation>
     <message>
         <location filename="../ui/files_tab.py" line="367"/>
         <source>File %1 saved</source>
-        <translation type="unfinished"/>
+        <translation>%1 fail on salvestatud</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="386"/>
         <source>Backup saved as %1</source>
-        <translation type="unfinished"/>
+        <translation>Varukoopia on salvestatud kui %1</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="395"/>
@@ -491,7 +491,7 @@ Parema klõpsuga näed muid valikuid</translation>
     <message>
         <location filename="../ui/files_tab.py" line="423"/>
         <source>%1 is valid</source>
-        <translation type="unfinished"/>
+        <translation>%1 on kehtiv</translation>
     </message>
 </context>
 <context>
@@ -568,20 +568,20 @@ Parema klõpsuga näed muid valikuid</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="195"/>
-        <source>'Super' (Meta) key is identical with 'Mod' by default.
+        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
-The shortcut field doesn't detect AltGr, use the checkbox instead.
-If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
-        <translation type="unfinished"/>
+The shortcut field doesn&apos;t detect AltGr, use the checkbox instead.
+If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="202"/>
-        <source>Add "Mod"</source>
+        <source>Add &quot;Mod&quot;</source>
         <translation>Lisa „Mod“</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="205"/>
-        <source>Add "AltGr"</source>
+        <source>Add &quot;AltGr&quot;</source>
         <translation>Lisa „AltGr“</translation>
     </message>
     <message>
@@ -613,17 +613,17 @@ If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
         <location filename="../ui/keybinds_tab.py" line="227"/>
         <source>Do not show this shortcut in the hotkey overlay.
 It also allows adding a custom title after editing.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="229"/>
         <source>Add mousebind:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="288"/>
         <source>Created new keybinds file</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="301"/>
@@ -707,7 +707,7 @@ copyq show
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="544"/>
-        <source>Add a comment, 'e.g. // my comment', an empty line or else:</source>
+        <source>Add a comment, &apos;e.g. // my comment&apos;, an empty line or else:</source>
         <translation>Lisa tühjale reale kommentaar, nagu näiteks „// minu kommentaar“ või muidu:</translation>
     </message>
     <message>
@@ -746,12 +746,12 @@ copyq show
     <message>
         <location filename="../ui/keyboard_tab.py" line="31"/>
         <source>window</source>
-        <translation type="unfinished"/>
+        <translation>aken</translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="31"/>
         <source>global</source>
-        <translation type="unfinished"/>
+        <translation>üldine</translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="39"/>
@@ -1041,7 +1041,7 @@ Sel puhul enne seda rida asuvaid identseid seadistusi eiratakse.</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="105"/>
-        <source> Hide by default backup files in 'Files' tab</source>
+        <source> Hide by default backup files in &apos;Files&apos; tab</source>
         <translation> Vaikimisi peida vahekaardilt „Failid“ varukoopiad</translation>
     </message>
     <message>
@@ -1167,6 +1167,7 @@ sulgeda akna protsessi tunnusega {}?</translation>
     <message>
         <location filename="../ui/all_tabs.py" line="716"/>
         <source>Tap button map:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
-</context></TS>
+</context>
+</TS>

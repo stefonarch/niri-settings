@@ -300,27 +300,27 @@
     <message>
         <location filename="../ui/all_tabs.py" line="522"/>
         <source>Hot corners</source>
-        <translation type="unfinished"/>
+        <translation>Aktive Ecken</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="527"/>
         <source>Top left</source>
-        <translation type="unfinished"/>
+        <translation>Oben links</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="529"/>
         <source>Top right</source>
-        <translation type="unfinished"/>
+        <translation>Oben rechts</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="530"/>
         <source>Bottom left</source>
-        <translation type="unfinished"/>
+        <translation>Unten links</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="531"/>
         <source>Bottom right</source>
-        <translation type="unfinished"/>
+        <translation>Unten rechts</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="553"/>
@@ -398,7 +398,7 @@
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="82"/>
-        <source>Set permanent in 'Tools → Settings'</source>
+        <source>Set permanent in &apos;Tools → Settings&apos;</source>
         <translation>In „Werkzeuge → Einstellungen“ als dauerhaft festlegen</translation>
     </message>
     <message>
@@ -419,7 +419,7 @@ Rechtsklick für weitere Optzionen</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="173"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>xdg-open nicht gefunden. Stellen Sie sicher, dass es installiert und in Ihrem PATH ist.</translation>
     </message>
     <message>
@@ -568,10 +568,10 @@ Rechtsklick für weitere Optzionen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="195"/>
-        <source>'Super' (Meta) key is identical with 'Mod' by default.
+        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
-The shortcut field doesn't detect AltGr, use the checkbox instead.
-If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
+The shortcut field doesn&apos;t detect AltGr, use the checkbox instead.
+If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
         <translation>Die „Super“-Taste (Meta) entspricht standardmäßig der „Mod“-Taste.
 Eine Zeile auswählen um die Tastenkombination einzufügen, andernfalls wird sie unten hinzugefügt.
 Das Tastenkombinationsfeld erkennt AltGr nicht. Stattdessen das Kontrollkästchen verwenden.
@@ -579,13 +579,13 @@ Falls Niri einen Fehler anzeigt, überprüfen Sie die Datei „keybinds.kdl“ i
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="202"/>
-        <source>Add "Mod"</source>
-        <translation>"Mod" hinzufügen</translation>
+        <source>Add &quot;Mod&quot;</source>
+        <translation>&quot;Mod&quot; hinzufügen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="205"/>
-        <source>Add "AltGr"</source>
-        <translation>"AltGr" hinzufügen</translation>
+        <source>Add &quot;AltGr&quot;</source>
+        <translation>&quot;AltGr&quot; hinzufügen</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="209"/>
@@ -711,8 +711,8 @@ copyq show
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="544"/>
-        <source>Add a comment, 'e.g. // my comment', an empty line or else:</source>
-        <translation>Einen Kommentar, zB: '// Anmerkung', eine Leerzeile 
+        <source>Add a comment, &apos;e.g. // my comment&apos;, an empty line or else:</source>
+        <translation>Einen Kommentar, zB: &apos;// Anmerkung&apos;, eine Leerzeile 
 oder anderes einfügen:</translation>
     </message>
     <message>
@@ -751,12 +751,12 @@ oder anderes einfügen:</translation>
     <message>
         <location filename="../ui/keyboard_tab.py" line="31"/>
         <source>window</source>
-        <translation type="unfinished"/>
+        <translation>Fenster</translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="31"/>
         <source>global</source>
-        <translation type="unfinished"/>
+        <translation>Global</translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="39"/>
@@ -1037,7 +1037,7 @@ Identische Einstellungen vor dieser Zeile werden dann ignoriert.</translation>
     <message>
         <location filename="../ui/tools_tab.py" line="103"/>
         <source>Touchpad tab is hidden when no touchpad is detected</source>
-        <translation>Das 'Touchpad' Tab wird ausgeblendet wenn keiner erkannt wird</translation>
+        <translation>Das &apos;Touchpad&apos; Tab wird ausgeblendet wenn keiner erkannt wird</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="104"/>
@@ -1046,7 +1046,7 @@ Identische Einstellungen vor dieser Zeile werden dann ignoriert.</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="105"/>
-        <source> Hide by default backup files in 'Files' tab</source>
+        <source> Hide by default backup files in &apos;Files&apos; tab</source>
         <translation> Sicherungsdateien standardmäßig im Tab „Dateien“ ausblenden</translation>
     </message>
     <message>
@@ -1174,4 +1174,5 @@ mit PID {} beenden wollen?</translation>
         <source>Tap button map:</source>
         <translation>Tipp-Tasten-Zuordnung:</translation>
     </message>
-</context></TS>
+</context>
+</TS>

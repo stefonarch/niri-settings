@@ -142,7 +142,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="307"/>
         <source>Place within column</source>
-        <translation>Mostra all'interno della colonna</translation>
+        <translation>Mostra all&apos;interno della colonna</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="313"/>
@@ -300,27 +300,27 @@
     <message>
         <location filename="../ui/all_tabs.py" line="522"/>
         <source>Hot corners</source>
-        <translation type="unfinished"/>
+        <translation>Angoli attivi</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="527"/>
         <source>Top left</source>
-        <translation type="unfinished"/>
+        <translation>In alto a sinistra</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="529"/>
         <source>Top right</source>
-        <translation type="unfinished"/>
+        <translation>In alto a destra</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="530"/>
         <source>Bottom left</source>
-        <translation type="unfinished"/>
+        <translation>In fondo a sinistra</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="531"/>
         <source>Bottom right</source>
-        <translation type="unfinished"/>
+        <translation>In fondo a destra</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="553"/>
@@ -398,8 +398,8 @@
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="82"/>
-        <source>Set permanent in 'Tools → Settings'</source>
-        <translation>Imposta permanente in 'Strumenti → Impostazioni'</translation>
+        <source>Set permanent in &apos;Tools → Settings&apos;</source>
+        <translation>Imposta permanente in &apos;Strumenti → Impostazioni&apos;</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="96"/>
@@ -419,7 +419,7 @@ Click destro per ulteriori opzioni</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="173"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>xdg-open non trovato, assicurati che è installato e nel PATH.</translation>
     </message>
     <message>
@@ -568,24 +568,24 @@ Click destro per ulteriori opzioni</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="195"/>
-        <source>'Super' (Meta) key is identical with 'Mod' by default.
+        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
-The shortcut field doesn't detect AltGr, use the checkbox instead.
-If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
-        <translation>Il tasto 'Super' (Meta) corrisponde a 'Mod' per impostazione predefinita.
+The shortcut field doesn&apos;t detect AltGr, use the checkbox instead.
+If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
+        <translation>Il tasto &apos;Super&apos; (Meta) corrisponde a &apos;Mod&apos; per impostazione predefinita.
 Seleziona una riga per inserire la scorciatoia, altrimenti verrà aggiunta in fondo.
 Il campo scorciatoia non rileva AltGr, utilizza la casella di controllo.
-Se Niri mostra un errore, convalida 'keybinds.kdl' nella scheda successiva.</translation>
+Se Niri mostra un errore, convalida &apos;keybinds.kdl&apos; nella scheda successiva.</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="202"/>
-        <source>Add "Mod"</source>
-        <translation>Aggiungi "Mod"</translation>
+        <source>Add &quot;Mod&quot;</source>
+        <translation>Aggiungi &quot;Mod&quot;</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="205"/>
-        <source>Add "AltGr"</source>
-        <translation>Aggiungi "AltGr"</translation>
+        <source>Add &quot;AltGr&quot;</source>
+        <translation>Aggiungi &quot;AltGr&quot;</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="209"/>
@@ -595,7 +595,7 @@ Se Niri mostra un errore, convalida 'keybinds.kdl' nella scheda successiva.</tra
     <message>
         <location filename="../ui/keybinds_tab.py" line="210"/>
         <source>Do not repeat the action. Repeating is default</source>
-        <translation>Non ripetere l'azione. La ripetizione è comportamento predefinito</translation>
+        <translation>Non ripetere l&apos;azione. La ripetizione è comportamento predefinito</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="213"/>
@@ -605,7 +605,7 @@ Se Niri mostra un errore, convalida 'keybinds.kdl' nella scheda successiva.</tra
     <message>
         <location filename="../ui/keybinds_tab.py" line="214"/>
         <source>Allow execution when screen is locked</source>
-        <translation>Consentire l'azione quando lo schermo è bloccato</translation>
+        <translation>Consentire l&apos;azione quando lo schermo è bloccato</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="225"/>
@@ -711,8 +711,8 @@ copyq show
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="544"/>
-        <source>Add a comment, 'e.g. // my comment', an empty line or else:</source>
-        <translation>Aggiungi un annotazione, per esempio: '// mia annotazione',
+        <source>Add a comment, &apos;e.g. // my comment&apos;, an empty line or else:</source>
+        <translation>Aggiungi un annotazione, per esempio: &apos;// mia annotazione&apos;,
 una riga vuota o altro:</translation>
     </message>
     <message>
@@ -751,12 +751,12 @@ una riga vuota o altro:</translation>
     <message>
         <location filename="../ui/keyboard_tab.py" line="31"/>
         <source>window</source>
-        <translation type="unfinished"/>
+        <translation>Finestra</translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="31"/>
         <source>global</source>
-        <translation type="unfinished"/>
+        <translation>Globale</translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="39"/>
@@ -1037,7 +1037,7 @@ Impostazioni identiche prima di questa riga verranno ignorate.</translation>
     <message>
         <location filename="../ui/tools_tab.py" line="103"/>
         <source>Touchpad tab is hidden when no touchpad is detected</source>
-        <translation>La scheda 'Touchpad' è nascosta se nessun touchpad viene rilevato</translation>
+        <translation>La scheda &apos;Touchpad&apos; è nascosta se nessun touchpad viene rilevato</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="104"/>
@@ -1046,8 +1046,8 @@ Impostazioni identiche prima di questa riga verranno ignorate.</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="105"/>
-        <source> Hide by default backup files in 'Files' tab</source>
-        <translation> Nascondi i files di backup nel tab 'File'</translation>
+        <source> Hide by default backup files in &apos;Files&apos; tab</source>
+        <translation> Nascondi i files di backup nel tab &apos;File&apos;</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="184"/>
@@ -1174,4 +1174,5 @@ finestra con PID {}?</translation>
         <source>Tap button map:</source>
         <translation>Mappatura dei pulsanti:</translation>
     </message>
-</context></TS>
+</context>
+</TS>
