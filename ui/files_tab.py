@@ -441,5 +441,5 @@ class FilesTab(QWidget):
         output = self.proc.readAll().data().decode()
         info_path = str(file_path).replace(self.home, "~", 1)
 
-        if "valid" not in output:
+        if "config is valid" not in output:
             self.status_label.setText(f"{output}")
