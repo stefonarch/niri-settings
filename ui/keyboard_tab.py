@@ -28,7 +28,7 @@ class KeyboardTab(QWidget):
         track_layout_layout = QHBoxLayout()
         track_layout_label = QLabel(self.tr('Track keyboard layout:'))
         self.track_layout_combobox = QComboBox()
-        self.track_layout_combobox.addItems([self.tr("window"),self.tr("global")])
+        self.track_layout_combobox.addItems(["window","global"])
 
         track_layout_layout.addWidget(track_layout_label)
         track_layout_layout.addWidget(self.track_layout_combobox)

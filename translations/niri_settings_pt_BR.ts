@@ -741,16 +741,6 @@ copyq show
         <translation>Seguir layout do teclado:</translation>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="31"/>
-        <source>window</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../ui/keyboard_tab.py" line="31"/>
-        <source>global</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
         <location filename="../ui/keyboard_tab.py" line="39"/>
         <source>Keyboard Layout</source>
         <translation>Layout do Teclado</translation>
