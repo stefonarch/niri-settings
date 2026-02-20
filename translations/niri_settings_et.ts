@@ -200,7 +200,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="414"/>
         <source>Warp mouse to focus</source>
-        <translation type="unfinished"></translation>
+        <translation>Hüppa kursoriga fookusesse</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="415"/>
@@ -210,7 +210,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="416"/>
         <source>Always focus windows on request</source>
-        <translation type="unfinished"></translation>
+        <translation>Luba akende automaatne fookustamine</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="417"/>
@@ -225,7 +225,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="419"/>
         <source>Workspace auto back and forth</source>
-        <translation type="unfinished"></translation>
+        <translation>Töölaudade vahel edasi-tagasi liikumine</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="420"/>

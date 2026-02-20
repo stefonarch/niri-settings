@@ -300,27 +300,27 @@
     <message>
         <location filename="../ui/all_tabs.py" line="522"/>
         <source>Hot corners</source>
-        <translation type="unfinished"/>
+        <translation>热角</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="527"/>
         <source>Top left</source>
-        <translation type="unfinished"/>
+        <translation>左上</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="529"/>
         <source>Top right</source>
-        <translation type="unfinished"/>
+        <translation>右上</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="530"/>
         <source>Bottom left</source>
-        <translation type="unfinished"/>
+        <translation>左下</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="531"/>
         <source>Bottom right</source>
-        <translation type="unfinished"/>
+        <translation>右下</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="553"/>
@@ -398,8 +398,8 @@
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="82"/>
-        <source>Set permanent in 'Tools → Settings'</source>
-        <translation>在 '工具 → 设置' 中永久设置</translation>
+        <source>Set permanent in &apos;Tools → Settings&apos;</source>
+        <translation>在 &apos;工具 → 设置&apos; 中永久设置</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="96"/>
@@ -419,7 +419,7 @@ Right click for other options</source>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="173"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>没找到 xdg-open。请确认它已安装且在 PATH 中。</translation>
     </message>
     <message>
@@ -568,24 +568,24 @@ Right click for other options</source>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="195"/>
-        <source>'Super' (Meta) key is identical with 'Mod' by default.
+        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
-The shortcut field doesn't detect AltGr, use the checkbox instead.
-If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
-        <translation>'Mod'键默认是'Super' (Meta)键 。
+The shortcut field doesn&apos;t detect AltGr, use the checkbox instead.
+If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
+        <translation>&apos;Mod&apos;键默认是&apos;Super&apos; (Meta)键 。
  选择一行以插入快捷键，否则它会被添加至最底部。 
 快捷键区并不检测 AltGr，若需要请勾选复选框。
-若 niri 提示出错，请在下一标签内验证 'keybinds.kdl' 的有效性。</translation>
+若 niri 提示出错，请在下一标签内验证 &apos;keybinds.kdl&apos; 的有效性。</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="202"/>
-        <source>Add "Mod"</source>
-        <translation>添加 "Mod"</translation>
+        <source>Add &quot;Mod&quot;</source>
+        <translation>添加 &quot;Mod&quot;</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="205"/>
-        <source>Add "AltGr"</source>
-        <translation>添加 "AltGr"</translation>
+        <source>Add &quot;AltGr&quot;</source>
+        <translation>添加 &quot;AltGr&quot;</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="209"/>
@@ -711,8 +711,8 @@ copyq show
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="544"/>
-        <source>Add a comment, 'e.g. // my comment', an empty line or else:</source>
-        <translation>添加一个注释， 'e.g. // my comment', 一个空行或是其他的:</translation>
+        <source>Add a comment, &apos;e.g. // my comment&apos;, an empty line or else:</source>
+        <translation>添加一个注释， &apos;e.g. // my comment&apos;, 一个空行或是其他的:</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="569"/>
@@ -750,12 +750,12 @@ copyq show
     <message>
         <location filename="../ui/keyboard_tab.py" line="31"/>
         <source>window</source>
-        <translation type="unfinished"/>
+        <translation>窗口</translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="31"/>
         <source>global</source>
-        <translation type="unfinished"/>
+        <translation>全局</translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="39"/>
@@ -1045,8 +1045,8 @@ Identical settings before this line will be ignored then.</source>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="105"/>
-        <source> Hide by default backup files in 'Files' tab</source>
-        <translation> 在 '文件' 标签页中默认隐藏备份文件</translation>
+        <source> Hide by default backup files in &apos;Files&apos; tab</source>
+        <translation> 在 &apos;文件&apos; 标签页中默认隐藏备份文件</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="184"/>
@@ -1172,4 +1172,5 @@ with PID {}?</source>
         <source>Tap button map:</source>
         <translation>轻触按键映射:</translation>
     </message>
-</context></TS>
+</context>
+</TS>
