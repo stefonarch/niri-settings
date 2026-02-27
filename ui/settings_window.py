@@ -362,7 +362,11 @@ class SettingsWindow(QMainWindow):
         with open(self.config_path, 'a') as f:  # Append to the file
             f.write('    \n')
             f.write('    keyboard {\n')
-            f.write(f'        track-layout "{self.keyboard_tab.track_layout_combobox.currentText()}"\n')
+            if (self.keyboard_tab.track_global_radio.isChecked()):
+                 f.write('        track-layout "global"\n')
+            else:
+                 f.write('        track-layout "window"\n')
+
             if self.keyboard_tab.numlock_checkbox.isChecked():
                 f.write('        numlock\n')
             else:
@@ -822,11 +826,11 @@ class SettingsWindow(QMainWindow):
                 match = re.search(r'repeat-rate\s+(\d+)', content)
                 self.keyboard_tab.repeat_rate_spinbox.setValue(int(match.group(1)))
 
-                match = re.search(r'track-layout\s+"([^"]+)"', content)
-                track_layout = match.group(1)
-                index = self.keyboard_tab.track_layout_combobox.findText(track_layout)
-                if index >= 0:
-                        self.keyboard_tab.track_layout_combobox.setCurrentIndex(index)
+                match = re.search(r'global', content)
+                if match:
+                        self.keyboard_tab.track_global_radio.setChecked(True)
+                else:
+                        self.keyboard_tab.track_window_radio.setChecked(True)
 
                 xkb_match = re.search(r'xkb\s*{.*?layout\s+"([^"]+)"', content, re.DOTALL)
                 if xkb_match:

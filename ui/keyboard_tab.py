@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QTextEdit, QListWidget,
                              QLabel, QFrame, QPushButton, QCheckBox, QDialog,QTreeWidget, QTreeWidgetItem,
-                             QDoubleSpinBox, QComboBox, QSpinBox, QLineEdit, QGroupBox
+                             QDoubleSpinBox, QComboBox, QSpinBox, QRadioButton, QLineEdit, QGroupBox
                              )
 from PyQt6.QtGui import QFont
 from PyQt6.QtCore import Qt
@@ -23,17 +23,6 @@ class KeyboardTab(QWidget):
         self.numlock_checkbox = QCheckBox(self.tr('Enable num lock at startup'))
         self.numlock_checkbox.setChecked(True)
         keyboard_layout.addWidget(self.numlock_checkbox)
-
-        # Track layout
-        track_layout_layout = QHBoxLayout()
-        track_layout_label = QLabel(self.tr('Track keyboard layout:'))
-        self.track_layout_combobox = QComboBox()
-        self.track_layout_combobox.addItems(["window","global"])
-
-        track_layout_layout.addWidget(track_layout_label)
-        track_layout_layout.addWidget(self.track_layout_combobox)
-        track_layout_layout.addStretch()
-        keyboard_layout.addLayout(track_layout_layout)
 
         # XKB Settings Group
         xkb_group = QGroupBox(self.tr("Keyboard Layout"))
@@ -180,6 +169,21 @@ class KeyboardTab(QWidget):
         file_layout.addWidget(self.file_edit)
         file_layout.addStretch()
         xkb_layout.addLayout(file_layout)
+
+        # Track layout
+        track_layout_layout = QHBoxLayout()
+        track_layout_label = QLabel(self.tr('Switching policy:'))
+        self.track_global_radio = QRadioButton(self.tr('Global'))
+        self.track_global_radio.setChecked(True)
+        self.track_window_radio = QRadioButton(self.tr('Window'))
+
+        track_layout_layout.addWidget(track_layout_label)
+        track_layout_layout.addSpacing(10)
+        track_layout_layout.addWidget(self.track_global_radio)
+        track_layout_layout.addWidget(self.track_window_radio)
+        track_layout_layout.addStretch()
+        xkb_layout.addSpacing(10)
+        xkb_layout.addLayout(track_layout_layout)
 
         keyboard_layout.addWidget(xkb_group)
 

@@ -398,8 +398,8 @@
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="82"/>
-        <source>Set permanent in &apos;Tools → Settings&apos;</source>
-        <translation>在 &apos;工具 → 设置&apos; 中永久设置</translation>
+        <source>Set permanent in 'Tools → Settings'</source>
+        <translation>在 '工具 → 设置' 中永久设置</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="96"/>
@@ -419,7 +419,7 @@ Right click for other options</source>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="173"/>
-        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
         <translation>没找到 xdg-open。请确认它已安装且在 PATH 中。</translation>
     </message>
     <message>
@@ -568,24 +568,24 @@ Right click for other options</source>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="195"/>
-        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
+        <source>'Super' (Meta) key is identical with 'Mod' by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
-The shortcut field doesn&apos;t detect AltGr, use the checkbox instead.
-If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
-        <translation>&apos;Mod&apos;键默认是&apos;Super&apos; (Meta)键 。
+The shortcut field doesn't detect AltGr, use the checkbox instead.
+If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
+        <translation>'Mod'键默认是'Super' (Meta)键 。
  选择一行以插入快捷键，否则它会被添加至最底部。 
 快捷键区并不检测 AltGr，若需要请勾选复选框。
-若 niri 提示出错，请在下一标签内验证 &apos;keybinds.kdl&apos; 的有效性。</translation>
+若 niri 提示出错，请在下一标签内验证 'keybinds.kdl' 的有效性。</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="202"/>
-        <source>Add &quot;Mod&quot;</source>
-        <translation>添加 &quot;Mod&quot;</translation>
+        <source>Add "Mod"</source>
+        <translation>添加 "Mod"</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="205"/>
-        <source>Add &quot;AltGr&quot;</source>
-        <translation>添加 &quot;AltGr&quot;</translation>
+        <source>Add "AltGr"</source>
+        <translation>添加 "AltGr"</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="209"/>
@@ -711,8 +711,8 @@ copyq show
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="544"/>
-        <source>Add a comment, &apos;e.g. // my comment&apos;, an empty line or else:</source>
-        <translation>添加一个注释， &apos;e.g. // my comment&apos;, 一个空行或是其他的:</translation>
+        <source>Add a comment, 'e.g. // my comment', an empty line or else:</source>
+        <translation>添加一个注释， 'e.g. // my comment', 一个空行或是其他的:</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="569"/>
@@ -743,62 +743,72 @@ copyq show
         <translation>在启动时启用 Numlock</translation>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="29"/>
-        <source>Track keyboard layout:</source>
-        <translation>键盘布局跟踪:</translation>
-    </message>
-    <message>
-        <location filename="../ui/keyboard_tab.py" line="39"/>
+        <location filename="../ui/keyboard_tab.py" line="28"/>
         <source>Keyboard Layout</source>
         <translation>键盘布局</translation>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="109"/>
+        <location filename="../ui/keyboard_tab.py" line="98"/>
         <source>Layout:</source>
         <translation>布局:</translation>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="116"/>
+        <location filename="../ui/keyboard_tab.py" line="105"/>
         <source>Select a layout to add</source>
         <translation>选择布局以添加</translation>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="130"/>
+        <location filename="../ui/keyboard_tab.py" line="119"/>
         <source>Variant:</source>
         <translation>变种:</translation>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="144"/>
+        <location filename="../ui/keyboard_tab.py" line="133"/>
         <source>Options:</source>
         <translation>选项:</translation>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="148"/>
+        <location filename="../ui/keyboard_tab.py" line="137"/>
         <source>Options (double click to add)</source>
         <translation>选项 (双击添加)</translation>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="159"/>
+        <location filename="../ui/keyboard_tab.py" line="148"/>
         <source>Model:</source>
         <translation>型号:</translation>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="173"/>
+        <location filename="../ui/keyboard_tab.py" line="162"/>
         <source>File:</source>
         <translation>文件:</translation>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="187"/>
+        <location filename="../ui/keyboard_tab.py" line="175"/>
+        <source>Switching policy:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/keyboard_tab.py" line="176"/>
+        <source>Global</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/keyboard_tab.py" line="178"/>
+        <source>Window</source>
+        <translation type="unfinished">窗口</translation>
+    </message>
+    <message>
+        <location filename="../ui/keyboard_tab.py" line="191"/>
         <source>Repeat Settings</source>
         <translation>重复设置</translation>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="192"/>
+        <location filename="../ui/keyboard_tab.py" line="196"/>
         <source>Repeat delay:</source>
         <translation>重复前延迟:</translation>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="206"/>
+        <location filename="../ui/keyboard_tab.py" line="210"/>
         <source>Repeat rate:</source>
         <translation>重复速率:</translation>
     </message>
@@ -899,32 +909,32 @@ copyq show
         <translation>关闭</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="897"/>
-        <location filename="../ui/settings_window.py" line="873"/>
-        <location filename="../ui/settings_window.py" line="808"/>
-        <location filename="../ui/settings_window.py" line="769"/>
-        <location filename="../ui/settings_window.py" line="682"/>
-        <location filename="../ui/settings_window.py" line="572"/>
+        <location filename="../ui/settings_window.py" line="901"/>
+        <location filename="../ui/settings_window.py" line="877"/>
+        <location filename="../ui/settings_window.py" line="812"/>
+        <location filename="../ui/settings_window.py" line="773"/>
+        <location filename="../ui/settings_window.py" line="686"/>
+        <location filename="../ui/settings_window.py" line="576"/>
         <source>Configuration Parsing Error</source>
         <translation>配置解析错误</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="899"/>
-        <location filename="../ui/settings_window.py" line="875"/>
-        <location filename="../ui/settings_window.py" line="810"/>
-        <location filename="../ui/settings_window.py" line="771"/>
-        <location filename="../ui/settings_window.py" line="684"/>
-        <location filename="../ui/settings_window.py" line="574"/>
+        <location filename="../ui/settings_window.py" line="903"/>
+        <location filename="../ui/settings_window.py" line="879"/>
+        <location filename="../ui/settings_window.py" line="814"/>
+        <location filename="../ui/settings_window.py" line="775"/>
+        <location filename="../ui/settings_window.py" line="688"/>
+        <location filename="../ui/settings_window.py" line="578"/>
         <source>Applying changes will reset to defaults some values, please check this file.</source>
         <translation>应用更改会使某些变量重置为默认值，请检查这个文件。</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="887"/>
+        <location filename="../ui/settings_window.py" line="891"/>
         <source>Niri Settings: Configuration not found</source>
         <translation>Niri 设置：没找到配置</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="889"/>
+        <location filename="../ui/settings_window.py" line="893"/>
         <source>This is needed to make niri-settings work. 
 Identical settings before this line will be ignored then.</source>
         <translation>niri-settings 需要它才能正常使用。 
@@ -1035,8 +1045,8 @@ Identical settings before this line will be ignored then.</source>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="105"/>
-        <source> Hide by default backup files in &apos;Files&apos; tab</source>
-        <translation> 在 &apos;文件&apos; 标签页中默认隐藏备份文件</translation>
+        <source> Hide by default backup files in 'Files' tab</source>
+        <translation> 在 '文件' 标签页中默认隐藏备份文件</translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="184"/>
@@ -1162,5 +1172,4 @@ with PID {}?</source>
         <source>Tap button map:</source>
         <translation>轻触按键映射:</translation>
     </message>
-</context>
-</TS>
+</context></TS>

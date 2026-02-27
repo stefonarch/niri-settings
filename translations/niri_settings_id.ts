@@ -731,62 +731,72 @@ copyq show
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="29"/>
-        <source>Track keyboard layout:</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../ui/keyboard_tab.py" line="39"/>
+        <location filename="../ui/keyboard_tab.py" line="28"/>
         <source>Keyboard Layout</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="109"/>
+        <location filename="../ui/keyboard_tab.py" line="98"/>
         <source>Layout:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="116"/>
+        <location filename="../ui/keyboard_tab.py" line="105"/>
         <source>Select a layout to add</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="130"/>
+        <location filename="../ui/keyboard_tab.py" line="119"/>
         <source>Variant:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="144"/>
+        <location filename="../ui/keyboard_tab.py" line="133"/>
         <source>Options:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="148"/>
+        <location filename="../ui/keyboard_tab.py" line="137"/>
         <source>Options (double click to add)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="159"/>
+        <location filename="../ui/keyboard_tab.py" line="148"/>
         <source>Model:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="173"/>
+        <location filename="../ui/keyboard_tab.py" line="162"/>
         <source>File:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="187"/>
+        <location filename="../ui/keyboard_tab.py" line="175"/>
+        <source>Switching policy:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/keyboard_tab.py" line="176"/>
+        <source>Global</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/keyboard_tab.py" line="178"/>
+        <source>Window</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../ui/keyboard_tab.py" line="191"/>
         <source>Repeat Settings</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="192"/>
+        <location filename="../ui/keyboard_tab.py" line="196"/>
         <source>Repeat delay:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/keyboard_tab.py" line="206"/>
+        <location filename="../ui/keyboard_tab.py" line="210"/>
         <source>Repeat rate:</source>
         <translation type="unfinished"/>
     </message>
@@ -887,32 +897,32 @@ copyq show
         <translation>Tutup</translation>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="897"/>
-        <location filename="../ui/settings_window.py" line="873"/>
-        <location filename="../ui/settings_window.py" line="808"/>
-        <location filename="../ui/settings_window.py" line="769"/>
-        <location filename="../ui/settings_window.py" line="682"/>
-        <location filename="../ui/settings_window.py" line="572"/>
+        <location filename="../ui/settings_window.py" line="901"/>
+        <location filename="../ui/settings_window.py" line="877"/>
+        <location filename="../ui/settings_window.py" line="812"/>
+        <location filename="../ui/settings_window.py" line="773"/>
+        <location filename="../ui/settings_window.py" line="686"/>
+        <location filename="../ui/settings_window.py" line="576"/>
         <source>Configuration Parsing Error</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="899"/>
-        <location filename="../ui/settings_window.py" line="875"/>
-        <location filename="../ui/settings_window.py" line="810"/>
-        <location filename="../ui/settings_window.py" line="771"/>
-        <location filename="../ui/settings_window.py" line="684"/>
-        <location filename="../ui/settings_window.py" line="574"/>
+        <location filename="../ui/settings_window.py" line="903"/>
+        <location filename="../ui/settings_window.py" line="879"/>
+        <location filename="../ui/settings_window.py" line="814"/>
+        <location filename="../ui/settings_window.py" line="775"/>
+        <location filename="../ui/settings_window.py" line="688"/>
+        <location filename="../ui/settings_window.py" line="578"/>
         <source>Applying changes will reset to defaults some values, please check this file.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="887"/>
+        <location filename="../ui/settings_window.py" line="891"/>
         <source>Niri Settings: Configuration not found</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../ui/settings_window.py" line="889"/>
+        <location filename="../ui/settings_window.py" line="893"/>
         <source>This is needed to make niri-settings work. 
 Identical settings before this line will be ignored then.</source>
         <translation type="unfinished"/>
