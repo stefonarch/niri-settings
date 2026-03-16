@@ -412,7 +412,6 @@ class BehaviorTab(QScrollArea):
         self.hotkey_overlay_checkbox = QCheckBox(self.tr('Show hotkeys at login'))
         self.hotkey_overlay_checkbox.setChecked(True)
         self.warp_mouse_to_focus_checkbox = QCheckBox(self.tr('Warp mouse to focus'))
-        self.focus_follows_mouse_checkbox = QCheckBox(self.tr('Focus follows mouse'))
         self.focus_request_checkbox = QCheckBox(self.tr('Always focus windows on request'))
         self.always_center_single_checkbox = QCheckBox(self.tr('Always center single column'))
         self.disable_power_key_checkbox = QCheckBox(self.tr('Disable power key handling'))
@@ -578,6 +577,37 @@ class BehaviorTab(QScrollArea):
         cursor_layout = QVBoxLayout(cursor_group)
         self.inactive_enable_checkbox = QCheckBox(self.tr("Enable"))
 
+        # Follow mouse, scroll_amount
+        scroll_amount_layout = QHBoxLayout()
+        self.focus_follows_mouse_checkbox = QCheckBox(self.tr('Focus follows mouse'))
+        scroll_amount_label = QLabel(self.tr('Maximum scroll amount:'))
+        self.enable_scroll_amount_checkbox = QCheckBox()
+        self.scroll_amount_spinbox = QSpinBox()
+        self.scroll_amount_spinbox.setRange(0,100)
+        self.scroll_amount_spinbox.setValue(10)
+        self.scroll_amount_spinbox.setSingleStep(1)
+        self.scroll_amount_spinbox.setSuffix(' %')
+
+        scroll_amount_layout.addWidget(self.focus_follows_mouse_checkbox)
+        scroll_amount_layout.addWidget(self.enable_scroll_amount_checkbox)
+        scroll_amount_layout.addWidget(scroll_amount_label)
+        scroll_amount_layout.addWidget(self.scroll_amount_spinbox)
+        scroll_amount_layout.addStretch()
+
+        def update_scroll_amount_enabled():
+            enabled = (self.focus_follows_mouse_checkbox.isChecked() and
+                    self.enable_scroll_amount_checkbox.isChecked())
+            scroll_amount_label.setEnabled(enabled)
+            self.scroll_amount_spinbox.setEnabled(enabled)
+
+        self.focus_follows_mouse_checkbox.toggled.connect(update_scroll_amount_enabled)
+        self.enable_scroll_amount_checkbox.toggled.connect(update_scroll_amount_enabled)
+
+        self.enable_scroll_amount_checkbox.setEnabled(self.focus_follows_mouse_checkbox.isChecked())
+        self.focus_follows_mouse_checkbox.toggled.connect(self.enable_scroll_amount_checkbox.setEnabled)
+
+        update_scroll_amount_enabled()
+
         # inactive block
         inactive_layout = QHBoxLayout()
         inactive_label = QLabel(self.tr('hiding after inactive for:'))
@@ -596,7 +626,7 @@ class BehaviorTab(QScrollArea):
         inactive_label.setEnabled(self.inactive_enable_checkbox.isChecked())
         self.inactive_spinbox.setEnabled(self.inactive_enable_checkbox.isChecked())
 
-        cursor_layout.addWidget(self.focus_follows_mouse_checkbox)
+        cursor_layout.addLayout(scroll_amount_layout)
         cursor_layout.addWidget(self.warp_mouse_to_focus_checkbox)
         cursor_layout.addWidget(self.hide_while_typing_checkbox)
         cursor_layout.addLayout(inactive_layout)

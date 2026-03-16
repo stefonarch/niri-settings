@@ -257,9 +257,16 @@ class SettingsWindow(QMainWindow):
             else:
                 f.write('    // warp-mouse-to-focus\n')
             if self.behavior_tab.focus_follows_mouse_checkbox.isChecked():
-                f.write('    focus-follows-mouse\n')
+                f.write('    focus-follows-mouse')
             else:
-                f.write('    // focus-follows-mouse\n')
+                f.write('    // focus-follows-mouse')
+
+            if self.behavior_tab.enable_scroll_amount_checkbox.isChecked():
+                f.write(' ')
+            else:
+                f.write(' // ')
+            f.write(f'max-scroll-amount="{self.behavior_tab.scroll_amount_spinbox.value()}%"\n')
+
             if self.behavior_tab.disable_power_key_checkbox.isChecked():
                 f.write('    disable-power-key-handling\n')
             else:
@@ -614,6 +621,13 @@ class SettingsWindow(QMainWindow):
                 self.behavior_tab.focus_follows_mouse_checkbox.setChecked(
                     '// focus-follows-mouse' not in content
                 )
+                self.behavior_tab.enable_scroll_amount_checkbox.setChecked(
+                    '// max-scroll-amount' not in content
+                )
+                percent = re.search(r'max-scroll-amount="(\d+)%?"', content)
+                if percent:
+                    self.behavior_tab.scroll_amount_spinbox.setValue(int(percent.group(1)))
+
                 self.behavior_tab.hide_while_typing_checkbox.setChecked(
                     '// hide-when-typing ' not in content
                 )
