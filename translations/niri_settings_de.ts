@@ -350,8 +350,8 @@
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="578"/>
-        <source>Enable</source>
-        <translation>Aktivieren</translation>
+        <source>Hide when inactive for:</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="582"/>
@@ -362,11 +362,6 @@
         <location filename="../ui/all_tabs.py" line="583"/>
         <source>Maximum scroll amount:</source>
         <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../ui/all_tabs.py" line="613"/>
-        <source>hiding after inactive for:</source>
-        <translation>Verbergen nach Inaktivität für:</translation>
     </message>
 </context>
 <context>
@@ -822,32 +817,32 @@ oder anderes einfügen:</translation>
 <context>
     <name>MouseTab</name>
     <message>
-        <location filename="../ui/all_tabs.py" line="788"/>
+        <location filename="../ui/all_tabs.py" line="784"/>
         <source>Natural scroll</source>
         <translation>Natürliches Scrollen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="789"/>
+        <location filename="../ui/all_tabs.py" line="785"/>
         <source>Left handed</source>
         <translation>Linkshändig</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="790"/>
+        <location filename="../ui/all_tabs.py" line="786"/>
         <source>Middle button emulation</source>
         <translation>Mittlere-Taste-Emulation</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="794"/>
+        <location filename="../ui/all_tabs.py" line="790"/>
         <source>Acceleration speed:</source>
         <translation>Beschleunigungsgeschwindigkeit:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="806"/>
+        <location filename="../ui/all_tabs.py" line="802"/>
         <source>Acceleration profile:</source>
         <translation>Beschleunigungsprofil:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="816"/>
+        <location filename="../ui/all_tabs.py" line="812"/>
         <source>Scroll factor:</source>
         <translation>Scroll-Faktor:</translation>
     </message>
@@ -1080,102 +1075,102 @@ mit PID {} beenden wollen?</translation>
 <context>
     <name>TouchpadTab</name>
     <message>
-        <location filename="../ui/all_tabs.py" line="657"/>
+        <location filename="../ui/all_tabs.py" line="653"/>
         <source>Tap to click</source>
         <translation>Tippen zum Klicken</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="659"/>
+        <location filename="../ui/all_tabs.py" line="655"/>
         <source>Natural scroll</source>
         <translation>Natürliches Scrollen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="661"/>
+        <location filename="../ui/all_tabs.py" line="657"/>
         <source>Tap and Drag</source>
         <translation>Tippen und Ziehen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="662"/>
+        <location filename="../ui/all_tabs.py" line="658"/>
         <source>Drag lock</source>
         <translation>Zieh-Sperre</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="670"/>
+        <location filename="../ui/all_tabs.py" line="666"/>
         <source>Disable when external mouse connected</source>
         <translation>Deaktivieren bei externer Maus</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="671"/>
+        <location filename="../ui/all_tabs.py" line="667"/>
         <source>Disable while typing</source>
         <translation>Beim Tippen deaktivieren</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="672"/>
+        <location filename="../ui/all_tabs.py" line="668"/>
         <source>Disable while trackpointing</source>
         <translation>Bei Trackpoint-Benutzung deaktivieren</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="673"/>
+        <location filename="../ui/all_tabs.py" line="669"/>
         <source>Left handed</source>
         <translation>Linkshändig</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="676"/>
+        <location filename="../ui/all_tabs.py" line="672"/>
         <source>Click method:</source>
         <translation>Klickmethode:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="677"/>
+        <location filename="../ui/all_tabs.py" line="673"/>
         <source>Button areas</source>
         <translation>Tastenbereiche</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="679"/>
+        <location filename="../ui/all_tabs.py" line="675"/>
         <source>Clickfinger</source>
         <translation>Klickfinger</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="689"/>
+        <location filename="../ui/all_tabs.py" line="685"/>
         <source>No scroll</source>
         <translation>Kein Scrollen</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="690"/>
+        <location filename="../ui/all_tabs.py" line="686"/>
         <source>Two finger</source>
         <translation>Zwei Finger</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="692"/>
+        <location filename="../ui/all_tabs.py" line="688"/>
         <source>Edge</source>
         <translation>Kante</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="693"/>
+        <location filename="../ui/all_tabs.py" line="689"/>
         <source>Button</source>
         <translation>Taste</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="700"/>
+        <location filename="../ui/all_tabs.py" line="696"/>
         <source>Scroll method</source>
         <translation>Scrollmethode</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="711"/>
+        <location filename="../ui/all_tabs.py" line="707"/>
         <source>Acceleration speed:</source>
         <translation>Beschleunigungsgeschwindigkeit:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="723"/>
+        <location filename="../ui/all_tabs.py" line="719"/>
         <source>Acceleration profile:</source>
         <translation>Beschleunigungsprofil:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="733"/>
+        <location filename="../ui/all_tabs.py" line="729"/>
         <source>Scroll factor:</source>
         <translation>Scroll-Faktor:</translation>
     </message>
     <message>
-        <location filename="../ui/all_tabs.py" line="746"/>
+        <location filename="../ui/all_tabs.py" line="742"/>
         <source>Tap button map:</source>
         <translation>Tipp-Tasten-Zuordnung:</translation>
     </message>

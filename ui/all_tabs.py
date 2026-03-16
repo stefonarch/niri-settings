@@ -575,7 +575,7 @@ class BehaviorTab(QScrollArea):
         # Cursor
         cursor_group = QGroupBox(self.tr("Cursor"))
         cursor_layout = QVBoxLayout(cursor_group)
-        self.inactive_enable_checkbox = QCheckBox(self.tr("Enable"))
+        self.inactive_enable_checkbox = QCheckBox(self.tr('Hide when inactive for:'))
 
         # Follow mouse, scroll_amount
         scroll_amount_layout = QHBoxLayout()
@@ -610,7 +610,6 @@ class BehaviorTab(QScrollArea):
 
         # inactive block
         inactive_layout = QHBoxLayout()
-        inactive_label = QLabel(self.tr('hiding after inactive for:'))
         self.inactive_spinbox = QSpinBox()
         self.inactive_spinbox.setRange(500, 20000)
         self.inactive_spinbox.setValue(3000)
@@ -618,12 +617,9 @@ class BehaviorTab(QScrollArea):
         self.inactive_spinbox.setSuffix(' ms')
 
         inactive_layout.addWidget(self.inactive_enable_checkbox)
-        inactive_layout.addWidget(inactive_label)
         inactive_layout.addWidget(self.inactive_spinbox)
         inactive_layout.addStretch()
         self.inactive_enable_checkbox.toggled.connect(self.inactive_spinbox.setEnabled)
-        self.inactive_enable_checkbox.toggled.connect(inactive_label.setEnabled)
-        inactive_label.setEnabled(self.inactive_enable_checkbox.isChecked())
         self.inactive_spinbox.setEnabled(self.inactive_enable_checkbox.isChecked())
 
         cursor_layout.addLayout(scroll_amount_layout)
