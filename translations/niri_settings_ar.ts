@@ -1,193 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.1" language="ar">
 <context>
     <name>AppearanceTab</name>
     <message>
         <location filename="../ui/all_tabs.py" line="22"/>
         <source>Choose Color</source>
-        <translation>Farbe wählen</translation>
+        <translation>اختيار لون</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="31"/>
         <source>Choose Incactive Color</source>
-        <translation>Inaktive Farbe wählen</translation>
+        <translation>اختيار لون عدم التمكين</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="41"/>
         <source>Choose Insert Hint Color</source>
-        <translation>Einfügehinweis-Farbe wählen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="58"/>
         <source>Use client side decorations</source>
-        <translation>Client-seitige Dekorationen verwenden</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="63"/>
         <source>Overview zoom:</source>
-        <translation>Übersichtszoom:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="75"/>
         <source>Enable shadows</source>
-        <translation>Schatten aktivieren</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="79"/>
         <source>Enable Animations</source>
-        <translation>Animationen aktivieren</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="82"/>
         <source>Slowdown:</source>
-        <translation>Verlangsamung:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="103"/>
         <source>Enable focus-ring or border</source>
-        <translation>Fokusring oder Rahmen aktivieren</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="118"/>
         <source>Active color: </source>
-        <translation>Aktive Farbe: </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="123"/>
         <source>Inactive color: </source>
-        <translation>Inaktive Farbe: </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="326"/>
         <location filename="../ui/all_tabs.py" line="138"/>
         <source>Width:</source>
-        <translation>Breite:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="156"/>
         <source>Apply as:</source>
-        <translation>Anwenden als:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="158"/>
         <source>Focus ring </source>
-        <translation>Fokusring </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="159"/>
         <source>Border</source>
-        <translation>Rahmen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="193"/>
         <source>Corner rounding:</source>
-        <translation>Eckenrundung:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="207"/>
         <source>Enable insert hint</source>
-        <translation>Einfügehinweis aktivieren</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="210"/>
         <source>Color: </source>
-        <translation>Farbe: </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="229"/>
         <source>Margins</source>
-        <translation>Ränder</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="234"/>
         <source>Gaps:</source>
-        <translation>Lücken:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="255"/>
         <source>Left:</source>
-        <translation>Links:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="261"/>
         <source>Right:</source>
-        <translation>Rechts:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="267"/>
         <source>Top:</source>
-        <translation>Oben:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="273"/>
         <source>Bottom:</source>
-        <translation>Unten:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="291"/>
         <source>Struts:</source>
-        <translation>Reservierte Ränder:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="298"/>
         <source>Tab Indicator</source>
-        <translation>Tab-Indikator</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="304"/>
         <source>Hide when single tab</source>
-        <translation>Bei einem einzelnen Tab verbergen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="307"/>
         <source>Place within column</source>
-        <translation>Innerhalb der Spalte platzieren</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="313"/>
         <source>Corner radius:</source>
-        <translation>Eckenradius:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="333"/>
         <source>Length:</source>
-        <translation>Länge:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="350"/>
         <source>Gap:</source>
-        <translation>Lücke:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="357"/>
         <source>Gap between:</source>
-        <translation>Lücke zwischen:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="374"/>
         <source>Position:</source>
-        <translation>Position:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="376"/>
         <source>left</source>
-        <translation>links</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="377"/>
         <source>top</source>
-        <translation>oben</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="378"/>
         <source>right</source>
-        <translation>rechts</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="379"/>
         <source>bottom</source>
-        <translation>unten</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -195,173 +195,173 @@
     <message>
         <location filename="../ui/all_tabs.py" line="412"/>
         <source>Show hotkeys at login</source>
-        <translation>Tastaturkürzel beim Anmelden anzeigen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="414"/>
         <source>Warp mouse to focus</source>
-        <translation>Maus zum Fokus bewegen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="415"/>
         <source>Always focus windows on request</source>
-        <translation>Fenster bei Anfrage immer fokussieren</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="416"/>
         <source>Always center single column</source>
-        <translation>Einzelne Spalte immer zentrieren</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="417"/>
         <source>Disable power key handling</source>
-        <translation>Energie-Tasten-Behandlung deaktivieren</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="418"/>
         <source>Workspace auto back and forth</source>
-        <translation>Arbeitsbereich automatisch vor und zurück</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="419"/>
         <source>Add also an empty workspace above</source>
-        <translation>Auch einen leeren Arbeitsbereich oben hinzufügen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="420"/>
         <source>Hide cursor while typing</source>
-        <translation>Cursor beim Tippen verbergen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="426"/>
         <source>Columns</source>
-        <translation>Spalten</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="431"/>
         <source>Default layout:</source>
-        <translation>Standardlayout:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="435"/>
         <source>Tabbed</source>
-        <translation>Mit Tabs</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="436"/>
         <source>Normal</source>
-        <translation>Normal</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="448"/>
         <source>Default width:</source>
-        <translation>Standardbreite:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="454"/>
         <source>Proportion:</source>
-        <translation>Anteil:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="455"/>
         <source>Fixed width:</source>
-        <translation>Feste Breite:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="456"/>
         <source>Applications may decide</source>
-        <translation>Anwendungen dürfen entscheiden</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="489"/>
         <source>Center focused column:</source>
-        <translation>Fokussierte Spalte zentrieren:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="493"/>
         <source>never</source>
-        <translation>nie</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="495"/>
         <source>always</source>
-        <translation>immer</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="496"/>
         <source>on overflow</source>
-        <translation>bei Überlauf</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="521"/>
         <source>Hot corners</source>
-        <translation>Aktive Ecken</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="526"/>
         <source>Top left</source>
-        <translation>Oben links</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="528"/>
         <source>Top right</source>
-        <translation>Oben rechts</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="529"/>
         <source>Bottom left</source>
-        <translation>Unten links</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="530"/>
         <source>Bottom right</source>
-        <translation>Unten rechts</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="552"/>
         <location filename="../ui/all_tabs.py" line="544"/>
         <source>Mod Key:</source>
-        <translation>Mod-Taste:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="546"/>
         <source>Super</source>
-        <translation>Super</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="547"/>
         <source>Alt</source>
-        <translation>Alt</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="548"/>
         <source>Ctrl</source>
-        <translation>Strg</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="564"/>
         <source>Screenshots:</source>
-        <translation>Bildschirmfotos:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="576"/>
         <source>Cursor</source>
-        <translation>Mauszeiger</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="578"/>
         <source>Hide when inactive for:</source>
-        <translation>Ausblenden, wenn inaktiv für:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="582"/>
         <source>Focus follows mouse</source>
-        <translation>Fokus folgt Maus</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="583"/>
         <source>Maximum scroll amount:</source>
-        <translation>Maximaler Scrollbetrag:</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -369,129 +369,126 @@
     <message>
         <location filename="../ui/files_tab.py" line="24"/>
         <source>Configuration Files</source>
-        <translation>Konfigurationsdateien</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="43"/>
         <source>Save</source>
-        <translation>Speichern</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="51"/>
         <source>Validate</source>
-        <translation>Validieren</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="59"/>
         <source>Backup</source>
-        <translation>Backup</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="67"/>
         <source>Refresh</source>
-        <translation>Aktualisieren</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="81"/>
         <source>Show backups</source>
-        <translation>Backups anzeigen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="82"/>
         <source>Set permanent in &apos;Tools → Settings&apos;</source>
-        <translation>In „Werkzeuge → Einstellungen“ als dauerhaft festlegen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="96"/>
         <source>Click file to edit here
 Double click to open in text editor
 Right click for other options</source>
-        <translation>Datei klicken, um sie hier zu bearbeiten
-Doppelklick öffnet im Texteditor
-Rechtsklick für weitere Optionen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="143"/>
         <source>Directory does not exist:
 {base_path}</source>
-        <translation>Verzeichnis existiert nicht:
-{base_path}</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="173"/>
         <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
-        <translation>xdg-open nicht gefunden. Stellen Sie sicher, dass es installiert und in Ihrem PATH ist.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="205"/>
         <source>Open</source>
-        <translation>Öffnen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="210"/>
         <source>Show in file manager</source>
-        <translation>Im Dateimanager anzeigen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="217"/>
         <source>Copy path to clipboard</source>
-        <translation>Pfad in die Zwischenablage kopieren</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="224"/>
         <source>Create new file here</source>
-        <translation>Neue Datei hier erstellen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="229"/>
         <source>Restore from backup</source>
-        <translation>Wiederherstellen aus Backup</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="234"/>
         <source>Move to trash</source>
-        <translation>In Papierkorb verschieben</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="294"/>
         <source>Selected a backup file!</source>
-        <translation>Backupdatei ausgewählt!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="330"/>
         <location filename="../ui/files_tab.py" line="300"/>
         <source>Confirm</source>
-        <translation>Bestätigen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="301"/>
         <source>Overwrite this file with its backup?</source>
-        <translation>Datei mit ihrem Backup überschreiben?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="331"/>
         <source>Move file to trash?</source>
-        <translation>Datei in Papierkorb verschieben?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="367"/>
         <source>File %1 saved</source>
-        <translation>Datei %1 gespeichert</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="386"/>
         <source>Backup saved as %1</source>
-        <translation>Sicherungskopie unter %1 gespeichert</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="395"/>
         <source>Permission denied. Cannot create backup.</source>
-        <translation>Berechtigung verweigert. Sicherung kann nicht erstellt werden.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="423"/>
         <source>%1 is valid</source>
-        <translation>%1 ist fehlerfrei</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -499,72 +496,72 @@ Rechtsklick für weitere Optionen</translation>
     <message>
         <location filename="../ui/keybinds_tab.py" line="64"/>
         <source>Editing %1</source>
-        <translation>Bearbeitung %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="79"/>
         <source>Filter:</source>
-        <translation>Filter:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="82"/>
         <source>Type to filter...</source>
-        <translation>Zum Filtern tippen ...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="115"/>
         <source>Select a line to edit here</source>
-        <translation>Eine Zeile zum Bearbeiten auswählen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="125"/>
         <source>Save edit</source>
-        <translation>Bearbeitung speichern</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="134"/>
         <source>Remove this line</source>
-        <translation>Diese Zeile entfernen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="144"/>
         <source>Move up</source>
-        <translation>Nach oben verschieben</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="149"/>
         <source>Move down</source>
-        <translation>Nach unten verschieben</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="154"/>
         <source>Trigger:</source>
-        <translation>Starten:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="157"/>
         <source>Application</source>
-        <translation>Anwendung</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="162"/>
         <source>Shell command</source>
-        <translation>Shell-Befehl</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="167"/>
         <source>niri action</source>
-        <translation>niri-Aktion</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="173"/>
         <source>Insert custom line</source>
-        <translation>Benutzerdefinierte Zeile einfügen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="193"/>
         <source>Add a shortcut:</source>
-        <translation>Tastaturkürzel hinzufügen:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="195"/>
@@ -572,124 +569,119 @@ Rechtsklick für weitere Optionen</translation>
  Select a line to insert the shortcut otherwise it will be added at the bottom.
 The shortcut field doesn&apos;t detect AltGr, use the checkbox instead.
 If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
-        <translation>Die „Super“-Taste (Meta) entspricht standardmäßig der „Mod“-Taste.
-Eine Zeile auswählen um die Tastenkombination einzufügen, andernfalls wird sie unten hinzugefügt.
-Das Tastenkombinationsfeld erkennt AltGr nicht. Stattdessen das Kontrollkästchen verwenden.
-Falls Niri einen Fehler anzeigt, überprüfen Sie die Datei „keybinds.kdl“ im nächsten Tab.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="202"/>
         <source>Add &quot;Mod&quot;</source>
-        <translation>„Mod“ hinzufügen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="205"/>
         <source>Add &quot;AltGr&quot;</source>
-        <translation>„AltGr“ hinzufügen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="209"/>
         <source>No repeat</source>
-        <translation>Nicht wiederholen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="210"/>
         <source>Do not repeat the action. Repeating is default</source>
-        <translation>Die Aktion nicht wiederholen. Wiederholung ist Standard</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="213"/>
         <source>Allow when locked</source>
-        <translation>Erlauben, wenn gesperrt</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="214"/>
         <source>Allow execution when screen is locked</source>
-        <translation>Ausführung zulassen, auch wenn der Bildschirm gesperrt ist</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="225"/>
         <source>No overlay</source>
-        <translation>Kein Overlay</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="227"/>
         <source>Do not show this shortcut in the hotkey overlay.
 It also allows adding a custom title after editing.</source>
-        <translation>Diese Tastenkombination nicht in der Hotkey-Übersicht anzeigen.
-Ermöglicht außerdem das Hinzufügen eines benutzerdefinierten Titels nach einer Bearbeitung.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="229"/>
         <source>Add mousebind:</source>
-        <translation>Mausbindung hinzufügen:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="288"/>
         <source>Created new keybinds file</source>
-        <translation>Neue Tastenkombinationsdatei erstellt</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="301"/>
         <source>Loaded %1 lines</source>
-        <translation>%1 Zeilen geladen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="328"/>
         <source>%1 matching</source>
-        <translation>%1 Treffer</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="365"/>
         <source>Editing line %1</source>
-        <translation>Bearbeitungszeile %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="405"/>
         <source>Saved line %1</source>
-        <translation>Zeile %1 gespeichert</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="413"/>
         <source>Error saving file: %1</source>
-        <translation>Fehler beim Speichern: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="434"/>
         <source>Line %1 deleted</source>
-        <translation>Zeile %1 gelöscht</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="449"/>
         <source>Error deleting line %1</source>
-        <translation>Fehler beim Löschen der Zeile %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="501"/>
         <location filename="../ui/keybinds_tab.py" line="455"/>
         <source>Add Command</source>
-        <translation>Befehl hinzufügen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="456"/>
         <source>Add a single command without arguments
 Example: firefox</source>
-        <translation>Einen einzelnen Befehl ohne Argumente hinzufügen.
-Beispiel: firefox</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="612"/>
         <location filename="../ui/keybinds_tab.py" line="531"/>
         <location filename="../ui/keybinds_tab.py" line="490"/>
         <source>Added new shortcut at line %1</source>
-        <translation>Neuer Kurzbefehl in Zeile %1 hinzugefügt</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="617"/>
         <location filename="../ui/keybinds_tab.py" line="536"/>
         <location filename="../ui/keybinds_tab.py" line="495"/>
         <source>Error adding shortcut: %1</source>
-        <translation>Fehler beim Hinzufügen: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="502"/>
@@ -698,42 +690,37 @@ Beispiel: firefox</translation>
 Examples: firefox -p myprofile
 copyq show
 </source>
-        <translation>Einen Shell-Befehl mit Argumenten hinzufügen
-
-Beispiele: firefox -p meinprofil
-copyq show
-</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="543"/>
         <source>Add a custom line</source>
-        <translation>Eine beliebige Zeile einfügen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="544"/>
         <source>Add a comment, &apos;e.g. // my comment&apos;, an empty line or else:</source>
-        <translation>Einen Kommentar, z. B.: „// Anmerkung“, eine Leerzeile 
-oder anderes einfügen:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="569"/>
         <source>Custom line saved at line %1</source>
-        <translation>Benutzerdefinierte Zeile in Zeile %1 gespeichert</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="574"/>
         <source>Error saving custom line: %1</source>
-        <translation>Fehler beim Hinzufügen: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="581"/>
         <source>Add niri action</source>
-        <translation>niri-Aktion hinzufügen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="582"/>
         <source>Select a niri action:</source>
-        <translation>Eine niri-Aktion auswählen:</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -741,77 +728,77 @@ oder anderes einfügen:</translation>
     <message>
         <location filename="../ui/keyboard_tab.py" line="23"/>
         <source>Enable num lock at startup</source>
-        <translation>Num Lock beim Start aktivieren</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="28"/>
         <source>Keyboard Layout</source>
-        <translation>Tastaturlayout</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="98"/>
         <source>Layout:</source>
-        <translation>Layout:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="105"/>
         <source>Select a layout to add</source>
-        <translation>Tastaturlayout auswählen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="119"/>
         <source>Variant:</source>
-        <translation>Variante:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="133"/>
         <source>Options:</source>
-        <translation>Optionen:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="137"/>
         <source>Options (double click to add)</source>
-        <translation>Optionen (Doppelklick zum Hinzufügen)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="148"/>
         <source>Model:</source>
-        <translation>Modell:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="162"/>
         <source>File:</source>
-        <translation>Datei:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="175"/>
         <source>Switching policy:</source>
-        <translation>Umschaltverhalten:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="176"/>
         <source>Global</source>
-        <translation>Global</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="178"/>
         <source>Window</source>
-        <translation>Fenster</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="191"/>
         <source>Repeat Settings</source>
-        <translation>Wiederholungseinstellungen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="196"/>
         <source>Repeat delay:</source>
-        <translation>Wiederholungsverzögerung:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="210"/>
         <source>Repeat rate:</source>
-        <translation>Wiederholungsrate:</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -819,32 +806,32 @@ oder anderes einfügen:</translation>
     <message>
         <location filename="../ui/all_tabs.py" line="784"/>
         <source>Natural scroll</source>
-        <translation>Natürliches Scrollen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="785"/>
         <source>Left handed</source>
-        <translation>Linkshändig</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="786"/>
         <source>Middle button emulation</source>
-        <translation>Mittlere-Taste-Emulation</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="790"/>
         <source>Acceleration speed:</source>
-        <translation>Beschleunigungsgeschwindigkeit:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="802"/>
         <source>Acceleration profile:</source>
-        <translation>Beschleunigungsprofil:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="812"/>
         <source>Scroll factor:</source>
-        <translation>Scroll-Faktor:</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -852,62 +839,62 @@ oder anderes einfügen:</translation>
     <message>
         <location filename="../ui/settings_window.py" line="31"/>
         <source>Niri Settings</source>
-        <translation>Niri-Einstellungen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="63"/>
         <source>Appearance</source>
-        <translation>Erscheinungsbild</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="64"/>
         <source>Behavior</source>
-        <translation>Verhalten</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="65"/>
         <source>Touchpad</source>
-        <translation>Touchpad</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="66"/>
         <source>Mouse</source>
-        <translation>Maus</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="67"/>
         <source>Keyboard</source>
-        <translation>Tastatur</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="68"/>
         <source>Shortcuts</source>
-        <translation>Tastenkombinationen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="69"/>
         <source>Files</source>
-        <translation>Dateien</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="70"/>
         <source>Tools</source>
-        <translation>Werkzeuge</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="79"/>
         <source>Wiki</source>
-        <translation>Wiki</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="83"/>
         <source>Apply</source>
-        <translation>Übernehmen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="87"/>
         <source>Close</source>
-        <translation>Schließen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="915"/>
@@ -917,7 +904,7 @@ oder anderes einfügen:</translation>
         <location filename="../ui/settings_window.py" line="700"/>
         <location filename="../ui/settings_window.py" line="583"/>
         <source>Configuration Parsing Error</source>
-        <translation>Fehler beim Parsen der Konfiguration</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="917"/>
@@ -927,19 +914,18 @@ oder anderes einfügen:</translation>
         <location filename="../ui/settings_window.py" line="702"/>
         <location filename="../ui/settings_window.py" line="585"/>
         <source>Applying changes will reset to defaults some values, please check this file.</source>
-        <translation>Das Übernehmen der Änderungen setzt einige Werte auf die Standardeinstellungen zurück. Bitte überprüfen Sie diese Datei.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="905"/>
         <source>Niri Settings: Configuration not found</source>
-        <translation>Niri-Einstellungen: Konfiguration nicht gefunden</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/settings_window.py" line="907"/>
         <source>This is needed to make niri-settings work. 
 Identical settings before this line will be ignored then.</source>
-        <translation>Dies ist erforderlich, damit niri-settings funktioniert.
-Identische Einstellungen vor dieser Zeile werden dann ignoriert.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -947,129 +933,128 @@ Identische Einstellungen vor dieser Zeile werden dann ignoriert.</translation>
     <message>
         <location filename="../ui/tools_tab.py" line="21"/>
         <source>Lists</source>
-        <translation>Listen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="24"/>
         <source>Windows</source>
-        <translation>Fenster</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="28"/>
         <source>Workspaces</source>
-        <translation>Arbeitsbereiche</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="32"/>
         <source>Layers</source>
-        <translation>Ebenen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="36"/>
         <source>Monitors</source>
-        <translation>Monitore</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="40"/>
         <source>Xwayland windows</source>
-        <translation>Xwayland-Fenster</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="47"/>
         <source>Information</source>
-        <translation>Information</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="50"/>
         <source>Window</source>
-        <translation>Fenster</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="54"/>
         <source>Monitor</source>
-        <translation>Monitor</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="58"/>
         <source>niri version</source>
-        <translation>niri-Version</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="62"/>
         <source>Processes</source>
-        <translation>Prozesse</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="66"/>
         <source>Event Stream</source>
-        <translation>Ereignisstrom</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="72"/>
         <source>Actions</source>
-        <translation>Aktionen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="75"/>
         <source>Kill a window</source>
-        <translation>Ein Fenster beenden</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="79"/>
         <source>Pick color</source>
-        <translation>Farbe auswählen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="83"/>
         <source>New action</source>
-        <translation>Neue Aktion</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="100"/>
         <source>Settings</source>
-        <translation>Einstellungen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="102"/>
         <source>Show all tabs</source>
-        <translation>Alle Tabs anzeigen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="103"/>
         <source>Touchpad tab is hidden when no touchpad is detected</source>
-        <translation>Das Tab „Touchpad“ wird ausgeblendet, wenn kein Touchpad erkannt wird</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="104"/>
         <source>Hide backups</source>
-        <translation>Backups verbergen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="105"/>
         <source> Hide by default backup files in &apos;Files&apos; tab</source>
-        <translation> Sicherungsdateien standardmäßig im Tab „Dateien“ ausblenden</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="184"/>
         <source>Error</source>
-        <translation>Fehler</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="184"/>
         <source>Not a window but maybe a layer surface?</source>
-        <translation>Kein Fenster, aber vielleicht eine Oberfläche einer Ebene?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="189"/>
         <source>Confirm</source>
-        <translation>Bestätigen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="190"/>
         <source>Are you sure to kill this window
 with PID {}?</source>
-        <translation>Sind Sie sicher, dass Sie dieses Fenster
-mit PID {} beenden wollen?</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1077,102 +1062,102 @@ mit PID {} beenden wollen?</translation>
     <message>
         <location filename="../ui/all_tabs.py" line="653"/>
         <source>Tap to click</source>
-        <translation>Tippen zum Klicken</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="655"/>
         <source>Natural scroll</source>
-        <translation>Natürliches Scrollen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="657"/>
         <source>Tap and Drag</source>
-        <translation>Tippen und Ziehen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="658"/>
         <source>Drag lock</source>
-        <translation>Ziehsperre</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="666"/>
         <source>Disable when external mouse connected</source>
-        <translation>Bei externer Maus deaktivieren</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="667"/>
         <source>Disable while typing</source>
-        <translation>Beim Tippen deaktivieren</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="668"/>
         <source>Disable while trackpointing</source>
-        <translation>Bei Trackpoint-Benutzung deaktivieren</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="669"/>
         <source>Left handed</source>
-        <translation>Linkshändig</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="672"/>
         <source>Click method:</source>
-        <translation>Klickmethode:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="673"/>
         <source>Button areas</source>
-        <translation>Tastenbereiche</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="675"/>
         <source>Clickfinger</source>
-        <translation>Klickfinger</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="685"/>
         <source>No scroll</source>
-        <translation>Kein Scrollen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="686"/>
         <source>Two finger</source>
-        <translation>Zwei Finger</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="688"/>
         <source>Edge</source>
-        <translation>Kante</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="689"/>
         <source>Button</source>
-        <translation>Taste</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="696"/>
         <source>Scroll method</source>
-        <translation>Scrollmethode</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="707"/>
         <source>Acceleration speed:</source>
-        <translation>Beschleunigungsgeschwindigkeit:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="719"/>
         <source>Acceleration profile:</source>
-        <translation>Beschleunigungsprofil:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="729"/>
         <source>Scroll factor:</source>
-        <translation>Scrollfaktor:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="742"/>
         <source>Tap button map:</source>
-        <translation>Tipptastenzuordnung:</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
