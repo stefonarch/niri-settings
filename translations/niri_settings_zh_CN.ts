@@ -351,7 +351,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="578"/>
         <source>Hide when inactive for:</source>
-        <translation type="unfinished"></translation>
+        <translation>非活动时隐藏：</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="582"/>
@@ -795,7 +795,7 @@ copyq show
     <message>
         <location filename="../ui/keyboard_tab.py" line="178"/>
         <source>Window</source>
-        <translation type="unfinished">窗口</translation>
+        <translation>窗口</translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="191"/>
