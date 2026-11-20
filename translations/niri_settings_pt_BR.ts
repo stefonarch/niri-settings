@@ -295,27 +295,27 @@
     <message>
         <location filename="../ui/all_tabs.py" line="521"/>
         <source>Hot corners</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="526"/>
         <source>Top left</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="528"/>
         <source>Top right</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="529"/>
         <source>Bottom left</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="530"/>
         <source>Bottom right</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="552"/>
@@ -346,12 +346,12 @@
     <message>
         <location filename="../ui/all_tabs.py" line="576"/>
         <source>Cursor</source>
-        <translation>mouse</translation>
+        <translation>Cursor</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="578"/>
         <source>Hide when inactive for:</source>
-        <translation type="unfinished"/>
+        <translation>Ocultar quando inativo para:</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="582"/>
@@ -361,7 +361,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="583"/>
         <source>Maximum scroll amount:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -394,12 +394,12 @@
     <message>
         <location filename="../ui/files_tab.py" line="81"/>
         <source>Show backups</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="82"/>
-        <source>Set permanent in 'Tools → Settings'</source>
-        <translation type="unfinished"/>
+        <source>Set permanent in &apos;Tools → Settings&apos;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="96"/>
@@ -419,7 +419,7 @@ Clique com o botão direito para outras opções</translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="173"/>
-        <source>xdg-open not found. Make sure it's installed and in your PATH.</source>
+        <source>xdg-open not found. Make sure it&apos;s installed and in your PATH.</source>
         <translation>xdg-open não encontrado. Certifique-se de que ele está instalado e no seu PATH.</translation>
     </message>
     <message>
@@ -476,12 +476,12 @@ Clique com o botão direito para outras opções</translation>
     <message>
         <location filename="../ui/files_tab.py" line="367"/>
         <source>File %1 saved</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="386"/>
         <source>Backup saved as %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/files_tab.py" line="395"/>
@@ -491,7 +491,7 @@ Clique com o botão direito para outras opções</translation>
     <message>
         <location filename="../ui/files_tab.py" line="423"/>
         <source>%1 is valid</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -568,21 +568,21 @@ Clique com o botão direito para outras opções</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="195"/>
-        <source>'Super' (Meta) key is identical with 'Mod' by default.
+        <source>&apos;Super&apos; (Meta) key is identical with &apos;Mod&apos; by default.
  Select a line to insert the shortcut otherwise it will be added at the bottom.
-The shortcut field doesn't detect AltGr, use the checkbox instead.
-If niri shows an error validate 'keybinds.kdl' in the next tab.</source>
-        <translation type="unfinished"/>
+The shortcut field doesn&apos;t detect AltGr, use the checkbox instead.
+If niri shows an error validate &apos;keybinds.kdl&apos; in the next tab.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="202"/>
-        <source>Add "Mod"</source>
-        <translation>Adicionar "Mod"</translation>
+        <source>Add &quot;Mod&quot;</source>
+        <translation>Adicionar &quot;Mod&quot;</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="205"/>
-        <source>Add "AltGr"</source>
-        <translation>Adicionar "AltGr"</translation>
+        <source>Add &quot;AltGr&quot;</source>
+        <translation>Adicionar &quot;AltGr&quot;</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="209"/>
@@ -695,7 +695,7 @@ Exemplo: firefox</translation>
 Examples: firefox -p myprofile
 copyq show
 </source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="543"/>
@@ -704,8 +704,8 @@ copyq show
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="544"/>
-        <source>Add a comment, 'e.g. // my comment', an empty line or else:</source>
-        <translation>Adicione um comentário, ex: '// meu comentário', uma linha vazia ou algo mais:</translation>
+        <source>Add a comment, &apos;e.g. // my comment&apos;, an empty line or else:</source>
+        <translation>Adicione um comentário, ex: &apos;// meu comentário&apos;, uma linha vazia ou algo mais:</translation>
     </message>
     <message>
         <location filename="../ui/keybinds_tab.py" line="569"/>
@@ -748,7 +748,7 @@ copyq show
     <message>
         <location filename="../ui/keyboard_tab.py" line="105"/>
         <source>Select a layout to add</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="119"/>
@@ -763,7 +763,7 @@ copyq show
     <message>
         <location filename="../ui/keyboard_tab.py" line="137"/>
         <source>Options (double click to add)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="148"/>
@@ -778,12 +778,12 @@ copyq show
     <message>
         <location filename="../ui/keyboard_tab.py" line="175"/>
         <source>Switching policy:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="176"/>
         <source>Global</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/keyboard_tab.py" line="178"/>
@@ -930,7 +930,7 @@ copyq show
         <location filename="../ui/settings_window.py" line="907"/>
         <source>This is needed to make niri-settings work. 
 Identical settings before this line will be ignored then.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1037,8 +1037,8 @@ Identical settings before this line will be ignored then.</source>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="105"/>
-        <source> Hide by default backup files in 'Files' tab</source>
-        <translation type="unfinished"/>
+        <source> Hide by default backup files in &apos;Files&apos; tab</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/tools_tab.py" line="184"/>
@@ -1165,4 +1165,5 @@ com o PID {}?</translation>
         <source>Tap button map:</source>
         <translation>Mapa de botões ao tocar:</translation>
     </message>
-</context></TS>
+</context>
+</TS>
