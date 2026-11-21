@@ -16,7 +16,7 @@
     <message>
         <location filename="../ui/all_tabs.py" line="41"/>
         <source>Choose Insert Hint Color</source>
-        <translation type="unfinished">İpucu Ekleme Rengi Seçiniz</translation>
+        <translation>İpucu Ekleme Rengini Seçiniz</translation>
     </message>
     <message>
         <location filename="../ui/all_tabs.py" line="58"/>
